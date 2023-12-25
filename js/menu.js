@@ -25,24 +25,4 @@ document.querySelector('.menu').addEventListener('click', function() {
   }
 });
 
-/*
-const botBar = document.querySelector('.bottomBar');
-const botBarHeight = window.getComputedStyle(botBar).getPropertyValue('height');
-document.documentElement.style.setProperty('--bottomBar-height', bottomBarHeight);
-*/
-
-
-var bottomBarSize = 2; // make it so it can be toggled
-document.querySelector('.botBar').addEventListener('click', function() {
-  this.classList.toggle('gnomeSelector');
-
-  if (this.classList.contains('gnomeSelector')) {
-    bottomBar.add('gnomeSelector-bottomBar');
-  } else {
-    bottomBar.remove('gnomeSelector-bottomBar');
-  }
-});
-
-
-
 // make sure that every element is accounted for, and that it accounts for active elements, you will figure something out

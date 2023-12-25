@@ -19,6 +19,9 @@
 }
 
 .mainWindow:hover {
+  user-select: none;
+}
+.mainWindow:hover.hoverable {
   width: calc(99% + 0.2em);
   height: calc(87% + 0.2em - 5.5%);
   right: calc(0.5% - 0.1em);
@@ -39,6 +42,9 @@
 }
 
 .menuOpen-mainWindow:hover {
+  user-select: none;
+}
+.menuOpen-mainWindow:hover.hoverable {
   width: calc(99% + 0.2em - (12.5vh - 0.5% + 10.25%) - 0.5%);
   height: calc(87% + 0.2em - 5.5%);
   right: calc(0.5% - 0.05em);
@@ -302,6 +308,10 @@
   backdrop-filter: blur(1.5em) brightness(1.2) contrast(1.15);
 }
 
+.hidden {
+  display: none;
+}
+
 .clock {
   left: 50%;
   transform: translateX(-50%);
@@ -344,7 +354,172 @@
   width: calc(7% + 0.2em);
 }
 
-html {
+.hidden {
+  display: none;
+}
+
+#emailPopup {
+  display: flex;
+  width: 30%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  user-select: none;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-size: 2.75vh;
+  margin: 0;
+  padding: 0;
+  bottom: 1%;
+  color: #fdfdfd;
+  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
+  border-radius: 17px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1em) brightness(1) contrast(1.1);
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(20, 20, 20, 0.8196078431);
+}
+#emailPopup:hover {
+  height: calc(20% + 0.2em);
+  width: calc(30% + 0.2em);
+  bottom: calc(1% - 0.1em);
+  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
+  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
+  background-color: rgba(37, 37, 42, 0.9058823529);
+  backdrop-filter: blur(1.5em) brightness(1.2) contrast(1.15);
+}
+#emailPopup.hidden {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  width: 20%;
+  height: 15%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, 0);
+  border: 0 solid rgba(0, 0, 0, 0);
+  border-radius: 21.25px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  animation: hidePopup 0s 0.4s forwards;
+}
+
+@keyframes hidePopup {
+  to {
+    display: none;
+  }
+}
+#emailPopupBg {
+  display: flex;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8549019608);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+#emailPopupBg.hidden {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  animation: hidePopupBg 0s 0.4s forwards;
+}
+
+@keyframes hidePopupBg {
+  to {
+    display: none;
+  }
+}
+#creditsPopup {
+  display: flex;
+  width: 30%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  user-select: none;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-size: 2.75vh;
+  margin: 0;
+  padding: 0;
+  bottom: 1%;
+  color: #fdfdfd;
+  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
+  border-radius: 17px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1em) brightness(1) contrast(1.1);
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(20, 20, 20, 0.8196078431);
+}
+#creditsPopup:hover {
+  height: calc(20% + 0.2em);
+  width: calc(30% + 0.2em);
+  bottom: calc(1% - 0.1em);
+  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
+  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
+  background-color: rgba(37, 37, 42, 0.9058823529);
+  backdrop-filter: blur(1.5em) brightness(1.2) contrast(1.15);
+}
+#creditsPopup.hidden {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  width: 20%;
+  height: 15%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, 0);
+  border: 0 solid rgba(0, 0, 0, 0);
+  border-radius: 21.25px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  animation: hidePopup 0s 0.4s forwards;
+}
+
+@keyframes hidePopup {
+  to {
+    display: none;
+  }
+}
+#creditsPopupBg {
+  display: flex;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8549019608);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+#creditsPopupBg.hidden {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  animation: hidePopupBg 0s 0.4s forwards;
+}
+
+@keyframes hidePopupBg {
+  to {
+    display: none;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-image: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -355,7 +530,7 @@ html {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
 }/*# sourceMappingURL=index.css.map */

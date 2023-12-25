@@ -19,7 +19,7 @@
         font-size: 0;
     }
     @if $uniMargin != 0% {
-        width: calc(perToInt($waybarHeight) * 1vh - ($uniMargin)); // Width calculation for menu
+        width: calc(12.5vh - $uniMargin); // Width calculation for menu
         height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height calculation for menu
         top: calc(2 * ($uniMargin));
         left: $uniMargin;
