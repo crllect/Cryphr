@@ -20,6 +20,7 @@
     box-sizing: border-box;
     transition: 
         background-color $transitionSpeed ease,
+        transform $transitionSpeed ease,
         width $transitionSpeed ease,
         height $transitionSpeed ease,
         left $transitionSpeed ease,
@@ -71,6 +72,18 @@
     }
 }
 
+/*
+.discord {
+    left: center; // which is 0.5%, how about
+    transform: translateX(calc($uniMargin/0.09)); // translateX(uniMargin/(perToInt(width)/100) * 1%)
+    width: 9%; // const
+    &:hover {
+        width: calc(9% * $hoverCoefficient + $hoverConst);
+        transform: translateX(calc($uniMargin/0.09 - $uniMargin * ($uniMargin * 6) / 1%))
+    }
+}
+*/
+
 .githubLink {
     left: 2 * $uniMargin + 9%;
     width: 8%;
@@ -92,5 +105,15 @@
     width: 7%;
     &:hover {
         width: calc(7% * $hoverCoefficient + $hoverConst);
+    }
+}
+
+.battery {
+    left: 53.5% + $uniMargin;
+    width: 5%;
+    &:hover {
+        width: calc(5% * $hoverCoefficient + $hoverConst);
+        transform: translateX(-(5% / 2)); // 5 is to 2, as 10 is to 8
+        cursor: default;
     }
 }

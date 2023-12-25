@@ -293,7 +293,7 @@
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(1em) brightness(1) contrast(1.1);
   box-sizing: border-box;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, transform 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -330,6 +330,17 @@
   width: calc(9% + 0.2em);
 }
 
+/*
+.discord {
+    left: center; // which is 0.5%, how about
+    transform: translateX(calc($uniMargin/0.09)); // translateX(uniMargin/(perToInt(width)/100) * 1%)
+    width: 9%; // const
+    &:hover {
+        width: calc(9% * $hoverCoefficient + $hoverConst);
+        transform: translateX(calc($uniMargin/0.09 - $uniMargin * ($uniMargin * 6) / 1%))
+    }
+}
+*/
 .githubLink {
   left: 10%;
   width: 8%;
@@ -352,6 +363,16 @@
 }
 .credits:hover {
   width: calc(7% + 0.2em);
+}
+
+.battery {
+  left: 54%;
+  width: 5%;
+}
+.battery:hover {
+  width: calc(5% + 0.2em);
+  transform: translateX(-2.5%);
+  cursor: default;
 }
 
 .hidden {
