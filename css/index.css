@@ -152,15 +152,24 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, border-radius 0.4s ease, stroke 0.4s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, border-radius 0.4s ease, stroke 0.4s ease, fill 0.4s ease, font-size 0.4s ease;
 }
 .menu .menuIcon {
   fill: #ffffff;
   stroke: #ffffff;
+  height: 112.5%;
+  transition: none;
 }
 .menu .menuLogo {
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Open Sans";
   fill: rgba(0, 0, 0, 0);
   stroke: rgba(0, 0, 0, 0);
+  color: transparent;
+  user-select: none;
+  cursor: default;
+  font-size: 0;
 }
 
 .menu:hover {
@@ -195,10 +204,17 @@
 .menu.menuOpen .menuIcon {
   fill: rgba(0, 0, 0, 0);
   stroke: rgba(0, 0, 0, 0);
+  height: 0;
+  width: 0;
 }
 .menu.menuOpen .menuLogo {
   fill: #ffffff;
   stroke: #ffffff;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 7vh;
+  font: "Open Sans";
+  text-decoration: none;
 }
 
 .menu.menuOpen:hover {
@@ -216,8 +232,8 @@
 .fullMenu {
   position: absolute;
   width: calc(12.5vh - 0.5% + 10.25%);
-  height: 82%;
-  bottom: 6%;
+  height: 81.5%;
+  bottom: 6.5%;
   left: -20%;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   border: 1.75px solid linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(156, 156, 156, 0.3568627451) 100%);
@@ -227,8 +243,8 @@
 
 .menuOpen-fullMenu {
   width: calc(12.5vh - 0.5% + 10.25%);
-  height: 82%;
-  bottom: 6%;
+  height: 81.5%;
+  bottom: 6.5%;
   left: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -244,8 +260,8 @@
 
 .menuOpen-fullMenu:hover {
   width: calc((12.5vh - 0.375% + 10.25%) * 1 + 0.2em);
-  height: calc(87% + 0.2em - 5%);
-  bottom: calc(1% - 0.1em + 5%);
+  height: calc(87% + 0.2em - 5.5%);
+  bottom: calc(1% - 0.1em + 5.5%);
   left: calc(0.5% - 0.1em);
   border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.1em - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
@@ -277,7 +293,6 @@
   justify-content: center;
   background-color: rgba(20, 20, 20, 0.8196078431);
 }
-
 .botBar:hover {
   height: calc(4.5% + 0.2em);
   bottom: calc(1% - 0.1em);
@@ -294,6 +309,7 @@
 }
 .clock:hover {
   width: calc(7% + 0.2em);
+  cursor: pointer;
 }
 
 .discord {
@@ -318,6 +334,14 @@
 }
 .email:hover {
   width: calc(8% + 0.2em);
+}
+
+.credits {
+  right: 9%;
+  width: 7%;
+}
+.credits:hover {
+  width: calc(7% + 0.2em);
 }
 
 html {

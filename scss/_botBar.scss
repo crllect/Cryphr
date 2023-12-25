@@ -36,18 +36,17 @@
     align-items: center;
     justify-content: center;
     background-color: $windowCol;
-}
-
-.botBar:hover {
-    height: calc((($botBarHeight - $uniMargin) * $hoverCoefficient) + $hoverConst);
-    bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-    box-shadow: $hoverShadowRad $hoverShadowCol;
-    border: $hoverBorderThickness solid $hoverBorderCol;
-    background-color: $hoverWindowCol;
-    backdrop-filter:
-        blur($hoverWindowBlur)
-        brightness($hoverWindowBrightness)
-        contrast($hoverWindowContrast);
+    &:hover {
+        height: calc((($botBarHeight - $uniMargin) * $hoverCoefficient) + $hoverConst);
+        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        box-shadow: $hoverShadowRad $hoverShadowCol;
+        border: $hoverBorderThickness solid $hoverBorderCol;
+        background-color: $hoverWindowCol;
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
+    }
 }
 
 .clock {
@@ -56,6 +55,7 @@
     width: 7%;
     &:hover {
         width: calc(7% * $hoverCoefficient + $hoverConst);
+        cursor: pointer;
     }
 }
 
@@ -80,5 +80,13 @@
     width: 8%;
     &:hover {
         width: calc(8% * $hoverCoefficient + $hoverConst);
+    }
+}
+
+.credits {
+    right: 2 * $uniMargin + 8%;
+    width: 7%;
+    &:hover {
+        width: calc(7% * $hoverCoefficient + $hoverConst);
     }
 }
