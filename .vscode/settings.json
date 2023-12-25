@@ -1,0 +1,35 @@
+{
+        "liveServer.settings.port": 5502,
+        "editor.renderWhitespace": "trailing",
+        "editor.cursorStyle": "underline",
+        "workbench.colorCustomizations": {},
+        "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+        "workbench.preferredHighContrastLightColorTheme": "Kimbie Dark",
+        "workbench.iconTheme": "vscode-icons",
+        "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
+        "scss.lint.duplicateProperties": "warning",
+        "scss.lint.float": "warning",
+        "liveSassCompile.settings.autoprefix": [
+
+                
+        ],
+        "liveSassCompile.settings.forceBaseDirectory": "",
+        "liveSassCompile.settings.formats": [
+                {
+                "format": "expanded",
+                "extensionName": ".css",
+                "savePath": "/css"
+                }
+        ],
+        "prettier.bracketSameLine": true,
+        "prettier.tabWidth": 4,
+        "prettier.quoteProps": "consistent",
+        "liveServer.settings.donotVerifyTags": true,
+        "[javascript]": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "scss.hover.references": false,
+        "editor.hover.sticky": false,
+        "editor.hover.delay": 700,
+        "liveServer.settings.donotShowInfoMsg": true
+}

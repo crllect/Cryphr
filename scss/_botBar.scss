@@ -1,0 +1,84 @@
+.botBar {
+    user-select: none;
+    font-style: normal;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    position: absolute;
+    font-size: 2.75vh;
+    margin: 0;
+    padding: 0;
+    bottom: 2 * $uniMargin;
+    color: #fdfdfd;
+    height: $botBarHeight - $uniMargin;
+    border: $borderThickness solid $borderCol;
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box;
+    transition: 
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        box-shadow $fastTransitionSpeed ease,
+        border $fastTransitionSpeed ease,
+        fill $transitionSpeed ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $windowCol;
+}
+
+.botBar:hover {
+    height: calc((($botBarHeight - $uniMargin) * $hoverCoefficient) + $hoverConst);
+    bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+    box-shadow: $hoverShadowRad $hoverShadowCol;
+    border: $hoverBorderThickness solid $hoverBorderCol;
+    background-color: $hoverWindowCol;
+    backdrop-filter:
+        blur($hoverWindowBlur)
+        brightness($hoverWindowBrightness)
+        contrast($hoverWindowContrast);
+}
+
+.clock {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7%;
+    &:hover {
+        width: calc(7% * $hoverCoefficient + $hoverConst);
+    }
+}
+
+.discord {
+    left: $uniMargin;
+    width: 9%;
+    &:hover {
+        width: calc(9% * $hoverCoefficient + $hoverConst);
+    }
+}
+
+.githubLink {
+    left: 2 * $uniMargin + 9%;
+    width: 8%;
+    &:hover {
+        width: calc(8% * $hoverCoefficient + $hoverConst);
+    }
+}
+
+.email {
+    right: $uniMargin;
+    width: 8%;
+    &:hover {
+        width: calc(8% * $hoverCoefficient + $hoverConst);
+    }
+}
