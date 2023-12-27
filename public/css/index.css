@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* ---------------
+*   Huge thanks to riftriot
+*   for helping me set up
+*   UV on this project
+*   Follow his GitHub:
+*   https://github.com/Riftriot
+*/
 .mainWindow {
   position: absolute;
   width: 99%;
@@ -101,8 +108,8 @@
 .iframeWindow {
   position: absolute;
   width: 99%;
-  height: 87%;
-  bottom: 1%;
+  height: 81.5%;
+  bottom: 6.5%;
   right: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -112,15 +119,17 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transform: translate(0, 0);
-  transition: width 0.4s ease, height 0.4s ease, right 0.4s ease, bottom 0.4s ease, transform 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, border-radius 0.4s ease;
+  transition: width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
 }
 
 .iframeWindow:hover {
+  user-select: none;
+}
+.iframeWindow:hover.hoverable {
   width: calc(99% + 0.7vh);
-  height: calc(87% + 0.7vh);
+  height: calc(87% + 0.7vh - 5.5%);
   right: calc(0.5% - 0.35vh);
-  bottom: calc(1% - 0.35vh);
+  bottom: calc(1% - 0.35vh + 5.5%);
   border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
@@ -128,18 +137,19 @@
 
 .menuOpen-iframeWindow {
   width: calc(99% - (12.5vh - 0.5% + 10.25%) - 0.5%);
-  height: 87%;
-  bottom: 1%;
+  height: 81.5%;
+  bottom: 6.5%;
   right: 0.5%;
 }
 
 .menuOpen-iframeWindow:hover {
-  width: calc(99% + 0.7vh - (12.5vh - 0.5% + 10.25%) - 0.75% + 0.5% - 0.35vh);
-  height: calc(87% + 0.7vh);
-  right: calc(0.5% - 0.35vh);
-  bottom: calc(1% - 0.35vh);
-  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
-  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
+  user-select: none;
+}
+.menuOpen-iframeWindow:hover.hoverable {
+  width: calc(99% + 0.7vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
+  height: calc(87% + 0.7vh - 5.5%);
+  right: calc(0.5% - 0.175vh);
+  bottom: calc(1% - 0.35vh + 5.5%);
 }
 
 .menu {
@@ -533,4 +543,107 @@ html, body {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-}/*# sourceMappingURL=index.css.map */
+}
+
+/* I The rest is just notes and such
+
+// Future feature notes:
+// add hoverShadowCol
+// add menu stuff
+// add percentage bar
+// find icons for waybar
+// add credits and dynamic linking(to my github or other projects)
+
+// convert to react, also make it so all global variables are defined at runtime. Once that is done, make it so particles.js only appears when the menu is opened, and its only the size of the menu.
+
+// in the future make it so when you hover over a window, its border changes color to become brighter, and it becomes slightly bigger by like 5-20% ish
+// ($hoverConst * ($uniMargin / 1%))
+// example = border-radius: calc($borderRad + ((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) + ($hoverConst * perToInt($sideMargin))) - (perToInt($waybarHeight) * 1vh - $uniMargin)));
+// border-radius: calc($borderRad + ((width) - (hover height)))
+// border-radius: calc($borderRad + ((((((perToInt($waybarHeight) * 1vh - $uniMargin) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (($waybarHeight) - 2.25 * ($uniMargin))) + (1 / ($borderRad / 1px))));
+// when click make it so iframe and mainWindow element become smaller when menu is clicked on. Make it procedural with if statements.
+// calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))
+
+// I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
+
+// General notes, code snippets, or ideas:
+
+// when it comes to the svg for the xorro logo in the menu, I used: https://danmarshall.github.io/google-font-to-svg-path/
+// the size is set to 300, and the rest is shown in my svg implamentation in the html ;3
+
+// width: calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) + $hoverConst));
+
+// width: calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * (1 / $hoverCoefficient)) - $hoverConst));
+
+// height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * $hoverCoefficient) + $hoverConst);
+
+// height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * (1 / $hoverCoefficient)) - $hoverConst);
+
+// calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) - (perToInt($waybarHeight) * 1vh - $sideMargin)) - $hoverConst));
+
+// calc(((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin)) * $hoverCoefficient) + $hoverConst));
+
+
+//.menuOpen-waybar {
+//    @if $uniMargin != 0% {
+//        width: calc((100% - (2 * $uniMargin)) - perToInt($waybarHeight) * 1vh); // Width calculation for waybar
+//        height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
+//        top: calc(2 * ($uniMargin));
+//        right: $uniMargin;
+//    } @else {
+//        width: calc((100% - (2 * $sideMargin)) - perToInt($waybarHeight) * 1vh);
+//        height: calc((($waybarHeight) - (2.25 * (2 * $bottomMargin))));
+//        top: calc(2 * ($bottomMargin));
+//        right: $sideMargin;
+//    }
+//}
+
+//.menuOpen-waybar:hover {
+//    @if $uniMargin != 0% {
+//        width: calc(((((100% - (2 * $uniMargin)) - (perToInt($waybarHeight) * 1vh)) * $hoverCoefficient) + $hoverConst));
+//        height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
+//        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
+//        top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    } @else {
+//        width: calc((((100% - (2 * $sideMargin)) * $hoverCoefficient) + $hoverConst) - perToInt($waybarHeight) * 1vh);
+//        height: calc((((($waybarHeight) - (2.25 * (2 * $bottomMargin)))) * $hoverCoefficient) + $hoverConst);
+//        right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//        top: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    }
+//}
+
+//.mainWindow {
+//    position: absolute; // Absolute positioning
+//    @if $uniMargin != 0% {
+//        width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
+//        height: calc(100% - $uniMargin - $waybarHeight); // Height considering uniform margin and waybar height
+//        bottom: calc(2 * ($uniMargin));
+//        right: $uniMargin;
+//    } @else {
+//        width: calc((100% - (2 * $sideMargin)));
+//        height: calc(100% - $bottomMargin - $waybarHeight);
+//        bottom: calc(2 * ($bottomMargin));
+//        right: $sideMargin;
+//    }
+//    border: $borderThickness solid $borderCol; // Border styling
+//    box-shadow: $shadowRad $shadowCol;
+//    background-color: $windowCol;
+//}
+//
+//.mainWindow:hover {
+//    @if $uniMargin != 0% {
+//        width: calc((((100% - (2 * $uniMargin))) * $hoverCoefficient) + $hoverConst); // Hover effect for width
+//        height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst); // Hover effect for height
+//        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    } @else {
+//        width: calc((((100% - (2 * $sideMargin))) * $hoverCoefficient) + $hoverConst);
+//        height: calc(((100% - $bottomMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst);
+//        right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//        bottom: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    }
+//    box-shadow: $shadowRad $shadowCol;
+//    background-color: $hoverWindowCol;
+//    border: $hoverBorderThickness solid $hoverBorderCol;
+
+*//*# sourceMappingURL=index.css.map */
