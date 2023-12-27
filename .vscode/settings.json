@@ -18,7 +18,7 @@
                 {
                 "format": "expanded",
                 "extensionName": ".css",
-                "savePath": "/css"
+                "savePath": "/public/css"
                 }
         ],
         "prettier.bracketSameLine": true,
@@ -31,5 +31,14 @@
         "scss.hover.references": false,
         "editor.hover.sticky": false,
         "editor.hover.delay": 700,
-        "liveServer.settings.donotShowInfoMsg": true
+        "liveServer.settings.donotShowInfoMsg": true,
+        "[html]": {
+                "editor.defaultFormatter": "svipas.prettier-plus"
+        },
+        "vscord.status.idle.timeout": 10000000000,
+        "vscord.status.resetElapsedTimePerFile": true,
+        "vscord.status.details.text.idle": "Looking at my Five to see what broke",
+        "vscord.status.details.text.notInFile": "Not Coding",
+        "liveSassCompile.settings.watchOnLaunch": true,
+        "liveSassCompile.settings.useNewCompiler": true
 }
