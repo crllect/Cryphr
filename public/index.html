@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Crypher is a open source proxy front end based on the titanium networks ultra violet">
+        <meta name="keywords" content="proxy server solutions, anonymous web browsing, high-speed proxies, secure proxy networks, private internet access, unblocked online games, access school games, bypass game restrictions, free web-based games, unblocked game sites, HTML5 game development, responsive web design, frontend frameworks, JavaScript UI development, CSS3 animations, SCSS best practices, SASS styling tips, SCSS vs SASS, advanced SCSS techniques, mixin libraries for SASS, clean UI design principles, minimalist website interfaces, user-friendly web design, intuitive navigation UI, aesthetic UI elements, interactive web games, HTML game programming, cross-platform game development, browser game optimization, game design for web, CSS animations for games, JavaScript game scripts, easy-to-learn web games, educational online games, casual browser games, competitive online gaming, web game design inspiration, mobile-responsive games, web gaming communities, HTML5 gaming libraries, CSS layout techniques, SASS variables and functions, SCSS nesting and partials, modular front-end coding, UI color schemes, typography in web design, front-end development tools, user experience enhancements, web design trends, innovative online games">
+
+        <!-- UV things -->
+        <script src="uv/uv.bundle.js" defer></script>
+        <script src="uv/uv.config.js" defer></script>
+        <script src="js/UVtest.js"></script>
+
+        <script>
+            if ("serviceWorker" in navigator) {
+              window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/uvsw.js", {
+                  scope: __uv$config.prefix
+                });
+              });
+            }
+        </script>
+
+
+        <script>
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/uv/sw.js', { scope: __uv$config.prefix })
+                .then(function (registration) {
+                  console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(function (error) {
+                  console.error('Service Worker registration failed:', error);
+                });
+            }
+        </script>
+        <!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
+
+        <script>
+            // page title
+            document.title = "crllect";
+        </script>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Include the xorrro stylesheet -->
+        <link rel="stylesheet" href="css/index.css" />
+
+        <!-- sets the favicon -->
+        <link
+            rel="icon"
+            href="assets/xorro-favicon-hypr-2.png"
+            id="image/x-icon"
+        />
+
+        <!-- dynamically sets the favicon based on user color scheme -->
+        <script>
+            function updateFavicon() {
+                const favicon = document.getElementById("image/x-icon");
+                if (
+                    window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                ) {
+                    // User prefers a dark color scheme
+                    favicon.href = "assets/xorro-favicon-dark-2.png";
+                } else {
+                    // User prefers a light color scheme
+                    favicon.href = "assets/xorro-favicon-light-2.png";
+                }
+            }
+
+            // Call the function on load
+            updateFavicon();
+        </script>
+        <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+        <script src="js/particles.js"></script>
+        <script src="https://kit.fontawesome.com/df4e45b628.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="particles-js"></div>
+        <section class="menu">
+            <!-- Nested SVG for menuIcon -->
+            <svg class="menuIcon" viewBox="-37.7 -37.7 452.40 452.40">
+                version="1.1"
+                id="Layer_1"
+                viewBox="-37.7 -37.7 452.40 452.40"
+                xml:space="preserve"
+                width="256px"
+                height="256px"
+                stroke-width="3.77"
+            >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g>
+                    <rect x="75" y="73.5" width="302" height="30" />
+                    <rect y="73.5" width="30" height="30" />
+                    <rect y="273.5" width="30" height="30" />
+                    <rect x="75" y="273.5" width="302" height="30" />
+                    <rect y="173.5" width="30" height="30" />
+                    <rect x="75" y="173.5" width="302" height="30" />
+                </g>
+
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <rect x="75" y="73.5" width="302" height="30" />
+                        <rect y="73.5" width="30" height="30" />
+                        <rect y="273.5" width="30" height="30" />
+                        <rect x="75" y="273.5" width="302" height="30" />
+                        <rect y="173.5" width="30" height="30" />
+                        <rect x="75" y="173.5" width="302" height="30" />
+                    </g>
+                </g>
+            </svg>
+        
+            <!-- Nested SVG for menuLogo -->
+            <p class="menuLogo" style="display: flex; text-align: center; justify-content: center;">
+                Crypher
+            </p>
+        </section>
+        <div class="fullMenu"></div>
+        <nav class="waybar">
+            <form id="myForm">
+                <!-- Your form inputs go here -->
+                <button type="submit">Submit</button>
+            </form>
+        </nav>
+
+        <!-- <iframe class="iframeWindow" src="https://copy.sh/v86/?profile=archlinux"></iframe> -->
+        <div id="mainWindow" class="mainWindow hoverable"></div>
+
+
+        <p id="time" class="clock botBar"></p>
+
+        <a class="discord botBar" href="https://discord.com/users/713488984596021291"><span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a>
+
+        <a class="githubLink botBar" href="https://github.com/crllect"><span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a>
+
+        <p class="credits botBar"><span class="fa-solid fa-info"></span>&#160;&#160;Credits</p>
+        <div class="hidden" id="creditsPopup"></div>
+        <div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
+
+        <p class="email botBar"><span class="fa-regular fa-at"></span>&#160;&#160;Emails</p>
+        <div class="hidden" id="emailPopup">test</div>
+        <div class="hidden emailPopupBg" id="emailPopupBg"></div>
+
+        <p id="battery" class="battery botBar"></p>
+
+        <script src="js/menu.js"></script>
+        <script src="js/clock.js"></script>
+        <script src="js/credits.js"></script>
+        <script src="js/emails.js"></script>
+        <script src="js/battery.js"></script>
+    </body>
+    <script src="js/indexParticles.js"></script>
+</html>
