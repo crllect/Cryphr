@@ -4,7 +4,7 @@ $bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
 
 // Window Properties
 $windowCol: #141414d1; // 12, 26, 28, 0.8
-$windowBlur: 1em;
+$windowBlur: 1vh;
 $windowBrightness: 1;
 $windowContrast: 1.1;
 
@@ -42,9 +42,9 @@ $fullMenuOffScreenWindowGrad: linear-gradient(90deg, #00000000 0%, $activeWindow
 $fullMenuOffset: 10px;
 
 // Hover Vars
-$hoverConst: 0.2em; // 0.7, 0.5, 0.25
+$hoverConst: 0.7vh; // 0.7, 0.5, 0.25
 $hoverCoefficient: 1;
-$hoverWindowBlur: 1.5em;
+$hoverWindowBlur: 0.7vw;
 $hoverWindowBrightness: 1.2;
 $hoverWindowContrast: 1.15;
 $hoverBorderCol: #e70052e7;
@@ -63,10 +63,6 @@ $hoverShadowRad: 0px 0px $fullMenuOffset;
 // Functions
 @function perToInt($percent) { // Function to convert percentage to integer
     @return calc($percent / 1%); 
-}
-
-@function fadeOut($inputCol) {
-    // somethig to fade out using $activeTransition to find the twean speed
 }
 
 // Presets
