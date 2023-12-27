@@ -1,0 +1,106 @@
+.mainWindow {
+    position: absolute; // Absolute positioning
+    @if $uniMargin != 0% {
+        width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
+        height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
+        bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+        right: $uniMargin;
+    } @else {
+        width: calc((100% - (2 * $sideMargin)));
+        height: calc(100% - $bottomMargin - $waybarHeight - ($botBarHeight + $uniMargin));
+        bottom: calc(2 * ($bottomMargin) + ($botBarHeight + $uniMargin));
+        right: $sideMargin;
+    }
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    background-color: $windowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        box-shadow $fastTransitionSpeed ease,
+        border $fastTransitionSpeed ease,
+        fill $transitionSpeed ease; // Smooth transitions for various properties
+}
+
+.mainWindow:hover {
+    user-select: none;
+    &.hoverable {
+        @if $uniMargin != 0% {
+            width: calc((100% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
+            height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
+            right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+            bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+            border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+        } @else {
+            width: calc((((100% - (2 * $sideMargin))) * $hoverCoefficient) + $hoverConst);
+            height: calc(((100% - $bottomMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin));
+            right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+            bottom: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+            border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($bottomMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($bottomMargin)))) - (perToInt($waybarHeight) * 1vh - ($sideMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+        }
+        box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
+        border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+        background-color: $hoverWindowCol;
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
+    }
+}
+
+.menuOpen-mainWindow {
+    @if $uniMargin != 0% {
+        width: calc(((100% - (2 * $uniMargin))) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width adjusted for uniform margin
+        height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
+        bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+        right: $uniMargin;
+    } @else {
+        width: calc((100% - (2 * $sideMargin)) - (((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin))))) - $sideMargin);
+        height: calc(100% - $bottomMargin - $waybarHeight - ($botBarHeight + $uniMargin));
+        bottom: calc(2 * ($bottomMargin) + ($botBarHeight + $uniMargin));
+        right: $sideMargin;
+    }
+    backdrop-filter:
+        blur(calc($hoverWindowBlur * 1))
+        brightness(calc($hoverWindowBrightness * 1))
+        contrast(calc($hoverWindowContrast * 1));
+}
+
+.menuOpen-mainWindow:hover {
+    user-select: none;
+    &.hoverable {
+        @if $uniMargin != 0% {
+            width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Hover effect for width
+            height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
+            right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
+            bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+        } @else {
+            width: calc(((((100% - (2 * $sideMargin)) * $hoverCoefficient) + $hoverConst)) - (((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin))))) - $sideMargin);
+            height: calc(((100% - $bottomMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin));
+            right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
+            bottom: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+        }
+        backdrop-filter:
+            blur(calc($hoverWindowBlur * 1))
+            brightness(calc($hoverWindowBrightness * 1))
+            contrast(calc($hoverWindowContrast * 1));
+    }
+}

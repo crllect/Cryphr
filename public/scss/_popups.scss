@@ -1,0 +1,174 @@
+.hidden {
+    display: none;
+}
+
+#emailPopup {
+    display: flex;
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    user-select: none;
+    font-style: normal;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-size: 2.75vh;
+    margin: 0;
+    padding: 0;
+    bottom: 2 * $uniMargin;
+    color: #fdfdfd;
+    border: $borderThickness solid $borderCol;
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box;
+    transition: 
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        box-shadow $fastTransitionSpeed ease,
+        border $fastTransitionSpeed ease,
+        fill $transitionSpeed ease;
+    align-items: center;
+    justify-content: center;
+    background-color: $windowCol;
+    &:hover {
+        height: calc(((20%) * $hoverCoefficient) + $hoverConst);
+        width: calc(((30%) * $hoverCoefficient) + $hoverConst);
+        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        box-shadow: $hoverShadowRad $hoverShadowCol;
+        border: $hoverBorderThickness solid $hoverBorderCol;
+        background-color: $hoverWindowCol;
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+#emailPopupBg {
+    display: flex;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000da;
+    backdrop-filter: blur(1vh);
+    z-index: 1000;
+    &.hidden {
+        display: none;
+    }
+}
+
+#creditsPopup {
+    display: flex;
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    user-select: none;
+    font-style: normal;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-size: 2.75vh;
+    margin: 0;
+    padding: 0;
+    bottom: 2 * $uniMargin;
+    color: #fdfdfd;
+    border: $borderThickness solid $borderCol;
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box;
+    transition:
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        box-shadow $fastTransitionSpeed ease,
+        border $fastTransitionSpeed ease,
+        fill $transitionSpeed ease;
+    align-items: center;
+    justify-content: center;
+    background-color: $windowCol;
+    &:hover {
+        height: calc(((20%) * $hoverCoefficient) + $hoverConst);
+        width: calc(((30%) * $hoverCoefficient) + $hoverConst);
+        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        box-shadow: $hoverShadowRad $hoverShadowCol;
+        border: $hoverBorderThickness solid $hoverBorderCol;
+        background-color: $hoverWindowCol;
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+#creditsPopupBg {
+    display: flex;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000da;
+    backdrop-filter: blur(1vh);
+    z-index: 1000;
+    &.hidden {
+        display: none;
+    }
+}
+
+
+// add this later to animate email and credits disapear once your braincells reapear:
+
+/*
+  &.hidden {
+        background-color: #00000000;
+        backdrop-filter: blur(0px);
+        width: 20%;
+        height: 15%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #00000000;
+        border: 0 solid #00000000;
+        border-radius: $borderRad * 1.25;
+        box-shadow: 0 0 0 #00000000;
+        visibility: hidden;
+        transition-delay: 1s
+  }
+*/

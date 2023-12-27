@@ -1,0 +1,268 @@
+.menu {
+    position: absolute; // Absolute positioning
+    // Conditional styling based on $uniMargin variable
+    .menuIcon {
+        fill: $menuButtonCol; // Fill color for menu button
+        stroke: $menuButtonCol; // Stroke color for menu button
+        height: $waybarHeight * 9;
+        transition: none;
+    }
+    .menuLogo {
+        font-style: normal;
+        text-decoration: none;
+        font-family: 'Open Sans';
+        fill: #00000000; // Fill color for menu button
+        stroke: #00000000; // Stroke color for menu button
+        color: transparent;
+        user-select: none;
+        cursor: default;
+        font-size: 0;
+    }
+    @if $uniMargin != 0% {
+        width: calc(12.5vh - $uniMargin); // Width calculation for menu
+        height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height calculation for menu
+        top: calc(2 * ($uniMargin));
+        left: $uniMargin;
+    } @else {
+        width: calc(perToInt($waybarHeight) * 1vh - $sideMargin); // Width calculation for menu
+        height: calc(($waybarHeight) - 2.25 * (2 * $bottomMargin)); // Height calculation for menu
+        top: calc(2 * ($bottomMargin));
+        left: $sideMargin;
+    }
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad; // Border radius
+    box-shadow: $shadowRad $shadowCol; // Box shadow styling
+    background-color: $windowCol; // Background color
+    // Backdrop filter for visual effects
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex; // Flex display for inner content
+    align-items: center; // Vertical alignment
+    justify-content: center; // Horizontal alignment
+    text-align: center; // Text alignment
+    // Transition effects for various properties
+    transition: 
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        transform $transitionSpeed ease,
+        box-shadow $fastTransitionSpeed ease,
+        border $fastTransitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        fill $transitionSpeed ease,
+        font-size $transitionSpeed ease;
+}
+
+.menu:hover {
+    // Conditional hover styling for menu
+    @if $uniMargin != 0% {
+        width: calc((((perToInt($waybarHeight) * 1vh - $uniMargin) * $hoverCoefficient) + $hoverConst)); // Width adjustment on hover
+        height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst); // Height adjustment on hover
+        left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Left position adjustment on hover
+        top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    } @else {
+        width: calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) + $hoverConst)); // Width adjustment on hover
+        height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * $hoverCoefficient) + $hoverConst); // Height adjustment on hover
+        left: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Left position adjustment on hover
+        top: calc(2 * $bottomMargin - (((100% - $bottomMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($bottomMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($bottomMargin)))) - (perToInt($waybarHeight) * 1vh - ($sideMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    }
+    background-color: $hoverWindowCol; // Background color on hover
+    box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
+    border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+    // Backdrop filter adjustments on hover
+    backdrop-filter:
+        blur($hoverWindowBlur)
+        brightness($hoverWindowBrightness)
+        contrast($hoverWindowContrast);
+}
+
+.menu.menuOpen {
+    position: absolute; // Absolute positioning
+    // Conditional styling based on $uniMargin variable
+    .menuIcon {
+        fill: #00000000; // Fill color for menu button
+        stroke: #00000000; // Stroke color for menu button
+        height: 0.00000000001;
+        width: 0.00000000001;
+    }
+    .menuLogo {
+        fill: $menuButtonCol; // Fill color for menu button
+        stroke: $menuButtonCol; // Stroke color for menu button
+        color: aliceblue;
+        cursor: pointer;
+        font-size: 7vh;
+        font: 'Open Sans';
+        text-decoration: none;
+    }
+    @if $uniMargin != 0% {
+        width: calc(((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))); // Width calculation for menu
+        height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height calculation for menu
+        top: calc(2 * ($uniMargin));
+        left: $uniMargin;
+    } @else {
+        width: calc(((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin))))); // Width calculation for menu
+        height: calc(($waybarHeight) - 2.25 * (2 * $bottomMargin)); // Height calculation for menu
+        top: calc(2 * ($bottomMargin));
+        left: $sideMargin;
+    }
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad; // Border radius
+    background-color: $activeWindowCol; // Background color
+    // Backdrop filter for visual effects
+    backdrop-filter:
+        blur(calc($hoverWindowBlur / 8))
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex; // Flex display for inner content
+    align-items: center; // Vertical alignment
+    justify-content: center; // Horizontal alignment
+    text-align: center; // Text alignment
+    // Transition effects for various properties
+    transition: 
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        transform $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        fill $transitionSpeed ease;
+
+}
+
+.menu.menuOpen:hover {
+    @if $uniMargin != 0% {
+        width: calc((((perToInt($waybarHeight) * 1vh - ($uniMargin / (4 / 3)))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) * $hoverCoefficient + $hoverConst); // Width adjustment on hover
+        height: calc((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient + $hoverConst); // Height adjustment on hover
+        left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Left position adjustment on hover
+        top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    } @else {
+        width: calc(((((perToInt($waybarHeight) * 1vh - ($sideMargin / (4 / 3)))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin)))) * (1 / $hoverCoefficient)) - ($hoverConst / 2))); // Width adjustment on hover
+        height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * (1 / $hoverCoefficient)) - ($hoverConst / 2)); // Height adjustment on hover
+        left: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) + ($hoverConst / 2) - ($sideMargin / 2)); // Left position adjustment on hover
+        top: calc(2 * $bottomMargin - (((100% - $bottomMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) + ($hoverConst / 2)); // Top position adjustment on hover
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($bottomMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($bottomMargin)))) - (perToInt($waybarHeight) * 1vh - ($sideMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    }
+    box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
+    background-color: $activeWindowCol; // Background color
+    border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+    // Backdrop filter adjustments on hover
+    backdrop-filter:
+        blur(calc($hoverWindowBlur / 6))
+        brightness(calc($hoverWindowBrightness - 0.3))
+        contrast($hoverWindowContrast);
+}
+.fullMenu {
+    position: absolute; // Absolute positioning
+    @if $uniMargin != 0% {
+        width: calc(((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin)))));
+        height: calc(100% - $bottomMargin - $waybarHeight - ($botBarHeight + $uniMargin));
+        bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+        left: -20%;
+    } @else {
+        width: calc(((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin)))));
+        height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin));
+        bottom: calc(2 * ($bottomMargin) + ($botBarHeight + $uniMargin));
+        left: -20%;
+    }
+    box-shadow: 0px 0px 0px #00000000;
+    border: $borderThickness solid $fullMenuOffScreenBorderGrad;
+    background-color: $fullMenuOffScreenWindowGrad;
+    transition:
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        transform $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        border $transitionSpeed ease,
+        box-shadow $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        fill $transitionSpeed ease;
+}
+.menuOpen-fullMenu {
+    @if $uniMargin != 0% {
+        width: calc(((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))); // Width calculation for menu
+        height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height calculation for menu
+        bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+        left: $uniMargin;
+    } @else {
+        width: calc(((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin))))); // Width calculation for menu
+        height: calc(100% - $bottomMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height calculation for menu
+        bottom: calc(2 * ($bottomMargin) + ($botBarHeight + $uniMargin));
+        left: $sideMargin;
+    }
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad; // Border radius
+    background-color: $activeWindowCol; // Background color
+    // Backdrop filter for visual effects
+    backdrop-filter:
+        blur(calc($hoverWindowBlur / 8))
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex; // Flex display for inner content
+    align-items: center; // Vertical alignment
+    justify-content: center; // Horizontal alignment
+    text-align: center; // Text alignment
+    // Transition effects for various properties
+    transition:
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        transform $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        border $transitionSpeed ease,
+        box-shadow $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        fill $transitionSpeed ease;
+}
+
+.menuOpen-fullMenu:hover {
+    @if $uniMargin != 0% {
+        width: calc((((perToInt($waybarHeight) * 1vh - ($uniMargin / (4 / 3)))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) * $hoverCoefficient + $hoverConst); // Width calculation for menu
+        height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Height calculation for menu
+        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+        left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    } @else {
+        width: calc(((((perToInt($waybarHeight) * 1vh - ($sideMargin / (4 / 3)))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin)))) * (1 / $hoverCoefficient)) - ($hoverConst / 2))); // Width calculation for menu
+        height: calc(100% - $bottomMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height calculation for menu
+        bottom: calc(2 * ($bottomMargin - (((100% - (2 * $bottomMargin)) * ($hoverCoefficient - 1)) / 2) + ($hoverConst / 2) - ($bottomMargin / 2)) + ($botBarHeight + $uniMargin));
+        left: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) + ($hoverConst / 2) - ($sideMargin / 2));
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($bottomMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($bottomMargin)))) - (perToInt($waybarHeight) * 1vh - ($sideMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    }
+    box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
+    background-color: $activeWindowCol; // Background color
+    border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+    // Backdrop filter adjustments on hover
+    backdrop-filter:
+        blur(calc($hoverWindowBlur / 6))
+        brightness(calc($hoverWindowBrightness - 0.3))
+        contrast($hoverWindowContrast);
+}

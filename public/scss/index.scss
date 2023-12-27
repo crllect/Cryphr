@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import "_variables.scss"; // Importing global variables
+@import "_mainWindow.scss"; // Rest of the imports are self explanitory
+@import "_waybar.scss";
+@import "_iframeWindow.scss";
+@import "_menu.scss";
+@import "_botBar.scss";
+@import "_popups.scss";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    @if str-index($bgCol, "url") {
+        background-image: $bgCol; // Background image for html
+        background-repeat: no-repeat;
+        background-size: cover;
+    } @else {
+        background-color: $bgCol;
+    }
+    overflow: hidden; // Prevents scrolling
+}
+
+#particles-js {
+    position: fixed; // Fixed position for particle effect
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; // Behind other content
+}
+
+
+
+// Future feature notes:
+// add hoverShadowCol
+// add menu stuff
+// add percentage bar
+// find icons for waybar
+// add credits and dynamic linking(to my github or other projects)
+
+// convert to react, also make it so all global variables are defined at runtime. Once that is done, make it so particles.js only appears when the menu is opened, and its only the size of the menu.
+
+// in the future make it so when you hover over a window, its border changes color to become brighter, and it becomes slightly bigger by like 5-20% ish
+// ($hoverConst * ($uniMargin / 1%))
+// example = border-radius: calc($borderRad + ((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) + ($hoverConst * perToInt($sideMargin))) - (perToInt($waybarHeight) * 1vh - $uniMargin)));
+// border-radius: calc($borderRad + ((width) - (hover height)))
+// border-radius: calc($borderRad + ((((((perToInt($waybarHeight) * 1vh - $uniMargin) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (($waybarHeight) - 2.25 * ($uniMargin))) + (1 / ($borderRad / 1px))));
+// when click make it so iframe and mainWindow element become smaller when menu is clicked on. Make it procedural with if statements.
+// calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))
+
+// I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
+
+// General notes, code snippets, or ideas:
+
+// when it comes to the svg for the xorro logo in the menu, I used: https://danmarshall.github.io/google-font-to-svg-path/
+// the size is set to 300, and the rest is shown in my svg implamentation in the html ;3
+
+// width: calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) + $hoverConst));
+
+// width: calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * (1 / $hoverCoefficient)) - $hoverConst));
+
+// height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * $hoverCoefficient) + $hoverConst);
+
+// height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * (1 / $hoverCoefficient)) - $hoverConst);
+
+// calc((((perToInt($waybarHeight) * 1vh - $sideMargin) * $hoverCoefficient) - (perToInt($waybarHeight) * 1vh - $sideMargin)) - $hoverConst));
+
+// calc(((perToInt($waybarHeight) * 1vh - ($sideMargin))) + (((($waybarHeight) - 2.25 * (2 * $sideMargin)) * $hoverCoefficient) + $hoverConst));
+
+
+//.menuOpen-waybar {
+//    @if $uniMargin != 0% {
+//        width: calc((100% - (2 * $uniMargin)) - perToInt($waybarHeight) * 1vh); // Width calculation for waybar
+//        height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
+//        top: calc(2 * ($uniMargin));
+//        right: $uniMargin;
+//    } @else {
+//        width: calc((100% - (2 * $sideMargin)) - perToInt($waybarHeight) * 1vh);
+//        height: calc((($waybarHeight) - (2.25 * (2 * $bottomMargin))));
+//        top: calc(2 * ($bottomMargin));
+//        right: $sideMargin;
+//    }
+//}
+
+//.menuOpen-waybar:hover {
+//    @if $uniMargin != 0% {
+//        width: calc(((((100% - (2 * $uniMargin)) - (perToInt($waybarHeight) * 1vh)) * $hoverCoefficient) + $hoverConst));
+//        height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
+//        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
+//        top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    } @else {
+//        width: calc((((100% - (2 * $sideMargin)) * $hoverCoefficient) + $hoverConst) - perToInt($waybarHeight) * 1vh);
+//        height: calc((((($waybarHeight) - (2.25 * (2 * $bottomMargin)))) * $hoverCoefficient) + $hoverConst);
+//        right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//        top: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    }
+//}
+
+//.mainWindow {
+//    position: absolute; // Absolute positioning
+//    @if $uniMargin != 0% {
+//        width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
+//        height: calc(100% - $uniMargin - $waybarHeight); // Height considering uniform margin and waybar height
+//        bottom: calc(2 * ($uniMargin));
+//        right: $uniMargin;
+//    } @else {
+//        width: calc((100% - (2 * $sideMargin)));
+//        height: calc(100% - $bottomMargin - $waybarHeight);
+//        bottom: calc(2 * ($bottomMargin));
+//        right: $sideMargin;
+//    }
+//    border: $borderThickness solid $borderCol; // Border styling
+//    box-shadow: $shadowRad $shadowCol;
+//    background-color: $windowCol;
+//}
+//
+//.mainWindow:hover {
+//    @if $uniMargin != 0% {
+//        width: calc((((100% - (2 * $uniMargin))) * $hoverCoefficient) + $hoverConst); // Hover effect for width
+//        height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst); // Hover effect for height
+//        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    } @else {
+//        width: calc((((100% - (2 * $sideMargin))) * $hoverCoefficient) + $hoverConst);
+//        height: calc(((100% - $bottomMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst);
+//        right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//        bottom: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+//    }
+//    box-shadow: $shadowRad $shadowCol;
+//    background-color: $hoverWindowCol;
+//    border: $hoverBorderThickness solid $hoverBorderCol;
+
