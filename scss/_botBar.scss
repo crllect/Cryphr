@@ -55,11 +55,11 @@
 }
 
 .clock {
-    left: 50%;
+    left: 48%;
     transform: translateX(-50%);
     width: 7%;
     &:hover {
-        width: calc(7% * $hoverCoefficient + $hoverConst);
+        width: calc(7% * $hoverCoefficient + ($hoverConst / 2));
         cursor: pointer;
     }
 }
@@ -68,7 +68,7 @@
     left: $uniMargin;
     width: 9%;
     &:hover {
-        width: calc(9% * $hoverCoefficient + $hoverConst);
+        width: calc(9% * $hoverCoefficient + ($hoverConst / 2));
     }
 }
 
@@ -88,7 +88,7 @@
     left: 2 * $uniMargin + 9%;
     width: 8%;
     &:hover {
-        width: calc(8% * $hoverCoefficient + $hoverConst);
+        width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
     }
 }
 
@@ -96,7 +96,7 @@
     right: $uniMargin;
     width: 8%;
     &:hover {
-        width: calc(8% * $hoverCoefficient + $hoverConst);
+        width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
     }
 }
 
@@ -104,16 +104,16 @@
     right: 2 * $uniMargin + 8%;
     width: 7%;
     &:hover {
-        width: calc(7% * $hoverCoefficient + $hoverConst);
+        width: calc(7% * $hoverCoefficient + ($hoverConst / 2));
     }
 }
 
 .battery {
-    left: 53.5% + $uniMargin;
+    left: 51.5% + $uniMargin;
     width: 5%;
     &:hover {
-        width: calc(5% * $hoverCoefficient + $hoverConst);
+        width: calc(5% * $hoverCoefficient + ($hoverConst / 2));
         transform: translateX(-(5% / 2)); // 5 is to 2, as 10 is to 8
-        cursor: default;
+        cursor: pointer;
     }
 }
