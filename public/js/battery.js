@@ -9,22 +9,23 @@ function getBatteryIcon(level) {
 function updateBatteryDisplay(batteryLevel, iconClass) {
     const batteryElement = document.getElementById('battery');
     if (batteryElement) {
-        // Set the icon with increased font size
-        batteryElement.innerHTML = `<span class="${iconClass} batteryIcon" style="font-size: calc(5vh); transform: translateY(5%);"></span>`;
-        batteryElement.setAttribute('data-battery-level', batteryLevel);
+        // Display the percentage by default
+        batteryElement.innerHTML = batteryLevel + '%';
+        batteryElement.setAttribute('data-showing', 'percentage');
         batteryElement.onclick = function() {
             if (this.getAttribute('data-showing') === 'percentage') {
-                // Reset to icon with increased font size
+                // Switch to icon with increased font size
                 this.innerHTML = `<span class="${iconClass} batteryIcon" style="font-size: calc(5vh); transform: translateY(5%);"></span>`;
                 this.setAttribute('data-showing', 'icon');
             } else {
-                // Display the percentage with original font size
+                // Switch back to displaying the percentage
                 this.innerHTML = batteryLevel + '%';
                 this.setAttribute('data-showing', 'percentage');
             }
         };
     }
 }
+
 
 if ('getBattery' in navigator) {
     navigator.getBattery().then(function(battery) {
