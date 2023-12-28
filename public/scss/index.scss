@@ -11,7 +11,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    
     @if str-index($bgCol, "url") {
         background-image: $bgCol; // Background image for html
         background-repeat: no-repeat;
@@ -20,6 +20,11 @@ html, body {
         background-color: $bgCol;
     }
     overflow: hidden; // Prevents scrolling
+    height: 100%;
+    /*
+    height: 121vh;
+    transform: translateY(-6.95vh);
+    */
 }
 
 #particles-js {

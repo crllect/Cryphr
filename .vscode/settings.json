@@ -36,7 +36,7 @@
                 "editor.defaultFormatter": "svipas.prettier-plus"
         },
         "vscord.status.idle.timeout": 10000000000,
-        "vscord.status.resetElapsedTimePerFile": true,
+        "vscord.status.resetElapsedTimePerFile": false,
         "vscord.status.details.text.idle": "Looking at my Five to see what broke",
         "vscord.status.details.text.notInFile": "Not Coding",
         "liveSassCompile.settings.watchOnLaunch": true,

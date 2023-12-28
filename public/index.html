@@ -138,13 +138,34 @@
         <div class="fullMenu"></div>
 
         <nav class="waybar">
-            <form id="myForm">
-                <button type="submit">Submit</button>
-            </form>
+            <input type="text" id="urlInput" placeholder="Enter URL here">
+            <button id="loadButton">Load</button>
         </nav>
 
-        <iframe id="iframeWindow-1" class="iframeWindow hoverable" src="https://copy.sh/v86/?profile=archlinux"></iframe>
-        <div id="mainWindow" class="mainWindow hoverable hidden"></div>
+        <iframe id="iframeWindow" class="iframeWindow hidden hoverable"></iframe>
+        <div id="mainWindow" class="mainWindow hoverable"></div>
+        <div id="loadingIframe" class="hidden">
+            <div id="loadingIframe" class="content">
+                <div class="bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- Center of botBar -->
         <p id="time" class="clock botBar"></p>
