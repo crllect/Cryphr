@@ -2,6 +2,7 @@
 #*.css.map
 *.sass.map
 *.scss.map
+node_modules/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
