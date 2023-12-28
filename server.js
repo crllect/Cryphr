@@ -1,17 +1,19 @@
-import { createBareServer } from "@tomphttp/bare-server-node";
-import express from "express";
-import { createServer } from "node:http";
-import { join } from "node:path";
+import { createBareServer } from '@tomphttp/bare-server-node';
+import express from 'express';
+import { createServer } from 'node:http';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const bare = createBareServer("/bare/");
+const __dirname = join(fileURLToPath(import.meta.url), '..');
+const bare = createBareServer('/bare/');
 const app = express();
-const publicPath = "public"
+const publicPath = 'public';
 
 app.use(express.static(publicPath));
 
 app.use((req, res) => {
   res.status(404);
-  res.sendFile(join(publicPath, "404.html"));
+  res.sendFile(join(__dirname, publicPath, '404.html'));
 });
 
 const server = createServer();
