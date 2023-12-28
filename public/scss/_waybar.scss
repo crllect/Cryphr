@@ -117,7 +117,7 @@
 
 #reloadButton {
     position: absolute;
-    left: perToInt($waybarHeight) * (1vh) / 4;
+    left: calc(perToInt($waybarHeight) * (1vh) / 4);
     margin: 0;
     padding: 0;
     background-color: #00000000;
@@ -125,6 +125,23 @@
     font-family: 'Open Sans';
     font-size: 3vw;
     color: $menuButtonCol;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#searchButton {
+    position: absolute;
+    left: calc(perToInt($waybarHeight) * (1vh) / 4 + (($waybarHeight) / 1%) * 3.95vw);
+    transform: translateY(-3%);
+    margin: 0;
+    padding: 0;
+    background-color: #00000000;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: 3vw;
+    color: #7C7777;
+    font-weight: 100;
     &:hover {
         cursor: pointer;
     }

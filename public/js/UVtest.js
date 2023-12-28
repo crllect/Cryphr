@@ -1,37 +1,42 @@
-document.getElementById('urlInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        document.getElementById('loadButton').click();
-    }
-});
-
-
-document.getElementById('loadButton').onclick = function(event) {
-    event.preventDefault();
-
-    var url = document.getElementById('urlInput').value; 
-    if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        url = 'https://' + url;
-    }
-    var encodedUrl = __uv$config.encodeUrl(url);
-
-    var iframeWindow = document.getElementById('iframeWindow');
-    document.querySelectorAll('.mainWindow').forEach(function(element) {
-        element.classList.add('hidden');
+document
+    .getElementById("urlInput")
+    .addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("searchButton").click();
+        }
     });
 
-    iframeWindow.classList.remove('hidden');
-    document.getElementById('loadingIframe').classList.remove('hidden');
+document.getElementById("searchButton").onclick = function (event) {
+    event.preventDefault();
 
-    iframeWindow.src = __uv$config.prefix + encodedUrl;
+    var url = document.getElementById("urlInput").value;
+    var preferredSearchEngine = localStorage.getItem("preferredSearchEngine");
+    var searchUrl = preferredSearchEngine || "https://www.google.com/search?q=";
 
-    setTimeout(function() {
-        document.getElementById('loadingIframe').classList.add('hidden');
+    if (!url.includes(".")) {
+        url = searchUrl + encodeURIComponent(url);
+    } else {
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "https://" + url;
+        }
+    }
+
+    var iframeWindow = document.getElementById("iframeWindow");
+    document.querySelectorAll(".mainWindow").forEach(function (element) {
+        element.classList.add("hidden");
+    });
+
+    iframeWindow.classList.remove("hidden");
+    document.getElementById("loadingIframe").classList.remove("hidden");
+
+    iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+
+    setTimeout(function () {
+        document.getElementById("loadingIframe").classList.add("hidden");
     }, 2000);
 };
 
-document.getElementById('reloadButton').onclick = function(event) {
-    document.getElementById('iframeWindow').contentWindow.location.reload(true);
-}
-
-// change it so that the end user can configur their prefered search engine
+document.getElementById("reloadButton").onclick = function (event) {
+    document.getElementById("iframeWindow").contentWindow.location.reload(true);
+};

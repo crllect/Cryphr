@@ -139,6 +139,23 @@
   cursor: pointer;
 }
 
+#searchButton {
+  position: absolute;
+  left: calc(3.125vh + 49.375vw);
+  transform: translateY(-3%);
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: transparent;
+  font-family: "Open Sans";
+  font-size: 3vw;
+  color: #7C7777;
+  font-weight: 100;
+}
+#searchButton:hover {
+  cursor: pointer;
+}
+
 .iframeWindow {
   position: absolute;
   width: 99%;
