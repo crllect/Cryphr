@@ -20,17 +20,21 @@
     justify-content: center;
     text-align: center;
     background-color: $windowCol;
-    transition: 
+    transition:
+        background-color $transitionSpeed ease,
         width $transitionSpeed ease,
         height $transitionSpeed ease,
         left $transitionSpeed ease,
         bottom $transitionSpeed ease,
         right $transitionSpeed ease,
         top $transitionSpeed ease,
+        transform $transitionSpeed ease,
         border-radius $transitionSpeed ease,
-        box-shadow $fastTransitionSpeed ease,
-        border $fastTransitionSpeed ease,
-        fill $transitionSpeed ease; // Smooth transitions for various properties
+        stroke $transitionSpeed ease,
+        border $transitionSpeed ease,
+        box-shadow $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        fill $transitionSpeed ease;
 }
 
 .iframeWindow:hover {

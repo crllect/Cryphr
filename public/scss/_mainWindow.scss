@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: 
+    transition:
         background-color $transitionSpeed ease,
         width $transitionSpeed ease,
         height $transitionSpeed ease,
@@ -32,12 +32,13 @@
         bottom $transitionSpeed ease,
         right $transitionSpeed ease,
         top $transitionSpeed ease,
+        transform $transitionSpeed ease,
         border-radius $transitionSpeed ease,
         stroke $transitionSpeed ease,
+        border $transitionSpeed ease,
+        box-shadow $transitionSpeed ease,
         backdrop-filter $transitionSpeed ease,
-        box-shadow $fastTransitionSpeed ease,
-        border $fastTransitionSpeed ease,
-        fill $transitionSpeed ease; // Smooth transitions for various properties
+        fill $transitionSpeed ease;
 }
 
 .mainWindow:hover {

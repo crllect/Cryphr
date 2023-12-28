@@ -29,3 +29,9 @@ document.getElementById('loadButton').onclick = function(event) {
         document.getElementById('loadingIframe').classList.add('hidden');
     }, 2000);
 };
+
+document.getElementById('reloadButton').onclick = function(event) {
+    document.getElementById('iframeWindow').contentWindow.location.reload(true);
+}
+
+// change it so that the end user can configur their prefered search engine

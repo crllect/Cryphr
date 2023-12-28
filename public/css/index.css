@@ -22,18 +22,18 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 
 .mainWindow:hover {
   user-select: none;
 }
 .mainWindow:hover.hoverable {
-  width: calc(99% + 0.7vh);
-  height: calc(87% + 0.7vh - 5.5%);
-  right: calc(0.5% - 0.35vh);
-  bottom: calc(1% - 0.35vh + 5.5%);
-  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
+  width: calc(99% + 0vh);
+  height: calc(87% + 0vh - 5.5%);
+  right: calc(0.5% - 0vh);
+  bottom: calc(1% - 0vh + 5.5%);
+  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0vh - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
   background-color: rgba(37, 37, 42, 0.9058823529);
@@ -52,10 +52,10 @@
   user-select: none;
 }
 .menuOpen-mainWindow:hover.hoverable {
-  width: calc(99% + 0.7vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
-  height: calc(87% + 0.7vh - 5.5%);
-  right: calc(0.5% - 0.175vh);
-  bottom: calc(1% - 0.35vh + 5.5%);
+  width: calc(99% + 0vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
+  height: calc(87% + 0vh - 5.5%);
+  right: calc(0.5% - 0vh);
+  bottom: calc(1% - 0vh + 5.5%);
   backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
 }
 
@@ -75,15 +75,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 
 .waybar:hover {
-  width: calc((99% - 12.5vh) * 1 + 0.7vh);
-  height: calc(10.25% + 0.7vh);
-  right: calc(0.5% - 0.175vh);
-  top: calc(1% - 0.35vh);
-  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
+  width: calc((99% - 12.5vh) * 1 + 0vh);
+  height: calc(10.25% + 0vh);
+  right: calc(0.5% - 0vh);
+  top: calc(1% - 0vh);
+  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0vh - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
   background-color: rgba(37, 37, 42, 0.9058823529);
@@ -99,10 +99,44 @@
 }
 
 .menuOpen-waybar:hover {
-  width: calc(99% + 0.7vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
-  height: calc(10.25% + 0.7vh);
-  right: calc(0.5% - 0.175vh);
-  top: calc(1% - 0.35vh);
+  width: calc(99% + 0vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
+  height: calc(10.25% + 0vh);
+  right: calc(0.5% - 0vh);
+  top: calc(1% - 0vh);
+}
+
+#urlInput {
+  position: absolute;
+  left: 12.5vh;
+  height: 8.5vh;
+  width: 50vw;
+  margin: 0;
+  border: transparent;
+  font-family: "Open Sans";
+  font-size: 2vw;
+  color: #ffffff;
+  border-radius: 100vw;
+  padding: 1em;
+  background-color: rgba(241, 241, 241, 0.0784313725);
+}
+#urlInput:focus, #urlInput:hover {
+  outline: none;
+  background-color: rgba(241, 241, 241, 0.1254901961);
+}
+
+#reloadButton {
+  position: absolute;
+  left: 3.125vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: transparent;
+  font-family: "Open Sans";
+  font-size: 3vw;
+  color: #ffffff;
+}
+#reloadButton:hover {
+  cursor: pointer;
 }
 
 .iframeWindow {
@@ -120,18 +154,18 @@
   justify-content: center;
   text-align: center;
   background-color: rgba(20, 20, 20, 0.8196078431);
-  transition: width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 
 .iframeWindow:hover {
   user-select: none;
 }
 .iframeWindow:hover.hoverable {
-  width: calc(99% + 0.7vh);
-  height: calc(87% + 0.7vh - 5.5%);
-  right: calc(0.5% - 0.35vh);
-  bottom: calc(1% - 0.35vh + 5.5%);
-  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
+  width: calc(99% + 0vh);
+  height: calc(87% + 0vh - 5.5%);
+  right: calc(0.5% - 0vh);
+  bottom: calc(1% - 0vh + 5.5%);
+  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0vh - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
 }
@@ -147,10 +181,10 @@
   user-select: none;
 }
 .menuOpen-iframeWindow:hover.hoverable {
-  width: calc(99% + 0.7vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
-  height: calc(87% + 0.7vh - 5.5%);
-  right: calc(0.5% - 0.175vh);
-  bottom: calc(1% - 0.35vh + 5.5%);
+  width: calc(99% + 0vh - (12.5vh - 0.5% + 10.25%) - 0.5%);
+  height: calc(87% + 0vh - 5.5%);
+  right: calc(0.5% - 0vh);
+  bottom: calc(1% - 0vh + 5.5%);
 }
 
 *, *:before, *:after {
@@ -300,7 +334,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, border-radius 0.4s ease, stroke 0.4s ease, fill 0.4s ease, font-size 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease, font-size 0.4s ease;
 }
 .menu .menuIcon {
   fill: #ffffff;
@@ -321,11 +355,11 @@ body {
 }
 
 .menu:hover {
-  width: calc((12.5vh - 0.5%) * 1 + 0.7vh);
-  height: calc(10.25% + 0.7vh);
-  left: calc(0.5% - 0.35vh);
-  top: calc(1% - 0.35vh);
-  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
+  width: calc((12.5vh - 0.5%) * 1 + 0vh);
+  height: calc(10.25% + 0vh);
+  left: calc(0.5% - 0vh);
+  top: calc(1% - 0vh);
+  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0vh - (12.5vh - 0.5%) + 2px);
   background-color: rgba(37, 37, 42, 0.9058823529);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
@@ -347,7 +381,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 .menu.menuOpen .menuIcon {
   fill: rgba(0, 0, 0, 0);
@@ -366,11 +400,11 @@ body {
 }
 
 .menu.menuOpen:hover {
-  width: calc((12.5vh - 0.375% + 10.25%) * 1 + 0.7vh);
-  height: calc(10.25% + 0.7vh);
-  left: calc(0.5% - 0.35vh);
-  top: calc(1% - 0.35vh);
-  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
+  width: calc((12.5vh - 0.5% + 10.25%) * 1 + 0vh);
+  height: calc(10.25% + 0vh);
+  left: calc(0.5% - 0vh);
+  top: calc(1% - 0vh);
+  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0vh - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   background-color: rgba(37, 37, 42, 0.8196078431);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
@@ -407,11 +441,11 @@ body {
 }
 
 .menuOpen-fullMenu:hover {
-  width: calc((12.5vh - 0.375% + 10.25%) * 1 + 0.7vh);
-  height: calc(87% + 0.7vh - 5.5%);
-  bottom: calc(1% - 0.35vh + 5.5%);
-  left: calc(0.5% - 0.35vh);
-  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0.35vh - (12.5vh - 0.5%) + 2px);
+  width: calc((12.5vh - 0.5% + 10.25%) * 1 + 0vh);
+  height: calc(87% + 0vh - 5.5%);
+  bottom: calc(1% - 0vh + 5.5%);
+  left: calc(0.5% - 0vh);
+  border-radius: calc(13.6px + (12.5vh - 0.5%) * 1 + 0vh - (12.5vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   background-color: rgba(37, 37, 42, 0.8196078431);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
@@ -435,15 +469,15 @@ body {
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
   box-sizing: border-box;
-  transition: background-color 0.4s ease, transform 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color 0.4s ease, transform 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, border 0.4s ease, fill 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(20, 20, 20, 0.8196078431);
 }
 .botBar:hover {
-  height: calc(4.5% + 0.7vh);
-  bottom: calc(1% - 0.35vh);
+  height: calc(4.5% + 0vh);
+  bottom: calc(1% - 0vh);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
   background-color: rgba(37, 37, 42, 0.9058823529);
@@ -460,7 +494,7 @@ body {
   width: 7%;
 }
 .clock:hover {
-  width: calc(7% + 0.35vh);
+  width: calc(7% + 0vh);
   cursor: pointer;
 }
 
@@ -470,7 +504,7 @@ body {
   transform: translateX(-50%);
 }
 .discord:hover {
-  width: calc(9% + 0.35vh);
+  width: calc(9% + 0vh);
 }
 
 /*
@@ -494,7 +528,7 @@ body {
   transform: translateX(-50%);
 }
 .githubLink:hover {
-  width: calc(8% + 0.35vh);
+  width: calc(8% + 0vh);
 }
 
 .email {
@@ -503,7 +537,8 @@ body {
   transform: translateX(50%);
 }
 .email:hover {
-  width: calc(8% + 0.35vh);
+  width: calc(8% + 0vh);
+  cursor: pointer;
 }
 
 .credits {
@@ -512,7 +547,8 @@ body {
   transform: translateX(50%);
 }
 .credits:hover {
-  width: calc(8% + 0.35vh);
+  width: calc(8% + 0vh);
+  cursor: pointer;
 }
 
 .battery {
@@ -521,7 +557,7 @@ body {
   width: 5%;
 }
 .battery:hover {
-  width: calc(5% + 0.35vh);
+  width: calc(5% + 0vh);
   cursor: pointer;
 }
 
@@ -558,9 +594,9 @@ body {
   background-color: rgba(20, 20, 20, 0.8196078431);
 }
 #emailPopup:hover {
-  height: calc(20% + 0.7vh);
-  width: calc(30% + 0.7vh);
-  bottom: calc(1% - 0.35vh);
+  height: calc(20% + 0vh);
+  width: calc(30% + 0vh);
+  bottom: calc(1% - 0vh);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
   background-color: rgba(37, 37, 42, 0.9058823529);
@@ -614,9 +650,9 @@ body {
   background-color: rgba(20, 20, 20, 0.8196078431);
 }
 #creditsPopup:hover {
-  height: calc(20% + 0.7vh);
-  width: calc(30% + 0.7vh);
-  bottom: calc(1% - 0.35vh);
+  height: calc(20% + 0vh);
+  width: calc(30% + 0vh);
+  bottom: calc(1% - 0vh);
   box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
   border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
   background-color: rgba(37, 37, 42, 0.9058823529);

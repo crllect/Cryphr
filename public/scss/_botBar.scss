@@ -30,8 +30,8 @@
         border-radius $transitionSpeed ease,
         stroke $transitionSpeed ease,
         backdrop-filter $transitionSpeed ease,
-        box-shadow $fastTransitionSpeed ease,
-        border $fastTransitionSpeed ease,
+        box-shadow $transitionSpeed ease,
+        border $transitionSpeed ease,
         fill $transitionSpeed ease;
     display: flex;
     align-items: center;
@@ -109,6 +109,7 @@
 
     &:hover {
         width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
+        cursor: pointer;
     }
 }
 
@@ -119,6 +120,7 @@
 
     &:hover {
         width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
+        cursor: pointer;
     }
 }
 

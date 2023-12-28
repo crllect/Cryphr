@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: 
+    transition:
         background-color $transitionSpeed ease,
         width $transitionSpeed ease,
         height $transitionSpeed ease,
@@ -35,9 +35,9 @@
         transform $transitionSpeed ease,
         border-radius $transitionSpeed ease,
         stroke $transitionSpeed ease,
+        border $transitionSpeed ease,
+        box-shadow $transitionSpeed ease,
         backdrop-filter $transitionSpeed ease,
-        box-shadow $fastTransitionSpeed ease,
-        border $fastTransitionSpeed ease,
         fill $transitionSpeed ease;
 }
 
@@ -93,5 +93,39 @@
         height: calc(((($waybarHeight) - 2.25 * (2 * $bottomMargin)) * $hoverCoefficient) + $hoverConst);
         right: calc($sideMargin - (((100% - (2 * $sideMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
         top: calc(2 * $bottomMargin - (((100% - $sideMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+    }
+}
+
+#urlInput {
+    position: absolute;
+    left: perToInt($waybarHeight) * 1vh;
+    height: calc((($waybarHeight) / 1%) * 1vh - (($uniMargin) / 1%) * 8vh);
+    width: calc((($waybarHeight) / 1%) * 4vw);
+    margin: 0;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: 2vw;
+    color: $menuButtonCol;
+    border-radius: 100vw;
+    padding: 1em;
+    background-color: #f1f1f114;
+    &:focus, &:hover {
+        outline: none;
+        background-color: #f1f1f120;
+    }
+}
+
+#reloadButton {
+    position: absolute;
+    left: perToInt($waybarHeight) * (1vh) / 4;
+    margin: 0;
+    padding: 0;
+    background-color: #00000000;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: 3vw;
+    color: $menuButtonCol;
+    &:hover {
+        cursor: pointer;
     }
 }

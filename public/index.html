@@ -20,31 +20,13 @@
         <script>
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", () => {
-                    navigator.serviceWorker.register("/uvsw.js", {
+                    navigator.serviceWorker.register("/uv/sw.js", {
                         scope: __uv$config.prefix,
                     });
                 });
             }
         </script>
 
-        <script>
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker
-                    .register("/uv/sw.js", { scope: __uv$config.prefix })
-                    .then(function (registration) {
-                        console.log(
-                            "Service Worker registered with scope:",
-                            registration.scope
-                        );
-                    })
-                    .catch(function (error) {
-                        console.error(
-                            "Service Worker registration failed:",
-                            error
-                        );
-                    });
-            }
-        </script>
         <!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
 
         <script>
@@ -84,6 +66,7 @@
             // Call the function on load
             updateFavicon();
         </script>
+
         <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
         <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
         <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
@@ -137,9 +120,10 @@
         </section>
         <div class="fullMenu"></div>
 
-        <nav class="waybar">
+        <nav class="waybar"> <!-- add zoom in browser (later date) -->
+            <p id="reloadButton"><span class="fa-solid fa-rotate-right"></span></p>
             <input type="text" id="urlInput" placeholder="Enter URL here">
-            <button id="loadButton">Load</button>
+            <button id="loadButton"><span class="fa-solid fa-search"></span></button>
         </nav>
 
         <iframe id="iframeWindow" class="iframeWindow hidden hoverable"></iframe>
