@@ -43,5 +43,6 @@
     "editor.fontFamily": "'Fira Code Nerd Font', 'Jetbrains Mono Nerd Font', 'Hack Nerd Font', 'monospace'",
     "editor.fontLigatures": true,
     "editor.tabSize": 4,
+    "fiveServer.navigate": false,
     "terminal.integrated.fontFamily": "'Fira Code Nerd Font', 'Jetbrains Mono Nerd Font', 'Hack Nerd Font', 'monospace'"
 }

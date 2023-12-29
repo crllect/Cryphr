@@ -7,11 +7,12 @@
 @import "_menu.scss";
 @import "_botBar.scss";
 @import "_popups.scss";
+@import "_aboutBlankChooser.scss";
 
 html, body {
     margin: 0;
     padding: 0;
-    
+
     @if str-index($bgCol, "url") {
         background-image: $bgCol; // Background image for html
         background-repeat: no-repeat;

@@ -1,0 +1,124 @@
+.aboutBlankOpener {
+    position: absolute; // Absolute positioning
+    width: calc((50% - (2 * $uniMargin)) + $uniMargin / 2); // Width adjusted for uniform margin
+    height: calc(100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin); // Height considering uniform margin and waybar height
+    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    right: $uniMargin;
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    background-color: $windowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all $transitionSpeed ease;
+    &:hover {
+        user-select: none;
+        width: calc((50% - (2 * $uniMargin) + $uniMargin / 2) * $hoverCoefficient + $hoverConst);
+        height: calc(((100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin) * $hoverCoefficient) + $hoverConst); // Hover effect for height
+        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+        box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
+        border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+        background-color: $hoverWindowCol;
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
+    }
+}
+
+
+.standardOpener {
+    position: absolute; // Absolute positioning
+    width: calc((50% - (2 * $uniMargin)) + $uniMargin / 2); // Width adjusted for uniform margin
+    height: calc(100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin); // Height considering uniform margin and waybar height
+    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    left: $uniMargin;
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    background-color: $windowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all $transitionSpeed ease;
+    &:hover {
+        user-select: none;
+        width: calc((50% - (2 * $uniMargin) + $uniMargin / 2) * $hoverCoefficient + $hoverConst);
+        height: calc(((100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin) * $hoverCoefficient) + $hoverConst); // Hover effect for height
+        left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+        box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
+        border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+        background-color: $hoverWindowCol;
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
+    }
+}
+
+.openerText {
+    position: absolute;
+    font-family: 'Open Sans';
+    font-size: 1.4vw;
+    color: #fff;
+    top: 45%
+}
+
+.openerSubText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-family: 'Open Sans';
+    color: #7C7777;
+    font-size: 0.9vw;
+    transform: translateY(810%);
+}
+
+
+.openerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 45%;
+    height: 50%;
+    background-color: #f1f1f114;
+    padding: 0.5em;
+    border-radius: $borderRad;
+}
+
+.openerButton {
+    transform: translateY(2vh);
+    display: inline-block;
+    background-color: transparent;
+    border: $borderThickness solid $hoverBorderCol;
+    color: #fff;
+    font-size: 1.5vw;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+    border-radius: $borderRad;
+    text-align: center;
+    box-shadow: $hoverShadowRad $hoverShadowCol;
+    &:hover {
+        background-color: rgba(231, 0, 86, 0.2);
+        text-shadow: 0px 0px 6px #e70056;
+    }
+}
