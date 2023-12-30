@@ -599,7 +599,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000;
+  z-index: 1000000;
   user-select: none;
   font-style: normal;
   text-decoration: none;
@@ -641,7 +641,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8549019608);
   backdrop-filter: blur(1vh);
-  z-index: 1000;
+  z-index: 999990;
 }
 #emailPopupBg.hidden {
   display: none;
@@ -655,7 +655,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000;
+  z-index: 1000000;
   user-select: none;
   font-style: normal;
   text-decoration: none;
@@ -697,7 +697,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8549019608);
   backdrop-filter: blur(1vh);
-  z-index: 1000;
+  z-index: 999990;
 }
 #creditsPopupBg.hidden {
   display: none;

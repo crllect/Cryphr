@@ -10,7 +10,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10000;
+    z-index: 1000000;
     user-select: none;
     font-style: normal;
     text-decoration: none;
@@ -71,7 +71,7 @@
     height: 100%;
     background-color: #000000da;
     backdrop-filter: blur(1vh);
-    z-index: 1000;
+    z-index: 999990;
     &.hidden {
         display: none;
     }
@@ -85,7 +85,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10000;
+    z-index: 1000000;
     user-select: none;
     font-style: normal;
     text-decoration: none;
@@ -146,7 +146,7 @@
     height: 100%;
     background-color: #000000da;
     backdrop-filter: blur(1vh);
-    z-index: 1000;
+    z-index: 999990;
     &.hidden {
         display: none;
     }
