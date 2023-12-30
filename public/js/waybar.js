@@ -46,28 +46,26 @@ document.getElementById("searchButton").onclick = function (event) {
         mainWindow.forEach(element => element.classList.remove("hidden"));
         setTimeout(function() {
             iframeWindow.classList.add("hidden");
-        }, 750);
+        }, 850);
         setTimeout(function() {
             mainWindow.forEach(element => element.classList.remove("mainWindowClose"))
-        }, 250);
+        }, 450);
     } else {
-        if (document.getElementById("mainWindow").classList.contains("menuOpen-mainWindow")) {
-            iframeWindow.classList.remove("hidden");
-            iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
-            iframeWindow.classList.remove("iframeWindowOpen");
-        }
+        iframeWindow.classList.remove("hidden");
+        iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
+        iframeWindow.classList.remove("iframeWindowOpen");
         mainWindow.forEach(element => element.classList.add("mainWindowClose"));
         iframeWindow.classList.remove("hidden");
         setTimeout(function() {
             mainWindow.forEach(element => element.classList.add("hidden"));
-        }, 750);
+        }, 850);
         setTimeout(function() {
             if (document.getElementById("fullMenu").classList.contains("menuOpen-fullMenu")) {
                 iframeWindow.classList.add("menuOpen-iframeWindowOpen");
             } else {
                 iframeWindow.classList.add("iframeWindowOpen");
             }
-        }, 250);
+        }, 450);
 
         loadingIframe.classList.remove("hidden"); // Show loading animation
 

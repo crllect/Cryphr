@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-size: 5vh;
+  font-family: "Open Sans";
+  user-select: none;
+  color: #fff;
+}
+
+.pageNotFound {
+  z-index: 100;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 25vh;
+  border: 0.536vh solid transparent;
+  height: 10vh;
+  border-radius: 20px;
+  border-right-color: rgba(241, 241, 241, 0.9058823529);
+  padding-right: 1em;
+  margin-right: 1em;
+}
+
+.pageNotFoundText {
+  z-index: 100;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 25vh;
+}
+
+.kaomoji {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(50vh);
+  font-size: 10vh;
+}
+
+#particles-js {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}/*# sourceMappingURL=404.css.map */

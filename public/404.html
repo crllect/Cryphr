@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-</head>
-<body>
-    <!--<p>If you are not redirected, <a href="app.html">click here!</a>.</p>-->
-    <h1>OY! Its an error, a 404 one.</h1>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="404, page not found" />
+
+        <script>
+            // page title
+            document.title = "Crypher";
+        </script>
+
+        <link rel="stylesheet" href="css/404.css" />
+
+        <!-- sets the favicon -->
+        <link
+            rel="icon"
+            href="assets/xorro-favicon-hypr-3.png"
+            id="image/x-icon"
+        />
+
+        <!-- dynamically sets the favicon based on user color scheme -->
+        <script>
+            function updateFavicon() {
+                const favicon = document.getElementById("image/x-icon");
+                if (
+                    window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                ) {
+                    // User prefers a dark color scheme
+                    favicon.href = "assets/xorro-favicon-dark-2.png";
+                } else {
+                    // User prefers a light color scheme
+                    favicon.href = "assets/xorro-favicon-light-2.png";
+                }
+            }
+
+            // Call the function on load
+            updateFavicon();
+        </script>
+
+        <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+        <script src="js/particles.js"></script>
+        <script
+            src="https://kit.fontawesome.com/df4e45b628.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <div class="pageNotFound">
+            404
+        </div>
+        <span class="pageNotFoundText">
+            Oy! Its an error, a 404 one
+        </span>
+        <div class="kaomoji"></div>
+        <script>
+            async function fetchKaomojiLine() {
+                try {
+                    const response = await fetch('kaomojis.txt');
+                    const text = await response.text();
+                    const lines = text.split('\n').filter(line => line.trim().length > 0);
+                    const randomIndex = Math.floor(Math.random() * lines.length);
+                    return lines[randomIndex];
+                } catch (error) {
+                    console.error('Error fetching kaomoji:', error);
+                    return '😅';
+                }
+            }
+            async function setRandomKaomoji() {
+                const kaomoji = await fetchKaomojiLine();
+                const kaomojiElement = document.querySelector('.kaomoji');
+                if (kaomojiElement) {
+                    kaomojiElement.textContent = kaomoji;
+                }
+            }
+            document.addEventListener('DOMContentLoaded', setRandomKaomoji);
+        </script>
+        </body>
+    <script src="js/404Particles.js"></script>
 </html>
