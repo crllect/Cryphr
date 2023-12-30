@@ -1,0 +1,86 @@
+.waybar {
+    position: absolute;
+    width: calc(100% - (2 * $uniMargin)); // Width calculation for waybar
+    height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
+    top: calc(2 * ($uniMargin));
+    right: $uniMargin;
+    border: $borderThickness solid $borderCol;
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    background-color: $windowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition:
+        background-color $transitionSpeed ease,
+        width $transitionSpeed ease,
+        height $transitionSpeed ease,
+        left $transitionSpeed ease,
+        bottom $transitionSpeed ease,
+        right $transitionSpeed ease,
+        top $transitionSpeed ease,
+        transform $transitionSpeed ease,
+        border-radius $transitionSpeed ease,
+        stroke $transitionSpeed ease,
+        border $transitionSpeed ease,
+        box-shadow $transitionSpeed ease,
+        backdrop-filter $transitionSpeed ease,
+        fill $transitionSpeed ease;
+}
+
+#urlInput {
+    position: absolute;
+    left: perToInt($waybarHeight) * 0.75vh;
+    height: calc((($waybarHeight) / 1%) * 1vh - (($uniMargin) / 1%) * 8vh);
+    width: calc((($waybarHeight) / 1%) * 5vw);
+    margin: 0;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: calc(3vh * ($waybarHeight / 12.5%) / 1.25);
+    color: $menuButtonCol;
+    border-radius: 100vw;
+    padding: 1em;
+    background-color: #f1f1f114;
+    &:focus, &:hover {
+        outline: none;
+        background-color: #f1f1f120;
+    }
+}
+
+#reloadButton {
+    position: absolute;
+    left: calc(perToInt($waybarHeight) * (1vh) / 4);
+    margin: 0;
+    padding: 0;
+    background-color: #00000000;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: calc(4.5vh * ($waybarHeight / 12.5%) / 1.25);
+    color: $menuButtonCol;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#searchButton {
+    position: absolute;
+    left: calc(((($waybarHeight) / 1%) * 4.5vw) + (perToInt($waybarHeight) * 1vh) - 1em);
+    transform: translateY(-3%) translateX(-50%);
+    margin: 0;
+    padding: 0;
+    background-color: #00000000;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: calc(4.5vh * ($waybarHeight / 12.5%) / 1.25);
+    color: #7C7777;
+    font-weight: 100;
+    &:hover {
+        cursor: pointer;
+    }
+}

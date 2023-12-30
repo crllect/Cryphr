@@ -59,9 +59,17 @@
             src="https://kit.fontawesome.com/df4e45b628.js"
             crossorigin="anonymous"
         ></script>
+        <script type="text/javascript">
+            function detectMobileDevice() {
+                var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                if (isMobile) {
+                    window.location = "mApp.html";
+                }
+            }
+        </script>
     </head>
 
-    <body>
+    <body onload="detectMobileDevice()">
         <div id="particles-js"></div>
 
         <div class="aboutBlankOpener">

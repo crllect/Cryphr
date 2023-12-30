@@ -60,31 +60,13 @@
 }
 
 .discord {
-    left: $uniMargin + (($fullMenuSize * 1%) / 2vw);
-    width: $fullMenuSize;
-    transform: translateX(-50%);
+    left: $uniMargin;
+    width: 50vw - ($uniMargin / 1% * 1.5vw);
 }
-
-/*
-.bottomBarThing {
-    left: whereItShouldBe + (width% / 2);
-    right: whereItShouldBe + (width% / 2);
-
-    width: width%;
-
-    transform: translateX(-50%); // left
-    transform: translateX(50%); // right
-
-    &:hover {
-        width: calc(width% * $hoverCoefficient + ($hoverConst / 2));
-    }
-}
-*/
 
 .githubLink {
-    left: calc(2 * $uniMargin + (($fullMenuSize * 1%) / 1vw) + 4%);
-    width: 8%;
-    transform: translateX(-50%);
+    right: $uniMargin;
+    width: 50vw - ($uniMargin / 1% * 1.5vw);
 }
 
 .email {
