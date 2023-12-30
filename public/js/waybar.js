@@ -37,18 +37,35 @@ document.getElementById("searchButton").onclick = function (event) {
     let loadingIframe = document.getElementById("loadingIframe");
 
     if (url.trim() === "") {
-        iframeWindow.classList.remove("iframeWindowOpen");
+        if (document.getElementById("fullMenu").classList.contains("menuOpen-fullMenu")) {
+            iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
+        } else {
+            iframeWindow.classList.remove("iframeWindowOpen");
+        }
+        mainWindow.forEach(element => element.classList.remove("hidden"));
         setTimeout(function() {
             iframeWindow.classList.add("hidden");
-            mainWindow.forEach(element => element.classList.remove("hidden", "mainWindowClose"));
-        }, 1000);
+        }, 750);
+        setTimeout(function() {
+            mainWindow.forEach(element => element.classList.remove("mainWindowClose"))
+        }, 250);
     } else {
+        if (document.getElementById("mainWindow").classList.contains("menuOpen-mainWindow")) {
+            iframeWindow.classList.remove("hidden");
+            iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
+        }
         mainWindow.forEach(element => element.classList.add("mainWindowClose"));
+        iframeWindow.classList.remove("hidden");
         setTimeout(function() {
             mainWindow.forEach(element => element.classList.add("hidden"));
-            iframeWindow.classList.remove("hidden");
-            iframeWindow.classList.add("iframeWindowOpen");
-        }, 1000);
+        }, 750);
+        setTimeout(function() {
+            if (document.getElementById("fullMenu").classList.contains("menuOpen-fullMenu")) {
+                iframeWindow.classList.add("menuOpen-iframeWindowOpen");
+            } else {
+                iframeWindow.classList.add("iframeWindowOpen");
+            }
+        }, 250);
 
         loadingIframe.classList.remove("hidden"); // Show loading animation
 

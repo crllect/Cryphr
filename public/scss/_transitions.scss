@@ -1,4 +1,5 @@
 .iframeWindowOpen {
+    z-index: 100000;
     position: absolute; // Absolute positioning
     width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
     height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
@@ -53,7 +54,6 @@
     height: 0;
     bottom: 50%;
     right: 50%;
-    transform: translateX(50%) translateY(50%);
     border: $borderThickness solid $borderCol;
     border-radius: $borderRad;
     box-shadow: $shadowRad $shadowCol;

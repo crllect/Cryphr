@@ -105,7 +105,7 @@ body {
 	width: 44vmin;
 	height: 3vmin;
 	margin: 2vmin 0vmin;
-	background: linear-gradient(90deg, #fff0 33%, $menuButtonCol 33% 67%, #fff0 67% 100%);
+	background: linear-gradient(90deg, #fff0 33%, transparent 33% 67%, #fff0 67% 100%);
 	animation: grow 1s ease-in-out 0s infinite alternate; 
 	background-size: 300%;
 	background-position-x: -203%;
