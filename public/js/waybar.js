@@ -67,10 +67,9 @@ document.getElementById("searchButton").onclick = function (event) {
             }
         }, 450);
 
-        loadingIframe.classList.remove("hidden"); // Show loading animation
 
         let preferredSearchEngine = localStorage.getItem("preferredSearchEngine");
-        let searchUrl = preferredSearchEngine || "https://www.duckduckgo.com/search?q=";
+        let searchUrl = preferredSearchEngine || "https://duckduckgo.com/?q=";
 
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);

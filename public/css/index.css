@@ -250,7 +250,7 @@ body {
   width: 44vmin;
   height: 3vmin;
   margin: 2vmin 0vmin;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 33%, transparent 33% 67%, rgba(255, 255, 255, 0) 67% 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 33%, #ffffff 33% 67%, rgba(255, 255, 255, 0) 67% 100%);
   animation: grow 1s ease-in-out 0s infinite alternate;
   background-size: 300%;
   background-position-x: -203%;
@@ -333,10 +333,6 @@ body {
 
 .bars:nth-child(2) .bar:nth-child(7) {
   animation-delay: -0.62s;
-}
-
-.iframeWindow {
-  color: #fff;
 }
 
 .menu {
