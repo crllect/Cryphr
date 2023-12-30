@@ -39,6 +39,7 @@ document.getElementById("searchButton").onclick = function (event) {
     if (url.trim() === "") {
         if (document.getElementById("fullMenu").classList.contains("menuOpen-fullMenu")) {
             iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
+            iframeWindow.classList.remove("iframeWindowOpen");
         } else {
             iframeWindow.classList.remove("iframeWindowOpen");
         }
@@ -53,6 +54,7 @@ document.getElementById("searchButton").onclick = function (event) {
         if (document.getElementById("mainWindow").classList.contains("menuOpen-mainWindow")) {
             iframeWindow.classList.remove("hidden");
             iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
+            iframeWindow.classList.remove("iframeWindowOpen");
         }
         mainWindow.forEach(element => element.classList.add("mainWindowClose"));
         iframeWindow.classList.remove("hidden");
