@@ -23,7 +23,7 @@ document.querySelector(".menu").addEventListener("click", function () {
         fullMenu.remove("menuOpen-fullMenu");
         body.remove("menuOpen-body");
 
-        if ((iframeWindow.contains("menuOpen-iframeMenuOpen")) && (!iframeWindow.contains("hidden"))) {
+        if (!iframeWindow.contains("hidden")) {
             iframeWindow.add("iframeWindowOpen")
         }
     }
