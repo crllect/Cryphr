@@ -120,5 +120,6 @@
     &:hover {
         background-color: color-mix(in srgb, $hoverBorderCol 20%, transparent);
         text-shadow: 0px 0px 6px $hoverBorderCol;
+        cursor: pointer;
     }
 }
