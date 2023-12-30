@@ -1,9 +1,9 @@
 function getBatteryIcon(level) {
-    if (level >= 85) return 'fa-solid fa-battery-full';
-    if (level >= 70) return 'fa-solid fa-battery-three-quarters';
-    if (level >= 40) return 'fa-solid fa-battery-half';
-    if (level >= 20) return 'fa-solid fa-battery-quarter';
-    return 'fa-solid fa-battery-low';
+    if (level >= 85) return 'fa-solid fa-battery-full fa-2xl';
+    if (level >= 70) return 'fa-solid fa-battery-three-quarters fa-2xl';
+    if (level >= 40) return 'fa-solid fa-battery-half fa-2xl';
+    if (level >= 20) return 'fa-solid fa-battery-quarter fa-2xl';
+    return 'fa-solid fa-battery-low fa-2xl';
 }
 
 function updateBatteryDisplay(batteryLevel, iconClass) {
@@ -15,7 +15,7 @@ function updateBatteryDisplay(batteryLevel, iconClass) {
         batteryElement.onclick = function() {
             if (this.getAttribute('data-showing') === 'percentage') {
                 // Switch to icon with increased font size
-                this.innerHTML = `<span class="${iconClass} batteryIcon" style="font-size: calc(5vh); transform: translateY(5%);"></span>`;
+                this.innerHTML = `<span class="${iconClass} batteryIcon" style="transform: translateY(0.15vh);"></span>`;
                 this.setAttribute('data-showing', 'icon');
             } else {
                 // Switch back to displaying the percentage

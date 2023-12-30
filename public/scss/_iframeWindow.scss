@@ -3,7 +3,7 @@
     width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
     height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
     bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
-    right: $uniMargin;
+    right: -100vw;
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad;
     box-shadow: $shadowRad $shadowCol;
@@ -35,7 +35,7 @@
     &.hoverable {
         width: calc((100% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
         height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
-        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        right: -100vw;
         bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
         border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
         box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
@@ -47,7 +47,7 @@
     width: calc(((100% - (2 * $uniMargin))) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width adjusted for uniform margin
     height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
     bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
-    right: $uniMargin;
+    right: -100vw;
 }
 
 .menuOpen-iframeWindow:hover {
@@ -55,9 +55,9 @@
     &.hoverable {
         width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Hover effect for width
         height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
-        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
+        right: -100vw;
         bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
-}
+    }
 }
 
 *, *:before, *:after {
@@ -166,4 +166,8 @@ body {
 }
 .bars:nth-child(2) .bar:nth-child(7) {
 	animation-delay: calc(calc(1s * -0.12) - calc(1s / 2));
+}
+
+.iframeWindow {
+    color: #fff;
 }

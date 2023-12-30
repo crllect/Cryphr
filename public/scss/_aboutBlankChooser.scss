@@ -118,7 +118,7 @@
     text-align: center;
     box-shadow: $hoverShadowRad $hoverShadowCol;
     &:hover {
-        background-color: rgba(231, 0, 86, 0.2);
-        text-shadow: 0px 0px 6px #e70056;
+        background-color: color-mix(in srgb, $hoverBorderCol 20%, transparent);
+        text-shadow: 0px 0px 6px $hoverBorderCol;
     }
 }

@@ -146,10 +146,15 @@
     width: calc(((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin)))));
     height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin));
     bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
-    left: -20%;
+    left: -20vw;
     box-shadow: 0px 0px 0px #00000000;
     border: $borderThickness solid $fullMenuOffScreenBorderGrad;
     background-color: $fullMenuOffScreenWindowGrad;
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex; // Flex display for inner content
+    align-items: center; // Vertical alignment
+    justify-content: center; // Horizontal alignment
+    text-align: center;
     transition:
         background-color $transitionSpeed ease,
         width $transitionSpeed ease,

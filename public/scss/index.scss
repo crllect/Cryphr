@@ -8,10 +8,13 @@
 @import "_botBar.scss";
 @import "_popups.scss";
 @import "_aboutBlankChooser.scss";
+@import "_transitions.scss";
 
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans';
+    color: #fff;
 
     @if str-index($bgCol, "url") {
         background-image: $bgCol; // Background image for html

@@ -8,6 +8,7 @@ document.querySelector(".menu").addEventListener("click", function () {
     if (this.classList.contains("menuOpen")) {
         mainWindow.add("menuOpen-mainWindow");
         iframeWindow.add("menuOpen-iframeWindow");
+        iframeWindow.add("menuOpen-iframeWindowOpen");
         waybar.add("menuOpen-waybar");
         fullMenu.add("menuOpen-fullMenu");
         body.add("menuOpen-body");
@@ -22,6 +23,7 @@ document.querySelector(".menu").addEventListener("click", function () {
     } else {
         mainWindow.remove("menuOpen-mainWindow");
         iframeWindow.remove("menuOpen-iframeWindow");
+        iframeWindow.remove("menuOpen-iframeWindowOpen");
         waybar.remove("menuOpen-waybar");
         fullMenu.remove("menuOpen-fullMenu");
         body.remove("menuOpen-body");
