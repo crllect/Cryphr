@@ -50,7 +50,7 @@
 }
 
 .menuOpen-waybar {
-    width: calc(((100% - (2 * $uniMargin))) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width calculation for waybar
+    width: calc(((100% - (2 * $uniMargin))) - $fullMenuSize - $uniMargin); // Width calculation for waybar
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
     top: calc(2 * ($uniMargin));
     right: $uniMargin;
@@ -61,7 +61,7 @@
 }
 
 .menuOpen-waybar:hover {
-    width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin);
+    width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - $uniMargin);
     height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
     right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
     top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));

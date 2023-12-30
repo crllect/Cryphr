@@ -70,7 +70,7 @@ document.getElementById("searchButton").onclick = function (event) {
         loadingIframe.classList.remove("hidden"); // Show loading animation
 
         let preferredSearchEngine = localStorage.getItem("preferredSearchEngine");
-        let searchUrl = preferredSearchEngine || "https://www.google.com/search?q=";
+        let searchUrl = preferredSearchEngine || "https://www.duckduckgo.com/search?q=";
 
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);

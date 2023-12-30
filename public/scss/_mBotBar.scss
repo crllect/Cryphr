@@ -56,24 +56,13 @@
 }
 
 .clock {
-    left: 46.25%;
-    transform: translateX(-50%);
-    width: 7%;
-
-    &:hover {
-        width: calc(7% * $hoverCoefficient + ($hoverConst / 2));
-        cursor: pointer;
-    }
+    display: none;
 }
 
 .discord {
-    left: calc($uniMargin + (($fullMenuSize * 1%) / 2vw));
+    left: $uniMargin + (($fullMenuSize * 1%) / 2vw);
     width: $fullMenuSize;
     transform: translateX(-50%);
-
-    &:hover {
-        width: calc(fullMenuSize * $hoverCoefficient + ($hoverConst / 2));
-    }
 }
 
 /*
@@ -96,41 +85,16 @@
     left: calc(2 * $uniMargin + (($fullMenuSize * 1%) / 1vw) + 4%);
     width: 8%;
     transform: translateX(-50%);
-
-    &:hover {
-        width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
-    }
 }
 
 .email {
-    right: $uniMargin + 4%;
-    width: 8%;
-    transform: translateX(50%);
-
-    &:hover {
-        width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
-        cursor: pointer;
-    }
+    display: none;
 }
 
 .credits {
-    right: 2 * $uniMargin + 8% + 4%;
-    width: 8%;
-    transform: translateX(50%);
-
-    &:hover {
-        width: calc(8% * $hoverCoefficient + ($hoverConst / 2));
-        cursor: pointer;
-    }
+    display: none;
 }
 
 .battery {
-    left: 52.25% + $uniMargin;
-    transform: translateX(-50%);
-    width: 5%;
-
-    &:hover {
-        width: calc(5% * $hoverCoefficient + ($hoverConst / 2));
-        cursor: pointer;
-    }
+    display: none;
 }

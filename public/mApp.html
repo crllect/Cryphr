@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="description"
+            content="Crypher is a open source proxy front end based on the titanium networks ultra violet"
+        />
+        <meta
+            name="keywords"
+            content="proxy server solutions, anonymous web browsing, high-speed proxies, secure proxy networks, private internet access, unblocked online games, access school games, bypass game restrictions, free web-based games, unblocked game sites, HTML5 game development, responsive web design, frontend frameworks, JavaScript UI development, CSS3 animations, SCSS best practices, SASS styling tips, SCSS vs SASS, advanced SCSS techniques, mixin libraries for SASS, clean UI design principles, minimalist website interfaces, user-friendly web design, intuitive navigation UI, aesthetic UI elements, interactive web games, HTML game programming, cross-platform game development, browser game optimization, game design for web, CSS animations for games, JavaScript game scripts, easy-to-learn web games, educational online games, casual browser games, competitive online gaming, web game design inspiration, mobile-responsive games, web gaming communities, HTML5 gaming libraries, CSS layout techniques, SASS variables and functions, SCSS nesting and partials, modular front-end coding, UI color schemes, typography in web design, front-end development tools, user experience enhancements, web design trends, innovative online games"
+        />
+
+        <!-- UV things -->
+        <script src="/uv/uv.bundle.js"></script>
+        <script src="/uv/uv.config.js"></script> <!-- added defer as before the script would load before the form would load -->
+
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/uv/sw.js", {
+                        scope: __uv$config.prefix,
+                    });
+                });
+            }
+        </script>
+
+        <!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
+
+        <script>
+            // page title
+            document.title = "Crypher";
+        </script>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Include the xorrro stylesheet -->
+        <link rel="stylesheet" href="css/mIndex.css" />
+
+        <!-- sets the favicon -->
+        <link
+            rel="icon"
+            href="assets/xorro-favicon-hypr-2.png"
+            id="image/x-icon"
+        />
+
+        <!-- dynamically sets the favicon based on user color scheme -->
+        <script>
+            function updateFavicon() {
+                const favicon = document.getElementById("image/x-icon");
+                if (
+                    window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                ) {
+                    // User prefers a dark color scheme
+                    favicon.href = "assets/xorro-favicon-dark-2.png";
+                } else {
+                    // User prefers a light color scheme
+                    favicon.href = "assets/xorro-favicon-light-2.png";
+                }
+            }
+
+            // Call the function on load
+            updateFavicon();
+        </script>
+
+        <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+        <script src="js/particles.js"></script>
+        <script
+            src="https://kit.fontawesome.com/df4e45b628.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <div id="fullMenu" class="fullMenu" style="display: none;">
+            <select id="searchEngineSelect">
+                <option value="https://www.google.com/search?q=">Google</option>
+                <option value="https://www.bing.com/search?q=">Bing</option>
+                <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+                <option value="https://www.baidu.com/s?wd=">Baidu</option>
+                <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+              </select>
+              <button onclick="saveSearchEnginePreference()">Save Preference</button>
+        </div>
+
+        <nav class="waybar"> <!-- add zoom in browser (later date) -->
+            <p id="reloadButton"><span class="fa-solid fa-rotate-right"></span></p>
+            <input type="text" id="urlInput" placeholder="Enter URL here">
+            <button id="searchButton"><span class="fa-solid fa-search"></span></button>
+        </nav>
+
+        <iframe id="iframeWindow" class="iframeWindow hidden hoverable"></iframe>
+        <div id="mainWindow" class="mainWindow hoverable"></div>
+
+        <!-- Left side of botBar -->
+        <a
+            class="discord botBar"
+            href="https://discord.com/users/713488984596021291"
+            target="_blank" rel="noopener noreferrer">
+            <span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
+        >
+
+        <a 
+            class="githubLink botBar"
+            href="https://github.com/crllect"
+            target="_blank" rel="noopener noreferrer">
+            <span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
+        >
+
+        <!-- Import varius JS things -->
+        <script src="js/waybar.js"></script>
+    </body>
+</html>

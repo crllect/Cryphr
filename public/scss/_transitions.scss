@@ -31,7 +31,7 @@
 }
 
 .menuOpen-iframeWindowOpen {
-    width: calc(((100% - (2 * $uniMargin))) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width adjusted for uniform margin
+    width: calc(((100% - (2 * $uniMargin))) - $fullMenuSize - $uniMargin); // Width adjusted for uniform margin
     height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
     bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
     right: $uniMargin;
@@ -40,7 +40,7 @@
 .menuOpen-iframeWindowOpen:hover {
     user-select: none;
     &.hoverable {
-        width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Hover effect for width
+        width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - $uniMargin); // Hover effect for width
         height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
         right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
         bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
