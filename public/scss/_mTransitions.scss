@@ -1,0 +1,51 @@
+.iframeWindowOpen {
+    z-index: 100000;
+    position: absolute; // Absolute positioning
+    width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
+    height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
+    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    right: $uniMargin;
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    box-sizing: border-box; // Ensures consistent box model
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $windowCol;
+    transition: all $transitionSpeed ease;
+}
+
+.menuOpen-iframeWindowOpen {
+    width: calc(((100% - (2 * $uniMargin))) - $fullMenuSize - $uniMargin); // Width adjusted for uniform margin
+    height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
+    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    right: $uniMargin;
+}
+
+.mainWindowClose {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 50%;
+    right: 50%;
+    border: $borderThickness solid $borderCol;
+    border-radius: $borderRad;
+    box-shadow: $shadowRad $shadowCol;
+    background-color: $windowCol;
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
+        contrast($windowContrast);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all $transitionSpeed ease;
+}
+
+.hidden {
+    display: none;
+}

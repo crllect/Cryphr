@@ -61,12 +61,12 @@
 
 .discord {
     left: $uniMargin;
-    width: 50vw - ($uniMargin / 1% * 1.5vw);
+    width: calc(50vw - ($uniMargin / 1% * 1.5vw));
 }
 
 .githubLink {
     right: $uniMargin;
-    width: 50vw - ($uniMargin / 1% * 1.5vw);
+    width: calc(50vw - ($uniMargin / 1% * 1.5vw));
 }
 
 .email {

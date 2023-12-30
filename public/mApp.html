@@ -36,7 +36,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Include the xorrro stylesheet -->
+        <!-- Include the stylesheet -->
         <link rel="stylesheet" href="css/mIndex.css" />
 
         <!-- sets the favicon -->
@@ -54,15 +54,14 @@
                     window.matchMedia &&
                     window.matchMedia("(prefers-color-scheme: dark)").matches
                 ) {
-                    // User prefers a dark color scheme
+
                     favicon.href = "assets/xorro-favicon-dark-2.png";
                 } else {
-                    // User prefers a light color scheme
+
                     favicon.href = "assets/xorro-favicon-light-2.png";
                 }
             }
 
-            // Call the function on load
             updateFavicon();
         </script>
 
@@ -97,7 +96,6 @@
         <iframe id="iframeWindow" class="iframeWindow hidden hoverable"></iframe>
         <div id="mainWindow" class="mainWindow hoverable"></div>
 
-        <!-- Left side of botBar -->
         <a
             class="discord botBar"
             href="https://discord.com/users/713488984596021291"

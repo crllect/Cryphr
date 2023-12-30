@@ -25,37 +25,11 @@
   transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 
-.mainWindow:hover {
-  user-select: none;
-}
-.mainWindow:hover.hoverable {
-  width: calc(98% + 0vh);
-  height: calc(84.5% + 0vh - 8.5%);
-  right: calc(1% - 0vh);
-  bottom: calc(2% - 0vh + 8.5%);
-  border-radius: calc(13.6px + (14.5vh - 1%) * 1 + 0vh - (14.5vh - 1%) + 2px);
-  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
-  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
-}
-
 .menuOpen-mainWindow {
   width: calc(98% - 10.5vw - 1%);
   height: 76%;
   bottom: 10.5%;
   right: 1%;
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
-}
-
-.menuOpen-mainWindow:hover {
-  user-select: none;
-}
-.menuOpen-mainWindow:hover.hoverable {
-  width: calc(98% + 0vh - 10.5vw - 1%);
-  height: calc(84.5% + 0vh - 8.5%);
-  right: calc(1% - 0vh);
-  bottom: calc(2% - 0vh + 8.5%);
   backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
 }
 
@@ -147,34 +121,11 @@
   transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 
-.iframeWindow:hover {
-  user-select: none;
-}
-.iframeWindow:hover.hoverable {
-  width: calc(98% + 0vh);
-  height: calc(84.5% + 0vh - 8.5%);
-  right: -200vw;
-  bottom: calc(2% - 0vh + 8.5%);
-  border-radius: calc(13.6px + (14.5vh - 1%) * 1 + 0vh - (14.5vh - 1%) + 2px);
-  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
-  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
-}
-
 .menuOpen-iframeWindow {
   width: calc(98% - (14.5vh - 1% + 10%) - 1%);
   height: 76%;
   bottom: 10.5%;
   right: -200vw;
-}
-
-.menuOpen-iframeWindow:hover {
-  user-select: none;
-}
-.menuOpen-iframeWindow:hover.hoverable {
-  width: calc(98% + 0vh - (14.5vh - 1% + 10%) - 1%);
-  height: calc(84.5% + 0vh - 8.5%);
-  right: -200vw;
-  bottom: calc(2% - 0vh + 8.5%);
 }
 
 *, *:before, *:after {
@@ -644,34 +595,11 @@ body {
   transition: all 0.4s ease;
 }
 
-.iframeWindowOpen:hover {
-  user-select: none;
-}
-.iframeWindowOpen:hover.hoverable {
-  width: calc(98% + 0vh);
-  height: calc(84.5% + 0vh - 8.5%);
-  right: calc(1% - 0vh);
-  bottom: calc(2% - 0vh + 8.5%);
-  border-radius: calc(13.6px + (14.5vh - 1%) * 1 + 0vh - (14.5vh - 1%) + 2px);
-  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
-  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
-}
-
 .menuOpen-iframeWindowOpen {
   width: calc(98% - 10.5vw - 1%);
   height: 76%;
   bottom: 10.5%;
   right: 1%;
-}
-
-.menuOpen-iframeWindowOpen:hover {
-  user-select: none;
-}
-.menuOpen-iframeWindowOpen:hover.hoverable {
-  width: calc(98% + 0vh - 10.5vw - 1%);
-  height: calc(84.5% + 0vh - 8.5%);
-  right: calc(1% - 0vh);
-  bottom: calc(2% - 0vh + 8.5%);
 }
 
 .mainWindowClose {
@@ -711,15 +639,6 @@ html, body {
   height: 121vh;
   transform: translateY(-6.95vh);
   */
-}
-
-#particles-js {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
 }
 
 /*
