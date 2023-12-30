@@ -85,10 +85,6 @@ document.getElementById("searchButton").onclick = function (event) {
         } else {
             iframeWindow.src = url;
         }
-
-        setTimeout(function () {
-            loadingIframe.classList.add("hidden"); // Hide loading animation after a delay
-        }, 2000);
     }
 };
 
