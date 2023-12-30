@@ -21,6 +21,7 @@ $windowContrast: 1.1;
 // Shadow properties
 $shadowCol: rgba(0, 0, 0, 0.2);
 $shadowRad: 7px 7px 7px;
+$botBarFontSize: 1;
 
 
 // Margins
@@ -55,7 +56,7 @@ $hoverCoefficient: 1;
 $hoverWindowBlur: 0.7vw;
 $hoverWindowBrightness: 1.2;
 $hoverWindowContrast: 1.15;
-$hoverBorderCol: #a1a1ffe7;
+$hoverBorderCol: #e70052e7;
 $hoverWindowCol: #141414d1;
 $hoverBorderThickness: 1.5px;
 $hoverBorderRad: 0.8;
@@ -71,4 +72,76 @@ $hoverShadowRad: 0px 0px $fullMenuOffset;
 // Functions
 @function perToInt($percent) { // Function to convert percentage to integer
     @return calc($percent / 1%); 
+}
+
+$preset: small;
+
+@if $preset == small {
+    // Background
+    $bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+    // https://raw.githubusercontent.com/hyprwm/Hyprland/main/assets/wall_anime_4K.png
+
+    // Window Properties
+    $windowCol: #141414d1; // 12, 26, 28, 0.8
+    $windowBlur: 1vh;
+    $windowBrightness: 1;
+    $windowContrast: 1.1;
+
+    // Shadow properties
+    $shadowCol: rgba(0, 0, 0, 0.2);
+    $shadowRad: 7px 7px 7px;
+
+    // Margins
+    $uniMargin: 0.5%; // 1, 0.5, 0.225
+    $waybarHeight: 7.91%; // 17.5, 12.5, 7.5
+    $botBarHeight: 4.5%;
+    $botBarFontSize: 0.8;
+
+    // Border
+    $borderRad: 17px; // 22.5, 12.5, 6
+    $borderThickness: 1.75px;
+    $borderCol: #9c9c9c5b;
+
+    // Transitions
+    $transitionSpeed: 0.4s;
+    $fastTransitionSpeed: 0.1s;
+
+    // Menu
+    $menuButtonCol: #ffffff;
+
+    // Active
+    $activeTransition: $transitionSpeed;
+    $activeWindowCol: #25252ad1; // 24, 76, 84, 0.6
+
+    // Full Menu
+    $fullMenuOffScreenBorderGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $borderCol 100%
+    );
+    $fullMenuOffScreenWindowGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $activeWindowCol 100%
+    );
+    $fullMenuOffset: 10px;
+
+    // Hover Vars
+    $hoverConst: 0vh; // 0.7, 0.5, 0.25
+    $hoverCoefficient: 1;
+    $hoverWindowBlur: 0.7vw;
+    $hoverWindowBrightness: 1.2;
+    $hoverWindowContrast: 1.15;
+    $hoverBorderCol: #a1a1ffe7;
+    $hoverWindowCol: #141414d1;
+    $hoverBorderThickness: 1.5px;
+    $hoverBorderRad: 0.8;
+    $hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    $hoverShadowCol: rgba(
+        calc(red($hoverBorderCol) * red($hoverBorderOpacity) / 255),
+        calc(green($hoverBorderCol) * green($hoverBorderOpacity) / 255),
+        calc(blue($hoverBorderCol) * blue($hoverBorderOpacity) / 255),
+        calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
+    );
+    $hoverShadowRad: 0px 0px $fullMenuOffset;
 }

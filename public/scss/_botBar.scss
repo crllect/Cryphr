@@ -4,7 +4,7 @@
     text-decoration: none;
     font-family: 'Open Sans';
     position: absolute;
-    font-size: 2.75vh;
+    font-size: 2.75vh * $botBarFontSize;
     margin: 0;
     padding: 0;
     bottom: 2 * $uniMargin;

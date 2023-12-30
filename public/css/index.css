@@ -9,8 +9,8 @@
 .mainWindow {
   position: absolute;
   width: 99%;
-  height: 83.5%;
-  bottom: 6.5%;
+  height: 86.59%;
+  bottom: 6%;
   right: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -30,10 +30,10 @@
 }
 .mainWindow:hover.hoverable {
   width: calc(99% + 0vh);
-  height: calc(89% + 0vh - 5.5%);
+  height: calc(91.59% + 0vh - 5%);
   right: calc(0.5% - 0vh);
-  bottom: calc(1% - 0vh + 5.5%);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  bottom: calc(1% - 0vh + 5%);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
   background-color: rgba(20, 20, 20, 0.8196078431);
@@ -41,9 +41,9 @@
 }
 
 .menuOpen-mainWindow {
-  width: calc(99% - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: 83.5%;
-  bottom: 6.5%;
+  width: calc(99% - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: 86.59%;
+  bottom: 6%;
   right: 0.5%;
   backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
 }
@@ -52,17 +52,17 @@
   user-select: none;
 }
 .menuOpen-mainWindow:hover.hoverable {
-  width: calc(99% + 0vh - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: calc(89% + 0vh - 5.5%);
+  width: calc(99% + 0vh - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: calc(91.59% + 0vh - 5%);
   right: calc(0.5% - 0vh);
-  bottom: calc(1% - 0vh + 5.5%);
+  bottom: calc(1% - 0vh + 5%);
   backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
 }
 
 .waybar {
   position: absolute;
-  width: calc(99% - 10.5vh);
-  height: 8.25%;
+  width: calc(99% - 7.91vh);
+  height: 5.66%;
   top: 1%;
   right: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
@@ -79,11 +79,11 @@
 }
 
 .waybar:hover {
-  width: calc((99% - 10.5vh) * 1 + 0vh);
-  height: calc(8.25% + 0vh);
+  width: calc((99% - 7.91vh) * 1 + 0vh);
+  height: calc(5.66% + 0vh);
   right: calc(0.5% - 0vh);
   top: calc(1% - 0vh);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
   background-color: rgba(20, 20, 20, 0.8196078431);
@@ -91,29 +91,29 @@
 }
 
 .menuOpen-waybar {
-  width: calc(99% - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: 8.25%;
+  width: calc(99% - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: 5.66%;
   top: 1%;
   right: 0.5%;
   backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
 }
 
 .menuOpen-waybar:hover {
-  width: calc(99% + 0vh - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: calc(8.25% + 0vh);
+  width: calc(99% + 0vh - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: calc(5.66% + 0vh);
   right: calc(0.5% - 0vh);
   top: calc(1% - 0vh);
 }
 
 #urlInput {
   position: absolute;
-  left: 10.5vh;
-  height: 6.5vh;
-  width: 42vw;
+  left: 7.91vh;
+  height: 3.91vh;
+  width: 31.64vw;
   margin: 0;
   border: transparent;
   font-family: "Open Sans";
-  font-size: 1.344vw;
+  font-size: 1.01248vw;
   color: #ffffff;
   border-radius: 100vw;
   padding: 1em;
@@ -126,13 +126,13 @@
 
 #reloadButton {
   position: absolute;
-  left: 2.625vh;
+  left: 1.9775vh;
   margin: 0;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
   border: transparent;
   font-family: "Open Sans";
-  font-size: 2.016vw;
+  font-size: 1.51872vw;
   color: #ffffff;
 }
 #reloadButton:hover {
@@ -141,14 +141,14 @@
 
 #searchButton {
   position: absolute;
-  left: calc(42vw + 10.5vh - 1em);
+  left: calc(31.64vw + 7.91vh - 1em);
   transform: translateY(-3%) translateX(-50%);
   margin: 0;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
   border: transparent;
   font-family: "Open Sans";
-  font-size: 2.016vw;
+  font-size: 1.51872vw;
   color: #7C7777;
   font-weight: 100;
 }
@@ -159,8 +159,8 @@
 .iframeWindow {
   position: absolute;
   width: 99%;
-  height: 83.5%;
-  bottom: 6.5%;
+  height: 86.59%;
+  bottom: 6%;
   right: -100vw;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -179,18 +179,18 @@
 }
 .iframeWindow:hover.hoverable {
   width: calc(99% + 0vh);
-  height: calc(89% + 0vh - 5.5%);
+  height: calc(91.59% + 0vh - 5%);
   right: -100vw;
-  bottom: calc(1% - 0vh + 5.5%);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  bottom: calc(1% - 0vh + 5%);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
 }
 
 .menuOpen-iframeWindow {
-  width: calc(99% - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: 83.5%;
-  bottom: 6.5%;
+  width: calc(99% - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: 86.59%;
+  bottom: 6%;
   right: -100vw;
 }
 
@@ -198,10 +198,10 @@
   user-select: none;
 }
 .menuOpen-iframeWindow:hover.hoverable {
-  width: calc(99% + 0vh - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: calc(89% + 0vh - 5.5%);
+  width: calc(99% + 0vh - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: calc(91.59% + 0vh - 5%);
   right: -100vw;
-  bottom: calc(1% - 0vh + 5.5%);
+  bottom: calc(1% - 0vh + 5%);
 }
 
 *, *:before, *:after {
@@ -341,8 +341,8 @@ body {
 
 .menu {
   position: absolute;
-  width: calc(10.5vh - 0.5%);
-  height: 8.25%;
+  width: calc(7.91vh - 0.5%);
+  height: 5.66%;
   top: 1%;
   left: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
@@ -360,7 +360,7 @@ body {
 .menu .menuIcon {
   fill: #ffffff;
   stroke: #ffffff;
-  height: 94.5%;
+  height: 71.19%;
   transition: none;
 }
 .menu .menuLogo {
@@ -376,11 +376,11 @@ body {
 }
 
 .menu:hover {
-  width: calc((10.5vh - 0.5%) * 1 + 0vh);
-  height: calc(8.25% + 0vh);
+  width: calc((7.91vh - 0.5%) * 1 + 0vh);
+  height: calc(5.66% + 0vh);
   left: calc(0.5% - 0vh);
   top: calc(1% - 0vh);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   background-color: rgba(20, 20, 20, 0.8196078431);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -389,8 +389,8 @@ body {
 
 .menu.menuOpen {
   position: absolute;
-  width: calc(10.5vh - 0.5% + 8.25%);
-  height: 8.25%;
+  width: calc(7.91vh - 0.5% + 5.66%);
+  height: 5.66%;
   top: 1%;
   left: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
@@ -415,17 +415,17 @@ body {
   stroke: #ffffff;
   color: aliceblue;
   cursor: pointer;
-  font-size: 5.88vh;
+  font-size: 4.4296vh;
   font: "Open Sans";
   text-decoration: none;
 }
 
 .menu.menuOpen:hover {
-  width: calc((10.5vh - 0.5% + 8.25%) * 1 + 0vh);
-  height: calc(8.25% + 0vh);
+  width: calc((7.91vh - 0.5% + 5.66%) * 1 + 0vh);
+  height: calc(5.66% + 0vh);
   left: calc(0.5% - 0vh);
   top: calc(1% - 0vh);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   background-color: rgba(37, 37, 42, 0.8196078431);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -434,9 +434,9 @@ body {
 
 .fullMenu {
   position: absolute;
-  width: calc(10.5vh - 0.5% + 8.25%);
-  height: 83.5%;
-  bottom: 6.5%;
+  width: calc(7.91vh - 0.5% + 5.66%);
+  height: 86.59%;
+  bottom: 6%;
   left: -20vw;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   border: 1.75px solid linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(156, 156, 156, 0.3568627451) 100%);
@@ -450,9 +450,9 @@ body {
 }
 
 .menuOpen-fullMenu {
-  width: calc(10.5vh - 0.5% + 8.25%);
-  height: 83.5%;
-  bottom: 6.5%;
+  width: calc(7.91vh - 0.5% + 5.66%);
+  height: 86.59%;
+  bottom: 6%;
   left: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -467,11 +467,11 @@ body {
 }
 
 .menuOpen-fullMenu:hover {
-  width: calc((10.5vh - 0.5% + 8.25%) * 1 + 0vh);
-  height: calc(89% + 0vh - 5.5%);
-  bottom: calc(1% - 0vh + 5.5%);
+  width: calc((7.91vh - 0.5% + 5.66%) * 1 + 0vh);
+  height: calc(91.59% + 0vh - 5%);
+  bottom: calc(1% - 0vh + 5%);
   left: calc(0.5% - 0vh);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   background-color: rgba(37, 37, 42, 0.8196078431);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -484,12 +484,12 @@ body {
   text-decoration: none;
   font-family: "Open Sans";
   position: absolute;
-  font-size: 2.75vh;
+  font-size: 2.2vh;
   margin: 0;
   padding: 0;
   bottom: 1%;
   color: #fdfdfd;
-  height: 4.5%;
+  height: 4%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
   box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
@@ -502,7 +502,7 @@ body {
   background-color: rgba(20, 20, 20, 0.8196078431);
 }
 .botBar:hover {
-  height: calc(4.5% + 0vh);
+  height: calc(4% + 0vh);
   bottom: calc(1% - 0vh);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -723,8 +723,8 @@ body {
 .aboutBlankOpener {
   position: absolute;
   width: 49.25%;
-  height: 92.5%;
-  bottom: 6.5%;
+  height: 93%;
+  bottom: 6%;
   right: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -741,10 +741,10 @@ body {
 .aboutBlankOpener:hover {
   user-select: none;
   width: calc(49.25% + 0vh);
-  height: calc(92.5% + 0vh);
+  height: calc(93% + 0vh);
   right: calc(0.5% - 0vh);
-  bottom: calc(1% - 0vh + 5.5%);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  bottom: calc(1% - 0vh + 5%);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
   background-color: rgba(20, 20, 20, 0.8196078431);
@@ -754,8 +754,8 @@ body {
 .standardOpener {
   position: absolute;
   width: 49.25%;
-  height: 92.5%;
-  bottom: 6.5%;
+  height: 93%;
+  bottom: 6%;
   left: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -772,10 +772,10 @@ body {
 .standardOpener:hover {
   user-select: none;
   width: calc(49.25% + 0vh);
-  height: calc(92.5% + 0vh);
+  height: calc(93% + 0vh);
   left: calc(0.5% - 0vh);
-  bottom: calc(1% - 0vh + 5.5%);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  bottom: calc(1% - 0vh + 5%);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
   background-color: rgba(20, 20, 20, 0.8196078431);
@@ -836,8 +836,8 @@ body {
   z-index: 100000;
   position: absolute;
   width: 99%;
-  height: 83.5%;
-  bottom: 6.5%;
+  height: 86.59%;
+  bottom: 6%;
   right: 0.5%;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 17px;
@@ -856,18 +856,18 @@ body {
 }
 .iframeWindowOpen:hover.hoverable {
   width: calc(99% + 0vh);
-  height: calc(89% + 0vh - 5.5%);
+  height: calc(91.59% + 0vh - 5%);
   right: calc(0.5% - 0vh);
-  bottom: calc(1% - 0vh + 5.5%);
-  border-radius: calc(13.6px + (10.5vh - 0.5%) * 1 + 0vh - (10.5vh - 0.5%) + 2px);
+  bottom: calc(1% - 0vh + 5%);
+  border-radius: calc(13.6px + (7.91vh - 0.5%) * 1 + 0vh - (7.91vh - 0.5%) + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
 }
 
 .menuOpen-iframeWindowOpen {
-  width: calc(99% - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: 83.5%;
-  bottom: 6.5%;
+  width: calc(99% - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: 86.59%;
+  bottom: 6%;
   right: 0.5%;
 }
 
@@ -875,10 +875,10 @@ body {
   user-select: none;
 }
 .menuOpen-iframeWindowOpen:hover.hoverable {
-  width: calc(99% + 0vh - (10.5vh - 0.5% + 8.25%) - 0.5%);
-  height: calc(89% + 0vh - 5.5%);
+  width: calc(99% + 0vh - (7.91vh - 0.5% + 5.66%) - 0.5%);
+  height: calc(91.59% + 0vh - 5%);
   right: calc(0.5% - 0vh);
-  bottom: calc(1% - 0vh + 5.5%);
+  bottom: calc(1% - 0vh + 5%);
 }
 
 .mainWindowClose {
