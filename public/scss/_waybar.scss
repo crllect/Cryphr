@@ -1,8 +1,8 @@
 .waybar {
     position: absolute;
-    width: calc((100% - (2 * $uniMargin)) - perToInt($waybarHeight) * 1vh); // Width calculation for waybar
+    width: calc((100% - (2 * $uniMargin)) - perToInt($waybarHeight)); // Width calculation for waybar
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
-    top: calc(2 * ($uniMargin));
+    top: calc(($uniMargin));
     right: $uniMargin;
     border: $borderThickness solid $borderCol;
     border-radius: $borderRad;
@@ -35,11 +35,11 @@
 }
 
 .waybar:hover {
-    width: calc(((((100% - (2 * $uniMargin)) - (perToInt($waybarHeight) * 1vh)) * $hoverCoefficient) + $hoverConst));
+    width: calc(((((100% - (2 * $uniMargin)) - (perToInt($waybarHeight))) * $hoverCoefficient) + $hoverConst));
     height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
     right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
-    top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-    border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+    border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
     box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
     border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
     background-color: $hoverWindowCol;
@@ -50,9 +50,9 @@
 }
 
 .menuOpen-waybar {
-    width: calc(((100% - (2 * $uniMargin))) - $fullMenuSize - $uniMargin); // Width calculation for waybar
+    width: calc(((100% - ($uniMargin))) - $fullMenuSize - 2 * $uniMargin); // Width calculation for waybar
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
-    top: calc(2 * ($uniMargin));
+    top: calc(($uniMargin));
     right: $uniMargin;
     backdrop-filter:
         blur($hoverWindowBlur)
@@ -61,24 +61,25 @@
 }
 
 .menuOpen-waybar:hover {
-    width: calc(((((100% - (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - $uniMargin);
+    width: calc(((((100% - ($uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - 2 * $uniMargin);
     height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
     right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
-    top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+    top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
 }
 
 #urlInput {
     position: absolute;
-    left: perToInt($waybarHeight) * 1vh;
-    height: calc((($waybarHeight) / 1%) * 1vh - (($uniMargin) / 1%) * 8vh);
-    width: calc((($waybarHeight) / 1%) * 4vw);
+    left: $waybarHeight;
+    height: calc((($waybarHeight)) - $uniMargin * 6);
+    width: calc((($waybarHeight) / 1vh) * 4vw);
     margin: 0;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc(2vw * ($waybarHeight / 12.5%) / 1.25);
+    font-size: calc((1.75vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
     color: $menuButtonCol;
     border-radius: 100vw;
-    padding: 1em;
+    padding: calc($uniMargin / 4);
+    padding-left: 0.5em;
     background-color: #f1f1f114;
     &:focus, &:hover {
         outline: none;
@@ -88,13 +89,13 @@
 
 #reloadButton {
     position: absolute;
-    left: calc(perToInt($waybarHeight) * (1vh) / 4);
+    left: calc(perToInt($waybarHeight) / 4);
     margin: 0;
     padding: 0;
     background-color: #00000000;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc(3vw * ($waybarHeight / 12.5%) / 1.25);
+    font-size: calc((2.5vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
     color: $menuButtonCol;
     &:hover {
         cursor: pointer;
@@ -103,14 +104,14 @@
 
 #searchButton {
     position: absolute;
-    left: calc(((($waybarHeight) / 1%) * 4vw) + (perToInt($waybarHeight) * 1vh) - 1em);
+    left: calc(((($waybarHeight) / 1vh) * 4vw) + (perToInt($waybarHeight)) - 1em);
     transform: translateY(-3%) translateX(-50%);
     margin: 0;
     padding: 0;
     background-color: #00000000;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc(3vw * ($waybarHeight / 12.5%) / 1.25);
+    font-size: calc((2vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
     color: #7C7777;
     font-weight: 100;
     &:hover {

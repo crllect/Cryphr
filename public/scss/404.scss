@@ -28,7 +28,7 @@
         height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
         right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
         bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
-        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
         box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
         border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
     }

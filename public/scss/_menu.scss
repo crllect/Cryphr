@@ -4,8 +4,10 @@
     .menuIcon {
         fill: $menuButtonCol; // Fill color for menu button
         stroke: $menuButtonCol; // Stroke color for menu button
-        height: $waybarHeight * 9;
+        height: calc($waybarHeight * 9);
+        width: calc($waybarHeight / 1.75);
         transition: none;
+        z-index: 9999980;
     }
     .menuLogo {
         font-style: normal;
@@ -18,9 +20,9 @@
         cursor: default;
         font-size: 0;
     }
-    width: calc(perToInt($waybarHeight) * 1vh - $uniMargin); // Width calculation for menu
+    width: calc(perToInt($waybarHeight) - $uniMargin); // Width calculation for menu
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height calculation for menu
-    top: calc(2 * ($uniMargin));
+    top: calc(($uniMargin));
     left: $uniMargin;
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad; // Border radius
@@ -57,11 +59,11 @@
 
 .menu:hover {
     // Conditional hover styling for menu
-    width: calc(((perToInt($waybarHeight) * 1vh - $uniMargin) * $hoverCoefficient) + $hoverConst); // Width adjustment on hover
+    width: calc(((perToInt($waybarHeight) - $uniMargin) * $hoverCoefficient) + $hoverConst); // Width adjustment on hover
     height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst); // Height adjustment on hover
     left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Left position adjustment on hover
-    top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
-    border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
+    border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
     background-color: $hoverWindowCol; // Background color on hover
     box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
     border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
@@ -86,13 +88,13 @@
         stroke: $menuButtonCol; // Stroke color for menu button
         color: aliceblue;
         cursor: pointer;
-        font-size: calc(7vh * ($waybarHeight / 12.5%));
+        font-size: calc(5 * ($waybarHeight / 12.5) * ($waybarHeight / 10vh));
         font: 'Open Sans';
         text-decoration: none;
     }
     width: $fullMenuSize; // Width calculation for menu
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height calculation for menu
-    top: calc(2 * ($uniMargin));
+    top: calc(($uniMargin));
     left: $uniMargin;
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad; // Border radius
@@ -130,8 +132,8 @@
     width: calc($fullMenuSize * $hoverCoefficient + $hoverConst); // Width adjustment on hover
     height: calc((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient + $hoverConst); // Height adjustment on hover
     left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Left position adjustment on hover
-    top: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
-    border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
+    border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
     box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
     background-color: $activeWindowCol; // Background color
     border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
@@ -143,9 +145,9 @@
 }
 .fullMenu {
     position: absolute; // Absolute positioning
-    width: $fullMenuSize;
-    height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin));
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    width: $fullMenuSize; // Width calculation for menu
+    height: calc(100% - $waybarHeight - ($botBarHeight) + $uniMargin * 1.5);  // Height calculation for menu
+    bottom: calc(($botBarHeight + $uniMargin));
     left: -20vw;
     box-shadow: 0px 0px 0px #00000000;
     border: $borderThickness solid $fullMenuOffScreenBorderGrad;
@@ -173,8 +175,8 @@
 }
 .menuOpen-fullMenu {
     width: $fullMenuSize; // Width calculation for menu
-    height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height calculation for menu
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    height: calc(100% - $waybarHeight - ($botBarHeight) + $uniMargin * 1.5);  // Height calculation for menu
+    bottom: calc(($botBarHeight + $uniMargin));
     left: $uniMargin;
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad; // Border radius
@@ -210,10 +212,10 @@
 .menuOpen-fullMenu:hover {
 
     width: calc(($fullMenuSize * $hoverCoefficient) + $hoverConst); // Width calculation for menu
-    height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Height calculation for menu
-    bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+    height: calc(((100% - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight) + 1.5 * $uniMargin); // Height calculation for menu
+    bottom: calc(0 - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
     left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-    border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
+    border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
     box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
     background-color: $activeWindowCol; // Background color
     border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover

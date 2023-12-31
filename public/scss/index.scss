@@ -16,13 +16,10 @@ html, body {
     font-family: 'Open Sans';
     color: #fff;
 
-    @if str-index($bgCol, "url") {
-        background-image: $bgCol;
-        background-repeat: no-repeat;
-        background-size: cover;
-    } @else {
-        background-color: $bgCol;
-    }
+    background-image: $bgCol;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $bgCol;
     overflow: hidden;
     height: 100%;
     /*
@@ -35,8 +32,8 @@ html, body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: calc(100vw * $isParticles);
+    height: calc(100vh * $isParticles);
     z-index: 0;
 }
 /*

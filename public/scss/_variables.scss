@@ -72,10 +72,12 @@ $hoverShadowRad: 0px 0px $fullMenuOffset;
 
 // Functions
 @function perToInt($percent) { // Function to convert percentage to integer
-    @return calc($percent / 1%); 
+    @return calc($percent); 
 }
 
-$preset: small;
+$isParticles: 1;
+
+$preset: nebula;
 
 @if $preset == small {
     // Background
@@ -146,4 +148,77 @@ $preset: small;
         calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
     );
     $hoverShadowRad: 0px 0px $fullMenuOffset;
+
+    $isParticles: 1;
+
+} @else if $preset == nebula {
+    // Background
+    $bgCol: #14121D;
+
+    // Window Properties
+    $windowCol: #191725; // 12, 26, 28, 0.8
+    $windowBlur: 0vh;
+    $windowBrightness: 1;
+    $windowContrast: 1;
+
+    // Shadow properties
+    $shadowCol: rgba(255, 255, 255, 0.02);
+    $shadowRad: 0px 4px 4px;
+
+    // Margins
+    $uniMargin: 1vh; // 1, 0.5, 0.225
+    $waybarHeight: 10vh; // 17.5, 12.5, 7.5
+    $botBarHeight: 4.5vh;
+    $botBarFontSize: 0.8;
+    $fullMenuSize: 25vh;
+
+    // Border
+    $borderRad: 7px; // 22.5, 12.5, 6
+    $borderThickness: 1.75px;
+    $borderCol: #ffffff10;
+
+    // Transitions
+    $transitionSpeed: 0.4s;
+    $fastTransitionSpeed: 0.1s;
+
+    // Menu
+    $menuButtonCol: #ffffff;
+
+    // Active
+    $activeTransition: $transitionSpeed;
+    $activeWindowCol: #1a1730; // 24, 76, 84, 0.6
+
+    // Full Menu
+    $fullMenuOffScreenBorderGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $borderCol 100%
+    );
+    $fullMenuOffScreenWindowGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $activeWindowCol 100%
+    );
+    $fullMenuOffset: 10px;
+
+    // Hover Vars
+    $hoverConst: 0vh; // 0.7, 0.5, 0.25
+    $hoverCoefficient: 1;
+    $hoverWindowBlur: 0.7vw;
+    $hoverWindowBrightness: 1.2;
+    $hoverWindowContrast: 1.15;
+    $hoverBorderCol: #a1a1ffe7;
+    $hoverWindowCol: #191725;
+    $hoverBorderThickness: 1.5px;
+    $hoverBorderRad: 0.8;
+    $hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    $hoverShadowCol: rgba(
+        calc(red($hoverBorderCol) * red($hoverBorderOpacity) / 255),
+        calc(green($hoverBorderCol) * green($hoverBorderOpacity) / 255),
+        calc(blue($hoverBorderCol) * blue($hoverBorderOpacity) / 255),
+        calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
+    );
+    $hoverShadowRad: 0px 0px $fullMenuOffset;
+
+    $isParticles: 0;
 }
