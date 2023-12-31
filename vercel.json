@@ -1,9 +1,43 @@
 {
-    "cleanUrls": true,
-    "rewrites": [
+    "builds": [
         {
-            "source": "/public/404.html",
-            "destination": "/public/404bg.html"
+            "src": "package.json",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/app.html",
+            "status": 301,
+            "headers": { "Location": "/app" }
+        },
+        {
+            "src": "/mApp.html",
+            "status": 301,
+            "headers": { "Location": "/mApp" }
+        },
+        {
+            "src": "/index.html",
+            "status": 301,
+            "headers": { "Location": "/" }
+        },
+        {
+            "src": "/404bg.html",
+            "status": 301,
+            "headers": { "Location": "/404bg" }
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1",
+            "continue": true
+        },
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/404",
+            "status": 404,
+            "dest": "/404bg.html"
         }
     ]
 }
