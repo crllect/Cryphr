@@ -425,14 +425,6 @@ body {
   justify-content: center;
   background-color: rgba(20, 20, 20, 0.8196078431);
 }
-.botBar:hover {
-  height: calc(6.5% + 0vh);
-  bottom: calc(2% - 0vh);
-  box-shadow: 0px 0px 10px rgba(231, 0, 82, 0.6739764706);
-  border: 1.5px solid rgba(231, 0, 82, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
-}
 
 .hidden {
   display: none;

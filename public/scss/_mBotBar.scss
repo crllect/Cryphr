@@ -37,18 +37,6 @@
     align-items: center;
     justify-content: center;
     background-color: $windowCol;
-
-    &:hover {
-        height: calc((($botBarHeight - $uniMargin) * $hoverCoefficient) + ($hoverConst));
-        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-        box-shadow: $hoverShadowRad $hoverShadowCol;
-        border: $hoverBorderThickness solid $hoverBorderCol;
-        background-color: $hoverWindowCol;
-        backdrop-filter:
-            blur($hoverWindowBlur)
-            brightness($hoverWindowBrightness)
-            contrast($hoverWindowContrast);
-    }
 }
 
 .hidden {
