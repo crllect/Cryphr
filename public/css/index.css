@@ -32,7 +32,7 @@
   width: calc((100% - 2vh) * 1 + 0vh);
   height: calc((100% - 10vh) * 1 + 0vh - 4.5vh + 1.5vh);
   right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: calc(0 - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
+  bottom: 5.5vh;
   border-radius: calc(5.6px + 0vh + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -55,7 +55,7 @@
   width: calc((100% - 1vh) * 1 + 0vh - 25vh - 2vh);
   height: calc((100% - 10vh) * 1 + 0vh - 3vh);
   right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: calc(0 - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
+  bottom: 5.5vh;
   backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
 }
 
@@ -161,7 +161,7 @@
   position: absolute;
   width: calc(100% - 3vh);
   height: calc(100% - 1vh - 10vh - 5.5vh);
-  bottom: 7.5vh;
+  bottom: 5.5vh;
   right: -200vw;
   border: 1.75px solid rgba(255, 255, 255, 0.062745098);
   border-radius: 7px;
@@ -175,34 +175,11 @@
   transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
 }
 
-.iframeWindow:hover {
-  user-select: none;
-}
-.iframeWindow:hover.hoverable {
-  width: calc((100% - 3vh) * 1 + 0vh);
-  height: calc((100% - 1vh - 10vh) * 1 + 0vh - 5.5vh);
-  right: -200vw;
-  bottom: calc(2vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-}
-
 .menuOpen-iframeWindow {
   width: calc(100% - 3vh - 13.5vh - 1vh);
   height: calc(100% - 1vh - 10vh - 5.5vh);
-  bottom: 7.5vh;
+  bottom: 5.5vh;
   right: -200vw;
-}
-
-.menuOpen-iframeWindow:hover {
-  user-select: none;
-}
-.menuOpen-iframeWindow:hover.hoverable {
-  width: calc((100% - 3vh) * 1 + 0vh - 14.5vh - 1vh);
-  height: calc((100% - 1vh - 10vh) * 1 + 0vh - 5.5vh);
-  right: -200vw;
-  bottom: calc(2vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
 }
 
 *, *:before, *:after {
@@ -468,7 +445,7 @@ body {
 .menuOpen-fullMenu:hover {
   width: 25vh;
   height: calc((100% - 10vh) * 1 + 0vh - 4.5vh + 1.5vh);
-  bottom: calc(0 - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
+  bottom: 5.5vh;
   left: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
   border-radius: calc(5.6px + 0vh + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
@@ -622,8 +599,8 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8549019608);
-  backdrop-filter: blur(1vh);
+  background-color: rgba(0, 0, 0, 0.4078431373);
+  backdrop-filter: blur(0.3vh);
   z-index: 999990;
 }
 #emailPopupBg.hidden {
@@ -678,8 +655,8 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8549019608);
-  backdrop-filter: blur(1vh);
+  background-color: rgba(0, 0, 0, 0.4078431373);
+  backdrop-filter: blur(0.3vh);
   z-index: 999990;
 }
 #creditsPopupBg.hidden {
@@ -705,9 +682,9 @@ body {
 */
 .aboutBlankOpener {
   position: absolute;
-  width: calc(50% - 2vh);
-  height: calc(100% - 5.5vh - 4vh);
-  bottom: 7.5vh;
+  width: calc(50% - 1.5vh);
+  height: calc(100% - 5.5vh - 1vh);
+  bottom: 5.5vh;
   right: 1vh;
   border: 1.75px solid rgba(255, 255, 255, 0.062745098);
   border-radius: 7px;
@@ -723,10 +700,10 @@ body {
 }
 .aboutBlankOpener:hover {
   user-select: none;
-  width: calc((50% - 2vh) * 1 + 0vh);
-  height: calc((100% - 5.5vh - 4vh) * 1 + 0vh);
+  width: calc(50% - 1.5vh + 0vh);
+  height: calc((100% - 5.5vh - 1vh) * 1 + 0vh);
   right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: calc(2vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
+  bottom: 5.5vh;
   border-radius: calc(5.6px + 0vh + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -736,9 +713,9 @@ body {
 
 .standardOpener {
   position: absolute;
-  width: calc(50% - 2vh);
-  height: calc(100% - 5.5vh - 4vh);
-  bottom: 7.5vh;
+  width: calc(50% - 1.5vh);
+  height: calc(100% - 5.5vh - 1vh);
+  bottom: 5.5vh;
   left: 1vh;
   border: 1.75px solid rgba(255, 255, 255, 0.062745098);
   border-radius: 7px;
@@ -754,10 +731,10 @@ body {
 }
 .standardOpener:hover {
   user-select: none;
-  width: calc((50% - 2vh) * 1 + 0vh);
-  height: calc((100% - 5.5vh - 4vh) * 1 + 0vh);
+  width: calc(50% - 1.5vh + 0vh);
+  height: calc((100% - 5.5vh - 1vh) * 1 + 0vh);
   left: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: calc(2vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh + 5.5vh);
+  bottom: 5.5vh;
   border-radius: calc(5.6px + 0vh + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -779,7 +756,7 @@ body {
   align-items: center;
   position: absolute;
   font-family: "Open Sans";
-  color: #7c7777;
+  color: #7C7777;
   font-size: 0.9vw;
   transform: translateY(810%);
 }
@@ -841,7 +818,7 @@ body {
   width: calc((100% - 2vh) * 1 + 0vh);
   height: calc((100% - 10vh) * 1 + 0vh - 4.5vh + 1.5vh);
   right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 2.75vh;
+  bottom: 5.5vh;
   border-radius: calc(5.6px + 0vh + 2px);
   box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
   border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
@@ -861,7 +838,7 @@ body {
   width: calc((100% - 1vh) * 1 + 0vh - 25vh - 2vh);
   height: calc((100% - 10vh) * 1 + 0vh - 3vh);
   right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 2.75vh;
+  bottom: 5.5vh;
 }
 
 .mainWindowClose {
@@ -870,10 +847,10 @@ body {
   height: 0;
   bottom: 50%;
   right: 50%;
-  border: 1.75px solid rgba(255, 255, 255, 0.062745098);
+  border: 1.75px solid transparent;
   border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  background-color: #191725;
+  box-shadow: 0px 4px 4px transparent;
+  background-color: transparent;
   backdrop-filter: blur(0vh) brightness(1) contrast(1);
   box-sizing: border-box;
   display: flex;
@@ -898,10 +875,6 @@ html, body {
   background-color: #14121D;
   overflow: hidden;
   height: 100%;
-  /*
-  height: 121vh;
-  transform: translateY(-6.95vh);
-  */
 }
 
 #particles-js {
@@ -914,10 +887,5 @@ html, body {
 }
 
 /*
-// I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
-
-// General notes, code snippets, or ideas:
-
-// when it comes to the svg for the xorro logo in the menu, I used: https://danmarshall.github.io/google-font-to-svg-path/
-// the size is set to 300, and the rest is shown in my svg implamentation in the html ;3
+    I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
 *//*# sourceMappingURL=index.css.map */

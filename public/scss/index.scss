@@ -22,10 +22,6 @@ html, body {
     background-color: $bgCol;
     overflow: hidden;
     height: 100%;
-    /*
-    height: 121vh;
-    transform: translateY(-6.95vh);
-    */
 }
 
 #particles-js {
@@ -37,10 +33,5 @@ html, body {
     z-index: 0;
 }
 /*
-// I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
-
-// General notes, code snippets, or ideas:
-
-// when it comes to the svg for the xorro logo in the menu, I used: https://danmarshall.github.io/google-font-to-svg-path/
-// the size is set to 300, and the rest is shown in my svg implamentation in the html ;3
+    I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
 */

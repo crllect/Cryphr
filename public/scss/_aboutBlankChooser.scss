@@ -1,16 +1,16 @@
 .aboutBlankOpener {
     position: absolute; // Absolute positioning
-    width: calc((50% - (2 * $uniMargin))); // Width adjusted for uniform margin
-    height: calc(
-        100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin
-    ); // Height considering uniform margin and waybar height
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    width: calc(50% - (1.5 * $uniMargin)); // Width adjusted for uniform margin
+    height: calc(100% - ($botBarHeight + $uniMargin) - $uniMargin); // Height considering uniform margin and waybar height
+    bottom: calc($botBarHeight + $uniMargin);
     right: $uniMargin;
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad;
     box-shadow: $shadowRad $shadowCol;
     background-color: $windowCol;
-    backdrop-filter: blur($windowBlur) brightness($windowBrightness)
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
         contrast($windowContrast);
     box-sizing: border-box; // Ensures consistent box model
     display: flex;
@@ -20,65 +20,35 @@
     transition: all $transitionSpeed ease;
     &:hover {
         user-select: none;
-        width: calc((50% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
-        height: calc(
-            (
-                    (100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin) *
-                        $hoverCoefficient
-                ) + $hoverConst
-        ); // Hover effect for height
-        right: calc(
-            $uniMargin -
-                (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) -
-                ($hoverConst / 2)
-        );
-        bottom: calc(
-            2 * $uniMargin -
-                (
-                    (
-                            (100% - $uniMargin - $waybarHeight) *
-                                ($hoverCoefficient - 1)
-                        ) / 2
-                ) - ($hoverConst / 2) + ($botBarHeight + $uniMargin)
-        );
-        border-radius: calc(
-            ($borderRad * $hoverBorderRad) +
-                (
-                    (
-                            (
-                                (
-                                        $waybarHeight - ($uniMargin) *
-                                            $hoverCoefficient
-                                    ) + ($hoverConst * $uniMargin / 1vh)
-                            )
-                        ) - ($waybarHeight - ($uniMargin))
-                ) +
-                (
-                    ($borderRad * $hoverBorderRad) /
-                        ((($borderRad * $hoverBorderRad) / 1px) / 2)
-                )
-        );
+        width: calc(50% - (1.5 * $uniMargin) * $hoverCoefficient + $hoverConst);
+        height: calc(((100% - ($botBarHeight + $uniMargin) - $uniMargin) * $hoverCoefficient) + $hoverConst); // Hover effect for height
+        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        bottom: calc((($botBarHeight + $uniMargin) * $hoverCoefficient) + $hoverConst / 2);
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
         box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
         border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
         background-color: $hoverWindowCol;
-        backdrop-filter: blur($hoverWindowBlur)
-            brightness($hoverWindowBrightness) contrast($hoverWindowContrast);
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
     }
 }
 
+
 .standardOpener {
     position: absolute; // Absolute positioning
-    width: calc((50% - (2 * $uniMargin))); // Width adjusted for uniform margin
-    height: calc(
-        100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin
-    ); // Height considering uniform margin and waybar height
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+    width: calc(50% - (1.5 * $uniMargin)); // Width adjusted for uniform margin
+    height: calc(100% - ($botBarHeight + $uniMargin) - $uniMargin); // Height considering uniform margin and waybar height
+    bottom: calc($botBarHeight + $uniMargin);
     left: $uniMargin;
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad;
     box-shadow: $shadowRad $shadowCol;
     background-color: $windowCol;
-    backdrop-filter: blur($windowBlur) brightness($windowBrightness)
+    backdrop-filter:
+        blur($windowBlur)
+        brightness($windowBrightness)
         contrast($windowContrast);
     box-sizing: border-box; // Ensures consistent box model
     display: flex;
@@ -88,58 +58,27 @@
     transition: all $transitionSpeed ease;
     &:hover {
         user-select: none;
-        width: calc((50% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
-        height: calc(
-            (
-                    (100% - ($botBarHeight + $uniMargin) - 4 * $uniMargin) *
-                        $hoverCoefficient
-                ) + $hoverConst
-        ); // Hover effect for height
-        left: calc(
-            $uniMargin -
-                (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) -
-                ($hoverConst / 2)
-        );
-        bottom: calc(
-            2 * $uniMargin -
-                (
-                    (
-                            (100% - $uniMargin - $waybarHeight) *
-                                ($hoverCoefficient - 1)
-                        ) / 2
-                ) - ($hoverConst / 2) + ($botBarHeight + $uniMargin)
-        );
-        border-radius: calc(
-            ($borderRad * $hoverBorderRad) +
-                (
-                    (
-                            (
-                                (
-                                        $waybarHeight - ($uniMargin) *
-                                            $hoverCoefficient
-                                    ) + ($hoverConst * $uniMargin / 1vh)
-                            )
-                        ) - ($waybarHeight - ($uniMargin))
-                ) +
-                (
-                    ($borderRad * $hoverBorderRad) /
-                        ((($borderRad * $hoverBorderRad) / 1px) / 2)
-                )
-        );
+        width: calc(50% - (1.5 * $uniMargin) * $hoverCoefficient + $hoverConst);
+        height: calc(((100% - ($botBarHeight + $uniMargin) - $uniMargin) * $hoverCoefficient) + $hoverConst); // Hover effect for height
+        left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+        bottom: calc((($botBarHeight + $uniMargin) * $hoverCoefficient) + $hoverConst / 2);
+        border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
         box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
         border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
         background-color: $hoverWindowCol;
-        backdrop-filter: blur($hoverWindowBlur)
-            brightness($hoverWindowBrightness) contrast($hoverWindowContrast);
+        backdrop-filter:
+            blur($hoverWindowBlur)
+            brightness($hoverWindowBrightness)
+            contrast($hoverWindowContrast);
     }
 }
 
 .openerText {
     position: absolute;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-size: 1.4vw;
     color: #fff;
-    top: 45%;
+    top: 45%
 }
 
 .openerSubText {
@@ -147,11 +86,12 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    font-family: "Open Sans";
-    color: #7c7777;
+    font-family: 'Open Sans';
+    color: #7C7777;
     font-size: 0.9vw;
     transform: translateY(810%);
 }
+
 
 .openerContainer {
     display: flex;
@@ -160,7 +100,7 @@
     position: relative;
     width: 45%;
     height: 50%;
-    background-color: #f1f1f114;
+    background-color: $frontElementCol;
     padding: 0.5em;
     border-radius: $borderRad;
 }

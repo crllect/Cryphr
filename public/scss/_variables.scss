@@ -17,6 +17,7 @@ $windowCol: #141414d1; // 12, 26, 28, 0.8
 $windowBlur: 1vh;
 $windowBrightness: 1;
 $windowContrast: 1.1;
+$frontElementCol: #f1f1f114;
 
 // Shadow properties
 $shadowCol: rgba(0, 0, 0, 0.2);
@@ -58,7 +59,7 @@ $hoverWindowBlur: 0.7vw;
 $hoverWindowBrightness: 1.2;
 $hoverWindowContrast: 1.15;
 $hoverBorderCol: #e70052e7;
-$hoverWindowCol: #141414d1;
+$hoverWindowCol: #f1f1f120;
 $hoverBorderThickness: 1.5px;
 $hoverBorderRad: 0.8;
 $hoverBorderOpacity: rgba(255, 255, 255, 0.744);
@@ -69,6 +70,7 @@ $hoverShadowCol: rgba(
     calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
 );
 $hoverShadowRad: 0px 0px $fullMenuOffset;
+$hoverFrontElementCol: #f1f1f120;
 
 // Functions
 @function perToInt($percent) { // Function to convert percentage to integer

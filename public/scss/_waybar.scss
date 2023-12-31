@@ -80,10 +80,10 @@
     border-radius: 100vw;
     padding: calc($uniMargin / 4);
     padding-left: 0.5em;
-    background-color: #f1f1f114;
+    background-color: $frontElementCol;
     &:focus, &:hover {
         outline: none;
-        background-color: #f1f1f120;
+        background-color: $hoverFrontElementCol;
     }
 }
 

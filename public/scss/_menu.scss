@@ -213,7 +213,7 @@
 
     width: calc(($fullMenuSize * $hoverCoefficient) + $hoverConst); // Width calculation for menu
     height: calc(((100% - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight) + 1.5 * $uniMargin); // Height calculation for menu
-    bottom: calc(0 - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
+    bottom: calc((($uniMargin) + ($botBarHeight)) * $hoverCoefficient - ($hoverConst / 2));
     left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
     border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
     box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling

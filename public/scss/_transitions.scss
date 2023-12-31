@@ -23,7 +23,7 @@
         width: calc((100% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
         height: calc(((100% - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight) + 1.5 * $uniMargin);// Hover effect for height
         right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-        bottom: calc(($botBarHeight + $uniMargin) * $hoverCoefficient / 2 + $hoverConst / 2);
+        bottom: calc((($uniMargin) + ($botBarHeight)) * $hoverCoefficient - ($hoverConst / 2));
         border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
         box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
         border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
@@ -43,7 +43,7 @@
         width: calc(((((100% - ($uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - 2 * $uniMargin); // Hover effect for width
         height: calc(((100% - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight - 1.5 * $uniMargin)); // Hover effect for height
         right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
-        bottom: calc(($botBarHeight + $uniMargin) * $hoverCoefficient / 2 + $hoverConst / 2);
+        bottom: calc((($uniMargin) + ($botBarHeight)) * $hoverCoefficient - ($hoverConst / 2));
     }
 }
 
@@ -54,10 +54,10 @@
     height: 0;
     bottom: 50%;
     right: 50%;
-    border: $borderThickness solid $borderCol;
+    border: $borderThickness solid transparent;
     border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
-    background-color: $windowCol;
+    box-shadow: $shadowRad transparent;
+    background-color: transparent;
     backdrop-filter:
         blur($windowBlur)
         brightness($windowBrightness)
