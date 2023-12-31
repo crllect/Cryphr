@@ -1,35 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-@import "index.scss";
-
-.iframeWindow404 {
-    z-index: 100000;
-    position: absolute; // Absolute positioning
-    width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
-    height: calc(100% - $uniMargin * 4 - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
-    right: $uniMargin;
-    border: $borderThickness solid $borderCol; // Border styling
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
-    box-sizing: border-box; // Ensures consistent box model
+html, body {
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    background-color: $windowCol;
-    transition: all $transitionSpeed ease;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-size: 5vh;
+    font-family: 'Open Sans';
+    user-select: none;
+    color: #fff;
 }
 
-.iframeWindow404:hover {
-    user-select: none;
-    &.hoverable {
-        width: calc((100% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
-        height: calc(((100% - $uniMargin - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight + $uniMargin)); // Hover effect for height
-        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2) + ($botBarHeight + $uniMargin));
-        border-radius: calc(($borderRad * $hoverBorderRad) + (((((perToInt($waybarHeight) * 1vh - ($uniMargin)) * $hoverCoefficient) + ($hoverConst * perToInt($uniMargin)))) - (perToInt($waybarHeight) * 1vh - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
-        box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
-        border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
-    }
+.pageNotFound {
+    z-index: 100;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 25vh;
+    border: 0.536vh solid transparent;
+    height: 10vh;
+    border-radius: 20px;
+    border-right-color: #f1f1f1e7;
+    padding-right: 1em;
+    margin-right: 1em;
+}
+
+.pageNotFoundText {
+    z-index: 100;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 25vh;
+}
+
+.kaomoji {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(50vh);
+    font-size: 10vh;
+}
+
+#particles-js {
+    position: fixed; // Fixed position for particle effect
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; // Behind other content
 }
