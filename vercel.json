@@ -2,8 +2,8 @@
     "cleanUrls": true,
     "rewrites": [
         {
-            "source": "/404.html",
-            "destination": "/404bg.html"
+            "source": "/public/404.html",
+            "destination": "/public/404bg.html"
         }
     ]
 }
