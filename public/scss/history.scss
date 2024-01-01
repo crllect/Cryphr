@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import "_variables.scss";
 
 $padding: 1vh;
@@ -10,15 +10,22 @@ html, body {
     align-items: center;
     margin: 0;
     font-size: 1.75vh;
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     user-select: none;
     color: $textCol;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
 }
 
 .historyTitle {
     font-size: 3vh;
     justify-content: left;
-    padding-left: $padding / 2;
+    padding-left: calc($padding / 2);
     padding-top: calc($padding / 2);
     align-self: flex-start;
 }
@@ -29,9 +36,31 @@ html, body {
     padding: 0;
     margin: 0;
     margin-top: 0.25em;
+    margin-bottom: 5.5vh;
     width: calc(100vw - $padding * 4);
     height: $borderThickness;
 }
+.history-wipe {
+    position: absolute;
+    top: 6.5vh;
+    width: 80vw;
+    height: 5vh;
+    background-color: transparent;
+    border: $borderThickness solid $hoverBorderCol;
+    color: $textCol;
+    font-size: 2vh;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+    border-radius: $borderRad;
+    text-align: center;
+    box-shadow: $hoverShadowRad $hoverShadowCol;
+    &:hover {
+        background-color: color-mix(in srgb, $hoverBorderCol 20%, transparent);
+        text-shadow: 0px 0px 6px $hoverBorderCol;
+        cursor: pointer;
+    }
+}
+
 .historyContainer {
     flex-direction: column;
     justify-content: left;
@@ -45,9 +74,10 @@ html, body {
 }
 
 .history-entry {
-    margin-bottom: 10px;
+    margin: 10px;
     padding: 5px;
-    border: 1px solid #ddd;
+    transform: translateX(-15vw);
+    margin-left: $padding;
 }
 
 .history-query {
@@ -55,15 +85,7 @@ html, body {
     cursor: pointer;
 }
 
-.history-date, .history-time {
+.history-date,
+.history-time {
     color: $borderCol;
-}
-
-.history-delete {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
 }

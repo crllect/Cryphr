@@ -22,7 +22,7 @@ function updateHistoryDisplay() {
         entryDiv.className = "history-entry";
 
         let queryDiv = document.createElement("div");
-        queryDiv.textContent = `Query: ${item.query}`;
+        queryDiv.textContent = `${item.query}`;
         queryDiv.className = "history-query";
         queryDiv.onclick = function() {
             window.parent.postMessage({ type: 'historySearch', query: item.query }, '*');
