@@ -5,7 +5,7 @@
 #emailPopup {
     display: flex;
     width: 30%;
-    height: 20%;
+    height: 30%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,7 +28,7 @@
         brightness($windowBrightness)
         contrast($windowContrast);
     box-sizing: border-box;
-    transition: 
+    transition:
         background-color $transitionSpeed ease,
         width $transitionSpeed ease,
         height $transitionSpeed ease,
@@ -46,7 +46,7 @@
     justify-content: center;
     background-color: $windowCol;
     &:hover {
-        height: calc(((20%) * $hoverCoefficient) + $hoverConst);
+        height: calc(((30%) * $hoverCoefficient) + $hoverConst);
         width: calc(((30%) * $hoverCoefficient) + $hoverConst);
         bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
         box-shadow: $hoverShadowRad $hoverShadowCol;
@@ -152,6 +152,12 @@
     }
 }
 
+.emailPopupText {
+    padding: 2em;
+}
+.creditsPopupText {
+    padding: 2em;
+}
 
 // add this later to animate email and credits disapear once your braincells reapear:
 

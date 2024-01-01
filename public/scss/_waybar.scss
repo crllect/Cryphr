@@ -79,8 +79,9 @@
     color: $menuButtonCol;
     border-radius: 100vw;
     padding: calc($uniMargin / 4);
-    padding-left: 0.5em;
+    padding-left: 0.75em;
     background-color: $frontElementCol;
+    transition: all $transitionSpeed ease;
     &:focus, &:hover {
         outline: none;
         background-color: $hoverFrontElementCol;
@@ -89,7 +90,7 @@
 
 #reloadButton {
     position: absolute;
-    left: calc(perToInt($waybarHeight) / 4);
+    left: calc($waybarHeight / 3 - $uniMargin);
     margin: 0;
     padding: 0;
     background-color: #00000000;
@@ -97,14 +98,16 @@
     font-family: 'Open Sans';
     font-size: calc((2.5vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
     color: $menuButtonCol;
+    transition: all $transitionSpeed ease;
     &:hover {
         cursor: pointer;
+        transform: rotate(360deg) scale(1.2);
     }
 }
 
 #searchButton {
     position: absolute;
-    left: calc(((($waybarHeight) / 1vh) * 4vw) + (perToInt($waybarHeight)) - 1em);
+    left: calc(((($waybarHeight) / 1vh) * 4vw) + (perToInt($waybarHeight)) - 1.25em);
     transform: translateY(-3%) translateX(-50%);
     margin: 0;
     padding: 0;
@@ -114,7 +117,25 @@
     font-size: calc((2vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
     color: #7C7777;
     font-weight: 100;
+    transition: all $transitionSpeed ease;
     &:hover {
         cursor: pointer;
+    }
+}
+
+#settingsButton {
+    position: absolute;
+    right: calc($uniMargin * 2);
+    margin: 0;
+    padding: 0;
+    background-color: #00000000;
+    border: transparent;
+    font-family: 'Open Sans';
+    font-size: calc((2.5vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
+    color: $menuButtonCol;
+    transition: all $transitionSpeed ease;
+    &:hover {
+        cursor: pointer;
+        transform: rotate(720deg) scale(1.2);
     }
 }

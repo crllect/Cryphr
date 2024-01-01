@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* ---------------
+*   Huge thanks to riftriot
+*   for helping me set up
+*   UV on this project
+*   Follow his GitHub:
+*   https://github.com/Riftriot
+*/
+html, body {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 1.75vh;
+  font-family: "Open Sans";
+  user-select: none;
+  color: #fff;
+}
+
+.historyTitle {
+  font-size: 3vh;
+  justify-content: left;
+  padding-left: 0.5vh;
+  padding-top: 0.5vh;
+  align-self: flex-start;
+}
+
+.historySeparator {
+  display: block;
+  background-color: rgba(156, 156, 156, 0.3568627451);
+  padding: 0;
+  margin: 0;
+  margin-top: 0.25em;
+  width: calc(100vw - 4vh);
+  height: 1.75px;
+}
+
+.historyContainer {
+  flex-direction: column;
+  justify-content: left;
+  font-size: 6vw;
+}
+
+.history-item {
+  outline: none;
+  border: none;
+  background: none;
+  color: #fff;
+}/*# sourceMappingURL=history.css.map */

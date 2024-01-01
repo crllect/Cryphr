@@ -14,8 +14,8 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans';
-    color: #fff;
-
+    color: $textCol;
+    user-select: none;
     background-image: $bgCol;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +31,9 @@ html, body {
     width: calc(100vw * $isParticles);
     height: calc(100vh * $isParticles);
     z-index: 0;
+}
+a {
+    color: $linkCol;
 }
 /*
     I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it

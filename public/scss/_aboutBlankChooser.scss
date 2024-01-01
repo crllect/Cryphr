@@ -77,7 +77,7 @@
     position: absolute;
     font-family: 'Open Sans';
     font-size: 1.4vw;
-    color: #fff;
+    color: $textCol;
     top: 45%
 }
 
@@ -110,7 +110,7 @@
     display: inline-block;
     background-color: transparent;
     border: $borderThickness solid $hoverBorderCol;
-    color: #fff;
+    color: $textCol;
     font-size: 1.5vw;
     padding: 0.5em 1em;
     transition: background-color 0.3s ease;

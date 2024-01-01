@@ -148,15 +148,21 @@
     width: $fullMenuSize; // Width calculation for menu
     height: calc(100% - $waybarHeight - ($botBarHeight) + $uniMargin * 1.5);  // Height calculation for menu
     bottom: calc(($botBarHeight + $uniMargin));
-    left: -20vw;
-    box-shadow: 0px 0px 0px #00000000;
-    border: $borderThickness solid $fullMenuOffScreenBorderGrad;
-    background-color: $fullMenuOffScreenWindowGrad;
+    left: calc(-$uniMargin * 2 - $fullMenuSize);
+    border: $borderThickness solid $borderCol; // Border styling
+    border-radius: $borderRad; // Border radius
+    background-color: $activeWindowCol; // Background color
+    // Backdrop filter for visual effects
+    backdrop-filter:
+        blur(calc($hoverWindowBlur / 8))
+        brightness($windowBrightness)
+        contrast($windowContrast);
     box-sizing: border-box; // Ensures consistent box model
     display: flex; // Flex display for inner content
     align-items: center; // Vertical alignment
     justify-content: center; // Horizontal alignment
-    text-align: center;
+    text-align: center; // Text alignment
+    // Transition effects for various properties
     transition:
         background-color $transitionSpeed ease,
         width $transitionSpeed ease,

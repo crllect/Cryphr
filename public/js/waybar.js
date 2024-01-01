@@ -1,3 +1,5 @@
+let historyArray = JSON.parse(localStorage.getItem("historyArray")) || [];
+
 document.addEventListener("DOMContentLoaded", function () {
     var urlInput = document.getElementById("urlInput");
     var searchButton = document.getElementById("searchButton");
@@ -11,13 +13,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     urlInput.addEventListener("input", updateButtonColor);
-
     urlInput.addEventListener("blur", function () {
         if (urlInput.value.trim() === "") {
             searchButton.style.color = "#7C7777";
         }
     });
+
+    // Listen for messages from history.html
+    window.addEventListener('message', function(event) {
+        if (event.data.type && event.data.type === 'historySearch') {
+            performSearch(event.data.query);
+        }
+    });
 });
+
+function performSearch(query) {
+    let urlInput = document.getElementById("urlInput");
+    urlInput.value = query;
+    document.getElementById("searchButton").click();
+}
 
 let proxyEnabled = true;
 
@@ -28,10 +42,26 @@ document.getElementById("urlInput").addEventListener("keydown", function (event)
     }
 });
 
+// Function to add search query to local storage with date and time
+function addToSearchHistory(query) {
+    let currentDate = new Date();
+    let dateStamp = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+    let timeStamp = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+
+    historyArray.push({ query, dateStamp, timeStamp });
+    localStorage.setItem("historyArray", JSON.stringify(historyArray));
+}
+
 document.getElementById("searchButton").onclick = function (event) {
     event.preventDefault();
 
     let url = document.getElementById("urlInput").value;
+
+    // Add search query to history
+    if (url.trim() !== "") {
+        addToSearchHistory(url.trim());
+    }
+
     let iframeWindow = document.getElementById("iframeWindow");
     let mainWindow = document.querySelectorAll(".mainWindow");
     let loadingIframe = document.getElementById("loadingIframe");
@@ -66,7 +96,6 @@ document.getElementById("searchButton").onclick = function (event) {
                 iframeWindow.classList.add("iframeWindowOpen");
             }
         }, 450);
-
 
         let preferredSearchEngine = localStorage.getItem("preferredSearchEngine");
         let searchUrl = preferredSearchEngine || "https://duckduckgo.com/?q=";

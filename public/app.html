@@ -73,8 +73,8 @@
         ></script>
         <script>
             window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-          </script>
-          <script defer src="/_vercel/insights/script.js"></script>
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
     </head>
 
     <body>
@@ -119,25 +119,28 @@
                 Crypher
             </p>
         </section>
-        <div id="fullMenu" class="fullMenu">
-            <select id="searchEngineSelect">
-                <option value="https://www.google.com/search?q=">Google</option>
-                <option value="https://www.bing.com/search?q=">Bing</option>
-                <option value="https://search.yahoo.com/search?p=">Yahoo</option>
-                <option value="https://www.baidu.com/s?wd=">Baidu</option>
-                <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
-              </select>
-              <button onclick="saveSearchEnginePreference()">Save Preference</button>
-        </div>
+        <iframe id="fullMenu" class="fullMenu" src="history.html">
+            <div class="searchEngineSelect hidden">
+                <select id="searchEngineSelect">
+                    <option value="https://www.google.com/search?q=">Google</option>
+                    <option value="https://www.bing.com/search?q=">Bing</option>
+                    <option value="https://search.yahoo.com/search?p=">Yahoo</option>
+                    <option value="https://www.baidu.com/s?wd=">Baidu</option>
+                    <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+                  </select>
+                  <button onclick="saveSearchEnginePreference()">Save Preference</button>
+            </div>
+        </iframe>
 
         <nav class="waybar"> <!-- add zoom in browser (later date) -->
             <p id="reloadButton"><span class="fa-solid fa-rotate-right"></span></p>
             <input type="text" id="urlInput" placeholder="Enter URL here">
             <button id="searchButton"><span class="fa-solid fa-search"></span></button>
+            <p id="settingsButton"><span class="fa-solid fa-cog"></span></p>
         </nav>
 
         <iframe id="iframeWindow" class="iframeWindow hidden hoverable"></iframe>
-        <iframe id="mainWindow" class="mainWindow hoverable"></iframe>
+        <iframe id="mainWindow" class="mainWindow hoverable" src="greeter.html"></iframe>
         <div id="loadingIframe" class="hidden" style="z-index: 999980;">
             <div id="loadingIframe" class="content"">
                 <div class="bars">
@@ -185,14 +188,28 @@
         <p class="credits botBar">
             <span class="fa-solid fa-info"></span>&#160;&#160;Credits
         </p>
-        <div class="hidden" id="creditsPopup">Thanks to&#160;<a href="https://github.com/Riftriot" target="_blank" rel="noopener noreferrer">Riftriot</a>&#160;for helping set up UV</div>
+        <div class="hidden" id="creditsPopup">
+            <div class="creditsPopupText">
+                Written completely by&#160;<a href="https://github.com/Crllect" target="_blank" rel="noopener noreferrer">Crllect</a>
+                <br>
+                <br>
+                Thanks to&#160;<a href="https://github.com/Riftriot" target="_blank" rel="noopener noreferrer">Riftriot</a>&#160;for helping set up UV
+            </div>
+        </div>
         <div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
 
         <!-- Email stuff-->
         <p class="email botBar">
             <span class="fa-regular fa-at"></span>&#160;&#160;Emails
         </p>
-        <div class="hidden" id="emailPopup">test</div>
+        <div class="hidden" id="emailPopup">
+            <div class="emailPopupText">
+                Email me at&#160;<a href="mailto:crllect@proton.me" target="_blank" rel="noopener noreferrer">crllect@proton.me</a>&#160;I check this email more often,
+                <br>
+                <br>
+                and at&#160;<a href="mailto:crllect@tuta.io" target="_blank" rel="noopener noreferrer">crllect@tuta.io</a>&#160;for serious inquiries
+            </div>
+        </div>
         <div class="hidden emailPopupBg" id="emailPopupBg"></div>
 
         <!-- Import varius JS things -->
@@ -202,6 +219,7 @@
         <script src="js/credits.js"></script>
         <script src="js/emails.js"></script>
         <script src="js/battery.js"></script>
+        <script src="js/settings.js"></script>
     </body>
     <script src="js/indexParticles.js"></script>
 </html>
