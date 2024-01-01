@@ -20,7 +20,7 @@
         cursor: default;
         font-size: 0;
     }
-    width: calc(perToInt($waybarHeight) - $uniMargin); // Width calculation for menu
+    width: calc($waybarHeight - $uniMargin); // Width calculation for menu
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height calculation for menu
     top: calc(($uniMargin));
     left: $uniMargin;
@@ -59,7 +59,7 @@
 
 .menu:hover {
     // Conditional hover styling for menu
-    width: calc(((perToInt($waybarHeight) - $uniMargin) * $hoverCoefficient) + $hoverConst); // Width adjustment on hover
+    width: calc((($waybarHeight - $uniMargin) * $hoverCoefficient) + $hoverConst); // Width adjustment on hover
     height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst); // Height adjustment on hover
     left: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Left position adjustment on hover
     top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2)); // Top position adjustment on hover
@@ -148,7 +148,7 @@
     width: $fullMenuSize; // Width calculation for menu
     height: calc(100% - $waybarHeight - ($botBarHeight) + $uniMargin * 1.5);  // Height calculation for menu
     bottom: calc(($botBarHeight + $uniMargin));
-    left: calc(-$uniMargin * 2 - $fullMenuSize);
+    left: calc((-1 * $uniMargin) * 2 - $fullMenuSize);
     border: $borderThickness solid $borderCol; // Border styling
     border-radius: $borderRad; // Border radius
     background-color: $activeWindowCol; // Background color

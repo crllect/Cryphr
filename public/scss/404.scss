@@ -47,8 +47,8 @@
     z-index: 999985;
     border: $borderThickness solid $borderCol; // Border styling
     box-shadow: $shadowRad $shadowCol;
-    left: $uniMargin * 2;
-    top: $uniMargin * 2;
+    left: calc($uniMargin * 2);
+    top: calc($uniMargin * 2);
     font-size: 3vh;
     color: $menuButtonCol;
     text-decoration: none;

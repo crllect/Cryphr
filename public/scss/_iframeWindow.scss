@@ -31,7 +31,7 @@
 }
 
 .menuOpen-iframeWindow {
-    width: calc(((100% - (3 * $uniMargin))) - (((perToInt($waybarHeight) - (2 * $uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width adjusted for uniform margin
+    width: calc(((100% - (3 * $uniMargin))) - ((($waybarHeight - (2 * $uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width adjusted for uniform margin
     height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
     bottom: calc(($botBarHeight + $uniMargin));
     right: -200vw;

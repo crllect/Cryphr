@@ -1,6 +1,6 @@
 .waybar {
     position: absolute;
-    width: calc((100% - (2 * $uniMargin)) - perToInt($waybarHeight)); // Width calculation for waybar
+    width: calc((100% - (2 * $uniMargin)) - $waybarHeight); // Width calculation for waybar
     height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
     top: calc(($uniMargin));
     right: $uniMargin;
@@ -35,7 +35,7 @@
 }
 
 .waybar:hover {
-    width: calc(((((100% - (2 * $uniMargin)) - (perToInt($waybarHeight))) * $hoverCoefficient) + $hoverConst));
+    width: calc(((((100% - (2 * $uniMargin)) - ($waybarHeight)) * $hoverCoefficient) + $hoverConst));
     height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
     right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
     top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
@@ -107,7 +107,7 @@
 
 #searchButton {
     position: absolute;
-    left: calc(((($waybarHeight) / 1vh) * 4vw) + (perToInt($waybarHeight)) - 1.25em);
+    left: calc(((($waybarHeight) / 1vh) * 4vw) + ($waybarHeight) - 1.25em);
     transform: translateY(-3%) translateX(-50%);
     margin: 0;
     padding: 0;

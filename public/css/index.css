@@ -434,7 +434,7 @@ body {
   width: 25vh;
   height: calc(100% - 10vh - 4.5vh + 1.5vh);
   bottom: 5.5vh;
-  left: calc(-20vw - 25vh);
+  left: -27vh;
   border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
   border-radius: 7px;
   background-color: rgba(37, 37, 42, 0.8196078431);
