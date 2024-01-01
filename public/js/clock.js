@@ -1,13 +1,13 @@
-let toggledClock = false;
+let toggledClock = JSON.parse(localStorage.getItem("toggledClock")) || false;
 
 document.getElementById("time").addEventListener("click", function () {
     toggledClock = !toggledClock;
+    localStorage.setItem("toggledClock", toggledClock); // Save state to localStorage
     updateClock();
 
     const historyIframe = document.getElementById("fullMenu").contentWindow;
     historyIframe.postMessage({ type: 'toggleClock', toggledClock: toggledClock }, "*");
 });
-
 
 function updateClock() {
     const now = new Date();
@@ -28,6 +28,7 @@ function updateClock() {
 
     const timeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById("time").textContent = timeString;
+    document.dispatchEvent(new CustomEvent('clockUpdated', { detail: { toggledClock } }));
 }
 
 function updateHistoryTimestamps() {

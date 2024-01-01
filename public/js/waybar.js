@@ -19,9 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Listen for messages from history.html
-    window.addEventListener('message', function(event) {
-        if (event.data.type && event.data.type === 'historySearch') {
+    window.addEventListener("message", function (event) {
+        if (event.data.type && event.data.type === "historySearch") {
             performSearch(event.data.query);
         }
     });
@@ -35,17 +34,20 @@ function performSearch(query) {
 
 let proxyEnabled = true;
 
-document.getElementById("urlInput").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("searchButton").click();
-    }
-});
+document
+    .getElementById("urlInput")
+    .addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("searchButton").click();
+        }
+    });
 
-// Function to add search query to local storage with date and time
 function addToSearchHistory(query) {
     let currentDate = new Date();
-    let dateStamp = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+    let dateStamp = `${
+        currentDate.getMonth() + 1
+    }/${currentDate.getDate()}/${currentDate.getFullYear()}`;
     let timeStamp = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
 
     historyArray.push({ query, dateStamp, timeStamp });
@@ -57,7 +59,6 @@ document.getElementById("searchButton").onclick = function (event) {
 
     let url = document.getElementById("urlInput").value;
 
-    // Add search query to history
     if (url.trim() !== "") {
         addToSearchHistory(url.trim());
     }
@@ -67,37 +68,51 @@ document.getElementById("searchButton").onclick = function (event) {
     let loadingIframe = document.getElementById("loadingIframe");
 
     if (url.trim() === "") {
-        if (document.getElementById("fullMenu").classList.contains("menuOpen-fullMenu")) {
+        if (
+            document
+                .getElementById("fullMenu")
+                .classList.contains("menuOpen-fullMenu")
+        ) {
             iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
             iframeWindow.classList.remove("iframeWindowOpen");
         } else {
             iframeWindow.classList.remove("iframeWindowOpen");
         }
-        mainWindow.forEach(element => element.classList.remove("hidden"));
-        setTimeout(function() {
+        mainWindow.forEach((element) => element.classList.remove("hidden"));
+        setTimeout(function () {
             iframeWindow.classList.add("hidden");
         }, 850);
-        setTimeout(function() {
-            mainWindow.forEach(element => element.classList.remove("mainWindowClose"))
+        setTimeout(function () {
+            mainWindow.forEach((element) =>
+                element.classList.remove("mainWindowClose")
+            );
         }, 450);
     } else {
         iframeWindow.classList.remove("hidden");
         iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
         iframeWindow.classList.remove("iframeWindowOpen");
-        mainWindow.forEach(element => element.classList.add("mainWindowClose"));
+        mainWindow.forEach((element) =>
+            element.classList.add("mainWindowClose")
+        );
         iframeWindow.classList.remove("hidden");
-        setTimeout(function() {
-            mainWindow.forEach(element => element.classList.add("hidden"));
+        setTimeout(function () {
+            mainWindow.forEach((element) => element.classList.add("hidden"));
         }, 850);
-        setTimeout(function() {
-            if (document.getElementById("fullMenu").classList.contains("menuOpen-fullMenu")) {
+        setTimeout(function () {
+            if (
+                document
+                    .getElementById("fullMenu")
+                    .classList.contains("menuOpen-fullMenu")
+            ) {
                 iframeWindow.classList.add("menuOpen-iframeWindowOpen");
             } else {
                 iframeWindow.classList.add("iframeWindowOpen");
             }
         }, 450);
 
-        let preferredSearchEngine = localStorage.getItem("preferredSearchEngine");
+        let preferredSearchEngine = localStorage.getItem(
+            "preferredSearchEngine"
+        );
         let searchUrl = preferredSearchEngine || "https://duckduckgo.com/?q=";
 
         if (!url.includes(".")) {
@@ -118,9 +133,9 @@ document.getElementById("searchButton").onclick = function (event) {
 
 document.getElementById("reloadButton").onclick = function (event) {
     let loadingIframe = document.getElementById("loadingIframe");
-    loadingIframe.classList.remove("hidden"); // Show loading animation on reload
+    loadingIframe.classList.remove("hidden");
     document.getElementById("iframeWindow").contentWindow.location.reload(true);
     setTimeout(function () {
-        loadingIframe.classList.add("hidden"); // Hide loading animation after a delay
+        loadingIframe.classList.add("hidden");
     }, 2000);
 };

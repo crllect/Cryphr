@@ -44,14 +44,26 @@ html, body {
     color: #fff;
 }
 
-.timestamp {
-    
+.history-entry {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
 }
 
-.datestamp {
-
+.history-query {
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.delete-button {
-    
+.history-date, .history-time {
+    color: $borderCol;
+}
+
+.history-delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
 }

@@ -47,4 +47,28 @@ html, body {
   border: none;
   background: none;
   color: #fff;
+}
+
+.history-entry {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+.history-query {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.history-date, .history-time {
+  color: rgba(156, 156, 156, 0.3568627451);
+}
+
+.history-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=history.css.map */
