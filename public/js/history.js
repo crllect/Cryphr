@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     updateHistoryDisplay();
+    addWipeHistoryButton();
 });
 
 window.addEventListener("storage", function (event) {
-    if (event.key === "historyArray") {
+    if (event.key === "historyArray" || event.key === "toggledClock") {
         updateHistoryDisplay();
     }
 });
@@ -32,41 +33,30 @@ function updateHistoryDisplay() {
         dateDiv.className = "history-date";
 
         let timeDiv = document.createElement("div");
-        timeDiv.textContent = `Time: ${formatHistoryTime(item.timeStamp, toggledClock)}`;
+        let timeText = toggledClock ? item.timeStamp24 : item.timeStamp12;
+        timeDiv.textContent = `Time: ${timeText}`;
         timeDiv.className = "history-time";
-
-        let deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.className = "history-delete";
-        deleteButton.onclick = function() {
-            deleteHistoryItem(i);
-        };
 
         entryDiv.appendChild(queryDiv);
         entryDiv.appendChild(dateDiv);
         entryDiv.appendChild(timeDiv);
-        entryDiv.appendChild(deleteButton);
 
         historyContainer.appendChild(entryDiv);
     }
 }
 
-function formatHistoryTime(timeStamp, is24HourFormat) {
-    let [hours, minutes] = timeStamp.split(':').map(num => parseInt(num, 10));
-    if (!is24HourFormat) {
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        return `${hours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
-    } else {
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-    }
+function addWipeHistoryButton() {
+    let wipeButton = document.createElement("button");
+    wipeButton.textContent = "Wipe History";
+    wipeButton.className = "history-wipe";
+    wipeButton.onclick = wipeHistory;
+
+    document.body.appendChild(wipeButton);
 }
 
-function deleteHistoryItem(index) {
-    let historyArray = JSON.parse(localStorage.getItem("historyArray")) || [];
-    if (index >= 0 && index < historyArray.length) {
-        historyArray.splice(index, 1);
-        localStorage.setItem("historyArray", JSON.stringify(historyArray));
-        updateHistoryDisplay();
-    }
+function wipeHistory() {
+    localStorage.removeItem("historyArray");
+    updateHistoryDisplay();
+
+    window.parent.location.reload();
 }

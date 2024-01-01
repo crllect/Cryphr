@@ -1,9 +1,10 @@
 let historyArray = JSON.parse(localStorage.getItem("historyArray")) || [];
+let nextHistoryItemId =
+    JSON.parse(localStorage.getItem("nextHistoryItemId")) || 0;
 
 document.addEventListener("DOMContentLoaded", function () {
     var urlInput = document.getElementById("urlInput");
     var searchButton = document.getElementById("searchButton");
-
     function updateButtonColor() {
         if (urlInput.value.trim() !== "") {
             searchButton.style.color = "#ffffff";
@@ -48,10 +49,39 @@ function addToSearchHistory(query) {
     let dateStamp = `${
         currentDate.getMonth() + 1
     }/${currentDate.getDate()}/${currentDate.getFullYear()}`;
-    let timeStamp = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
 
-    historyArray.push({ query, dateStamp, timeStamp });
+    let timeStamp24 = `${currentDate
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${currentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
+
+    let hours = currentDate.getHours();
+    let hours12 = hours % 12 || 12;
+    let ampm = hours >= 12 ? "PM" : "AM";
+    let timeStamp12 = `${hours12.toString().padStart(2, "0")}:${currentDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")} ${ampm}`;
+
+    let newHistoryItem = {
+        id: nextHistoryItemId,
+        query: query,
+        dateStamp: dateStamp,
+        timeStamp24: timeStamp24,
+        timeStamp12: timeStamp12,
+    };
+
+    historyArray.push(newHistoryItem);
     localStorage.setItem("historyArray", JSON.stringify(historyArray));
+
+    nextHistoryItemId++;
+    localStorage.setItem(
+        "nextHistoryItemId",
+        JSON.stringify(nextHistoryItemId)
+    );
 }
 
 document.getElementById("searchButton").onclick = function (event) {
