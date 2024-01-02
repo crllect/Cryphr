@@ -48,6 +48,219 @@
         ></script>
     </head>
     <body>
-        test
+        <h1>Customize Appearance</h1>
+
+        <!-- Background Color -->
+        <div class="bgColSettings">
+            <label for="bgCol">Background Color:</label>
+            <input type="color" id="bgColPicker" value="#14121D" />
+            <input type="url" id="bgColURL" placeholder="Or enter image URL" />
+        </div>
+
+        <!-- Window Properties -->
+        <div class="winPropSettings">
+            <label for="windowCol">Window Color:</label>
+            <input type="color" id="windowCol" value="#14121D" />
+        </div>
+        <div>
+            <label for="windowBlur">Window Blur (vh):</label>
+            <input type="number" id="windowBlur" value="0" />
+        </div>
+        <div>
+            <label for="windowBrightness">Window Brightness:</label>
+            <input type="number" id="windowBrightness" step="0.1" value="1" />
+        </div>
+        <div>
+            <label for="windowContrast">Window Contrast:</label>
+            <input type="number" id="windowContrast" step="0.1" value="1.1" />
+        </div>
+        <div>
+            <label for="frontElementCol">Front Element Color:</label>
+            <input type="color" id="frontElementCol" value="#f1f1f114" />
+        </div>
+        <div>
+            <label for="textCol">Text Color:</label>
+            <input type="color" id="textCol" value="#ffffff" />
+        </div>
+        <div>
+            <label for="textColSec">Secondary Text Color:</label>
+            <input type="color" id="textColSec" value="#ffffff9" />
+        </div>
+        <div>
+            <label for="linkCol">Link Color:</label>
+            <input type="color" id="linkCol" value="#5a2491" />
+        </div>
+
+        <!-- Shadow properties -->
+        <div class="shadowSettings">
+            <label for="shadowCol">Shadow Color:</label>
+            <input type="color" id="shadowCol" value="#ffffff02" />
+        </div>
+        <div>
+            <label for="shadowRad">Shadow Radius:</label>
+            <input type="text" id="shadowRad" value="0px 4px 4px" />
+        </div>
+
+        <!-- Margins -->
+        <div class="marginSettings">
+            <label for="uniMargin">Universal Margin (vh):</label>
+            <input type="number" id="uniMargin" value="1" />
+        </div>
+        <div>
+            <label for="waybarHeight">Waybar Height (vh):</label>
+            <input type="number" id="waybarHeight" value="10" />
+        </div>
+        <div>
+            <label for="urlInputLength">URL Input Length (vw):</label>
+            <input type="number" id="urlInputLength" value="43" />
+        </div>
+        <div>
+            <label for="botBarHeight">Bottom Bar Height (vh):</label>
+            <input type="number" id="botBarHeight" value="4.5" />
+        </div>
+        <div>
+            <label for="botBarFontSize">Bottom Bar Font Size:</label>
+            <input type="number" id="botBarFontSize" step="0.1" value="0.8" />
+        </div>
+        <div>
+            <label for="fullMenuSize">Full Menu Size (vh):</label>
+            <input type="number" id="fullMenuSize" value="25" />
+        </div>
+
+        <!-- Border -->
+        <div class="borderSettings">
+            <label for="borderRad">Border Radius (px):</label>
+            <input type="number" id="borderRad" value="7" />
+        </div>
+        <div>
+            <label for="borderThickness">Border Thickness (px):</label>
+            <input type="number" id="borderThickness" value="1.75" />
+        </div>
+        <div>
+            <label for="borderCol">Border Color:</label>
+            <input type="color" id="borderCol" value="#ffffff10" />
+        </div>
+
+        <!-- Transitions -->
+        <div class="transSettings">
+            <label for="transitionSpeed">Transition Speed (s):</label>
+            <input type="number" id="transitionSpeed" step="0.1" value="0.4" />
+        </div>
+        <div>
+            <label for="fastTransitionSpeed">Fast Transition Speed (s):</label>
+            <input
+                type="number"
+                id="fastTransitionSpeed"
+                step="0.1"
+                value="0.1"
+            />
+        </div>
+
+        <!-- Menu -->
+        <div class="menuSettings">
+            <label for="menuButtonCol">Menu Button Color:</label>
+            <input type="color" id="menuButtonCol" value="#ffffff" />
+        </div>
+
+        <!-- Active -->
+        <div class="activeSettings">
+            <label for="activeTransition">Active Transition (s):</label>
+            <input type="number" id="activeTransition" step="0.1" value="0.4" />
+        </div>
+        <div>
+            <label for="activeWindowCol">Active Window Color:</label>
+            <input type="color" id="activeWindowCol" value="#1a1730" />
+        </div>
+
+        <!-- Full Menu -->
+        <div class="fullMenuSettings">
+            <label for="fullMenuOffset">Full Menu Offset (px):</label>
+            <input type="number" id="fullMenuOffset" value="10" />
+        </div>
+
+        <!-- Hover Variables -->
+        <div class="hoverSettings">
+            <label for="hoverConst">Hover Constant (vh):</label>
+            <input type="number" id="hoverConst" value="0" />
+        </div>
+        <div>
+            <label for="hoverCoefficient">Hover Coefficient:</label>
+            <input type="number" id="hoverCoefficient" value="1" />
+        </div>
+        <div>
+            <label for="hoverWindowBlur">Hover Window Blur (vw):</label>
+            <input type="number" id="hoverWindowBlur" step="0.1" value="0.7" />
+        </div>
+        <div>
+            <label for="hoverWindowBrightness">Hover Window Brightness:</label>
+            <input
+                type="number"
+                id="hoverWindowBrightness"
+                step="0.1"
+                value="1.2"
+            />
+        </div>
+        <div>
+            <label for="hoverWindowContrast">Hover Window Contrast:</label>
+            <input
+                type="number"
+                id="hoverWindowContrast"
+                step="0.1"
+                value="1.15"
+            />
+        </div>
+        <div>
+            <label for="hoverBorderCol">Hover Border Color:</label>
+            <input type="color" id="hoverBorderCol" value="#a1a1ffe7" />
+        </div>
+        <div>
+            <label for="hoverWindowCol">Hover Window Color:</label>
+            <input type="color" id="hoverWindowCol" value="#191725" />
+        </div>
+        <div>
+            <label for="hoverBorderThickness"
+                >Hover Border Thickness (px):</label
+            >
+            <input type="number" id="hoverBorderThickness" value="1.5" />
+        </div>
+        <div>
+            <label for="hoverBorderRad">Hover Border Radius:</label>
+            <input type="number" id="hoverBorderRad" step="0.1" value="0.8" />
+        </div>
+        <div>
+            <label for="hoverBorderOpacity">Hover Border Opacity:</label>
+            <input
+                type="number"
+                id="hoverBorderOpacity"
+                step="0.1"
+                min="0"
+                max="1"
+                value="0.744"
+            />
+        </div>
+        <div>
+            <label for="hoverShadowCol">Hover Shadow Color:</label>
+            <input type="color" id="hoverShadowCol" value="#a1a1ffe7" />
+        </div>
+        <div>
+            <label for="hoverShadowRad">Hover Shadow Radius:</label>
+            <input type="text" id="hoverShadowRad" value="0px 0px 10px" />
+        </div>
+        <div>
+            <label for="hoverFrontElementCol">Hover Front Element Color:</label>
+            <input type="color" id="hoverFrontElementCol" value="#f1f1f120" />
+        </div>
+
+        <!-- Particles -->
+        <div class="particleSettings">
+            <label for="isParticles">Particles:</label>
+            <select id="isParticles">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <button onclick="updateSettings()">Apply</button>
     </body>
+    <script src="js/settings.js"></script>
 </html>

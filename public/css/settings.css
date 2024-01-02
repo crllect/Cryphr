@@ -61,7 +61,7 @@
   );
   --hoverShadowRad: 0px 0px var(--fullMenuOffset);
   --hoverFrontElementCol: #f1f1f120;
-  --isParticles: 0;
+  --isParticles: 1;
 }
 
 /*
