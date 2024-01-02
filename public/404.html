@@ -47,9 +47,13 @@
             crossorigin="anonymous"
         ></script>
         <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-          </script>
-          <script defer src="/_vercel/insights/script.js"></script>
+            window.va =
+                window.va ||
+                function () {
+                    (window.vaq = window.vaq || []).push(arguments);
+                };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
     </head>
     <body>
         <div id="particles-js"></div>
@@ -58,58 +62,88 @@
             <span class="fa-solid fa-arrow-left fa-2xl"></span>
         </a>
 
-        <iframe id="iframeWindow404" class="iframeWindow404 hoverable" src="404bg.html"></iframe>
-         <!-- Center of botBar -->
-         <p id="time" class="clock botBar"></p>
+        <iframe
+            id="iframeWindow404"
+            class="iframeWindow404 hoverable"
+            src="404bg.html"
+        ></iframe>
+        <!-- Center of botBar -->
+        <p id="time" class="clock botBar"></p>
 
-         <p id="battery" class="battery botBar"></p>
- 
-         <!-- Left side of botBar -->
-         <a
-             class="discord botBar"
-             href="https://discord.com/users/713488984596021291"
-             target="_blank" rel="noopener noreferrer">
-             <span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
-         >
- 
-         <a 
-             class="githubLink botBar"
-             href="https://github.com/crllect"
-             target="_blank" rel="noopener noreferrer">
-             <span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
-         >
- 
-         <!-- Credits stuff-->
-         <p class="credits botBar">
-             <span class="fa-solid fa-info"></span>&#160;&#160;Credits
-         </p>
-         <div class="creditsPopupText">
-            Written completely by&#160;<a href="https://github.com/Crllect" target="_blank" rel="noopener noreferrer">Crllect</a>
-            <br>
-            <br>
-            Thanks to&#160;<a href="https://github.com/Riftriot" target="_blank" rel="noopener noreferrer">Riftriot</a>&#160;for helping set up UV
-        </div>
-         <div class="hidden creditsPopupBg" id="creditsPopupBg">
-            <div class="emailPopupText">
-                Email me at&#160;<a href="mailto:crllect@proton.me" target="_blank" rel="noopener noreferrer">crllect@proton.me</a>&#160;I check this email more often,
-                <br>
-                <br>
-                and at&#160;<a href="mailto:crllect@tuta.io" target="_blank" rel="noopener noreferrer">crllect@tuta.io</a>&#160;for serious inquiries
+        <p id="battery" class="battery botBar"></p>
+
+        <!-- Left side of botBar -->
+        <a
+            class="discord botBar"
+            href="https://discord.com/users/713488984596021291"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
+        >
+
+        <a
+            class="githubLink botBar"
+            href="https://github.com/crllect"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
+        >
+
+        <!-- Credits stuff-->
+        <p class="credits botBar">
+            <span class="fa-solid fa-info"></span>&#160;&#160;Credits
+        </p>
+        <div class="hidden" id="creditsPopup">
+            <div class="creditsPopupText">
+                Written completely by&#160;<a
+                    href="https://github.com/Crllect"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Crllect</a
+                >
+                <br />
+                <br />
+                Thanks to&#160;<a
+                    href="https://github.com/Riftriot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Riftriot</a
+                >&#160;for helping set up UV
             </div>
-         </div>
- 
-         <!-- Email stuff-->
-         <p class="email botBar">
-             <span class="fa-regular fa-at"></span>&#160;&#160;Emails
-         </p>
-         <div class="hidden" id="emailPopup">test</div>
-         <div class="hidden emailPopupBg" id="emailPopupBg"></div>
- 
-         <!-- Import varius JS things -->
-         <script src="js/clock.js"></script>
-         <script src="js/credits.js"></script>
-         <script src="js/emails.js"></script>
-         <script src="js/battery.js"></script>
+        </div>
+        <div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
+
+        <!-- Email stuff-->
+        <p class="email botBar">
+            <span class="fa-regular fa-at"></span>&#160;&#160;Emails
+        </p>
+        <div class="hidden" id="emailPopup">
+            <div class="emailPopupText">
+                Email me at&#160;<a
+                    href="mailto:crllect@proton.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >crllect@proton.me</a
+                >&#160;I check this email more often,
+                <br />
+                <br />
+                and at&#160;<a
+                    href="mailto:crllect@tuta.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >crllect@tuta.io</a
+                >&#160;for serious inquiries
+            </div>
+        </div>
+        <div class="hidden emailPopupBg" id="emailPopupBg"></div>
+
+        <!-- Import varius JS things -->
+        <script src="js/clock.js"></script>
+        <script src="js/credits.js"></script>
+        <script src="js/emails.js"></script>
+        <script src="js/battery.js"></script>
     </body>
     <script src="js/indexParticles.js"></script>
     <script src="js/settingsLoader.js"></script>

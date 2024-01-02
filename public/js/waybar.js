@@ -24,17 +24,24 @@ window.addEventListener(
     false
 );
 
-window.addEventListener('message', function(event) {
-    if (event.origin !== "*") {
-        return;
-    }
+window.addEventListener(
+    "message",
+    function (event) {
+        if (event.origin !== "*") {
+            return;
+        }
 
-    var data = event.data;
-    if(data.variable && data.value) {
-        document.documentElement.style.setProperty(data.variable, data.value);
-        localStorage.setItem(data.variable, data.value);
-    }
-}, false);
+        var data = event.data;
+        if (data.variable && data.value) {
+            document.documentElement.style.setProperty(
+                data.variable,
+                data.value
+            );
+            localStorage.setItem(data.variable, data.value);
+        }
+    },
+    false
+);
 
 let historyArray = JSON.parse(localStorage.getItem("historyArray")) || [];
 let nextHistoryItemId =
@@ -206,4 +213,28 @@ document.getElementById("reloadButton").onclick = function (event) {
     setTimeout(function () {
         loadingIframe.classList.add("hidden");
     }, 2000);
+};
+
+let settingsOpen = false; // Declare this outside the event handler
+
+document.getElementById("settingsButton").onclick = function (event) {
+    event.preventDefault();
+
+    // Set the URL input to an empty string and perform the search
+    let urlInput = document.getElementById("urlInput");
+    urlInput.value = "";
+    performSearch("");
+
+    // Toggle the settingsOpen value
+    settingsOpen = !settingsOpen;
+
+    // Assuming the ID of your main window iframe is 'mainWindow'
+    let mainWindow = document.getElementById("mainWindow");
+
+    // Change the src of mainWindow based on the settingsOpen value
+    if (settingsOpen) {
+        mainWindow.src = "settings.html";
+    } else {
+        mainWindow.src = "greeter.html";
+    }
 };

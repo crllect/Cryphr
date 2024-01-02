@@ -107,7 +107,7 @@ const presets = {
         "--hoverBorderOpacity": "rgba(255, 255, 255, 0.744)",
         "--hoverFrontElementCol": "#f1f1f120",
 
-        "--doParticles": "1",
+        "--doParticles": "0",
     }
 };
 
