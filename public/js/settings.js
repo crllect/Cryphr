@@ -41,7 +41,6 @@ function updateSettings() { // I sadly used chatGPT to write this, as writing al
     changeParentCssVariable('--doParticles', document.getElementById('doParticles').value);
 }
 
-
 function changeParentCssVariable(variableName, value) {
     var message = { variable: variableName, value: value };
     window.parent.postMessage(message, "*");
@@ -66,3 +65,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+function resetSettings() {
+    for (let i = localStorage.length; i >= 0; i--) {
+        let key = localStorage.key(i);
+        if (key && key.startsWith("--")) {
+            localStorage.removeItem(key);
+        }
+        for (let i = localStorage.length; i >= 0; i--) {
+            let key = localStorage.key(i);
+            if (key && key.startsWith("--")) {
+                localStorage.removeItem(key);
+            }
+        }
+    }
+    window.parent.location.reload();
+}

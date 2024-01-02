@@ -46,6 +46,8 @@
             src="https://kit.fontawesome.com/df4e45b628.js"
             crossorigin="anonymous"
         ></script>
+
+        <link rel="stylesheet" href="css/history.css">
     </head>
     <body>
         <h1>Customize Appearance</h1>
@@ -54,7 +56,6 @@
         <div class="bgColSettings">
             <label for="bgCol">Background Color:</label>
             <input type="text" id="bgColPicker" value="#14121D" />
-            <input type="url" id="bgColURL" placeholder="Or enter image URL" />
         </div>
 
         <!-- Window Properties -->
@@ -261,6 +262,7 @@
         </div>
 
         <button onclick="updateSettings()">Apply</button>
+        <button onclick="resetSettings()">Reset</button>
     </body>
     <script src="js/settings.js"></script>
 </html>
