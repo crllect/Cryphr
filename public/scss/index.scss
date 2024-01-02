@@ -28,8 +28,8 @@ html, body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: calc(100vw * var(--isParticles));
-    height: calc(100vh * var(--isParticles));
+    width: calc(100vw * var(--doParticles));
+    height: calc(100vh * var(--doParticles));
     z-index: 0;
 }
 

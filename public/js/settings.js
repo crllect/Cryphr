@@ -38,7 +38,7 @@ function updateSettings() { // I sadly used chatGPT to write this, as writing al
     changeParentCssVariable('--hoverShadowCol', document.getElementById('hoverShadowCol').value);
     changeParentCssVariable('--hoverShadowRad', document.getElementById('hoverShadowRad').value);
     changeParentCssVariable('--hoverFrontElementCol', document.getElementById('hoverFrontElementCol').value);
-    changeParentCssVariable('--isParticles', document.getElementById('isParticles').value);
+    changeParentCssVariable('--doParticles', document.getElementById('doParticles').value);
 }
 
 
@@ -48,13 +48,21 @@ function changeParentCssVariable(variableName, value) {
     localStorage.setItem(variableName, value);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         let value = localStorage.getItem(key);
 
-        if(key.startsWith('--')) {
+        if (key.startsWith("--")) {
             document.documentElement.style.setProperty(key, value);
+        }
+
+        if (key === "--doParticles") {
+            let selectElement = document.getElementById("doParticles");
+            if (selectElement) {
+                selectElement.value = value.trim();
+            }
         }
     }
 });
+

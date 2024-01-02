@@ -73,7 +73,7 @@
     --hoverShadowRad: 0px 0px var(--fullMenuOffset);
     --hoverFrontElementCol: #f1f1f120;
 
-    --isParticles: 1;
+    --doParticles: 1;
 }
 
 /*
@@ -152,6 +152,6 @@ $preset: old;
     );
     $hoverShadowRad: 0px 0px $fullMenuOffset;
 
-    $isParticles: 0;
+    $doParticles: 0;
 }
 */

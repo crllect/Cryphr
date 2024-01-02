@@ -62,7 +62,7 @@
   );
   --hoverShadowRad: 0px 0px var(--fullMenuOffset);
   --hoverFrontElementCol: #f1f1f120;
-  --isParticles: 1;
+  --doParticles: 1;
 }
 
 /*
@@ -141,7 +141,7 @@ $preset: old;
     );
     $hoverShadowRad: 0px 0px $fullMenuOffset;
 
-    $isParticles: 0;
+    $doParticles: 0;
 }
 */
 .mainWindow {
@@ -1036,8 +1036,8 @@ html, body {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: calc(100vw * var(--isParticles));
-  height: calc(100vh * var(--isParticles));
+  width: calc(100vw * var(--doParticles));
+  height: calc(100vh * var(--doParticles));
   z-index: 0;
 }
 
