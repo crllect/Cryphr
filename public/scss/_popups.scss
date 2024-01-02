@@ -18,44 +18,44 @@
     font-size: 2.75vh;
     margin: 0;
     padding: 0;
-    bottom: calc(2 * $uniMargin);
-    color: #fdfdfd;
-    border: $borderThickness solid $borderCol;
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
+    bottom: calc(2 * var(--uniMargin));
+    color: calc(var(--textCol));
+    border: var(--borderThickness) solid var(--borderCol);
+    border-radius: var(--borderRad);
+    box-shadow: var(--shadowRad) var(--shadowCol);
     backdrop-filter:
-        blur($windowBlur)
-        brightness($windowBrightness)
-        contrast($windowContrast);
+        blur(var(--windowBlur))
+        brightness(var(--windowBrightness))
+        contrast(var(--windowContrast));
     box-sizing: border-box;
     transition:
-        background-color $transitionSpeed ease,
-        width $transitionSpeed ease,
-        height $transitionSpeed ease,
-        left $transitionSpeed ease,
-        bottom $transitionSpeed ease,
-        right $transitionSpeed ease,
-        top $transitionSpeed ease,
-        border-radius $transitionSpeed ease,
-        stroke $transitionSpeed ease,
-        backdrop-filter $transitionSpeed ease,
-        box-shadow $fastTransitionSpeed ease,
-        border $fastTransitionSpeed ease,
-        fill $transitionSpeed ease;
+        background-color var(--transitionSpeed) ease,
+        width var(--transitionSpeed) ease,
+        height var(--transitionSpeed) ease,
+        left var(--transitionSpeed) ease,
+        bottom var(--transitionSpeed) ease,
+        right var(--transitionSpeed) ease,
+        top var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease,
+        stroke var(--transitionSpeed) ease,
+        backdrop-filter var(--transitionSpeed) ease,
+        box-shadow var(--fastTransitionSpeed) ease,
+        border var(--fastTransitionSpeed) ease,
+        fill var(--transitionSpeed) ease;
     align-items: center;
     justify-content: center;
-    background-color: $windowCol;
+    background-color: var(--windowCol);
     &:hover {
-        height: calc(((30%) * $hoverCoefficient) + $hoverConst);
-        width: calc(((30%) * $hoverCoefficient) + $hoverConst);
-        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-        box-shadow: $hoverShadowRad $hoverShadowCol;
-        border: $hoverBorderThickness solid $hoverBorderCol;
-        background-color: $hoverWindowCol;
+        height: calc(((30%) * var(--hoverCoefficient)) + var(--hoverConst));
+        width: calc(((30%) * var(--hoverCoefficient)) + var(--hoverConst));
+        bottom: calc(2 * var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
+        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+        background-color: var(--hoverWindowCol);
         backdrop-filter:
-            blur($hoverWindowBlur)
-            brightness($hoverWindowBrightness)
-            contrast($hoverWindowContrast);
+            blur(var(--hoverWindowBlur))
+            brightness(var(--hoverWindowBrightness))
+            contrast(var(--hoverWindowContrast));
     }
     &.hidden {
         display: none;
@@ -93,44 +93,44 @@
     font-size: 2.75vh;
     margin: 0;
     padding: 0;
-    bottom: calc(2 * $uniMargin);
-    color: #fdfdfd;
-    border: $borderThickness solid $borderCol;
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
+    bottom: calc(2 * var(--uniMargin));
+    color: calc(var(--textCol));
+    border: var(--borderThickness) solid var(--borderCol);
+    border-radius: var(--borderRad);
+    box-shadow: var(--shadowRad) var(--shadowCol);
     backdrop-filter:
-        blur($windowBlur)
-        brightness($windowBrightness)
-        contrast($windowContrast);
+        blur(var(--windowBlur))
+        brightness(var(--windowBrightness))
+        contrast(var(--windowContrast));
     box-sizing: border-box;
     transition:
-        background-color $transitionSpeed ease,
-        width $transitionSpeed ease,
-        height $transitionSpeed ease,
-        left $transitionSpeed ease,
-        bottom $transitionSpeed ease,
-        right $transitionSpeed ease,
-        top $transitionSpeed ease,
-        border-radius $transitionSpeed ease,
-        stroke $transitionSpeed ease,
-        backdrop-filter $transitionSpeed ease,
-        box-shadow $fastTransitionSpeed ease,
-        border $fastTransitionSpeed ease,
-        fill $transitionSpeed ease;
+        background-color var(--transitionSpeed) ease,
+        width var(--transitionSpeed) ease,
+        height var(--transitionSpeed) ease,
+        left var(--transitionSpeed) ease,
+        bottom var(--transitionSpeed) ease,
+        right var(--transitionSpeed) ease,
+        top var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease,
+        stroke var(--transitionSpeed) ease,
+        backdrop-filter var(--transitionSpeed) ease,
+        box-shadow var(--fastTransitionSpeed) ease,
+        border var(--fastTransitionSpeed) ease,
+        fill var(--transitionSpeed) ease;
     align-items: center;
     justify-content: center;
-    background-color: $windowCol;
+    background-color: var(--windowCol);
     &:hover {
-        height: calc(((20%) * $hoverCoefficient) + $hoverConst);
-        width: calc(((30%) * $hoverCoefficient) + $hoverConst);
-        bottom: calc(2 * $uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-        box-shadow: $hoverShadowRad $hoverShadowCol;
-        border: $hoverBorderThickness solid $hoverBorderCol;
-        background-color: $hoverWindowCol;
+        height: calc(((20%) * var(--hoverCoefficient)) + var(--hoverConst));
+        width: calc(((30%) * var(--hoverCoefficient)) + var(--hoverConst));
+        bottom: calc(2 * var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
+        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+        background-color: var(--hoverWindowCol);
         backdrop-filter:
-            blur($hoverWindowBlur)
-            brightness($hoverWindowBrightness)
-            contrast($hoverWindowContrast);
+            blur(var(--hoverWindowBlur))
+            brightness(var(--hoverWindowBrightness))
+            contrast(var(--hoverWindowContrast));
     }
     &.hidden {
         display: none;
@@ -158,23 +158,3 @@
 .creditsPopupText {
     padding: 2em;
 }
-
-// add this later to animate email and credits disapear once your braincells reapear:
-
-/*
-  &.hidden {
-        background-color: #00000000;
-        backdrop-filter: blur(0px);
-        width: 20%;
-        height: 15%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #00000000;
-        border: 0 solid #00000000;
-        border-radius: $borderRad * 1.25;
-        box-shadow: 0 0 0 #00000000;
-        visibility: hidden;
-        transition-delay: 1s
-  }
-*/

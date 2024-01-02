@@ -10,5 +10,5 @@ html, body {
     font-size: 5vh;
     font-family: 'Open Sans';
     user-select: none;
-    color: $textCol;
+    color: var(--textCol);
 }

@@ -7,137 +7,274 @@
 *   Follow his GitHub:
 *   https://github.com/Riftriot
 */
+:root {
+  /* Background */
+  --bgCol: #14121D;
+  /* Window Properties */
+  --windowCol: #14121D;
+  --windowBlur: 0vh;
+  --windowBrightness: 1;
+  --windowContrast: 1.1;
+  --frontElementCol: #f1f1f114;
+  --textCol: #fff;
+  --textColSec: #fff9;
+  --linkCol: #5a2491;
+  /* Shadow properties */
+  --shadowCol: rgba(255, 255, 255, 0.02);
+  --shadowRad: 0px 4px 4px;
+  /* Margins */
+  --uniMargin: 1vh;
+  --waybarHeight: 10vh;
+  --urlInputLength: 43vw;
+  --botBarHeight: 4.5vh;
+  --botBarFontSize: 0.8;
+  --fullMenuSize: 25vh;
+  /* Border */
+  --borderRad: 7px;
+  --borderThickness: 1.75px;
+  --borderCol: #ffffff10;
+  /* Transitions */
+  --transitionSpeed: 0.4s;
+  --fastTransitionSpeed: 0.1s;
+  /* Menu */
+  --menuButtonCol: var(--textCol);
+  /* Active */
+  --activeTransition: var(--transitionSpeed);
+  --activeWindowCol: #1a1730;
+  /* Full Menu */
+  --fullMenuOffset: 10px;
+  /* Hover Vars */
+  --hoverConst: 0vh;
+  --hoverCoefficient: 1;
+  --hoverWindowBlur: 0.7vw;
+  --hoverWindowBrightness: 1.2;
+  --hoverWindowContrast: 1.15;
+  --hoverBorderCol: #a1a1ffe7;
+  --hoverWindowCol: #191725;
+  --hoverBorderThickness: 1.5px;
+  --hoverBorderRad: 0.8;
+  --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+  --hoverShadowCol: rgba(
+      calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
+      calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
+      calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
+      calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
+  );
+  --hoverShadowRad: 0px 0px var(--fullMenuOffset);
+  --hoverFrontElementCol: #f1f1f120;
+  --isParticles: 0;
+}
+
+/*
+$preset: old;
+
+@if $preset == old {
+    // Background
+    $bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+    // https://raw.githubusercontent.com/hyprwm/Hyprland/main/assets/wall_anime_4K.png
+
+    // Window Properties
+    $windowCol: #141414d1; // 12, 26, 28, 0.8
+    $windowBlur: 1vh;
+    $windowBrightness: 1;
+    $windowContrast: 1.1;
+    $textCol: #fff;
+    $textColSec: #fff6;
+    $linkCol: #4b1c79;
+
+    // Shadow properties
+    $shadowCol: rgba(255, 255, 255, 0.02);
+    $shadowRad: 0px 4px 4px;
+
+    // Margins
+    $uniMargin: 1vh; // 1, 0.5, 0.225
+    $waybarHeight: 10vh; // 17.5, 12.5, 7.5
+    $botBarHeight: 4.5vh;
+    $botBarFontSize: 0.8;
+    $fullMenuSize: 25vh;
+
+    // Border
+    $borderRad: 7px; // 22.5, 12.5, 6
+    $borderThickness: 1.75px;
+    $borderCol: #9c9c9c5b;
+
+    // Transitions
+    $transitionSpeed: 0.4s;
+    $fastTransitionSpeed: 0.1s;
+
+    // Menu
+    $menuButtonCol: $textCol;
+
+    // Active
+    $activeTransition: $transitionSpeed;
+    $activeWindowCol: #25252ad1; // 24, 76, 84, 0.6
+
+    // Full Menu
+    $fullMenuOffScreenBorderGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $borderCol 100%
+    );
+    $fullMenuOffScreenWindowGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $activeWindowCol 100%
+    );
+    $fullMenuOffset: 10px;
+
+    // Hover Vars
+    $hoverConst: 0vh; // 0.7, 0.5, 0.25
+    $hoverCoefficient: 1;
+    $hoverWindowBlur: 0.7vw;
+    $hoverWindowBrightness: 1.2;
+    $hoverWindowContrast: 1.15;
+    $hoverBorderCol: #a1a1ffe7;
+    $hoverWindowCol: #141414d1;
+    $hoverBorderThickness: 1.5px;
+    $hoverBorderRad: 0.8;
+    $hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    $hoverShadowCol: rgba(
+        calc(red($hoverBorderCol) * red($hoverBorderOpacity) / 255),
+        calc(green($hoverBorderCol) * green($hoverBorderOpacity) / 255),
+        calc(blue($hoverBorderCol) * blue($hoverBorderOpacity) / 255),
+        calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
+    );
+    $hoverShadowRad: 0px 0px $fullMenuOffset;
+
+    $isParticles: 0;
+}
+*/
 .mainWindow {
   position: absolute;
-  width: calc(100vw - 2vh);
-  height: calc(100% - 10vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  right: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  width: calc(100vw - 2 * var(--uniMargin));
+  height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
+  bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
+  right: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  background-color: var(--windowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 
 .mainWindow:hover {
   user-select: none;
 }
 .mainWindow:hover.hoverable {
-  width: calc((100% - 2vh) * 1 + 0vh);
-  height: calc((100% - 10vh) * 1 + 0vh - 4.5vh + 1.5vh);
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc((100% - 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((100% - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst) - (var(--botBarHeight)) + 1.5 * var(--uniMargin));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-mainWindow {
-  width: calc(100% - 1vh - 25vh - 2vh);
-  height: calc(100% - 10vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  right: 1vh;
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc(100% - (var(--uniMargin)) - var(--fullMenuSize) - 2 * var(--uniMargin));
+  height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
+  right: var(--uniMargin);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-mainWindow:hover {
   user-select: none;
 }
 .menuOpen-mainWindow:hover.hoverable {
-  width: calc((100% - 1vh) * 1 + 0vh - 25vh - 2vh);
-  height: calc((100% - 10vh) * 1 + 0vh - 3vh);
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst) - var(--fullMenuSize) - 2 * var(--uniMargin));
+  height: calc((100% - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst) - (var(--botBarHeight) - 1.5 * var(--uniMargin)));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 4);
+  bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .waybar {
   position: absolute;
-  width: calc(100% - 2vh - 10vh);
-  height: 5.5vh;
-  top: 1vh;
-  right: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  width: calc(100% - 2 * var(--uniMargin) - var(--waybarHeight));
+  height: calc(var(--waybarHeight) - 2.25 * 2 * var(--uniMargin));
+  top: calc(var(--uniMargin));
+  right: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  background-color: var(--windowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 
 .waybar:hover {
-  width: calc((100% - 2vh - 10vh) * 1 + 0vh);
-  height: 5.5vh;
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  top: calc(1vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc((100% - 2 * var(--uniMargin) - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((var(--waybarHeight) - 2.25 * 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 4);
+  top: calc(var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-waybar {
-  width: calc(100% - 1vh - 25vh - 2vh);
-  height: 5.5vh;
-  top: 1vh;
-  right: 1vh;
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc(100% - (var(--uniMargin)) - var(--fullMenuSize) - 2 * var(--uniMargin));
+  height: calc(var(--waybarHeight) - 2.25 * 2 * var(--uniMargin));
+  top: calc(var(--uniMargin));
+  right: var(--uniMargin);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-waybar:hover {
-  width: calc((100% - 1vh) * 1 + 0vh - 25vh - 2vh);
-  height: 5.5vh;
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  top: calc(1vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
+  width: calc((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst) - var(--fullMenuSize) - 2 * var(--uniMargin));
+  height: calc((var(--waybarHeight) - 2.25 * 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 4);
+  top: calc(var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
 }
 
 #urlInput {
   position: absolute;
-  left: 10vh;
-  height: 4vh;
-  width: 40vw;
+  left: var(--waybarHeight);
+  height: calc(((var(--waybarHeight))) - var(--uniMargin) * 6);
+  width: calc((var(--urlInputLength)));
   margin: 0;
   border: transparent;
   font-family: "Open Sans";
-  font-size: 1.12vw;
-  color: #fff;
+  font-size: calc(1.75vw * var(--waybarHeight) / 12.5vh / 1.25 * var(--waybarHeight) / 10vh);
+  color: var(--menuButtonCol);
   border-radius: 100vw;
-  padding: 0.25vh;
+  padding: calc(var(--uniMargin) / 4);
   padding-left: 0.75em;
-  background-color: rgba(241, 241, 241, 0.0784313725);
-  transition: all 0.4s ease;
+  background-color: var(--frontElementCol);
+  transition: all var(--transitionSpeed) ease;
 }
 #urlInput:focus, #urlInput:hover {
   outline: none;
-  background-color: rgba(241, 241, 241, 0.1254901961);
+  background-color: var(--hoverFrontElementCol);
 }
 
 #reloadButton {
   position: absolute;
-  left: 2.3333333333vh;
+  left: calc(var(--waybarHeight) / 3 - var(--uniMargin));
   margin: 0;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
   border: transparent;
   font-family: "Open Sans";
-  font-size: 1.6vw;
-  color: #fff;
-  transition: all 0.4s ease;
+  font-size: calc(var(--waybarHeight) / 4);
+  color: var(--menuButtonCol);
+  transition: all var(--transitionSpeed) ease;
 }
 #reloadButton:hover {
   cursor: pointer;
@@ -146,33 +283,34 @@
 
 #searchButton {
   position: absolute;
-  left: calc(40vw + 10vh - 1.25em);
+  left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em);
   transform: translateY(-3%) translateX(-50%);
   margin: 0;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
   border: transparent;
   font-family: "Open Sans";
-  font-size: 1.28vw;
+  font-size: calc(var(--waybarHeight) / 4);
   color: #7C7777;
   font-weight: 100;
-  transition: all 0.4s ease;
+  transition: all var(--transitionSpeed) ease;
 }
 #searchButton:hover {
   cursor: pointer;
+  transform: translateY(-3%) translateX(-50%) scale(1.2);
 }
 
 #settingsButton {
   position: absolute;
-  right: 2vh;
+  right: calc(var(--uniMargin) * 2);
   margin: 0;
   padding: 0;
   background-color: rgba(0, 0, 0, 0);
   border: transparent;
   font-family: "Open Sans";
-  font-size: 1.6vw;
-  color: #fff;
-  transition: all 0.4s ease;
+  font-size: calc(var(--waybarHeight) / 4);
+  color: var(--menuButtonCol);
+  transition: all var(--transitionSpeed) ease;
 }
 #settingsButton:hover {
   cursor: pointer;
@@ -181,26 +319,26 @@
 
 .iframeWindow {
   position: absolute;
-  width: calc(100% - 3vh);
-  height: calc(100% - 1vh - 10vh - 5.5vh);
-  bottom: 5.5vh;
+  width: calc(100% - 3 * var(--uniMargin));
+  height: calc(100% - var(--uniMargin) - var(--waybarHeight) - (var(--botBarHeight) + var(--uniMargin)));
+  bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
   right: -200vw;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  background-color: var(--windowCol);
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 
 .menuOpen-iframeWindow {
-  width: calc(100% - 3vh - 13.5vh - 1vh);
-  height: calc(100% - 1vh - 10vh - 5.5vh);
-  bottom: 5.5vh;
+  width: calc(100% - 3 * var(--uniMargin) - (var(--waybarHeight) - 2 * var(--uniMargin) + var(--waybarHeight) - 2.25 * 2 * var(--uniMargin)) - var(--uniMargin));
+  height: calc(100% - var(--uniMargin) - var(--waybarHeight) - (var(--botBarHeight) + var(--uniMargin)));
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
   right: -200vw;
 }
 
@@ -250,7 +388,7 @@ body {
   width: 44vmin;
   height: 3vmin;
   margin: 2vmin 0vmin;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 33%, #fff 33% 67%, rgba(255, 255, 255, 0) 67% 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 33%, var(--menuButtonCol) 33% 67%, rgba(255, 255, 255, 0) 67% 100%);
   animation: grow 1s ease-in-out 0s infinite alternate;
   background-size: 300%;
   background-position-x: -203%;
@@ -337,27 +475,27 @@ body {
 
 .menu {
   position: absolute;
-  width: 9vh;
-  height: 5.5vh;
-  top: 1vh;
-  left: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  width: calc(var(--waybarHeight) - var(--uniMargin));
+  height: calc(var(--waybarHeight) - 2.25 * 2 * var(--uniMargin));
+  top: calc(var(--uniMargin));
+  left: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  background-color: var(--windowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease, font-size 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease, font-size var(--transitionSpeed) ease;
 }
 .menu .menuIcon {
-  fill: #fff;
-  stroke: #fff;
-  height: 90vh;
-  width: 5.7142857143vh;
+  fill: var(--menuButtonCol);
+  stroke: var(--menuButtonCol);
+  height: calc(var(--waybarHeight) * 9);
+  width: calc(var(--waybarHeight) / 1.75);
   transition: none;
   z-index: 9999980;
 }
@@ -374,33 +512,33 @@ body {
 }
 
 .menu:hover {
-  width: 9vh;
-  height: 5.5vh;
-  left: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  top: calc(1vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
-  border-radius: calc(5.6px + 0vh + 2px);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc((var(--waybarHeight) - var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((var(--waybarHeight) - 2.25 * 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  left: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  top: calc(var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  background-color: var(--hoverWindowCol);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .menu.menuOpen {
   position: absolute;
-  width: 25vh;
-  height: 5.5vh;
-  top: 1vh;
-  left: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  background-color: rgba(37, 37, 42, 0.8196078431);
-  backdrop-filter: blur(0.0875vw) brightness(1) contrast(1.1);
+  width: var(--fullMenuSize);
+  height: calc(var(--waybarHeight) - 2.25 * 2 * var(--uniMargin));
+  top: calc(var(--uniMargin));
+  left: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  background-color: var(--activeWindowCol);
+  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 8)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 .menu.menuOpen .menuIcon {
   fill: rgba(0, 0, 0, 0);
@@ -409,72 +547,73 @@ body {
   width: 0;
 }
 .menu.menuOpen .menuLogo {
-  fill: #fff;
-  stroke: #fff;
+  fill: var(--menuButtonCol);
+  stroke: var(--menuButtonCol);
   color: aliceblue;
   cursor: pointer;
-  font-size: 4vh;
+  font-size: calc(0.4 * var(--waybarHeight));
   font: "Open Sans";
   text-decoration: none;
 }
 
 .menu.menuOpen:hover {
-  width: 25vh;
-  height: 5.5vh;
-  left: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  top: calc(1vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  background-color: rgba(37, 37, 42, 0.8196078431);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  backdrop-filter: blur(0.1166666667vw) brightness(0.9) contrast(1.15);
+  width: calc(var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((var(--waybarHeight) - 2.25 * 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  left: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  top: calc(var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  background-color: var(--activeWindowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 6)) brightness(calc(var(--hoverWindowBrightness) - 0.3)) contrast(var(--hoverWindowContrast));
 }
 
 .fullMenu {
   position: absolute;
-  width: 25vh;
-  height: calc(100% - 10vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  left: -27vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  background-color: rgba(37, 37, 42, 0.8196078431);
-  backdrop-filter: blur(0.0875vw) brightness(1) contrast(1.1);
+  width: var(--fullMenuSize);
+  height: calc(100% - var(--waybarHeight) - var(--botBarHeight) + var(--uniMargin) * 1.5);
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
+  left: calc(-1 * var(--uniMargin) * 2 - var(--fullMenuSize));
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  background-color: var(--activeWindowCol);
+  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 8)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 
 .menuOpen-fullMenu {
-  width: 25vh;
-  height: calc(100% - 10vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  left: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  background-color: rgba(37, 37, 42, 0.8196078431);
-  backdrop-filter: blur(0.0875vw) brightness(1) contrast(1.1);
+  position: absolute;
+  width: var(--fullMenuSize);
+  height: calc(100% - var(--waybarHeight) - var(--botBarHeight) + var(--uniMargin) * 1.5);
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
+  left: calc(var(--uniMargin));
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  background-color: var(--activeWindowCol);
+  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 8)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, transform 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, border 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 
 .menuOpen-fullMenu:hover {
-  width: 25vh;
-  height: calc((100% - 10vh) * 1 + 0vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  left: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  background-color: rgba(37, 37, 42, 0.8196078431);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  backdrop-filter: blur(0.1166666667vw) brightness(0.9) contrast(1.15);
+  width: calc(var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((100% - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst) - var(--botBarHeight) + 1.5 * var(--uniMargin));
+  bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  left: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  background-color: var(--activeWindowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 6)) brightness(calc(var(--hoverWindowBrightness) - 0.3)) contrast(var(--hoverWindowContrast));
 }
 
 .botBar {
@@ -483,30 +622,30 @@ body {
   text-decoration: none;
   font-family: "Open Sans";
   position: absolute;
-  font-size: 2.2vh;
+  font-size: calc(2.75vh * var(--botBarFontSize));
   margin: 0;
   padding: 0;
-  bottom: 1vh;
-  color: #fdfdfd;
-  height: 3.5vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  bottom: calc(var(--uniMargin));
+  color: calc(var(--textCol));
+  height: calc(var(--botBarHeight) - var(--uniMargin));
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
-  transition: background-color 0.4s ease, transform 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, border 0.4s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, border var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(20, 20, 20, 0.8196078431);
+  background-color: var(--windowCol);
 }
 .botBar:hover {
-  height: 3.5vh;
-  bottom: calc(1vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  height: calc((var(--botBarHeight) - var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  bottom: calc(var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .hidden {
@@ -514,59 +653,59 @@ body {
 }
 
 .clock {
-  left: calc(50vw - 0.5vh - 7vh);
+  left: calc(50vw - var(--uniMargin) / 2 - 7vh);
   transform: translateX(-50%);
   width: 14vh;
 }
 .clock:hover {
-  width: 14vh;
+  width: calc(14vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
   cursor: pointer;
 }
 
 .discord {
-  left: 13.5vh;
-  width: 25vh;
+  left: calc(var(--uniMargin) + var(--fullMenuSize) / 2);
+  width: var(--fullMenuSize);
   transform: translateX(-50%);
 }
 .discord:hover {
-  width: calc(fullMenuSize * 1 + 0vh);
+  width: calc(var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst) / 2);
 }
 
 .githubLink {
-  left: 35vh;
+  left: calc(var(--uniMargin) + (var(--fullMenuSize)) / 2 * 2 + var(--uniMargin) + 8vh);
   width: 16vh;
   transform: translateX(-50%);
 }
 .githubLink:hover {
-  width: 16vh;
+  width: calc(16vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
 }
 
 .email {
-  right: 9vh;
+  right: calc(var(--uniMargin) + 8vh);
   width: 16vh;
   transform: translateX(50%);
 }
 .email:hover {
-  width: 16vh;
+  width: calc(16vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
   cursor: pointer;
 }
 
 .credits {
-  right: 18vh;
+  right: calc(var(--uniMargin) + 8vh + var(--uniMargin) + 8vh);
   width: 16vh;
 }
 .credits:hover {
-  width: 16vh;
+  width: calc(16vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
   cursor: pointer;
 }
 
 .battery {
-  right: calc(50vw - 0.5vh - 5vh);
+  right: calc(50vw - var(--uniMargin) / 2 - 5vh);
   transform: translateX(50%);
   width: 10vh;
 }
 .battery:hover {
-  width: 10vh;
+  width: calc(10vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
   cursor: pointer;
 }
 
@@ -590,26 +729,26 @@ body {
   font-size: 2.75vh;
   margin: 0;
   padding: 0;
-  bottom: 2vh;
-  color: #fdfdfd;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  bottom: calc(2 * var(--uniMargin));
+  color: calc(var(--textCol));
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, box-shadow var(--fastTransitionSpeed) ease, border var(--fastTransitionSpeed) ease, fill var(--transitionSpeed) ease;
   align-items: center;
   justify-content: center;
-  background-color: rgba(20, 20, 20, 0.8196078431);
+  background-color: var(--windowCol);
 }
 #emailPopup:hover {
-  height: calc(30% + 0vh);
-  width: calc(30% + 0vh);
-  bottom: calc(2vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  height: calc(30% * var(--hoverCoefficient) + var(--hoverConst));
+  width: calc(30% * var(--hoverCoefficient) + var(--hoverConst));
+  bottom: calc(2 * var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 #emailPopup.hidden {
   display: none;
@@ -646,26 +785,26 @@ body {
   font-size: 2.75vh;
   margin: 0;
   padding: 0;
-  bottom: 2vh;
-  color: #fdfdfd;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  bottom: calc(2 * var(--uniMargin));
+  color: calc(var(--textCol));
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
-  transition: background-color 0.4s ease, width 0.4s ease, height 0.4s ease, left 0.4s ease, bottom 0.4s ease, right 0.4s ease, top 0.4s ease, border-radius 0.4s ease, stroke 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.1s ease, border 0.1s ease, fill 0.4s ease;
+  transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, box-shadow var(--fastTransitionSpeed) ease, border var(--fastTransitionSpeed) ease, fill var(--transitionSpeed) ease;
   align-items: center;
   justify-content: center;
-  background-color: rgba(20, 20, 20, 0.8196078431);
+  background-color: var(--windowCol);
 }
 #creditsPopup:hover {
-  height: calc(20% + 0vh);
-  width: calc(30% + 0vh);
-  bottom: calc(2vh - (100% - 1vh - 10vh) * 0 / 2 - 0vh);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  height: calc(20% * var(--hoverCoefficient) + var(--hoverConst));
+  width: calc(30% * var(--hoverCoefficient) + var(--hoverConst));
+  bottom: calc(2 * var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 #creditsPopup.hidden {
   display: none;
@@ -694,90 +833,73 @@ body {
   padding: 2em;
 }
 
-/*
-  &.hidden {
-        background-color: #00000000;
-        backdrop-filter: blur(0px);
-        width: 20%;
-        height: 15%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #00000000;
-        border: 0 solid #00000000;
-        border-radius: $borderRad * 1.25;
-        box-shadow: 0 0 0 #00000000;
-        visibility: hidden;
-        transition-delay: 1s
-  }
-*/
 .aboutBlankOpener {
   position: absolute;
-  width: calc(50% - 1.5vh);
-  height: calc(100% - 5.5vh - 1vh);
-  bottom: 5.5vh;
-  right: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  width: calc(50% - 1.5 * var(--uniMargin));
+  height: calc(100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin));
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
+  right: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  background-color: var(--windowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: all var(--transitionSpeed) ease;
 }
 .aboutBlankOpener:hover {
   user-select: none;
-  width: calc(50% - 1.5vh + 0vh);
-  height: calc((100% - 5.5vh - 1vh) * 1 + 0vh);
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc(50% - 1.5 * var(--uniMargin) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  bottom: calc((var(--botBarHeight) + var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .standardOpener {
   position: absolute;
-  width: calc(50% - 1.5vh);
-  height: calc(100% - 5.5vh - 1vh);
-  bottom: 5.5vh;
-  left: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  width: calc(50% - 1.5 * var(--uniMargin));
+  height: calc(100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin));
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
+  left: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  background-color: var(--windowCol);
+  backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: all var(--transitionSpeed) ease;
 }
 .standardOpener:hover {
   user-select: none;
-  width: calc(50% - 1.5vh + 0vh);
-  height: calc((100% - 5.5vh - 1vh) * 1 + 0vh);
-  left: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  backdrop-filter: blur(0.7vw) brightness(1.2) contrast(1.15);
+  width: calc(50% - 1.5 * var(--uniMargin) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  left: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  bottom: calc((var(--botBarHeight) + var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+  background-color: var(--hoverWindowCol);
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverWindowBrightness)) contrast(var(--hoverWindowContrast));
 }
 
 .openerText {
   position: absolute;
   font-family: "Open Sans";
   font-size: 1.4vw;
-  color: #fff;
+  color: var(--textCol);
   top: 45%;
 }
 
@@ -799,77 +921,77 @@ body {
   position: relative;
   width: 45%;
   height: 50%;
-  background-color: rgba(241, 241, 241, 0.0784313725);
+  background-color: var(--frontElementCol);
   padding: 0.5em;
-  border-radius: 7px;
+  border-radius: var(--borderRad);
 }
 
 .openerButton {
   transform: translateY(2vh);
   display: inline-block;
   background-color: transparent;
-  border: 1.75px solid rgba(161, 161, 255, 0.9058823529);
-  color: #fff;
+  border: var(--borderThickness) solid var(--hoverBorderCol);
+  color: var(--textCol);
   font-size: 1.5vw;
   padding: 0.5em 1em;
   transition: background-color 0.3s ease;
-  border-radius: 7px;
+  border-radius: var(--borderRad);
   text-align: center;
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
 }
 .openerButton:hover {
-  background-color: color-mix(in srgb, rgba(161, 161, 255, 0.9058823529) 20%, transparent);
-  text-shadow: 0px 0px 6px rgba(161, 161, 255, 0.9058823529);
+  background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
+  text-shadow: 0px 0px 6px var(--hoverBorderCol);
   cursor: pointer;
 }
 
 .iframeWindowOpen {
   z-index: 100000;
   position: absolute;
-  width: calc(100% - 2vh);
-  height: calc(100% - 10vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  right: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
+  width: calc(100% - 2 * var(--uniMargin));
+  height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
+  bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
+  right: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  transition: all 0.4s ease;
+  background-color: var(--windowCol);
+  transition: all var(--transitionSpeed) ease;
 }
 
 .iframeWindowOpen:hover {
   user-select: none;
 }
 .iframeWindowOpen:hover.hoverable {
-  width: calc((100% - 2vh) * 1 + 0vh);
-  height: calc((100% - 10vh) * 1 + 0vh - 4.5vh + 1.5vh);
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
+  width: calc((100% - 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((100% - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst) - (var(--botBarHeight)) + 1.5 * var(--uniMargin));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
 }
 
 .menuOpen-iframeWindowOpen {
-  width: calc(100% - 1vh - 25vh - 2vh);
-  height: calc(100% - 10vh - 4.5vh + 1.5vh);
-  bottom: 5.5vh;
-  right: 1vh;
+  width: calc(100% - (var(--uniMargin)) - var(--fullMenuSize) - 2 * var(--uniMargin));
+  height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
+  bottom: calc(var(--botBarHeight) + var(--uniMargin));
+  right: var(--uniMargin);
 }
 
 .menuOpen-iframeWindowOpen:hover {
   user-select: none;
 }
 .menuOpen-iframeWindowOpen:hover.hoverable {
-  width: calc((100% - 1vh) * 1 + 0vh - 25vh - 2vh);
-  height: calc((100% - 10vh) * 1 + 0vh - 3vh);
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
+  width: calc((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst) - var(--fullMenuSize) - 2 * var(--uniMargin));
+  height: calc((100% - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst) - (var(--botBarHeight) - 1.5 * var(--uniMargin)));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 4);
+  bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - var(--hoverConst) / 2);
 }
 
 .mainWindowClose {
@@ -878,18 +1000,18 @@ body {
   height: 0;
   bottom: 50%;
   right: 50%;
-  border: 1.75px solid transparent;
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px transparent;
+  border: var(--borderThickness) solid transparent;
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) transparent;
   background-color: transparent;
-  backdrop-filter: blur(1vh) brightness(1) contrast(1.1);
+  backdrop-filter: blur(0);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: transparent;
-  transition: all 0.4s ease;
+  transition: all var(--transitionSpeed) ease;
 }
 
 .hidden {
@@ -900,12 +1022,12 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Open Sans";
-  color: #fff;
+  color: var(--textCol);
   user-select: none;
-  background-image: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+  background-image: var(--bgCol);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+  background-color: var(--bgCol);
   overflow: hidden;
   height: 100%;
 }
@@ -914,48 +1036,48 @@ html, body {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 0vw;
-  height: 0vh;
+  width: calc(100vw * var(--isParticles));
+  height: calc(100vh * var(--isParticles));
   z-index: 0;
 }
 
 a {
-  color: #4b1c79;
+  color: var(--linkCol);
 }
 
 /*
-    I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
+    I wrote all of this myself, it's all mostly free to use, just credit me please if you are going to use it
 */
 .iframeWindow404 {
   z-index: 100000;
   position: absolute;
-  width: calc(100% - 2vh);
-  height: calc(100% - 2vh - 4.5vh);
-  bottom: 5.5vh;
-  right: 1vh;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
+  width: calc(100% - 2 * var(--uniMargin));
+  height: calc(100% - var(--uniMargin) * 2 - (var(--botBarHeight)));
+  bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
+  right: var(--uniMargin);
+  border: var(--borderThickness) solid var(--borderCol);
+  border-radius: var(--borderRad);
+  box-shadow: var(--shadowRad) var(--shadowCol);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgba(20, 20, 20, 0.8196078431);
-  transition: all 0.4s ease;
+  background-color: var(--windowCol);
+  transition: all var(--transitionSpeed) ease;
 }
 
 .iframeWindow404:hover {
   user-select: none;
 }
 .iframeWindow404:hover.hoverable {
-  width: calc((100% - 2vh) * 1 + 0vh);
-  height: calc((100% - 2vh) * 1 + 0vh - 4.5vh);
-  right: calc(1vh - (100% - 2vh) * 0 / 2 - 0vh);
-  bottom: 5.5vh;
-  border-radius: calc(5.6px + 0vh + 2px);
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
+  width: calc((100% - 2 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc((100% - var(--uniMargin) * 2) * var(--hoverCoefficient) + var(--hoverConst) - (var(--botBarHeight)));
+  right: calc(var(--uniMargin) - (100% - 2 * var(--uniMargin)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
+  bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
 }
 
 .backToApp {
@@ -963,26 +1085,26 @@ a {
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 10vh;
-  height: 10vh;
-  background-color: rgba(241, 241, 241, 0.0784313725);
+  width: var(--waybarHeight);
+  height: var(--waybarHeight);
+  background-color: var(--frontElementCol);
   padding: 0.5em;
-  border-radius: 7px;
+  border-radius: var(--borderRad);
   z-index: 999985;
-  border: 1.75px solid rgba(156, 156, 156, 0.3568627451);
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.02);
-  left: 2vh;
-  top: 2vh;
+  border: var(--borderThickness) solid var(--borderCol);
+  box-shadow: var(--shadowRad) var(--shadowCol);
+  left: calc(var(--uniMargin) * 2);
+  top: calc(var(--uniMargin) * 2);
   font-size: 3vh;
-  color: #fff;
+  color: var(--menuButtonCol);
   text-decoration: none;
 }
 .backToApp:hover {
-  width: 10vh;
-  height: 10vh;
-  left: 2vh;
-  top: 2vh;
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
-  border: 1.5px solid rgba(161, 161, 255, 0.9058823529);
+  width: calc(var(--waybarHeight) * var(--hoverCoefficient) + var(--hoverConst));
+  height: calc(var(--waybarHeight) * var(--hoverCoefficient) + var(--hoverConst));
+  left: calc(var(--uniMargin) * 2 * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  top: calc(var(--uniMargin) * 2 * var(--hoverCoefficient) - var(--hoverConst) / 2);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+  border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
   cursor: pointer;
 }/*# sourceMappingURL=404.css.map */

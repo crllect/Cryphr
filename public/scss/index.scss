@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 @import "_variables.scss"; // Importing global variables
-@import "_mainWindow.scss"; // Rest of the imports are self explanitory
+@import "_mainWindow.scss"; // Rest of the imports are self-explanatory
 @import "_waybar.scss";
 @import "_iframeWindow.scss";
 @import "_menu.scss";
@@ -14,12 +14,12 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans';
-    color: $textCol;
+    color: var(--textCol);
     user-select: none;
-    background-image: $bgCol;
+    background-image: var(--bgCol);
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: $bgCol;
+    background-color: var(--bgCol);
     overflow: hidden;
     height: 100%;
 }
@@ -28,13 +28,15 @@ html, body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: calc(100vw * $isParticles);
-    height: calc(100vh * $isParticles);
+    width: calc(100vw * var(--isParticles));
+    height: calc(100vh * var(--isParticles));
     z-index: 0;
 }
+
 a {
-    color: $linkCol;
+    color: var(--linkCol);
 }
+
 /*
-    I wrote all of this my self, its all mostly free to use, just credit me pls if you are going to use it
+    I wrote all of this myself, it's all mostly free to use, just credit me please if you are going to use it
 */

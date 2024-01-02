@@ -8,72 +8,75 @@
 
 
 
-// Background
-$bgCol: #14121D;
+:root {
+    /* Background */
+    --bgCol: #14121D;
 
-// Window Properties
-$windowCol: #14121D; // 12, 26, 28, 0.8
-$windowBlur: 0vh;
-$windowBrightness: 1;
-$windowContrast: 1.1;
-$frontElementCol: #f1f1f114;
-$textCol: #fff;
-$textColSec: #fff9;
-$linkCol: #5a2491;
+    /* Window Properties */
+    --windowCol: #14121D;
+    --windowBlur: 0vh;
+    --windowBrightness: 1;
+    --windowContrast: 1.1;
+    --frontElementCol: #f1f1f114;
+    --textCol: #fff;
+    --textColSec: #fff9;
+    --linkCol: #5a2491;
 
-// Shadow properties
-$shadowCol: rgba(255, 255, 255, 0.02);
-$shadowRad: 0px 4px 4px;
+    /* Shadow properties */
+    --shadowCol: rgba(255, 255, 255, 0.02);
+    --shadowRad: 0px 4px 4px;
 
+    /* Margins */
+    --uniMargin: 1vh;
+    --waybarHeight: 10vh;
+    --urlInputLength: 43vw;
+    --botBarHeight: 4.5vh;
+    --botBarFontSize: 0.8;
+    --fullMenuSize: 25vh;
 
-// Margins
-$uniMargin: 1vh; // 1, 0.5, 0.225
-$waybarHeight: 10vh; // 17.5, 12.5, 7.5
-$botBarHeight: 4.5vh;
-$botBarFontSize: 0.8;
-$fullMenuSize: 25vh;
+    /* Border */
+    --borderRad: 7px;
+    --borderThickness: 1.75px;
+    --borderCol: #ffffff10;
 
-// Border
-$borderRad: 7px; // 22.5, 12.5, 6
-$borderThickness: 1.75px;
-$borderCol: #ffffff10;
+    /* Transitions */
+    --transitionSpeed: 0.4s;
+    --fastTransitionSpeed: 0.1s;
 
-// Transitions
-$transitionSpeed: 0.4s;
-$fastTransitionSpeed: 0.1s;
- 
-// Menu
-$menuButtonCol: $textCol;
+    /* Menu */
+    --menuButtonCol: var(--textCol);
 
-// Active
-$activeTransition: $transitionSpeed;
-$activeWindowCol: #1a1730; // 24, 76, 84, 0.6
+    /* Active */
+    --activeTransition: var(--transitionSpeed);
+    --activeWindowCol: #1a1730;
 
-// Full Menu
-$fullMenuOffset: 10px;
+    /* Full Menu */
+    --fullMenuOffset: 10px;
 
-// Hover Vars
-$hoverConst: 0vh; // 0.7, 0.5, 0.25
-$hoverCoefficient: 1;
-$hoverWindowBlur: 0.7vw;
-$hoverWindowBrightness: 1.2;
-$hoverWindowContrast: 1.15;
-$hoverBorderCol: #a1a1ffe7;
-$hoverWindowCol: #191725;
-$hoverBorderThickness: 1.5px;
-$hoverBorderRad: 0.8;
-$hoverBorderOpacity: rgba(255, 255, 255, 0.744);
-$hoverShadowCol: rgba(
-    calc(red($hoverBorderCol) * red($hoverBorderOpacity) / 255),
-    calc(green($hoverBorderCol) * green($hoverBorderOpacity) / 255),
-    calc(blue($hoverBorderCol) * blue($hoverBorderOpacity) / 255),
-    calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
-);
-$hoverShadowRad: 0px 0px $fullMenuOffset;
-$hoverFrontElementCol: #f1f1f120;
+    /* Hover Vars */
+    --hoverConst: 0vh;
+    --hoverCoefficient: 1;
+    --hoverWindowBlur: 0.7vw;
+    --hoverWindowBrightness: 1.2;
+    --hoverWindowContrast: 1.15;
+    --hoverBorderCol: #a1a1ffe7;
+    --hoverWindowCol: #191725;
+    --hoverBorderThickness: 1.5px;
+    --hoverBorderRad: 0.8;
+    --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    --hoverShadowCol: rgba(
+        calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
+        calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
+        calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
+        calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
+    );
+    --hoverShadowRad: 0px 0px var(--fullMenuOffset);
+    --hoverFrontElementCol: #f1f1f120;
 
-$isParticles: 0;
+    --isParticles: 0;
+}
 
+/*
 $preset: old;
 
 @if $preset == old {
@@ -151,4 +154,4 @@ $preset: old;
 
     $isParticles: 0;
 }
-
+*/

@@ -6,6 +6,147 @@
 *   Follow his GitHub:
 *   https://github.com/Riftriot
 */
+:root {
+  /* Background */
+  --bgCol: #14121D;
+  /* Window Properties */
+  --windowCol: #14121D;
+  --windowBlur: 0vh;
+  --windowBrightness: 1;
+  --windowContrast: 1.1;
+  --frontElementCol: #f1f1f114;
+  --textCol: #fff;
+  --textColSec: #fff9;
+  --linkCol: #5a2491;
+  /* Shadow properties */
+  --shadowCol: rgba(255, 255, 255, 0.02);
+  --shadowRad: 0px 4px 4px;
+  /* Margins */
+  --uniMargin: 1vh;
+  --waybarHeight: 10vh;
+  --urlInputLength: 43vw;
+  --botBarHeight: 4.5vh;
+  --botBarFontSize: 0.8;
+  --fullMenuSize: 25vh;
+  /* Border */
+  --borderRad: 7px;
+  --borderThickness: 1.75px;
+  --borderCol: #ffffff10;
+  /* Transitions */
+  --transitionSpeed: 0.4s;
+  --fastTransitionSpeed: 0.1s;
+  /* Menu */
+  --menuButtonCol: var(--textCol);
+  /* Active */
+  --activeTransition: var(--transitionSpeed);
+  --activeWindowCol: #1a1730;
+  /* Full Menu */
+  --fullMenuOffset: 10px;
+  /* Hover Vars */
+  --hoverConst: 0vh;
+  --hoverCoefficient: 1;
+  --hoverWindowBlur: 0.7vw;
+  --hoverWindowBrightness: 1.2;
+  --hoverWindowContrast: 1.15;
+  --hoverBorderCol: #a1a1ffe7;
+  --hoverWindowCol: #191725;
+  --hoverBorderThickness: 1.5px;
+  --hoverBorderRad: 0.8;
+  --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+  --hoverShadowCol: rgba(
+      calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
+      calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
+      calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
+      calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
+  );
+  --hoverShadowRad: 0px 0px var(--fullMenuOffset);
+  --hoverFrontElementCol: #f1f1f120;
+  --isParticles: 0;
+}
+
+/*
+$preset: old;
+
+@if $preset == old {
+    // Background
+    $bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+    // https://raw.githubusercontent.com/hyprwm/Hyprland/main/assets/wall_anime_4K.png
+
+    // Window Properties
+    $windowCol: #141414d1; // 12, 26, 28, 0.8
+    $windowBlur: 1vh;
+    $windowBrightness: 1;
+    $windowContrast: 1.1;
+    $textCol: #fff;
+    $textColSec: #fff6;
+    $linkCol: #4b1c79;
+
+    // Shadow properties
+    $shadowCol: rgba(255, 255, 255, 0.02);
+    $shadowRad: 0px 4px 4px;
+
+    // Margins
+    $uniMargin: 1vh; // 1, 0.5, 0.225
+    $waybarHeight: 10vh; // 17.5, 12.5, 7.5
+    $botBarHeight: 4.5vh;
+    $botBarFontSize: 0.8;
+    $fullMenuSize: 25vh;
+
+    // Border
+    $borderRad: 7px; // 22.5, 12.5, 6
+    $borderThickness: 1.75px;
+    $borderCol: #9c9c9c5b;
+
+    // Transitions
+    $transitionSpeed: 0.4s;
+    $fastTransitionSpeed: 0.1s;
+
+    // Menu
+    $menuButtonCol: $textCol;
+
+    // Active
+    $activeTransition: $transitionSpeed;
+    $activeWindowCol: #25252ad1; // 24, 76, 84, 0.6
+
+    // Full Menu
+    $fullMenuOffScreenBorderGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $borderCol 100%
+    );
+    $fullMenuOffScreenWindowGrad: linear-gradient(
+        90deg,
+        #00000000 0%,
+        $activeWindowCol 100%
+    );
+    $fullMenuOffset: 10px;
+
+    // Hover Vars
+    $hoverConst: 0vh; // 0.7, 0.5, 0.25
+    $hoverCoefficient: 1;
+    $hoverWindowBlur: 0.7vw;
+    $hoverWindowBrightness: 1.2;
+    $hoverWindowContrast: 1.15;
+    $hoverBorderCol: #a1a1ffe7;
+    $hoverWindowCol: #141414d1;
+    $hoverBorderThickness: 1.5px;
+    $hoverBorderRad: 0.8;
+    $hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    $hoverShadowCol: rgba(
+        calc(red($hoverBorderCol) * red($hoverBorderOpacity) / 255),
+        calc(green($hoverBorderCol) * green($hoverBorderOpacity) / 255),
+        calc(blue($hoverBorderCol) * blue($hoverBorderOpacity) / 255),
+        calc(alpha($hoverBorderCol) * alpha($hoverBorderOpacity))
+    );
+    $hoverShadowRad: 0px 0px $fullMenuOffset;
+
+    $isParticles: 0;
+}
+*/
+:root {
+  --padding: 1vh;
+}
+
 html, body {
   display: flex;
   justify-content: left;
@@ -15,7 +156,7 @@ html, body {
   font-size: 1.75vh;
   font-family: "Open Sans";
   user-select: none;
-  color: #fff;
+  color: var(--textCol);
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: auto;
@@ -27,20 +168,20 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .historyTitle {
   font-size: 3vh;
   justify-content: left;
-  padding-left: 0.5vh;
-  padding-top: 0.5vh;
+  padding-left: calc(var(--padding) / 2);
+  padding-top: calc(var(--padding) / 2);
   align-self: flex-start;
 }
 
 .historySeparator {
   display: block;
-  background-color: rgba(156, 156, 156, 0.3568627451);
+  background-color: var(--borderCol);
   padding: 0;
   margin: 0;
   margin-top: 0.25em;
   margin-bottom: 5.5vh;
-  width: calc(100vw - 4vh);
-  height: 1.75px;
+  width: calc(100vw - var(--padding) * 4);
+  height: var(--borderThickness);
 }
 
 .history-wipe {
@@ -49,18 +190,18 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 80vw;
   height: 5vh;
   background-color: transparent;
-  border: 1.75px solid rgba(161, 161, 255, 0.9058823529);
-  color: #fff;
+  border: var(--borderThickness) solid var(--hoverBorderCol);
+  color: var(--textCol);
   font-size: 2vh;
   padding: 0.5em 1em;
   transition: background-color 0.3s ease;
-  border-radius: 7px;
+  border-radius: var(--borderRad);
   text-align: center;
-  box-shadow: 0px 0px 10px rgba(161, 161, 255, 0.6739764706);
+  box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
 }
 .history-wipe:hover {
-  background-color: color-mix(in srgb, rgba(161, 161, 255, 0.9058823529) 20%, transparent);
-  text-shadow: 0px 0px 6px rgba(161, 161, 255, 0.9058823529);
+  background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
+  text-shadow: 0px 0px 6px var(--hoverBorderCol);
   cursor: pointer;
 }
 
@@ -81,7 +222,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   margin: 10px;
   padding: 5px;
   transform: translateX(-15vw);
-  margin-left: 1vh;
+  margin-left: var(--padding);
 }
 
 .history-query {
@@ -91,5 +232,5 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 .history-date,
 .history-time {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--textColSec);
 }/*# sourceMappingURL=history.css.map */

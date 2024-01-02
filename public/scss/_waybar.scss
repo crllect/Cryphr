@@ -1,104 +1,105 @@
 .waybar {
     position: absolute;
-    width: calc((100% - (2 * $uniMargin)) - $waybarHeight); // Width calculation for waybar
-    height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
-    top: calc(($uniMargin));
-    right: $uniMargin;
-    border: $borderThickness solid $borderCol;
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
-    background-color: $windowCol;
+    width: calc((100% - (2 * var(--uniMargin))) - var(--waybarHeight));
+    height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
+    top: calc(var(--uniMargin));
+    right: var(--uniMargin);
+    border: var(--borderThickness) solid var(--borderCol);
+    border-radius: var(--borderRad);
+    box-shadow: var(--shadowRad) var(--shadowCol);
+    background-color: var(--windowCol);
     backdrop-filter:
-        blur($windowBlur)
-        brightness($windowBrightness)
-        contrast($windowContrast);
+        blur(var(--windowBlur))
+        brightness(var(--windowBrightness))
+        contrast(var(--windowContrast));
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     transition:
-        background-color $transitionSpeed ease,
-        width $transitionSpeed ease,
-        height $transitionSpeed ease,
-        left $transitionSpeed ease,
-        bottom $transitionSpeed ease,
-        right $transitionSpeed ease,
-        top $transitionSpeed ease,
-        transform $transitionSpeed ease,
-        border-radius $transitionSpeed ease,
-        stroke $transitionSpeed ease,
-        border $transitionSpeed ease,
-        box-shadow $transitionSpeed ease,
-        backdrop-filter $transitionSpeed ease,
-        fill $transitionSpeed ease;
+        background-color var(--transitionSpeed) ease,
+        width var(--transitionSpeed) ease,
+        height var(--transitionSpeed) ease,
+        left var(--transitionSpeed) ease,
+        bottom var(--transitionSpeed) ease,
+        right var(--transitionSpeed) ease,
+        top var(--transitionSpeed) ease,
+        transform var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease,
+        stroke var(--transitionSpeed) ease,
+        border var(--transitionSpeed) ease,
+        box-shadow var(--transitionSpeed) ease,
+        backdrop-filter var(--transitionSpeed) ease,
+        fill var(--transitionSpeed) ease;
 }
 
 .waybar:hover {
-    width: calc(((((100% - (2 * $uniMargin)) - ($waybarHeight)) * $hoverCoefficient) + $hoverConst));
-    height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
-    right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
-    top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-    border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
-    box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
-    border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
-    background-color: $hoverWindowCol;
+    width: calc((((100% - (2 * var(--uniMargin))) - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst)));
+    height: calc((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
+    right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 4));
+    top: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
+    border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+    box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+    border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+    background-color: var(--hoverWindowCol);
     backdrop-filter:
-        blur($hoverWindowBlur)
-        brightness($hoverWindowBrightness)
-        contrast($hoverWindowContrast);
+        blur(var(--hoverWindowBlur))
+        brightness(var(--hoverWindowBrightness))
+        contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-waybar {
-    width: calc(((100% - ($uniMargin))) - $fullMenuSize - 2 * $uniMargin); // Width calculation for waybar
-    height: calc(($waybarHeight) - 2.25 * (2 * $uniMargin)); // Height adjustment for waybar
-    top: calc(($uniMargin));
-    right: $uniMargin;
+    width: calc(((100% - (var(--uniMargin))) - var(--fullMenuSize) - 2 * var(--uniMargin)));
+    height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
+    top: calc(var(--uniMargin));
+    right: var(--uniMargin);
     backdrop-filter:
-        blur($hoverWindowBlur)
-        brightness($hoverWindowBrightness)
-        contrast($hoverWindowContrast);
+        blur(var(--hoverWindowBlur))
+        brightness(var(--hoverWindowBrightness))
+        contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-waybar:hover {
-    width: calc(((((100% - ($uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - 2 * $uniMargin);
-    height: calc(((($waybarHeight) - 2.25 * (2 * $uniMargin)) * $hoverCoefficient) + $hoverConst);
-    right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
-    top: calc($uniMargin - (((100% - $uniMargin - $waybarHeight) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
+    width: calc((((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst)) - var(--fullMenuSize) - 2 * var(--uniMargin)));
+    height: calc((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
+    right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 4));
+    top: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
 }
 
 #urlInput {
     position: absolute;
-    left: $waybarHeight;
-    height: calc((($waybarHeight)) - $uniMargin * 6);
-    width: calc((($waybarHeight) / 1vh) * 4vw);
+    left: var(--waybarHeight);
+    height: calc(((var(--waybarHeight))) - var(--uniMargin) * 6);
+    width: calc((var(--urlInputLength)));
     margin: 0;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc((1.75vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
-    color: $menuButtonCol;
+    font-size: calc((1.75vw * (var(--waybarHeight) / 12.5vh) / 1.25) * (var(--waybarHeight) / 10vh));
+    color: var(--menuButtonCol);
     border-radius: 100vw;
-    padding: calc($uniMargin / 4);
+    padding: calc(var(--uniMargin) / 4);
     padding-left: 0.75em;
-    background-color: $frontElementCol;
-    transition: all $transitionSpeed ease;
+    background-color: var(--frontElementCol);
+    transition: all var(--transitionSpeed) ease;
     &:focus, &:hover {
         outline: none;
-        background-color: $hoverFrontElementCol;
+        background-color: var(--hoverFrontElementCol);
     }
 }
 
+
 #reloadButton {
     position: absolute;
-    left: calc($waybarHeight / 3 - $uniMargin);
+    left: calc(var(--waybarHeight) / 3 - var(--uniMargin));
     margin: 0;
     padding: 0;
     background-color: #00000000;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc((2.5vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
-    color: $menuButtonCol;
-    transition: all $transitionSpeed ease;
+    font-size: calc(var(--waybarHeight) / 4);
+    color: var(--menuButtonCol);
+    transition: all var(--transitionSpeed) ease;
     &:hover {
         cursor: pointer;
         transform: rotate(360deg) scale(1.2);
@@ -107,33 +108,34 @@
 
 #searchButton {
     position: absolute;
-    left: calc(((($waybarHeight) / 1vh) * 4vw) + ($waybarHeight) - 1.25em);
+    left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em);
     transform: translateY(-3%) translateX(-50%);
     margin: 0;
     padding: 0;
     background-color: #00000000;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc((2vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
+    font-size: calc(var(--waybarHeight) / 4);
     color: #7C7777;
     font-weight: 100;
-    transition: all $transitionSpeed ease;
+    transition: all var(--transitionSpeed) ease;
     &:hover {
         cursor: pointer;
+        transform: translateY(-3%) translateX(-50%) scale(1.2);
     }
 }
 
 #settingsButton {
     position: absolute;
-    right: calc($uniMargin * 2);
+    right: calc(var(--uniMargin) * 2);
     margin: 0;
     padding: 0;
     background-color: #00000000;
     border: transparent;
     font-family: 'Open Sans';
-    font-size: calc((2.5vw * ($waybarHeight / 12.5vh) / 1.25) * ($waybarHeight / 10vh));
-    color: $menuButtonCol;
-    transition: all $transitionSpeed ease;
+    font-size: calc(var(--waybarHeight) / 4);
+    color: var(--menuButtonCol);
+    transition: all var(--transitionSpeed) ease;
     &:hover {
         cursor: pointer;
         transform: rotate(720deg) scale(1.2);

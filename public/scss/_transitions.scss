@@ -1,52 +1,51 @@
 .iframeWindowOpen {
     z-index: 100000;
-    position: absolute; // Absolute positioning
-    width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
-    height: calc(100% - $waybarHeight - ($botBarHeight) + $uniMargin * 1.5); // Height considering uniform margin and waybar height
-    bottom: calc(($uniMargin) + ($botBarHeight));
-    right: $uniMargin;
-    border: $borderThickness solid $borderCol; // Border styling
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
-    box-sizing: border-box; // Ensures consistent box model
+    position: absolute;
+    width: calc((100% - (2 * var(--uniMargin))));
+    height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
+    bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
+    right: var(--uniMargin);
+    border: var(--borderThickness) solid var(--borderCol);
+    border-radius: var(--borderRad);
+    box-shadow: var(--shadowRad) var(--shadowCol);
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $windowCol;
-    transition: all $transitionSpeed ease;
+    background-color: var(--windowCol);
+    transition: all var(--transitionSpeed) ease;
 }
 
 .iframeWindowOpen:hover {
     user-select: none;
     &.hoverable {
-        width: calc((100% - (2 * $uniMargin)) * $hoverCoefficient + $hoverConst);
-        height: calc(((100% - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight) + 1.5 * $uniMargin);// Hover effect for height
-        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 2));
-        bottom: calc((($uniMargin) + ($botBarHeight)) * $hoverCoefficient - ($hoverConst / 2));
-        border-radius: calc(($borderRad * $hoverBorderRad) + (((($waybarHeight - ($uniMargin) * $hoverCoefficient) + ($hoverConst * $uniMargin / 1vh))) - ($waybarHeight - ($uniMargin))) + (($borderRad * $hoverBorderRad) / ((($borderRad * $hoverBorderRad) / 1px) / 2)));
-        box-shadow: $hoverShadowRad $hoverShadowCol; // Box shadow styling
-        border: $hoverBorderThickness solid $hoverBorderCol; // Border styling on hover
+        width: calc((100% - (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
+        height: calc(((100% - var(--waybarHeight)) * var(--hoverCoefficient)) + var(--hoverConst) - (var(--botBarHeight)) + 1.5 * var(--uniMargin));
+        right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
+        bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - (var(--hoverConst) / 2));
+        border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
     }
 }
 
 .menuOpen-iframeWindowOpen {
-    width: calc(((100% - ($uniMargin))) - $fullMenuSize - 2 * $uniMargin); // Width adjusted for uniform margin
-    height: calc(100% - $waybarHeight - ($botBarHeight) + $uniMargin * 1.5);  // Height considering uniform margin and waybar height
-    bottom: calc(($botBarHeight + $uniMargin));
-    right: $uniMargin;
+    width: calc(((100% - (var(--uniMargin))) - var(--fullMenuSize) - 2 * var(--uniMargin)));
+    height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
+    bottom: calc((var(--botBarHeight) + var(--uniMargin)));
+    right: var(--uniMargin);
 }
 
 .menuOpen-iframeWindowOpen:hover {
     user-select: none;
     &.hoverable {
-        width: calc(((((100% - ($uniMargin)) * $hoverCoefficient) + $hoverConst)) - $fullMenuSize - 2 * $uniMargin); // Hover effect for width
-        height: calc(((100% - $waybarHeight) * $hoverCoefficient) + $hoverConst - ($botBarHeight - 1.5 * $uniMargin)); // Hover effect for height
-        right: calc($uniMargin - (((100% - (2 * $uniMargin)) * ($hoverCoefficient - 1)) / 2) - ($hoverConst / 4));
-        bottom: calc((($uniMargin) + ($botBarHeight)) * $hoverCoefficient - ($hoverConst / 2));
+        width: calc((((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst)) - var(--fullMenuSize) - 2 * var(--uniMargin)));
+        height: calc(((100% - var(--waybarHeight)) * var(--hoverCoefficient)) + var(--hoverConst) - (var(--botBarHeight) - 1.5 * var(--uniMargin)));
+        right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 4));
+        bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - (var(--hoverConst) / 2));
     }
 }
-
 
 .mainWindowClose {
     position: absolute;
@@ -54,21 +53,18 @@
     height: 0;
     bottom: 50%;
     right: 50%;
-    border: $borderThickness solid transparent;
-    border-radius: $borderRad;
-    box-shadow: $shadowRad transparent;
+    border: var(--borderThickness) solid transparent;
+    border-radius: var(--borderRad);
+    box-shadow: var(--shadowRad) transparent;
     background-color: transparent;
-    backdrop-filter:
-        blur($windowBlur)
-        brightness($windowBrightness)
-        contrast($windowContrast);
+    backdrop-filter: blur(0);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: transparent;
-    transition: all $transitionSpeed ease;
+    transition: all var(--transitionSpeed) ease;
 }
 
 .hidden {
