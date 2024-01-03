@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-1F8N3BHMZ1");
+        </script>
+
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Settings page for Crypher" />
@@ -10,7 +25,7 @@
             document.title = "Crypher";
         </script>
 
-        <link rel="stylesheet" href="css/greeter.css" />
+        <link rel="stylesheet" href="css/settings.css" />
 
         <!-- sets the favicon -->
         <link
@@ -46,8 +61,6 @@
             src="https://kit.fontawesome.com/df4e45b628.js"
             crossorigin="anonymous"
         ></script>
-
-        <link rel="stylesheet" href="css/history.css">
     </head>
     <body>
         <h1>Customize Appearance</h1>
@@ -57,7 +70,10 @@
 
         <!-- Background Color -->
         <div class="bgColSettings">
-            <label for="bgCol">Background Color: (do url(https://LINK.TO.IMAGE) for images)</label>
+            <label for="bgCol"
+                >Background Color: (do url(https://LINK.TO.IMAGE) for
+                images)</label
+            >
             <input type="text" id="bgColPicker" value="#14121D" />
         </div>
 
