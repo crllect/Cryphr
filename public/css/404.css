@@ -9,16 +9,16 @@
 */
 :root {
   /* Background */
-  --bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+  --bgCol: #14121D;
   /* Window Properties */
-  --windowCol: #141414d1;
-  --windowBlur: 1vh;
+  --windowCol: #14121D;
+  --windowBlur: 0vh;
   --windowBrightness: 1;
   --windowContrast: 1.1;
   --frontElementCol: #f1f1f114;
   --textCol: #fff;
   --textColSec: #fff9;
-  --linkCol: #4b1c79;
+  --linkCol: #5a2491;
   /* Shadow properties */
   --shadowCol: rgba(255, 255, 255, 0.02);
   --shadowRad: 0px 4px 4px;
@@ -32,7 +32,7 @@
   /* Border */
   --borderRad: 7px;
   --borderThickness: 1.75px;
-  --borderCol: #9c9c9c5b;
+  --borderCol: #ffffff10;
   /* Transitions */
   --transitionSpeed: 0.4s;
   --fastTransitionSpeed: 0.1s;
@@ -40,7 +40,7 @@
   --menuButtonCol: var(--textCol);
   /* Active */
   --activeTransition: var(--transitionSpeed);
-  --activeWindowCol: #25252ad1;
+  --activeWindowCol: #1a1730;
   /* Full Menu */
   --fullMenuOffset: 10px;
   /* Hover Vars */
@@ -50,7 +50,7 @@
   --hoverWindowBrightness: 1.2;
   --hoverWindowContrast: 1.15;
   --hoverBorderCol: #a1a1ffe7;
-  --hoverWindowCol: #141414d1;
+  --hoverWindowCol: #191725;
   --hoverBorderThickness: 1.5px;
   --hoverBorderRad: 0.8;
   --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
