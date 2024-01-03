@@ -11,4 +11,52 @@ html, body {
     font-family: 'Open Sans';
     user-select: none;
     color: var(--textCol);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
+}
+
+textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    background-color: var(--frontElementCol);
+    padding: var(--uniMargin);
+    border-radius: var(--borderRad);
+    z-index: 999985;
+    border: var(--borderThickness) solid var(--borderCol);
+    box-shadow: var(--shadowRad) var(--shadowCol);
+    left: 50%;
+    top: 7vw;
+    transform: translateX(-50%);
+    font-size: 1.5vh;
+    color: var(--menuButtonCol);
+    margin-bottom: calc(var(--uniMargin));
+    text-decoration: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
+    transition: all var(--transitionSpeed) ease;
+    user-select: none;
+    &:hover {
+        width: calc(80vw * var(--hoverCoefficient) + var(--hoverConst));
+        height: calc(80vh * var(--hoverCoefficient) + var(--hoverConst));
+        left: calc(50% * var(--hoverCoefficient) - var(--hoverConst) / 2);
+        top: calc(7vw * var(--hoverCoefficient) - var(--hoverConst) / 2);
+        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
 }

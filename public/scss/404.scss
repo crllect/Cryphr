@@ -52,6 +52,7 @@
     font-size: 3vh;
     color: var(--menuButtonCol);
     text-decoration: none;
+    transition: all var(--transitionSpeed) ease;
     &:hover {
         width: calc(var(--waybarHeight) * var(--hoverCoefficient) + var(--hoverConst));
         height: calc(var(--waybarHeight) * var(--hoverCoefficient) + var(--hoverConst));
