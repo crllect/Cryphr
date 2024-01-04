@@ -1,0 +1,62 @@
+:root {
+    /* Background */
+    --bgCol: #25252a;
+
+    /* Window Properties */
+    --windowCol: transparent;
+    --windowBlur: 0vh;
+    --windowBrightness: 1;
+    --windowContrast: 1;
+    --frontElementCol: #f1f1f114;
+    --textCol: #fff;
+    --textColSec: #fff9;
+    --linkCol: #5a2491;
+
+    /* Shadow properties */
+    --shadowCol: rgba(255, 255, 255, 0.0);
+    --shadowRad: 0px 4px 4px;
+
+    /* Margins */
+    --uniMargin: 1vh;
+    --waybarHeight: 10vh;
+    --urlInputLength: 43vw;
+    --botBarHeight: 4.5vh;
+    --botBarFontSize: 0.8;
+    --fullMenuSize: 25vh;
+
+    /* Border */
+    --borderRad: 7px;
+    --borderThickness: 1.75px;
+    --borderCol: transparent;
+
+    /* Transitions */
+    --transitionSpeed: 0s;
+    --fastTransitionSpeed: 0s;
+
+    /* Menu */
+    --menuButtonCol: var(--textCol);
+
+    /* Active */
+    --activeTransition: var(--transitionSpeed);
+    --activeWindowCol: transparent;
+
+    /* Full Menu */
+    --fullMenuOffset: 10px;
+
+    /* Hover Vars */
+    --hoverConst: 0vh;
+    --hoverCoefficient: 1;
+    --hoverWindowBlur: 0vw;
+    --hoverWindowBrightness: 1;
+    --hoverWindowContrast: 1;
+    --hoverBorderCol: transparent;
+    --hoverWindowCol: transparent;
+    --hoverBorderThickness: 1.5px;
+    --hoverBorderRad: 0.8;
+    --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    --hoverShadowCol: transparent;
+    --hoverShadowRad: 0px 0px var(--fullMenuOffset);
+    --hoverFrontElementCol: #f1f1f120;
+
+    --doParticles: 0;
+}
