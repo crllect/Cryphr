@@ -40,19 +40,7 @@ document.getElementById("clearButton").addEventListener("click", function () {
     applyCustomCSS("");
 });
 
-document.getElementById('cssTemplate').addEventListener('click', function() { // Again, more chatgpt, ion care tho, hella usefull
-    const cssCode = this.value;
-    navigator.clipboard.writeText(cssCode)
-        .then(() => {
-            alert('CSS code copied to clipboard!');
-        })
-        .catch(err => {
-            alert('Error in copying text: ', err);
-        });
-});
-
 document.getElementById('cssTemplateCopyText').addEventListener('click', function() {
-    // Retrieve the text from the 'textarea' with the ID 'cssTemplate'
     const cssCode = document.getElementById('cssTemplate').value;
 
     navigator.clipboard.writeText(cssCode)
