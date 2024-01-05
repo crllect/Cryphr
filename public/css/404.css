@@ -9,7 +9,7 @@
 */
 :root {
   /* Background */
-  --bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+  --bgCol: url("../assets/bgImg.png");
   /* Window Properties */
   --windowCol: #141414d1;
   --windowBlur: 1vh;
