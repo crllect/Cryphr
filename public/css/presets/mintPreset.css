@@ -1,25 +1,16 @@
-/* ---------------
-*   Huge thanks to riftriot
-*   for helping me set up
-*   UV on this project
-*   Follow his GitHub:
-*   https://github.com/Riftriot
-*/
-
-
 :root {
     /* Background */
-    --bgCol: url(https://w.wallhaven.cc/full/wy/wallhaven-wyp7ep.jpg);
+    --bgCol: #98ff98;
 
     /* Window Properties */
-    --windowCol: #141414d1;
+    --windowCol: #98ff9890;
     --windowBlur: 1vh;
     --windowBrightness: 1;
     --windowContrast: 1.1;
     --frontElementCol: #f1f1f114;
-    --textCol: #fff;
+    --textCol: #006400;
     --textColSec: #fff9;
-    --linkCol: #4b1c79;
+    --linkCol: #3eb489;
 
     /* Shadow properties */
     --shadowCol: rgba(255, 255, 255, 0.02);
@@ -36,7 +27,7 @@
     /* Border */
     --borderRad: 7px;
     --borderThickness: 1.75px;
-    --borderCol: #9c9c9c5b;
+    --borderCol: #90ee90;
 
     /* Transitions */
     --transitionSpeed: 0.4s;
@@ -48,9 +39,6 @@
     /* Active */
     --activeTransition: var(--transitionSpeed);
     --activeWindowCol: #25252ad1;
-    --activeWindowBlur: calc(var(--hoverWindowBlur) / 8);
-    --activeWindowBrightness: var(--hoverWindowBrightness);
-    --activeWindowContrast: var(--hoverWindowContrast);
 
     /* Full Menu */
     --fullMenuOffset: 10px;
@@ -62,7 +50,7 @@
     --hoverWindowBrightness: 1.2;
     --hoverWindowContrast: 1.15;
     --hoverBorderCol: #a1a1ffe7;
-    --hoverWindowCol: #141414d1;
+    --hoverWindowCol: #98ff9890;
     --hoverBorderThickness: 1.5px;
     --hoverBorderRad: 0.8;
     --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
@@ -74,9 +62,6 @@
     );
     --hoverShadowRad: 0px 0px var(--fullMenuOffset);
     --hoverFrontElementCol: #f1f1f120;
-    --hoverActiveWindowBlur: calc(var(--hoverWindowBlur) / 6);
-    --hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
-    --hoverActiveWindowContrast: var(--hoverWindowContrast);
 
-    --doParticles: 1;
+    --doParticles: 0;
 }

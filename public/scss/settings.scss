@@ -1,16 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import "_variables.scss";
 
-html, body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    font-size: 5vh;
+body {
     font-family: 'Open Sans';
-    user-select: none;
+    background-color: var(--debugBg);
     color: var(--textCol);
+    margin: 0;
+    padding: calc(var(--uniMargin) * 2);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
+    user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -webkit-user-select: none !important;
+}
+
+#uploadButton {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        background-color var(--transitionSpeed) ease,
+        border var(--transitionSpeed) ease,
+        color var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease;
+    background-color: transparent;
+    border: var(--borderThickness) solid var(--hoverBorderCol);
+    color: var(--textCol);
+    &:hover {
+        background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
+        text-shadow: 0px 0px 6px var(--hoverBorderCol);
+        cursor: pointer;
+    }
+}
+
+.presetGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        background-color var(--transitionSpeed) ease,
+        border var(--transitionSpeed) ease,
+        color var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease;
+    background-color: transparent;
+    border: var(--borderThickness) solid var(--hoverBorderCol);
+    color: var(--textCol);
+    &:hover {
+        background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
+        text-shadow: 0px 0px 6px var(--hoverBorderCol);
+        cursor: pointer;
+    }
+}
+
+.cssTutorial {
+    margin: calc(var(--uniMargin) * 2);
+    color: var(--textCol);
+    box-sizing: border-box;
+    font-family: monospace;
+    background-color: var(--frontElementCol);
+    border-radius: var(--borderRad);
+    z-index: 999985;
+    border: var(--borderThickness) solid var(--borderCol);
+    box-shadow: var(--shadowRad) var(--shadowCol);
+    user-select: none;
+    padding: calc(var(--uniMargin) * 2);
+    padding-top: 0;
+    transition:
+        background-color var(--transitionSpeed) ease,
+        border var(--transitionSpeed) ease,
+        color var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -19,44 +90,57 @@ html, body {
     overflow-y: auto;
 }
 
-textarea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 80vw;
-    height: 80vh;
+.cssTemplate {
+    margin-bottom: var(--uniMargin);
+    color: var(--textCol);
+}
+
+.cssTemplateCopyText {
+    color: var(--textColSec);
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#cssTemplate {
+    user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -webkit-user-select: none !important;
+    width: calc(100vw - var(--uniMargin) * 6);
+    height: 60vh;
+    color: var(--textCol);
+    box-sizing: border-box;
+    margin: var(--uniMargin);
+    font-family: monospace;
     background-color: var(--frontElementCol);
     padding: var(--uniMargin);
     border-radius: var(--borderRad);
     z-index: 999985;
     border: var(--borderThickness) solid var(--borderCol);
     box-shadow: var(--shadowRad) var(--shadowCol);
-    left: 50%;
-    top: 7vw;
-    transform: translateX(-50%);
-    font-size: 1.5vh;
-    color: var(--menuButtonCol);
-    margin-bottom: calc(var(--uniMargin));
-    text-decoration: none;
+    transition:
+        background-color var(--transitionSpeed) ease,
+        border var(--transitionSpeed) ease,
+        color var(--transitionSpeed) ease,
+        border-radius var(--transitionSpeed) ease;
     &::-webkit-scrollbar {
         display: none;
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: auto;
-    transition: all var(--transitionSpeed) ease;
-    user-select: none;
-    &:hover {
-        width: calc(80vw * var(--hoverCoefficient) + var(--hoverConst));
-        height: calc(80vh * var(--hoverCoefficient) + var(--hoverConst));
-        left: calc(50% * var(--hoverCoefficient) - var(--hoverConst) / 2);
-        top: calc(7vw * var(--hoverCoefficient) - var(--hoverConst) / 2);
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        cursor: pointer;
-    }
     &:focus {
         outline: none;
+    }
+    &:hover {
+        background-color: var(--hoverFrontElementCol);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .presetGrid {
+        grid-template-columns: 1fr;
     }
 }

@@ -40,6 +40,9 @@
   /* Active */
   --activeTransition: var(--transitionSpeed);
   --activeWindowCol: #25252ad1;
+  --activeWindowBlur: calc(var(--hoverWindowBlur) / 8);
+  --activeWindowBrightness: var(--hoverWindowBrightness);
+  --activeWindowContrast: var(--hoverWindowContrast);
   /* Full Menu */
   --fullMenuOffset: 10px;
   /* Hover Vars */
@@ -61,6 +64,9 @@
   );
   --hoverShadowRad: 0px 0px var(--fullMenuOffset);
   --hoverFrontElementCol: #f1f1f120;
+  --hoverActiveWindowBlur: calc(var(--hoverWindowBlur) / 6);
+  --hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
+  --hoverActiveWindowContrast: var(--hoverWindowContrast);
   --doParticles: 1;
 }
 
@@ -69,6 +75,7 @@
 }
 
 html, body {
+  background-color: var(--debugBg);
   display: flex;
   justify-content: left;
   flex-direction: column;
@@ -136,7 +143,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   outline: none;
   border: none;
   background: none;
-  color: #fff;
+  color: var(--textCol);
 }
 
 .history-entry {

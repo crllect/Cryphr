@@ -40,6 +40,9 @@
   /* Active */
   --activeTransition: var(--transitionSpeed);
   --activeWindowCol: #25252ad1;
+  --activeWindowBlur: calc(var(--hoverWindowBlur) / 8);
+  --activeWindowBrightness: var(--hoverWindowBrightness);
+  --activeWindowContrast: var(--hoverWindowContrast);
   /* Full Menu */
   --fullMenuOffset: 10px;
   /* Hover Vars */
@@ -61,6 +64,9 @@
   );
   --hoverShadowRad: 0px 0px var(--fullMenuOffset);
   --hoverFrontElementCol: #f1f1f120;
+  --hoverActiveWindowBlur: calc(var(--hoverWindowBlur) / 6);
+  --hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
+  --hoverActiveWindowContrast: var(--hoverWindowContrast);
   --doParticles: 1;
 }
 
@@ -485,7 +491,7 @@ body {
   box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
   background-color: var(--activeWindowCol);
   border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 6)) brightness(calc(var(--hoverWindowBrightness) - 0.3)) contrast(var(--hoverWindowContrast));
+  backdrop-filter: blur(var(--hoverWindowBlur)) brightness(var(--hoverActiveWindowBrightness)) contrast(var(--hoverActiveWindowContrast));
 }
 
 .fullMenu {
@@ -497,7 +503,7 @@ body {
   border: var(--borderThickness) solid var(--borderCol);
   border-radius: var(--borderRad);
   background-color: var(--activeWindowCol);
-  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 8)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
+  backdrop-filter: blur(var(--activeTransition)) brightness(var(--activeWindowBrightness)) contrast(var(--activeWindowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -515,7 +521,7 @@ body {
   border: var(--borderThickness) solid var(--borderCol);
   border-radius: var(--borderRad);
   background-color: var(--activeWindowCol);
-  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 8)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
+  backdrop-filter: blur(var(--activeWindowContrast)) brightness(var(--activeWindowBrightness)) contrast(var(--activeWindowContrast));
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -533,7 +539,7 @@ body {
   box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
   background-color: var(--activeWindowCol);
   border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-  backdrop-filter: blur(calc(var(--hoverWindowBlur) / 6)) brightness(calc(var(--hoverWindowBrightness) - 0.3)) contrast(var(--hoverWindowContrast));
+  backdrop-filter: blur(var(--hoverActiveWindowBlur)) brightness(var(--hoverActiveWindowBrightness)) contrast(var(--hoverActiveWindowContrast));
 }
 
 .botBar {
