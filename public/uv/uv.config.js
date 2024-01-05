@@ -1,7 +1,7 @@
 /*global Ultraviolet*/
 self.__uv$config = {
     prefix: '/uv/service/',
-    bare: 'https://galactic.px.wip.la/bare/',
+    bare: 'https://typhoon.lol/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/uv/uv.handler.js',
