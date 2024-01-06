@@ -33,7 +33,7 @@ function performSearch(query) {
     document.getElementById("searchButton").click();
 }
 
-let proxyEnabled = true;
+let dynDisabled = true;
 
 document
     .getElementById("urlInput")
@@ -98,6 +98,10 @@ document.getElementById("searchButton").onclick = function (event) {
     let loadingIframe = document.getElementById("loadingIframe");
 
     if (url.trim() === "") {
+        if (settingsOpen) {
+            let mainWindow = document.getElementById("mainWindow");
+            mainWindow.src = "greeter.html";
+        }
         if (
             document
                 .getElementById("fullMenu")
@@ -118,6 +122,10 @@ document.getElementById("searchButton").onclick = function (event) {
             );
         }, 450);
     } else {
+        if (settingsOpen) {
+            let mainWindow = document.getElementById("mainWindow");
+            mainWindow.src = "greeter.html";
+        }
         iframeWindow.classList.remove("hidden");
         iframeWindow.classList.remove("menuOpen-iframeWindowOpen");
         iframeWindow.classList.remove("iframeWindowOpen");
@@ -153,10 +161,10 @@ document.getElementById("searchButton").onclick = function (event) {
             }
         }
 
-        if (proxyEnabled) {
+        if (dynDisabled) {
             iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
         } else {
-            iframeWindow.src = url;
+            iframeWindow.src = __dynamic$config.prefix + "route?url=" + encodeURIComponent(url);
         }
     }
 };
@@ -170,23 +178,19 @@ document.getElementById("reloadButton").onclick = function (event) {
     }, 2000);
 };
 
-let settingsOpen = false; // Declare this outside the event handler
+let settingsOpen = false;
 
 document.getElementById("settingsButton").onclick = function (event) {
     event.preventDefault();
 
-    // Set the URL input to an empty string and perform the search
     let urlInput = document.getElementById("urlInput");
     urlInput.value = "";
     performSearch("");
 
-    // Toggle the settingsOpen value
     settingsOpen = !settingsOpen;
 
-    // Assuming the ID of your main window iframe is 'mainWindow'
     let mainWindow = document.getElementById("mainWindow");
 
-    // Change the src of mainWindow based on the settingsOpen value
     if (settingsOpen) {
         mainWindow.src = "settings.html";
     } else {

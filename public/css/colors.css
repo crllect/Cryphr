@@ -70,6 +70,10 @@
   --doParticles: 1;
 }
 
+@font-face {
+  font-family: cursive2;
+  src: url("../assets/cursive.ttf");
+}
 body {
   font-family: "Open Sans";
   background-color: var(--debugBg);
@@ -103,16 +107,9 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
-.presetGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 10px;
-  margin-bottom: 20px;
-}
-
 button {
   padding: 10px;
-  border-radius: 5px;
+  border-radius: var(--borderRad);
   cursor: pointer;
   transition: background-color var(--transitionSpeed) ease, border var(--transitionSpeed) ease, color var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease;
   background-color: transparent;
@@ -191,9 +188,68 @@ button:hover {
   background-color: var(--hoverFrontElementCol);
 }
 
+.title {
+  position: sticky;
+  top: calc(var(--uniMargin) + 1vh);
+  z-index: 999987;
+  width: calc(45vw + var(--uniMargin) * 2);
+  height: calc(7vh + var(--uniMargin) * 2);
+  backdrop-filter: blur(var(--windowBlur));
+  border-radius: var(--borderRad);
+}
+
+.topButton {
+  transform: translateX(var(--uniMargin)) translateY(var(--uniMargin));
+  font-size: 1vw;
+  padding: 0.5vw;
+  margin: 0.1vw;
+  cursor: pointer;
+}
+
+.crllectButton {
+  font-family: cursive2 !important;
+  font-size: 1.8vw;
+  padding: 0vw;
+  margin: 0vw;
+  border: none !important;
+  background-color: transparent !important;
+  text-shadow: none !important;
+  transform: translateY(30%) translateX(6%);
+  cursor: default !important;
+}
+
+.settingsSeparator {
+  display: block;
+  background-color: var(--borderCol);
+  padding: 0;
+  margin: 0;
+  margin-top: var(--uniMargin);
+  margin-bottom: 5.5vh;
+  width: 45vw;
+  transform: translateX(var(--uniMargin)) translateY(var(--uniMargin));
+  height: var(--borderThickness);
+}
+
+.content {
+  margin-top: 5vh;
+}
+
+.selected {
+  background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
+  text-shadow: 0px 0px 6px var(--hoverBorderCol);
+  cursor: default;
+}
+
+.presetGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .presetGrid {
     grid-template-columns: 1fr;
   }
-}/*# sourceMappingURL=settings.css.map */
+}/*# sourceMappingURL=colors.css.map */

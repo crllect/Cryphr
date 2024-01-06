@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-1F8N3BHMZ1");
+        </script>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Settings page for Crypher" />
+
+        <script>
+            // page title
+            document.title = "Crypher";
+        </script>
+
+        <link rel="stylesheet" href="css/colors.css" />
+
+        <!-- sets the favicon -->
+        <link
+            rel="icon"
+            href="assets/xorro-favicon-hypr-3.png"
+            id="image/x-icon"
+        />
+
+        <!-- dynamically sets the favicon based on user color scheme -->
+        <script>
+            function updateFavicon() {
+                const favicon = document.getElementById("image/x-icon");
+                if (
+                    window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                ) {
+                    favicon.href = "assets/xorro-favicon-dark-2.png";
+                } else {
+                    favicon.href = "assets/xorro-favicon-light-2.png";
+                }
+            }
+            updateFavicon();
+        </script>
+
+        <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+        <script
+            src="https://kit.fontawesome.com/df4e45b628.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="title">
+            <button id="setColorSettings" class="selected topButton">Colors</button>
+            <button id="setProxySettings" class="topButton">Proxy Configuration</button>
+            <button id="setCloakingSettings" class="topButton">Tab Cloaking</button>
+            <button id="wipeAllSettings" class="topButton">WIPE ALL SETTINGS</button>
+            <button class="crllectButton">Made By Crllect</button>
+            <div class="settingsSeparator"></div>
+        </div>
+        <main class="content">
+            <div class="presetGrid">
+                <button id="clearButton">Load Default Preset</button>
+                <button id="nebulaPreset">Load Nebula Preset</button>
+                <button id="copperPreset">Load Copper Preset</button>
+                <button id="emeraldPreset">Load Emerald Preset</button>
+                <button id="forestPreset">Load Forest Preset</button>
+                <button id="goldenPreset">Load Golden Preset</button>
+                <button id="lavenderPreset">Load Lavender Preset</button>
+                <button id="midnightPreset">Load Midnight Preset</button>
+                <button id="mintPreset">Load Mint Preset</button>
+                <button id="oceanPreset">Load Ocean Preset</button>
+                <button id="rosePreset">Load Rose Preset</button>
+                <button id="rusticPreset">Load Rustic Preset</button>
+                <button id="sandyPreset">Load Sandy Preset</button>
+                <button id="sapphirePreset">Load Sapphire Preset</button>
+                <button id="sunsetPreset">Load Sunset Preset</button>
+                <button id="violetPreset">Load Violet Preset</button>
+                <button id="winterPreset">Load Winter Preset</button>
+                <button id="transparentPreset">Load Transparent Preset</button>
+                <button id="debugPreset">Load Debug Preset</button>
+            </div>
+
+            <br>
+
+            <div class="cssTutorial">
+                <h2>Wanna make your own theme?</h2>
+                <br>
+                Well, turns out its pretty easy. Courtesy of me, below is a CSS template. You can copy that into any text editor or even google docs. Edit the values to add custom colors or any other custom CSS that you want to, then just re-upload it!
+            </div>
+
+            <button id="uploadButtonCSS" onclick="document.getElementById('uploadButton').click();">Upload Custom CSS here!</button>
+            <input type="file" id="uploadButton" accept="text/css" style="display: none;" onchange="handleFileSelect(this)"/>
+            <h1 class="csstemplate">
+                CSS template:
+                <h4 id="cssTemplateCopyText" class="cssTemplateCopyText">(Click to Copy)</h4>
+            </h1>
+            <textarea id="cssTemplate" readonly spellcheck="false">
+:root { // You can put "transparent" instead of "#00000000" for transparent colors
+    /* Background */
+    --bgCol: #14121D; // <-- url(https://link.to.image/image) instead of #hexColor for image
+
+    /* Window Properties */
+    --windowCol: #141414d1;
+    --windowBlur: 1vh;
+    --windowBrightness: 1;
+    --windowContrast: 1.1;
+    --frontElementCol: #f1f1f114;
+    --textCol: #fff;
+    --textColSec: #fff9;
+    --linkCol: #4b1c79;
+
+    /* Shadow properties */
+    --shadowCol: rgba(255, 255, 255, 0.02);
+    --shadowRad: 0px 4px 4px;
+
+    /* Margins */
+    --uniMargin: 1vh;
+    --waybarHeight: 10vh;
+    --urlInputLength: 43vw;
+    --botBarHeight: 4.5vh;
+    --botBarFontSize: 0.8;
+    --fullMenuSize: 25vh;
+
+    /* Border */
+    --borderRad: 7px;
+    --borderThickness: 1.75px;
+    --borderCol: #9c9c9c5b;
+
+    /* Transitions */
+    --transitionSpeed: 0.4s;
+    --fastTransitionSpeed: 0.1s;
+
+    /* Menu */
+    --menuButtonCol: var(--textCol); // <-- you can replace any value with var(--variable) in order to reuse already written values. But make sure that they are the same type, i.e. VH vs VW vs PX etc.
+
+    /* Active */
+    --activeTransition: var(--transitionSpeed);
+    --activeWindowCol: #25252ad1;
+    --activeWindowBlur: calc(var(--hoverWindowBlur) / 8);
+    --activeWindowBrightness: var(--hoverWindowBrightness);
+    --activeWindowContrast: var(--hoverWindowContrast);
+
+    /* Full Menu */
+    --fullMenuOffset: 10px;
+
+    /* Hover Vars */
+    --hoverConst: 0vh;
+    --hoverCoefficient: 1;
+    --hoverWindowBlur: 0.7vw;
+    --hoverWindowBrightness: 1.2;
+    --hoverWindowContrast: 1.15;
+    --hoverBorderCol: #a1a1ffe7;
+    --hoverWindowCol: #141414d1;
+    --hoverBorderThickness: 1.5px;
+    --hoverBorderRad: 0.8;
+    --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+    --hoverShadowCol: rgba(      // <-- automatically calculates the hoverShadowColor based on the hoverBorderColor and the hoverBorderOpacity
+        calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
+        calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
+        calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
+        calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
+    );
+    --hoverShadowRad: 0px 0px var(--fullMenuOffset);
+    --hoverFrontElementCol: #f1f1f120;
+    --hoverActiveWindowBlur: calc(var(--hoverWindowBlur) / 6);
+    --hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
+    --hoverActiveWindowContrast: var(--hoverWindowContrast);
+
+    --doParticles: 1 ; // <-- 1 is particles, 0 is no particles
+
+    --debugBg: transparent; // <-- adds backgrounds to history, settings and other embeds. Mostly used for debugging or developement, but you can use to get a look that your prefer
+}
+
+// Do note that there are no safe guards. You can add or change any CSS, but messing with something like the margins too much might break code or cause divisions by 0. So unless your doing something very complex or trying to break my app (report bugs to the repo https://github.com/crllect/Crypher), I wouldn't recommend messing with anything too much.
+            </textarea>
+        </main>
+    </body>
+    <script>
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                console.log("File chosen: ", input.files[0].name);
+            }
+        }
+    </script>
+    <script src="js/colors.js"></script>
+    <script src="js/presets.js"></script>
+    <script src="js/settings.js"></script>
+</html>

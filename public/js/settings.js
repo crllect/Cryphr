@@ -1,53 +1,33 @@
-document
-    .getElementById("uploadButton")
-    .addEventListener("change", function (e) {
-        const file = e.target.files[0];
-        if (!file) {
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const contents = e.target.result;
-            localStorage.setItem("customCSS", contents);
-            applyCustomCSS(contents);
-        };
-
-        reader.readAsText(file);
-
-        e.target.value = "";
-    });
-
-function applyCustomCSS(css) {
-    let styleSheet = document.getElementById("custom-css-style");
-    if (!styleSheet) {
-        styleSheet = document.createElement("style");
-        styleSheet.id = "custom-css-style";
-        document.head.appendChild(styleSheet);
-    }
-    styleSheet.textContent = css;
+function redirectTo(page) {
+    window.location.href = page;
 }
 
-window.addEventListener("load", function () {
-    const customCSS = localStorage.getItem("customCSS");
-    if (customCSS) {
-        applyCustomCSS(customCSS);
-    }
-});
+document.addEventListener("DOMContentLoaded", function () {
+    document
+        .getElementById("setColorSettings")
+        .addEventListener("click", function () {
+            localStorage.setItem("recentSettings", "colorSettings");
+            redirectTo("colors.html");
+        });
 
-document.getElementById("clearButton").addEventListener("click", function () {
-    localStorage.removeItem("customCSS");
-    applyCustomCSS("");
-});
+    document
+        .getElementById("setProxySettings")
+        .addEventListener("click", function () {
+            localStorage.setItem("recentSettings", "proxySettings");
+            redirectTo("proxyConfig.html");
+        });
 
-document.getElementById('cssTemplateCopyText').addEventListener('click', function() {
-    const cssCode = document.getElementById('cssTemplate').value;
+    document
+        .getElementById("setCloakingSettings")
+        .addEventListener("click", function () {
+            localStorage.setItem("recentSettings", "cloakSettings");
+            redirectTo("cloaking.html");
+        });
 
-    navigator.clipboard.writeText(cssCode)
-        .then(() => {
-            alert('CSS code copied to clipboard!');
-        })
-        .catch(err => {
-            alert('Error in copying text: ', err);
+    document
+        .getElementById("wipeAllSettings")
+        .addEventListener("click", function () {
+            localStorage.clear();
+            window.parent.location.reload();
         });
 });
