@@ -7,10 +7,10 @@ Hey, my names crllect, I started working on this proxy pretty recently, I think 
  - Working UltraViolet
  - Pretty clean UI
  - Ability to view and clear search history
+ - Uploading / adding custom CSS
 ---
 ## TODO:
  - Settings tab, current WIP at the time of writing
- - Uploading / adding custom CSS
  - Muiltiple tabs
  - Dynamic and Rammerhead proxies
 ---
