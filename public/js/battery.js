@@ -3,17 +3,17 @@ function getBatteryIcon(level) {
     if (level >= 70) return 'fa-solid fa-battery-three-quarters fa-2xl';
     if (level >= 40) return 'fa-solid fa-battery-half fa-2xl';
     if (level >= 20) return 'fa-solid fa-battery-quarter fa-2xl';
-    return 'fa-solid fa-battery-low fa-2xl';
+    return 'fa-solid fa-battery-empty fa-2xl';
 }
 
 function updateBatteryDisplay(batteryLevel, iconClass) {
     const batteryElement = document.getElementById('battery');
     if (batteryElement) {
-        const showing = batteryElement.getAttribute('data-showing');
-        if (showing === 'percentage') {
-            batteryElement.innerHTML = batteryLevel + '%';
-        } else {
+        const showing = batteryElement.getAttribute('data-showing') || 'percentage';
+        if (showing === 'icon') {
             batteryElement.innerHTML = `<span class="${iconClass} batteryIcon" style="transform: translateY(0.15vh);"></span>`;
+        } else {
+            batteryElement.innerHTML = batteryLevel + '%';
         }
     }
 }
@@ -33,11 +33,8 @@ function setupBatteryDisplay(battery) {
     const batteryElement = document.getElementById('battery');
     if (batteryElement) {
         batteryElement.onclick = function() {
-            if (this.getAttribute('data-showing') === 'percentage') {
-                this.setAttribute('data-showing', 'icon');
-            } else {
-                this.setAttribute('data-showing', 'percentage');
-            }
+            const currentShowing = this.getAttribute('data-showing') || 'percentage';
+            this.setAttribute('data-showing', currentShowing === 'percentage' ? 'icon' : 'percentage');
             updateDisplay();
         };
     }
