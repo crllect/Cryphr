@@ -9,30 +9,42 @@ function getBatteryIcon(level) {
 function updateBatteryDisplay(batteryLevel, iconClass) {
     const batteryElement = document.getElementById('battery');
     if (batteryElement) {
-        // Display the percentage by default
-        batteryElement.innerHTML = batteryLevel + '%';
-        batteryElement.setAttribute('data-showing', 'percentage');
+        const showing = batteryElement.getAttribute('data-showing');
+        if (showing === 'percentage') {
+            batteryElement.innerHTML = batteryLevel + '%';
+        } else {
+            batteryElement.innerHTML = `<span class="${iconClass} batteryIcon" style="transform: translateY(0.15vh);"></span>`;
+        }
+    }
+}
+
+function setupBatteryDisplay(battery) {
+    const updateDisplay = () => {
+        const batteryLevel = Math.round(battery.level * 100);
+        const iconClass = getBatteryIcon(batteryLevel);
+        updateBatteryDisplay(batteryLevel, iconClass);
+    };
+
+    updateDisplay();
+
+    battery.addEventListener('chargingchange', updateDisplay);
+    battery.addEventListener('levelchange', updateDisplay);
+
+    const batteryElement = document.getElementById('battery');
+    if (batteryElement) {
         batteryElement.onclick = function() {
             if (this.getAttribute('data-showing') === 'percentage') {
-                // Switch to icon with increased font size
-                this.innerHTML = `<span class="${iconClass} batteryIcon" style="transform: translateY(0.15vh);"></span>`;
                 this.setAttribute('data-showing', 'icon');
             } else {
-                // Switch back to displaying the percentage
-                this.innerHTML = batteryLevel + '%';
                 this.setAttribute('data-showing', 'percentage');
             }
+            updateDisplay();
         };
     }
 }
 
-
 if ('getBattery' in navigator) {
-    navigator.getBattery().then(function(battery) {
-        const batteryLevel = Math.round(battery.level * 100);
-        const iconClass = getBatteryIcon(batteryLevel);
-        updateBatteryDisplay(batteryLevel, iconClass);
-    });
+    navigator.getBattery().then(setupBatteryDisplay);
 } else {
     const batteryElement = document.getElementById('battery');
     if (batteryElement) {
