@@ -17,7 +17,7 @@
   --frontElementCol: #f1f1f114;
   --textCol: #fff;
   --textColSec: #fff9;
-  --linkCol: #4b1c79;
+  --linkCol: #5a2491;
   /* Shadow properties */
   --shadowCol: rgba(255, 255, 255, 0.02);
   --shadowRad: 0px 4px 4px;
@@ -641,7 +641,7 @@ body {
 
 #emailPopup {
   display: flex;
-  width: 30%;
+  width: 35%;
   height: 30%;
   position: absolute;
   top: 50%;
@@ -669,7 +669,7 @@ body {
 }
 #emailPopup:hover {
   height: calc(30% * var(--hoverCoefficient) + var(--hoverConst));
-  width: calc(30% * var(--hoverCoefficient) + var(--hoverConst));
+  width: calc(35% * var(--hoverCoefficient) + var(--hoverConst));
   bottom: calc(2 * var(--uniMargin) - (100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1) / 2 - var(--hoverConst) / 2);
   box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
   border: var(--hoverBorderThickness) solid var(--hoverBorderCol);

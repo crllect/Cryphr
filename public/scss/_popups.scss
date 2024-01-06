@@ -2,10 +2,13 @@
     display: none;
 }
 
+$emailWidth: 35%;
+$emailHeight: 30%;
+
 #emailPopup {
     display: flex;
-    width: 30%;
-    height: 30%;
+    width: $emailWidth;
+    height: $emailHeight;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -46,8 +49,8 @@
     justify-content: center;
     background-color: var(--windowCol);
     &:hover {
-        height: calc(((30%) * var(--hoverCoefficient)) + var(--hoverConst));
-        width: calc(((30%) * var(--hoverCoefficient)) + var(--hoverConst));
+        height: calc((($emailHeight) * var(--hoverCoefficient)) + var(--hoverConst));
+        width: calc((($emailWidth) * var(--hoverCoefficient)) + var(--hoverConst));
         bottom: calc(2 * var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
         box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
         border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
@@ -77,10 +80,12 @@
     }
 }
 
+$creditsWidth: 30%;
+$creditsHeight: 20%;
 #creditsPopup {
     display: flex;
-    width: 30%;
-    height: 20%;
+    width: $creditsWidth;
+    height: $creditsHeight;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -121,8 +126,8 @@
     justify-content: center;
     background-color: var(--windowCol);
     &:hover {
-        height: calc(((20%) * var(--hoverCoefficient)) + var(--hoverConst));
-        width: calc(((30%) * var(--hoverCoefficient)) + var(--hoverConst));
+        height: calc((($creditsHeight) * var(--hoverCoefficient)) + var(--hoverConst));
+        width: calc((($creditsWidth) * var(--hoverCoefficient)) + var(--hoverConst));
         bottom: calc(2 * var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
         box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
         border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
