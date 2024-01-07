@@ -15,7 +15,7 @@
 
             gtag("config", "G-1F8N3BHMZ1");
         </script>
-        
+    
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Greeter embed for Crypher" />
@@ -25,7 +25,7 @@
             document.title = "Crypher";
         </script>
 
-        <link rel="stylesheet" href="css/settings.css" />
+        <link rel="stylesheet" href="css/greeter.css" />
 
         <!-- sets the favicon -->
         <link
@@ -42,15 +42,12 @@
                     window.matchMedia &&
                     window.matchMedia("(prefers-color-scheme: dark)").matches
                 ) {
-                    // User prefers a dark color scheme
                     favicon.href = "assets/xorro-favicon-dark-2.png";
                 } else {
-                    // User prefers a light color scheme
                     favicon.href = "assets/xorro-favicon-light-2.png";
                 }
             }
 
-            // Call the function on load
             updateFavicon();
         </script>
 
