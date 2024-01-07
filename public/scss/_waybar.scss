@@ -138,6 +138,6 @@
     transition: all var(--transitionSpeed) ease;
     &:hover {
         cursor: pointer;
-        transform: rotate(720deg) scale(1.2);
+        transform: rotate(360deg) scale(1.2) translateY(-3%);
     }
 }
