@@ -223,6 +223,7 @@ body::-webkit-scrollbar {
   background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
   text-shadow: 0px 0px 6px var(--hoverBorderCol);
   cursor: default !important;
+  pointer-events: none !important;
 }
 
 @media (max-width: 600px) {

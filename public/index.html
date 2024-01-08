@@ -54,15 +54,12 @@
                     window.matchMedia &&
                     window.matchMedia("(prefers-color-scheme: dark)").matches
                 ) {
-                    // User prefers a dark color scheme
                     favicon.href = "assets/xorro-favicon-dark-2.png";
                 } else {
-                    // User prefers a light color scheme
                     favicon.href = "assets/xorro-favicon-light-2.png";
                 }
             }
 
-            // Call the function on load
             updateFavicon();
         </script>
 

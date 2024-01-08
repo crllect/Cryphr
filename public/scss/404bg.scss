@@ -9,7 +9,7 @@ html, body {
     font-size: 5vh;
     font-family: 'Open Sans';
     user-select: none;
-    color: #fff;
+    color: var(--textCol);
 }
 
 .pageNotFound {
@@ -22,7 +22,7 @@ html, body {
     border: 0.536vh solid transparent;
     height: 10vh;
     border-radius: 20px;
-    border-right-color: #f1f1f1e7;
+    border-right-color: var(--textColSec);
     padding-right: 1em;
     margin-right: 1em;
 }
@@ -46,10 +46,10 @@ html, body {
 }
 
 #particles-js {
-    position: fixed; // Fixed position for particle effect
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0; // Behind other content
+    z-index: 0;
 }
