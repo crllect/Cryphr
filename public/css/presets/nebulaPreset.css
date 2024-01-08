@@ -13,8 +13,8 @@
     --linkCol: #5a2491;
 
     /* Shadow properties */
-    --shadowCol: rgba(255, 255, 255, 0.02);
-    --shadowRad: 0px 4px 4px;
+    --shadowCol: var(--borderCol);
+    --shadowRad: 0px 4px 0px;
 
     /* Margins */
     --uniMargin: 1vh;
@@ -41,7 +41,7 @@
     --activeWindowCol: #1a1730;
 
     /* Full Menu */
-    --fullMenuOffset: 10px;
+    --fullMenuOffset: 3px;
 
     /* Hover Vars */
     --hoverConst: 0vh;
@@ -53,13 +53,8 @@
     --hoverWindowCol: #191725;
     --hoverBorderThickness: 1.5px;
     --hoverBorderRad: 0.8;
-    --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
-    --hoverShadowCol: rgba(
-        calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
-        calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
-        calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
-        calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
-    );
+    --hoverBorderOpacity: rgba(255, 255, 255, 1);
+    --hoverShadowCol: #a1a1ffe7;
     --hoverShadowRad: 0px 0px var(--fullMenuOffset);
     --hoverFrontElementCol: #f1f1f120;
 

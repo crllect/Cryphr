@@ -151,6 +151,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    box-shadow: var(--shadowRad) var(--shadowCol);
     transition:
         background-color var(--transitionSpeed) ease,
         width var(--transitionSpeed) ease,

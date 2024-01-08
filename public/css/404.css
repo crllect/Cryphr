@@ -510,6 +510,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  box-shadow: var(--shadowRad) var(--shadowCol);
   transition: background-color var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, border var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
 }
 
