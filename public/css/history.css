@@ -53,7 +53,7 @@
   --hoverWindowContrast: 1.15;
   --hoverBorderCol: #a1a1ffe7;
   --hoverWindowCol: #141414d1;
-  --hoverBorderThickness: 1.5px;
+  --hoverBorderThickness: var(--borderThickness);
   --hoverBorderRad: 0.8;
   --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
   --hoverShadowCol: rgba(

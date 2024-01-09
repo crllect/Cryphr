@@ -53,7 +53,7 @@
   --hoverWindowContrast: 1.15;
   --hoverBorderCol: #a1a1ffe7;
   --hoverWindowCol: #141414d1;
-  --hoverBorderThickness: 1.5px;
+  --hoverBorderThickness: var(--borderThickness);
   --hoverBorderRad: 0.8;
   --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
   --hoverShadowCol: rgba(
@@ -171,7 +171,7 @@
 
 #urlInput {
   position: absolute;
-  left: var(--waybarHeight);
+  left: calc(var(--waybarHeight) - var(--waybarHeight) / 3);
   height: calc(((var(--waybarHeight))) - var(--uniMargin) * 6);
   width: calc((var(--urlInputLength)));
   margin: 0;
@@ -209,7 +209,7 @@
 
 #searchButton {
   position: absolute;
-  left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em);
+  left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em - var(--waybarHeight) / 3);
   transform: translateY(-3%) translateX(-50%);
   margin: 0;
   padding: 0;
@@ -240,7 +240,7 @@
 }
 #settingsButton:hover {
   cursor: pointer;
-  transform: rotate(360deg) scale(1.2) translateY(-3%);
+  transform: translateY(-1%) rotate(360deg) scale(1.2);
 }
 
 .iframeWindow {

@@ -54,7 +54,7 @@
   --hoverWindowContrast: 1.15;
   --hoverBorderCol: #a1a1ffe7;
   --hoverWindowCol: #141414d1;
-  --hoverBorderThickness: 1.5px;
+  --hoverBorderThickness: var(--borderThickness);
   --hoverBorderRad: 0.8;
   --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
   --hoverShadowCol: rgba(
@@ -125,7 +125,7 @@
   --hoverWindowContrast: 1.15;
   --hoverBorderCol: #a1a1ffe7;
   --hoverWindowCol: #141414d1;
-  --hoverBorderThickness: 1.5px;
+  --hoverBorderThickness: var(--borderThickness);
   --hoverBorderRad: 0.8;
   --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
   --hoverShadowCol: rgba(
@@ -168,7 +168,7 @@ body::-webkit-scrollbar {
   position: sticky;
   top: calc(var(--uniMargin) + 1vh);
   z-index: 999987;
-  width: calc(45vw + var(--uniMargin) * 2);
+  width: calc(47vw + var(--uniMargin) * 2);
   height: calc(7vh + var(--uniMargin) * 2);
   backdrop-filter: blur(var(--hoverWindowBlur));
   border-radius: var(--borderRad);
@@ -209,8 +209,8 @@ body::-webkit-scrollbar {
   padding: 0;
   margin: 0;
   margin-top: var(--uniMargin);
-  margin-bottom: 5.5vh;
-  width: 45vw;
+  margin-bottom: 6vh;
+  width: 47vw;
   transform: translateX(var(--uniMargin)) translateY(var(--uniMargin));
   height: var(--borderThickness);
 }

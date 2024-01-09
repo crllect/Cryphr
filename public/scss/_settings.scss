@@ -23,11 +23,13 @@ body {
     -webkit-user-select: none !important;
 }
 
+$topBarWidth: 47vw;
+
 .title {
     position: sticky;
     top: calc(var(--uniMargin) + 1vh);
     z-index: 999987;
-    width: calc(45vw + var(--uniMargin) * 2);
+    width: calc($topBarWidth + var(--uniMargin) * 2);
     height: calc(7vh + var(--uniMargin) * 2);
     backdrop-filter: blur(var(--hoverWindowBlur));
     border-radius: var(--borderRad);
@@ -68,8 +70,8 @@ body {
     padding: 0;
     margin: 0;
     margin-top: var(--uniMargin);
-    margin-bottom: 5.5vh;
-    width: 45vw;
+    margin-bottom: 6vh;
+    width: $topBarWidth;
     transform: translateX(var(--uniMargin)) translateY(var(--uniMargin));
     height: var(--borderThickness);
 }

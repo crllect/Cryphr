@@ -69,7 +69,7 @@
 
 #urlInput {
     position: absolute;
-    left: var(--waybarHeight);
+    left: calc(var(--waybarHeight) - (var(--waybarHeight) / 3));
     height: calc(((var(--waybarHeight))) - var(--uniMargin) * 6);
     width: calc((var(--urlInputLength)));
     margin: 0;
@@ -108,7 +108,7 @@
 
 #searchButton {
     position: absolute;
-    left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em);
+    left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em - (var(--waybarHeight) / 3));
     transform: translateY(-3%) translateX(-50%);
     margin: 0;
     padding: 0;
@@ -138,6 +138,6 @@
     transition: all var(--transitionSpeed) ease;
     &:hover {
         cursor: pointer;
-        transform: rotate(360deg) scale(1.2) translateY(-3%);
+        transform: translateY(-1%) rotate(360deg) scale(1.2);
     }
 }
