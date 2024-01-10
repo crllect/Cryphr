@@ -14,3 +14,4 @@ Hey, my names crllect, I started working on this proxy pretty recently, I think 
  - Dynamic and Rammerhead proxies
 ---
 If you even moderately enjoy this, star this and follow my GitHub, I promise you wont regret it.
+Add some PR if you notice any easy bugs or stupid design decisions.
