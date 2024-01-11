@@ -183,6 +183,7 @@ body::-webkit-scrollbar {
   background-color: transparent;
   border: var(--borderThickness) solid var(--hoverBorderCol);
   color: var(--textCol);
+  transition: all var(--transitionSpeed) ease;
 }
 .topButton:hover {
   background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);

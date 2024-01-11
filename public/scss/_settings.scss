@@ -44,6 +44,7 @@ $topBarWidth: 47vw;
     background-color: transparent;
     border: var(--borderThickness) solid var(--hoverBorderCol);
     color: var(--textCol);
+    transition: all var(--transitionSpeed) ease;
     &:hover {
         background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
         text-shadow: 0px 0px 6px var(--hoverBorderCol);

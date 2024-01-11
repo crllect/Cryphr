@@ -27,13 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+window.addEventListener("storage", function (event) {
+    if (event.key === "UVEnabled") {
+        let newValue = JSON.parse(event.newValue) || true;
+        UVEnabled = newValue;
+    }
+});
+
 function performSearch(query) {
     let urlInput = document.getElementById("urlInput");
     urlInput.value = query;
     document.getElementById("searchButton").click();
 }
 
-let dynDisabled = true;
+let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || true;
 
 document
     .getElementById("urlInput")
@@ -161,10 +168,13 @@ document.getElementById("searchButton").onclick = function (event) {
             }
         }
 
-        if (dynDisabled) {
+        if (UVEnabled) {
             iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
         } else {
-            iframeWindow.src = __dynamic$config.prefix + "route?url=" + encodeURIComponent(url);
+            iframeWindow.src =
+                __dynamic$config.prefix +
+                "route?url=" +
+                encodeURIComponent(url);
         }
     }
 };
@@ -197,3 +207,5 @@ document.getElementById("settingsButton").onclick = function (event) {
         mainWindow.src = "greeter.html";
     }
 };
+
+console.log("Yea, I dont know if something I did broke so horribly that you needed to open the dev console. If that was the case, you should probably tell me about it")

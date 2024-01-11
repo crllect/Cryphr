@@ -30,12 +30,13 @@
         <!-- UV things -->
         <script src="/uv/uv.bundle.js"></script>
         <script src="/uv/uv.config.js"></script> <!-- added defer as before the script would load before the form would load -->
+        <script src="/dynamic/dynamic.config.js"></script>
 
         <script>
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", () => {
-                    navigator.serviceWorker.register("/uv/sw.js", {
-                        scope: __uv$config.prefix,
+                    navigator.serviceWorker.register("/sw.js", {
+                        scope: "/",
                     });
                 });
             }
