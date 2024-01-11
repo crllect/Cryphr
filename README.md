@@ -16,6 +16,7 @@ Hey, my names crllect, I started working on this proxy pretty recently, I think 
  - Add DIP as an option
  - Change how to open the window, E.G. Embed vs New Tab
  - Add css for proxyConfig
+ - On first open, make the user go to settings to add a theme, and add a breif tutorial on changing proxies and when to do so (Very Low priority)
 ---
 If you even moderately enjoy this, star this and follow my GitHub, I promise you wont regret it.
 Add some PRs if you notice any easy bugs or stupid design decisions.
