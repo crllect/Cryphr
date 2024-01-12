@@ -208,4 +208,4 @@ document.getElementById("settingsButton").onclick = function (event) {
     }
 };
 
-console.log("Yea, I dont know if something I did broke so horribly that you needed to open the dev console. If that was the case, you should probably tell me about it")
+console.log("Yea, I dont know if something I did broke so horribly that you needed to open the dev console. If that was the case, you should probably tell me about it");
