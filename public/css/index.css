@@ -560,7 +560,7 @@ body {
   box-shadow: var(--shadowRad) var(--shadowCol);
   backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness)) contrast(var(--windowContrast));
   box-sizing: border-box;
-  transition: background-color var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, backdrop-filter var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, border var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
+  transition: background-color var(--transitionSpeed) ease, transform var(--transitionSpeed) ease, width var(--transitionSpeed) ease, height var(--transitionSpeed) ease, left var(--transitionSpeed) ease, bottom var(--transitionSpeed) ease, right var(--transitionSpeed) ease, top var(--transitionSpeed) ease, border-radius var(--transitionSpeed) ease, stroke var(--transitionSpeed) ease, box-shadow var(--transitionSpeed) ease, border var(--transitionSpeed) ease, fill var(--transitionSpeed) ease;
   display: flex;
   align-items: center;
   justify-content: center;
