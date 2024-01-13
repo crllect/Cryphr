@@ -848,7 +848,7 @@ body {
   align-items: center;
   position: relative;
   width: 45%;
-  height: 50%;
+  height: 22vw;
   background-color: var(--frontElementCol);
   padding: 0.5em;
   border-radius: var(--borderRad);
