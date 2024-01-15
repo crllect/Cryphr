@@ -15,6 +15,11 @@
 
             gtag("config", "G-1F8N3BHMZ1");
         </script>
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
+            crossorigin="anonymous"
+        ></script>
 
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,10 +65,18 @@
     </head>
     <body>
         <div class="title">
-            <button id="setColorSettings" class="selected topButton">Colors</button>
-            <button id="setProxySettings" class="topButton">Proxy Configuration</button>
-            <button id="setCloakingSettings" class="topButton">Tab Cloaking</button>
-            <button id="wipeAllSettings" class="topButton">WIPE ALL SETTINGS</button>
+            <button id="setColorSettings" class="selected topButton">
+                Colors
+            </button>
+            <button id="setProxySettings" class="topButton">
+                Proxy Configuration
+            </button>
+            <button id="setCloakingSettings" class="topButton">
+                Tab Cloaking
+            </button>
+            <button id="wipeAllSettings" class="topButton">
+                WIPE ALL SETTINGS
+            </button>
             <button class="crllectButton">Made By Crllect</button>
             <div class="settingsSeparator"></div>
         </div>
@@ -75,19 +88,35 @@
                 <button id="debugPreset">Load Debug Preset</button>
             </div>
 
-            <br>
+            <br />
 
             <div class="cssTutorial">
                 <h2>Wanna make your own theme?</h2>
-                <br>
-                Well, turns out its pretty easy. Courtesy of me, below is a CSS template. You can copy that into any text editor or even google docs. Edit the values to add custom colors or any other custom CSS that you want to, then just re-upload it!
+                <br />
+                Well, turns out its pretty easy. Courtesy of me, below is a CSS
+                template. You can copy that into any text editor or even google
+                docs. Edit the values to add custom colors or any other custom
+                CSS that you want to, then just re-upload it!
             </div>
 
-            <button id="uploadButtonCSS" onclick="document.getElementById('uploadButton').click();">Upload Custom CSS here!</button>
-            <input type="file" id="uploadButton" accept="text/css" style="display: none;" onchange="handleFileSelect(this)"/>
+            <button
+                id="uploadButtonCSS"
+                onclick="document.getElementById('uploadButton').click();"
+            >
+                Upload Custom CSS here!
+            </button>
+            <input
+                type="file"
+                id="uploadButton"
+                accept="text/css"
+                style="display: none;"
+                onchange="handleFileSelect(this)"
+            />
             <h1 class="csstemplate">
                 CSS template:
-                <h4 id="cssTemplateCopyText" class="cssTemplateCopyText">(Click to Copy)</h4>
+                <h4 id="cssTemplateCopyText" class="cssTemplateCopyText">
+                    (Click to Copy)
+                </h4>
             </h1>
             <textarea id="cssTemplate" readonly spellcheck="false">
 :root { /* You can put "transparent" instead of "#00000000" for transparent colors, also you dont need to set every variable. You can just not include it and it will use the default one */

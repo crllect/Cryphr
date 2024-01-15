@@ -589,6 +589,16 @@ body {
   cursor: pointer;
 }
 
+.battery {
+  right: calc(50vw - var(--uniMargin) / 2 - 5vh);
+  transform: translateX(50%);
+  width: 10vh;
+}
+.battery:hover {
+  width: calc(10vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
+  cursor: pointer;
+}
+
 .discord {
   left: calc(var(--uniMargin) + var(--fullMenuSize) / 2);
   width: var(--fullMenuSize);
@@ -623,16 +633,6 @@ body {
 }
 .credits:hover {
   width: calc(16vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
-  cursor: pointer;
-}
-
-.battery {
-  right: calc(50vw - var(--uniMargin) / 2 - 5vh);
-  transform: translateX(50%);
-  width: 10vh;
-}
-.battery:hover {
-  width: calc(10vh * var(--hoverCoefficient) + var(--hoverConst) / 2);
   cursor: pointer;
 }
 

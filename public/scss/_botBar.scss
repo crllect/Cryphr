@@ -54,65 +54,72 @@
     display: none;
 }
 
+$clockWidth: 14vh;
+$batteryWidth: 10vh;
+$discordWidth: var(--fullMenuSize);
+$githubLinkWidth: 16vh;
+$emailWidth: 16vh;
+$creditsWidth: 16vh;
+
 .clock {
-    left: calc(50vw - (var(--uniMargin) / 2) - 7vh);
+    left: calc(50vw - (var(--uniMargin) / 2) - ($clockWidth / 2));
     transform: translateX(-50%);
-    width: 14vh;
+    width: $clockWidth;
 
     &:hover {
-        width: calc(14vh * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-        cursor: pointer;
-    }
-}
-
-.discord {
-    left: calc(var(--uniMargin) + (var(--fullMenuSize) / 2));
-    width: var(--fullMenuSize);
-    transform: translateX(-50%);
-
-    &:hover {
-        width: calc(var(--fullMenuSize) * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-    }
-}
-
-.githubLink {
-    left: calc(var(--uniMargin) + ((var(--fullMenuSize)) / 2) * 2 + var(--uniMargin) + 8vh);
-    width: 16vh;
-    transform: translateX(-50%);
-
-    &:hover {
-        width: calc(16vh * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-    }
-}
-
-.email {
-    right: calc(var(--uniMargin) + 8vh);
-    width: 16vh;
-    transform: translateX(50%);
-
-    &:hover {
-        width: calc(16vh * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-        cursor: pointer;
-    }
-}
-
-.credits {
-    right: calc((var(--uniMargin) + 8vh) + var(--uniMargin) + 8vh);
-    width: 16vh;
-
-    &:hover {
-        width: calc(16vh * var(--hoverCoefficient) + (var(--hoverConst) / 2));
+        width: calc($clockWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
         cursor: pointer;
     }
 }
 
 .battery {
-    right: calc(50vw - (var(--uniMargin) / 2) - 5vh);
+    right: calc(50vw - (var(--uniMargin) / 2) - ($batteryWidth / 2));
     transform: translateX(50%);
-    width: 10vh;
+    width: $batteryWidth;
 
     &:hover {
-        width: calc(10vh * var(--hoverCoefficient) + (var(--hoverConst) / 2));
+        width: calc($batteryWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
+        cursor: pointer;
+    }
+}
+
+.discord {
+    left: calc(var(--uniMargin) + ($discordWidth / 2));
+    width: $discordWidth;
+    transform: translateX(-50%);
+
+    &:hover {
+        width: calc($discordWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
+    }
+}
+
+.githubLink {
+    left: calc(var(--uniMargin) + ((var(--fullMenuSize)) / 2) * 2 + var(--uniMargin) + ($githubLinkWidth / 2));
+    width: $githubLinkWidth;
+    transform: translateX(-50%);
+
+    &:hover {
+        width: calc($githubLinkWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
+    }
+}
+
+.email {
+    right: calc(var(--uniMargin) + ($emailWidth / 2));
+    width: $emailWidth;
+    transform: translateX(50%);
+
+    &:hover {
+        width: calc($emailWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
+        cursor: pointer;
+    }
+}
+
+.credits {
+    right: calc((var(--uniMargin) + ($emailWidth / 2)) + var(--uniMargin) + ($creditsWidth / 2));
+    width: $creditsWidth;
+
+    &:hover {
+        width: calc($creditsWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
         cursor: pointer;
     }
 }
