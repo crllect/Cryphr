@@ -47,6 +47,7 @@ window.settingsLoader = {
     handleFileUpload,
     clearCustomCSS,
 };
+
 console.log(`
                        x .d88"  x .d88"                           :8
              .u    .    5888R    5888R                           .88

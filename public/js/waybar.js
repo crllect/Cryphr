@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("storage", function (event) {
     if (event.key === "UVEnabled") {
-        let newValue = JSON.parse(event.newValue) || true;
+        let newValue = JSON.parse(event.newValue) || false;
         UVEnabled = newValue;
     }
 });
@@ -40,7 +40,7 @@ function performSearch(query) {
     document.getElementById("searchButton").click();
 }
 
-let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || true;
+let UVEnabled = JSON.parse(localStorage.getItem("UVEnabled")) || false;
 
 document
     .getElementById("urlInput")
@@ -158,7 +158,7 @@ document.getElementById("searchButton").onclick = function (event) {
         let preferredSearchEngine = localStorage.getItem(
             "preferredSearchEngine"
         );
-        let searchUrl = preferredSearchEngine || "https://duckduckgo.com/?q=";
+        let searchUrl = preferredSearchEngine || "https://www.google.com/search?q=";
 
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);
@@ -208,4 +208,4 @@ document.getElementById("settingsButton").onclick = function (event) {
     }
 };
 
-console.log("Yea, I dont know if something I did broke so horribly that you needed to open the dev console. If that was the case, you should probably tell me about it");
+console.log("Yea, I dont know if something I did broke so horribly that you needed to open the dev console to fix it. If that is the case, you should probably tell me about it");
