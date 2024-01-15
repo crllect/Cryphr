@@ -90,9 +90,9 @@
                 <h4 id="cssTemplateCopyText" class="cssTemplateCopyText">(Click to Copy)</h4>
             </h1>
             <textarea id="cssTemplate" readonly spellcheck="false">
-:root { // You can put "transparent" instead of "#00000000" for transparent colors
+:root { /* You can put "transparent" instead of "#00000000" for transparent colors, also you dont need to set every variable. You can just not include it and it will use the default one */
     /* Background */
-    --bgCol: #14121D; // <-- url(https://link.to.image/image) instead of #hexColor for image
+    --bgCol: #14121D; /* <-- url(https://link.to.image/image) instead of #hexColor for image */
 
     /* Window Properties */
     --windowCol: #141414d1;
@@ -126,7 +126,7 @@
     --fastTransitionSpeed: 0.1s;
 
     /* Menu */
-    --menuButtonCol: var(--textCol); // <-- you can replace any value with var(--variable) in order to reuse already written values. But make sure that they are the same type, i.e. VH vs VW vs PX etc.
+    --menuButtonCol: var(--textCol); /* <-- you can replace any value with var(--variable) in order to reuse already written values. But make sure that they are the same type, i.e. VH vs VW vs PX etc. */
 
     /* Active */
     --activeTransition: var(--transitionSpeed);
@@ -149,7 +149,7 @@
     --hoverBorderThickness: 1.5px;
     --hoverBorderRad: 0.8;
     --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
-    --hoverShadowCol: rgba(      // <-- automatically calculates the hoverShadowColor based on the hoverBorderColor and the hoverBorderOpacity
+    --hoverShadowCol: rgba(      /* <-- automatically calculates the hoverShadowColor based on the hoverBorderColor and the hoverBorderOpacity */
         calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
         calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
         calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
@@ -161,12 +161,12 @@
     --hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
     --hoverActiveWindowContrast: var(--hoverWindowContrast);
 
-    --doParticles: 1 ; // <-- 1 is particles, 0 is no particles
+    --doParticles: 1 ; /* <-- 1 is particles, 0 is no particles */
 
-    --debugBg: transparent; // <-- adds backgrounds to history, settings and other embeds. Mostly used for debugging or developement, but you can use to get a look that your prefer
+    --debugBg: transparent; /* <-- adds backgrounds to history, settings and other embeds. Mostly used for debugging or developement, but you can use it to get a look that your prefer */
 }
 
-// Do note that there are no safe guards. You can add or change any CSS, but messing with something like the margins too much might break code or cause divisions by 0. So unless your doing something very complex or trying to break my app (report bugs to the repo https://github.com/crllect/Cryphr), I wouldn't recommend messing with anything too much.
+/* Do note that there are no safe guards. You can add or change any CSS, but messing with something like the margins too much might break code or cause divisions by 0. So unless your doing something very complex or trying to break my app (report bugs to the repo https://github.com/crllect/Cryphr), I wouldn't recommend messing with anything too much unless you know what your doing. If you end up making a theme that you like, send it so me on discord, I might add it to the presets */
             </textarea>
         </main>
     </body>
