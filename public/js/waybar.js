@@ -91,8 +91,31 @@ function addToSearchHistory(query) {
     );
 }
 
+let settingsOpen = false;
+
+function closeSettings() {
+    if (settingsOpen) {
+        settingsOpen = false;
+        document.getElementById("mainWindow").src = "greeter.html";
+    }
+}
+
+document.getElementById("mainWindow").src = "greeter.html";
+
+document.getElementById("settingsButton").onclick = function (event) {
+    event.preventDefault();
+
+    let mainWindow = document.getElementById("mainWindow");
+
+    settingsOpen = !settingsOpen;
+
+    mainWindow.src = settingsOpen ? "settings.html" : "greeter.html";
+};
+
 document.getElementById("searchButton").onclick = function (event) {
     event.preventDefault();
+
+    closeSettings();
 
     let url = document.getElementById("urlInput").value;
 
@@ -188,24 +211,33 @@ document.getElementById("reloadButton").onclick = function (event) {
     }, 2000);
 };
 
-let settingsOpen = false;
-
 document.getElementById("settingsButton").onclick = function (event) {
     event.preventDefault();
 
     let urlInput = document.getElementById("urlInput");
-    urlInput.value = "";
-    performSearch("");
-
-    settingsOpen = !settingsOpen;
-
     let mainWindow = document.getElementById("mainWindow");
+    let iframeWindow = document.getElementById("iframeWindow");
 
-    if (settingsOpen) {
-        mainWindow.src = "settings.html";
+    if (!iframeWindow.classList.contains("hidden")) {
+        urlInput.value = "";
+        performSearch("");
+
+        if (!settingsOpen) {
+            mainWindow.src = "settings.html";
+        }
+        settingsOpen = true;
     } else {
-        mainWindow.src = "greeter.html";
+        if (settingsOpen) {
+            mainWindow.src = "greeter.html";
+            settingsOpen = false;
+        } else {
+            mainWindow.src = "settings.html";
+            settingsOpen = true;
+        }
     }
 };
+
+
+
 
 console.log("Yea, I dont know if something I did broke so horribly that you needed to open the dev console to fix it. If that is the case, you should probably tell me about it");
