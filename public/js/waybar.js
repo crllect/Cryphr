@@ -181,7 +181,7 @@ document.getElementById("searchButton").onclick = function (event) {
         let preferredSearchEngine = localStorage.getItem(
             "preferredSearchEngine"
         );
-        let searchUrl = preferredSearchEngine || "https://www.google.com/search?q=";
+        let searchUrl = preferredSearchEngine || "https://www.bing.com/search?q=";
 
         if (!url.includes(".")) {
             url = searchUrl + encodeURIComponent(url);
