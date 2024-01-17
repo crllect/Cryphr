@@ -124,5 +124,5 @@ self.__dynamic$config = {
         "an.facebook.com",
         "static.ads-twitter.com",
         "ads-api.twitter.com",
-    ],
+    ]
 };
