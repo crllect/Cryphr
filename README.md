@@ -10,7 +10,7 @@ Hey, my names crllect, I started working on this proxy pretty recently, I think 
  - Both UltraViolet and Dynamic proxies are setup and toggleable.
 ---
 ## TODO:
- - Muiltiple tabs
+ - Muiltiple tabs (this is going to be a seperate project/repo
  - Add rammerhead as a proxy option
  - Add DIP as a proxy option
  - Change how to open the window, E.G. Embed vs New Tab
