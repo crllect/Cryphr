@@ -1,27 +1,3 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    { "source": "/404", "destination": "/404.html" },
-    { "source": "/404bg", "destination": "/404bg.html" },
-    { "source": "/aboutblank", "destination": "/aboutblank.html" },
-    { "source": "/app", "destination": "/app.html" },
-    { "source": "/cloaking", "destination": "/cloaking.html" },
-    { "source": "/colors", "destination": "/colors.html" },
-    { "source": "/greeter", "destination": "/greeter.html" },
-    { "source": "/history", "destination": "/history.html" },
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/mApp", "destination": "/mApp.html" },
-    { "source": "/proxyConfig", "destination": "/proxyConfig.html" },
-    { "source": "/settings", "destination": "/settings.html" },
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
-  ]
+  "cleanurls": true
 }
