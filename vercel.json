@@ -1,4 +1,5 @@
 {
+  "cleanurls": true,
   "version": 2,
   "builds": [
     {
