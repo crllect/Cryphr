@@ -1,4 +1,4 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { injectSpeedInsights } from "@vercel/speed-insights"
 
 function applyCustomCSS(css) {
     let styleSheet = document.getElementById("custom-css-style");
