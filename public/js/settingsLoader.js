@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 function applyCustomCSS(css) {
     let styleSheet = document.getElementById("custom-css-style");
     if (!styleSheet) {
