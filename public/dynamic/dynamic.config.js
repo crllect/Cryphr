@@ -5,7 +5,7 @@ self.__dynamic$config = {
     logLevel: 3,
     bare: {
         version: 2,
-        path: "https://crystalnetwork.me/bare/",
+        path: "https://geometry.solar-energy.cl/bare/",
     },
     tab: {
         title: "Service",
