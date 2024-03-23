@@ -1,6 +1,3 @@
-import { injectSpeedInsights } from '@vercel/speed-insights';
-injectSpeedInsights();
-
 function applyCustomCSS(css) {
     let styleSheet = document.getElementById("custom-css-style");
     if (!styleSheet) {
