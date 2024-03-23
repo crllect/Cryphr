@@ -1,7 +1,7 @@
 /*global Ultraviolet*/
 self.__uv$config = {
     prefix: '/uv/service/',
-    bare: 'https://roblox-interstellar.vercel.app/outerspace/',
+    bare: 'https://lunarlearningcenter.space/bare/', // https://infiniteknowledge.online/bare/, https://scholarlyessay.info/bare/
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/uv/uv.handler.js',
