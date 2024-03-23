@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         UVEnabled = !UVEnabled;
 
         toggleButton.textContent = UVEnabled
-            ? "Dynamic: OFF"
-            : "Dynamic: ON";
+            ? "UV: OFF"
+            : "UV: ON";
 
         localStorage.setItem("UVEnabled", JSON.stringify(UVEnabled));
     });
@@ -29,6 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let initialUVEnabled =
         JSON.parse(localStorage.getItem("UVEnabled")) || false;
     toggleButton.textContent = initialUVEnabled
-        ? "Dynamic: OFF"
-        : "Dynamic: ON";
+        ? "UV: OFF"
+        : "UV: ON";
 });

@@ -10,11 +10,11 @@ Hey, my names crllect, I started working on this proxy pretty recently, I think 
  - Both UltraViolet and Dynamic proxies are setup and toggleable.
 ---
 ## TODO:
- - Muiltiple tabs (this is going to be a seperate project/repo
+ - Muiltiple tabs (this is going to be a seperate project/repo)
  - Add rammerhead as a proxy option
  - Add DIP as a proxy option
  - Change how to open the window, E.G. Embed vs New Tab
- - Tab Cloaking (Favicon and Title, along with some preset)
+ - Tab Cloaking (Favicon and Title, along with some presets)
  - Add css for proxyConfig
  - Add my game lib, and also add 3kh0 game lib. Might also have a ruffle embed built in. Depends if this gains any traction or not
  - On first open, make the user go to settings to add a theme, and add a breif tutorial on changing proxies and when to do so (Very Low priority)

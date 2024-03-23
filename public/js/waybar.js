@@ -191,7 +191,7 @@ document.getElementById("searchButton").onclick = function (event) {
             }
         }
 
-        if (UVEnabled) {
+        if (!UVEnabled) {
             iframeWindow.src = __uv$config.prefix + __uv$config.encodeUrl(url);
         } else {
             iframeWindow.src =
