@@ -5,7 +5,7 @@ self.__dynamic$config = {
     logLevel: 3,
     bare: {
         version: 2,
-        path: "https://roblox-interstellar.vercel.app/outerspace/",
+        path: "https://focus-bare.vercel.app/",
     },
     tab: {
         title: "Service",
