@@ -183,7 +183,7 @@ document.getElementById("searchButton").onclick = function (event) {
         );
         let searchUrl = preferredSearchEngine || "https://www.bing.com/search?q=";
 
-        if (!url.includes(".")) {
+        if (!url.includes(".") || url.split(".").slice(1).toString().includes(" ")) {
             url = searchUrl + encodeURIComponent(url);
         } else {
             if (!url.startsWith("http://") && !url.startsWith("https://")) {
