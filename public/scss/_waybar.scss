@@ -1,143 +1,200 @@
 .waybar {
-    position: absolute;
-    width: calc((100% - (2 * var(--uniMargin))) - var(--waybarHeight));
-    height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
-    top: calc(var(--uniMargin));
-    right: var(--uniMargin);
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    background-color: var(--windowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
+	position: absolute;
+	width: calc((100% - (2 * var(--uniMargin))) - var(--waybarHeight));
+	height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
+	top: calc(var(--uniMargin));
+	right: var(--uniMargin);
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	background-color: var(--windowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
 }
 
 .waybar:hover {
-    width: calc((((100% - (2 * var(--uniMargin))) - var(--waybarHeight)) * var(--hoverCoefficient) + var(--hoverConst)));
-    height: calc((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
-    right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 4));
-    top: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-    border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-    box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-    border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-    background-color: var(--hoverWindowCol);
-    backdrop-filter:
-        blur(var(--hoverWindowBlur))
-        brightness(var(--hoverWindowBrightness))
-        contrast(var(--hoverWindowContrast));
+	width: calc(
+		(
+			((100% - (2 * var(--uniMargin))) - var(--waybarHeight)) *
+				var(--hoverCoefficient) + var(--hoverConst)
+		)
+	);
+	height: calc(
+		(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) *
+			var(--hoverCoefficient) + var(--hoverConst)
+	);
+	right: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - (2 * var(--uniMargin))) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 4)
+	);
+	top: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - var(--uniMargin) - var(--waybarHeight)) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
+	border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+	box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+	border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+	background-color: var(--hoverWindowCol);
+	backdrop-filter: blur(var(--hoverWindowBlur))
+		brightness(var(--hoverWindowBrightness))
+		contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-waybar {
-    width: calc(((100% - (var(--uniMargin))) - var(--fullMenuSize) - 2 * var(--uniMargin)));
-    height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
-    top: calc(var(--uniMargin));
-    right: var(--uniMargin);
-    backdrop-filter:
-        blur(var(--hoverWindowBlur))
-        brightness(var(--hoverWindowBrightness))
-        contrast(var(--hoverWindowContrast));
+	width: calc(
+		(
+			(100% - (var(--uniMargin))) - var(--fullMenuSize) - 2 *
+				var(--uniMargin)
+		)
+	);
+	height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
+	top: calc(var(--uniMargin));
+	right: var(--uniMargin);
+	backdrop-filter: blur(var(--hoverWindowBlur))
+		brightness(var(--hoverWindowBrightness))
+		contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-waybar:hover {
-    width: calc((((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst)) - var(--fullMenuSize) - 2 * var(--uniMargin)));
-    height: calc((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
-    right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 4));
-    top: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
+	width: calc(
+		(
+			(
+					(100% - (var(--uniMargin))) * var(--hoverCoefficient) +
+						var(--hoverConst)
+				) - var(--fullMenuSize) - 2 * var(--uniMargin)
+		)
+	);
+	height: calc(
+		(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) *
+			var(--hoverCoefficient) + var(--hoverConst)
+	);
+	right: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - (2 * var(--uniMargin))) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 4)
+	);
+	top: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - var(--uniMargin) - var(--waybarHeight)) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
 }
 
 #urlInput {
-    position: absolute;
-    left: calc(var(--waybarHeight) - (var(--waybarHeight) / 3));
-    height: calc(((var(--waybarHeight))) - var(--uniMargin) * 6);
-    width: calc((var(--urlInputLength)));
-    margin: 0;
-    border: transparent;
-    font-family: 'Open Sans';
-    font-size: calc((1.75vw * (var(--waybarHeight) / 12.5vh) / 1.25) * (var(--waybarHeight) / 10vh));
-    color: var(--menuButtonCol);
-    border-radius: 100vw;
-    padding: calc(var(--uniMargin) / 4);
-    padding-left: 0.75em;
-    background-color: var(--frontElementCol);
-    transition: all var(--transitionSpeed) ease;
-    &:focus, &:hover {
-        outline: none;
-        background-color: var(--hoverFrontElementCol);
-    }
+	position: absolute;
+	left: calc(var(--waybarHeight) - (var(--waybarHeight) / 3));
+	height: calc(((var(--waybarHeight))) - var(--uniMargin) * 6);
+	width: calc((var(--urlInputLength)));
+	margin: 0;
+	border: transparent;
+	font-family: 'Open Sans';
+	font-size: calc(
+		(1.75vw * (var(--waybarHeight) / 12.5vh) / 1.25) *
+			(var(--waybarHeight) / 10vh)
+	);
+	color: var(--menuButtonCol);
+	border-radius: 100vw;
+	padding: calc(var(--uniMargin) / 4);
+	padding-left: 0.75em;
+	background-color: var(--frontElementCol);
+	transition: all var(--transitionSpeed) ease;
+	&:focus,
+	&:hover {
+		outline: none;
+		background-color: var(--hoverFrontElementCol);
+	}
 }
 
-
 #reloadButton {
-    position: absolute;
-    left: calc(var(--waybarHeight) / 3 - var(--uniMargin));
-    margin: 0;
-    padding: 0;
-    background-color: #00000000;
-    border: transparent;
-    font-family: 'Open Sans';
-    font-size: calc(var(--waybarHeight) / 4);
-    color: var(--menuButtonCol);
-    transition: all var(--transitionSpeed) ease;
-    &:hover {
-        cursor: pointer;
-        transform: rotate(360deg) scale(1.2);
-    }
+	position: absolute;
+	left: calc(var(--waybarHeight) / 3 - var(--uniMargin));
+	margin: 0;
+	padding: 0;
+	background-color: #00000000;
+	border: transparent;
+	font-family: 'Open Sans';
+	font-size: calc(var(--waybarHeight) / 4);
+	color: var(--menuButtonCol);
+	transition: all var(--transitionSpeed) ease;
+	&:hover {
+		cursor: pointer;
+		transform: rotate(360deg) scale(1.2);
+	}
 }
 
 #searchButton {
-    position: absolute;
-    left: calc(var(--urlInputLength) + var(--waybarHeight) - 1em - (var(--waybarHeight) / 3));
-    transform: translateY(-3%) translateX(-50%);
-    margin: 0;
-    padding: 0;
-    background-color: #00000000;
-    border: transparent;
-    font-family: 'Open Sans';
-    font-size: calc(var(--waybarHeight) / 4);
-    color: #7C7777;
-    font-weight: 100;
-    transition: all var(--transitionSpeed) ease;
-    &:hover {
-        cursor: pointer;
-        transform: translateY(-3%) translateX(-50%) scale(1.2);
-    }
+	position: absolute;
+	left: calc(
+		var(--urlInputLength) + var(--waybarHeight) - 1em -
+			(var(--waybarHeight) / 3)
+	);
+	transform: translateY(-3%) translateX(-50%);
+	margin: 0;
+	padding: 0;
+	background-color: #00000000;
+	border: transparent;
+	font-family: 'Open Sans';
+	font-size: calc(var(--waybarHeight) / 4);
+	color: #7c7777;
+	font-weight: 100;
+	transition: all var(--transitionSpeed) ease;
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-3%) translateX(-50%) scale(1.2);
+	}
 }
 
 #settingsButton {
-    position: absolute;
-    right: calc(var(--uniMargin) * 2);
-    margin: 0;
-    padding: 0;
-    background-color: #00000000;
-    border: transparent;
-    font-family: 'Open Sans';
-    font-size: calc(var(--waybarHeight) / 4);
-    color: var(--menuButtonCol);
-    transition: all var(--transitionSpeed) ease;
-    &:hover {
-        cursor: pointer;
-        transform: translateY(-1%) rotate(360deg) scale(1.2);
-    }
+	position: absolute;
+	right: calc(var(--uniMargin) * 2);
+	margin: 0;
+	padding: 0;
+	background-color: #00000000;
+	border: transparent;
+	font-family: 'Open Sans';
+	font-size: calc(var(--waybarHeight) / 4);
+	color: var(--menuButtonCol);
+	transition: all var(--transitionSpeed) ease;
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-1%) rotate(360deg) scale(1.2);
+	}
 }

@@ -1,57 +1,65 @@
 .botBar {
-    user-select: none;
-    font-style: normal;
-    text-decoration: none;
-    font-family: 'Open Sans';
-    position: absolute;
-    font-size: calc(2.75vh * var(--botBarFontSize));
-    margin: 0;
-    padding: 0;
-    bottom: calc(var(--uniMargin));
-    color: calc(var(--textCol));
-    height: calc(var(--botBarHeight) - var(--uniMargin));
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--windowCol);
+	user-select: none;
+	font-style: normal;
+	text-decoration: none;
+	font-family: 'Open Sans';
+	position: absolute;
+	font-size: calc(2.75vh * var(--botBarFontSize));
+	margin: 0;
+	padding: 0;
+	bottom: calc(var(--uniMargin));
+	color: calc(var(--textCol));
+	height: calc(var(--botBarHeight) - var(--uniMargin));
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--windowCol);
 
-    &:hover {
-        height: calc((var(--botBarHeight) - var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
-        bottom: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        background-color: var(--hoverWindowCol);
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
+	&:hover {
+		height: calc(
+			(var(--botBarHeight) - var(--uniMargin)) * var(--hoverCoefficient) +
+				var(--hoverConst)
+		);
+		bottom: calc(
+			var(--uniMargin) -
+				(
+					(
+							(100% - var(--uniMargin) - var(--waybarHeight)) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 2)
+		);
+		box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+		border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+		background-color: var(--hoverWindowCol);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 $clockWidth: 14vh;
@@ -62,64 +70,82 @@ $emailWidth: 16vh;
 $creditsWidth: 16vh;
 
 .clock {
-    left: calc(50vw - (var(--uniMargin) / 2) - ($clockWidth / 2));
-    transform: translateX(-50%);
-    width: $clockWidth;
+	left: calc(50vw - (var(--uniMargin) / 2) - ($clockWidth / 2));
+	transform: translateX(-50%);
+	width: $clockWidth;
 
-    &:hover {
-        width: calc($clockWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-        cursor: pointer;
-    }
+	&:hover {
+		width: calc(
+			$clockWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2)
+		);
+		cursor: pointer;
+	}
 }
 
 .battery {
-    right: calc(50vw - (var(--uniMargin) / 2) - ($batteryWidth / 2));
-    transform: translateX(50%);
-    width: $batteryWidth;
+	right: calc(50vw - (var(--uniMargin) / 2) - ($batteryWidth / 2));
+	transform: translateX(50%);
+	width: $batteryWidth;
 
-    &:hover {
-        width: calc($batteryWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-        cursor: pointer;
-    }
+	&:hover {
+		width: calc(
+			$batteryWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2)
+		);
+		cursor: pointer;
+	}
 }
 
 .discord {
-    left: calc(var(--uniMargin) + ($discordWidth / 2));
-    width: $discordWidth;
-    transform: translateX(-50%);
+	left: calc(var(--uniMargin) + ($discordWidth / 2));
+	width: $discordWidth;
+	transform: translateX(-50%);
 
-    &:hover {
-        width: calc($discordWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-    }
+	&:hover {
+		width: calc(
+			$discordWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2)
+		);
+	}
 }
 
 .githubLink {
-    left: calc(var(--uniMargin) + ((var(--fullMenuSize)) / 2) * 2 + var(--uniMargin) + ($githubLinkWidth / 2));
-    width: $githubLinkWidth;
-    transform: translateX(-50%);
+	left: calc(
+		var(--uniMargin) + ((var(--fullMenuSize)) / 2) * 2 + var(--uniMargin) +
+			($githubLinkWidth / 2)
+	);
+	width: $githubLinkWidth;
+	transform: translateX(-50%);
 
-    &:hover {
-        width: calc($githubLinkWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-    }
+	&:hover {
+		width: calc(
+			$githubLinkWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2)
+		);
+	}
 }
 
 .email {
-    right: calc(var(--uniMargin) + ($emailWidth / 2));
-    width: $emailWidth;
-    transform: translateX(50%);
+	right: calc(var(--uniMargin) + ($emailWidth / 2));
+	width: $emailWidth;
+	transform: translateX(50%);
 
-    &:hover {
-        width: calc($emailWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-        cursor: pointer;
-    }
+	&:hover {
+		width: calc(
+			$emailWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2)
+		);
+		cursor: pointer;
+	}
 }
 
 .credits {
-    right: calc((var(--uniMargin) + ($emailWidth / 2)) + var(--uniMargin) + ($creditsWidth / 2));
-    width: $creditsWidth;
+	right: calc(
+		(var(--uniMargin) + ($emailWidth / 2)) + var(--uniMargin) +
+			($creditsWidth / 2)
+	);
+	width: $creditsWidth;
 
-    &:hover {
-        width: calc($creditsWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2));
-        cursor: pointer;
-    }
+	&:hover {
+		width: calc(
+			$creditsWidth * var(--hoverCoefficient) + (var(--hoverConst) / 2)
+		);
+		cursor: pointer;
+	}
 }

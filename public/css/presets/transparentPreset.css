@@ -1,68 +1,68 @@
 :root {
-    /* Background */
-    --bgCol: #25252a;
+	/* Background */
+	--bgCol: #25252a;
 
-    /* Window Properties */
-    --windowCol: #000000aa;
-    --windowBlur: 0vh;
-    --windowBrightness: 1;
-    --windowContrast: 1;
-    --frontElementCol: #f1f1f114;
-    --textCol: #fff;
-    --textColSec: #fff9;
-    --linkCol: #2353b2;
+	/* Window Properties */
+	--windowCol: #000000aa;
+	--windowBlur: 0vh;
+	--windowBrightness: 1;
+	--windowContrast: 1;
+	--frontElementCol: #f1f1f114;
+	--textCol: #fff;
+	--textColSec: #fff9;
+	--linkCol: #2353b2;
 
-    /* Shadow properties */
-    --shadowCol: rgba(255, 255, 255, 0.0);
-    --shadowRad: 0px 4px 4px;
+	/* Shadow properties */
+	--shadowCol: rgba(255, 255, 255, 0);
+	--shadowRad: 0px 4px 4px;
 
-    /* Margins */
-    --uniMargin: 1vh;
-    --waybarHeight: 10vh;
-    --urlInputLength: 43vw;
-    --botBarHeight: 4.5vh;
-    --botBarFontSize: 0.8;
-    --fullMenuSize: 25vh;
+	/* Margins */
+	--uniMargin: 1vh;
+	--waybarHeight: 10vh;
+	--urlInputLength: 43vw;
+	--botBarHeight: 4.5vh;
+	--botBarFontSize: 0.8;
+	--fullMenuSize: 25vh;
 
-    /* Border */
-    --borderRad: 7px;
-    --borderThickness: 1.75px;
-    --borderCol: transparent;
+	/* Border */
+	--borderRad: 7px;
+	--borderThickness: 1.75px;
+	--borderCol: transparent;
 
-    /* Transitions */
-    --transitionSpeed: 0.6s;
-    --fastTransitionSpeed: 0.15s;
+	/* Transitions */
+	--transitionSpeed: 0.6s;
+	--fastTransitionSpeed: 0.15s;
 
-    /* Menu */
-    --menuButtonCol: var(--textCol);
+	/* Menu */
+	--menuButtonCol: var(--textCol);
 
-    /* Active */
-    --activeTransition: var(--transitionSpeed);
-    --activeWindowCol: #000000aa;
-    --activeWindowBlur:0;
-    --activeWindowBrightness: 1;
-    --activeWindowContrast: 1;
+	/* Active */
+	--activeTransition: var(--transitionSpeed);
+	--activeWindowCol: #000000aa;
+	--activeWindowBlur: 0;
+	--activeWindowBrightness: 1;
+	--activeWindowContrast: 1;
 
-    /* Full Menu */
-    --fullMenuOffset: 10px;
+	/* Full Menu */
+	--fullMenuOffset: 10px;
 
-    /* Hover Vars */
-    --hoverConst: 0vh;
-    --hoverCoefficient: 1;
-    --hoverWindowBlur: 0vw;
-    --hoverWindowBrightness: 1;
-    --hoverWindowContrast: 1.;
-    --hoverBorderCol: transparent;
-    --hoverWindowCol: #000000aa;
-    --hoverBorderThickness: 1.5px;
-    --hoverBorderRad: 0.8;
-    --hoverBorderOpacity: rgba(255, 255, 255, 0.0);
-    --hoverShadowCol: transparent;
-    --hoverShadowRad: 0px 0px var(--fullMenuOffset);
-    --hoverFrontElementCol: #f1f1f120;
-    --hoverActiveWindowBlur: 0;
-    --hoverActiveWindowBrightness: 1;
-    --hoverActiveWindowContrast: 1;
+	/* Hover Vars */
+	--hoverConst: 0vh;
+	--hoverCoefficient: 1;
+	--hoverWindowBlur: 0vw;
+	--hoverWindowBrightness: 1;
+	--hoverWindowContrast: 1;
+	--hoverBorderCol: transparent;
+	--hoverWindowCol: #000000aa;
+	--hoverBorderThickness: 1.5px;
+	--hoverBorderRad: 0.8;
+	--hoverBorderOpacity: rgba(255, 255, 255, 0);
+	--hoverShadowCol: transparent;
+	--hoverShadowRad: 0px 0px var(--fullMenuOffset);
+	--hoverFrontElementCol: #f1f1f120;
+	--hoverActiveWindowBlur: 0;
+	--hoverActiveWindowBrightness: 1;
+	--hoverActiveWindowContrast: 1;
 
-    --doParticles: 0;
+	--doParticles: 0;
 }

@@ -1,181 +1,264 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-            gtag("config", "G-1F8N3BHMZ1");
-        </script>
-        <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
-            crossorigin="anonymous"
-        ></script>
+			gtag('config', 'G-1F8N3BHMZ1');
+		</script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
+			crossorigin="anonymous"
+		></script>
 
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-            name="description"
-            content="Cryphr is a open source proxy front end based on the titanium networks ultra violet"
-        />
-        <meta
-            name="keywords"
-            content="proxy server solutions, anonymous web browsing, high-speed proxies, secure proxy networks, private internet access, unblocked online games, access school games, bypass game restrictions, free web-based games, unblocked game sites, HTML5 game development, responsive web design, frontend frameworks, JavaScript UI development, CSS3 animations, SCSS best practices, SASS styling tips, SCSS vs SASS, advanced SCSS techniques, mixin libraries for SASS, clean UI design principles, minimalist website interfaces, user-friendly web design, intuitive navigation UI, aesthetic UI elements, interactive web games, HTML game programming, cross-platform game development, browser game optimization, game design for web, CSS animations for games, JavaScript game scripts, easy-to-learn web games, educational online games, casual browser games, competitive online gaming, web game design inspiration, mobile-responsive games, web gaming communities, HTML5 gaming libraries, CSS layout techniques, SASS variables and functions, SCSS nesting and partials, modular front-end coding, UI color schemes, typography in web design, front-end development tools, user experience enhancements, web design trends, innovative online games"
-        />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="description"
+			content="Cryphr is a open source proxy front end based on the titanium networks ultra violet"
+		/>
+		<meta
+			name="keywords"
+			content="proxy server solutions, anonymous web browsing, high-speed proxies, secure proxy networks, private internet access, unblocked online games, access school games, bypass game restrictions, free web-based games, unblocked game sites, HTML5 game development, responsive web design, frontend frameworks, JavaScript UI development, CSS3 animations, SCSS best practices, SASS styling tips, SCSS vs SASS, advanced SCSS techniques, mixin libraries for SASS, clean UI design principles, minimalist website interfaces, user-friendly web design, intuitive navigation UI, aesthetic UI elements, interactive web games, HTML game programming, cross-platform game development, browser game optimization, game design for web, CSS animations for games, JavaScript game scripts, easy-to-learn web games, educational online games, casual browser games, competitive online gaming, web game design inspiration, mobile-responsive games, web gaming communities, HTML5 gaming libraries, CSS layout techniques, SASS variables and functions, SCSS nesting and partials, modular front-end coding, UI color schemes, typography in web design, front-end development tools, user experience enhancements, web design trends, innovative online games"
+		/>
 
-        <!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
+		<!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
 
-        <script>
-            // page title
-            document.title = "Cryphr";
-        </script>
+		<script>
+			// page title
+			document.title = 'Cryphr';
+		</script>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Include the stylesheet -->
-        <link rel="stylesheet" href="css/index.css" />
+		<!-- Include the stylesheet -->
+		<link rel="stylesheet" href="css/index.css" />
 
-        <!-- sets the favicon -->
-        <link
-            rel="icon"
-            href="assets/xorro-favicon-hypr-2.png"
-            id="image/x-icon"
-        />
+		<!-- sets the favicon -->
+		<link
+			rel="icon"
+			href="assets/xorro-favicon-hypr-2.png"
+			id="image/x-icon"
+		/>
 
-        <!-- dynamically sets the favicon based on user color scheme -->
-        <script>
-            function updateFavicon() {
-                const favicon = document.getElementById("image/x-icon");
-                if (
-                    window.matchMedia &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches
-                ) {
-                    favicon.href = "assets/xorro-favicon-dark-2.png";
-                } else {
-                    favicon.href = "assets/xorro-favicon-light-2.png";
-                }
-            }
+		<!-- dynamically sets the favicon based on user color scheme -->
+		<script>
+			function updateFavicon() {
+				const favicon = document.getElementById('image/x-icon');
+				if (
+					window.matchMedia &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches
+				) {
+					favicon.href = 'assets/xorro-favicon-dark-2.png';
+				} else {
+					favicon.href = 'assets/xorro-favicon-light-2.png';
+				}
+			}
 
-            updateFavicon();
-        </script>
+			updateFavicon();
+		</script>
 
-        <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
-        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
-        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
-        <script src="js/particles.js"></script>
-        <script
-            src="https://kit.fontawesome.com/df4e45b628.js"
-            crossorigin="anonymous"
-        ></script>
-        <script type="text/javascript">
-            function detectMobileDevice() {
-                var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                if (isMobile) {
-                    window.location = "mApp.html";
-                }
-            }
-        </script>
-        <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-          </script>
-          <script defer src="/_vercel/insights/script.js"></script>
-    </head>
+		<!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+		<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+		<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+		<script src="js/particles.js"></script>
+		<script
+			src="https://kit.fontawesome.com/df4e45b628.js"
+			crossorigin="anonymous"
+		></script>
+		<script type="text/javascript">
+			function detectMobileDevice() {
+				var isMobile = /iPhone|iPad|iPod|Android/i.test(
+					navigator.userAgent
+				);
+				if (isMobile) {
+					window.location = 'mApp.html';
+				}
+			}
+		</script>
+		<script>
+			window.va =
+				window.va ||
+				function () {
+					(window.vaq = window.vaq || []).push(arguments);
+				};
+		</script>
+		<script defer src="/_vercel/insights/script.js"></script>
+	</head>
 
-    <body onload="detectMobileDevice()">
-        <div id="particles-js"></div>
+	<body onload="detectMobileDevice()">
+		<div id="particles-js"></div>
 
-        <div class="aboutBlankOpener">
-            <div class="openerContainer">
-                <svg class="aboutBlankOpenerLogo" viewBox="-122.5 -60 300 300" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 43.9492 47.3227 C 44.2544 47.6280 44.6821 47.7909 45.0686 47.7909 C 45.8832 47.7909 46.6361 47.0580 46.6361 46.2234 C 46.6361 45.8163 46.4735 45.4092 46.1679 45.1038 L 12.1120 11.0682 C 11.8066 10.7629 11.3995 10.6204 10.9924 10.6204 C 10.1781 10.6204 9.4250 11.3532 9.4250 12.1674 C 9.4250 12.5949 9.5675 13.0020 9.8728 13.2870 Z M 45.8628 41.5619 C 52.2546 37.4295 56.0000 32.0555 56.0000 29.6738 C 56.0000 25.5415 44.7025 12.3710 28.0102 12.3710 C 24.5497 12.3710 21.3130 12.9613 18.3410 13.9384 L 23.6540 19.2311 C 24.9771 18.6611 26.4428 18.3354 28.0102 18.3354 C 34.3207 18.3354 39.3892 23.3226 39.3892 29.6738 C 39.3892 31.2209 39.0636 32.7069 38.4324 34.0097 Z M 28.0102 46.9766 C 31.7761 46.9766 35.2774 46.3049 38.4124 45.2056 L 33.0179 39.8112 C 31.5318 40.5848 29.8219 41.0122 28.0102 41.0122 C 21.6591 41.0122 16.6310 35.8621 16.6107 29.6738 C 16.6107 27.8418 17.0382 26.1115 17.8117 24.5848 L 10.7278 17.4600 C 4.0102 21.5924 0 27.2310 0 29.6738 C 0 33.7858 11.5013 46.9766 28.0102 46.9766 Z M 34.4835 29.2463 C 34.4835 25.6840 31.6133 22.7934 28.0102 22.7934 C 27.7456 22.7934 27.4809 22.8137 27.2367 22.8341 L 34.4428 30.0402 C 34.4632 29.7960 34.4835 29.5110 34.4835 29.2463 Z M 21.5166 29.2056 C 21.5166 32.7883 24.4682 35.6789 28.0306 35.6789 C 28.3156 35.6789 28.5802 35.6586 28.8652 35.6382 L 21.5573 28.3303 C 21.5369 28.6153 21.5166 28.9206 21.5166 29.2056 Z"/>
-                </svg>
-                <p class="openerText">
-                    Opens Cryphr in <br>About:Blank<br>
-                    <button class="openerButton" onclick="location.href = 'aboutblank.html'">Open in cloaked applet</button>
-                    <p class="openerSubText">Will hide from searh history, but is more buggy</p>
-                </p>
-            </div>
-        </div>
+		<div class="aboutBlankOpener">
+			<div class="openerContainer">
+				<svg
+					class="aboutBlankOpenerLogo"
+					viewBox="-122.5 -60 300 300"
+					fill="#ffffff"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M 43.9492 47.3227 C 44.2544 47.6280 44.6821 47.7909 45.0686 47.7909 C 45.8832 47.7909 46.6361 47.0580 46.6361 46.2234 C 46.6361 45.8163 46.4735 45.4092 46.1679 45.1038 L 12.1120 11.0682 C 11.8066 10.7629 11.3995 10.6204 10.9924 10.6204 C 10.1781 10.6204 9.4250 11.3532 9.4250 12.1674 C 9.4250 12.5949 9.5675 13.0020 9.8728 13.2870 Z M 45.8628 41.5619 C 52.2546 37.4295 56.0000 32.0555 56.0000 29.6738 C 56.0000 25.5415 44.7025 12.3710 28.0102 12.3710 C 24.5497 12.3710 21.3130 12.9613 18.3410 13.9384 L 23.6540 19.2311 C 24.9771 18.6611 26.4428 18.3354 28.0102 18.3354 C 34.3207 18.3354 39.3892 23.3226 39.3892 29.6738 C 39.3892 31.2209 39.0636 32.7069 38.4324 34.0097 Z M 28.0102 46.9766 C 31.7761 46.9766 35.2774 46.3049 38.4124 45.2056 L 33.0179 39.8112 C 31.5318 40.5848 29.8219 41.0122 28.0102 41.0122 C 21.6591 41.0122 16.6310 35.8621 16.6107 29.6738 C 16.6107 27.8418 17.0382 26.1115 17.8117 24.5848 L 10.7278 17.4600 C 4.0102 21.5924 0 27.2310 0 29.6738 C 0 33.7858 11.5013 46.9766 28.0102 46.9766 Z M 34.4835 29.2463 C 34.4835 25.6840 31.6133 22.7934 28.0102 22.7934 C 27.7456 22.7934 27.4809 22.8137 27.2367 22.8341 L 34.4428 30.0402 C 34.4632 29.7960 34.4835 29.5110 34.4835 29.2463 Z M 21.5166 29.2056 C 21.5166 32.7883 24.4682 35.6789 28.0306 35.6789 C 28.3156 35.6789 28.5802 35.6586 28.8652 35.6382 L 21.5573 28.3303 C 21.5369 28.6153 21.5166 28.9206 21.5166 29.2056 Z"
+					/>
+				</svg>
+				<div class="openerText">
+					Opens Cryphr in <br />About:Blank<br />
+					<button
+						class="openerButton"
+						onclick="location.href = 'aboutblank.html'"
+					>
+						Open in cloaked applet
+					</button>
+					<p class="openerSubText">
+						Will hide from searh history, but is more buggy
+					</p>
+				</div>
+			</div>
+		</div>
 
-        <div class="standardOpener">
-            <div class="openerContainer">
-                <svg class="starderdOpenerLogo" viewBox="-122.5 -60 300 300" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 45.863 41.562 C 52.255 37.43 56 32.056 56 29.674 C 56 25.542 44.703 12.371 28.01 12.371 C 24.55 12.371 21.313 12.961 18.341 13.938 L 23.654 19.231 C 24.977 18.661 26.443 18.335 28.01 18.335 C 34.321 18.335 39.389 23.323 39.389 29.674 C 39.389 31.221 39.064 32.707 38.432 34.01 L 45.863 41.562 Z M 28.01 46.977 C 31.776 46.977 35.277 46.305 38.412 45.206 L 33.018 39.811 C 31.532 40.585 29.822 41.012 28.01 41.012 C 21.659 41.012 16.631 35.862 16.611 29.674 C 16.611 27.842 17.038 26.112 17.812 24.585 L 11.232 17.418 C 4.514 21.55 0 27.231 0 29.674 C 0 33.786 11.501 46.977 28.01 46.977 Z M 34.484 29.246 C 34.484 25.684 31.613 22.793 28.01 22.793 C 27.746 22.793 27.481 22.814 27.237 22.834 L 34.443 30.04 C 34.463 29.796 34.484 29.511 34.484 29.246 Z M 21.517 29.206 C 21.517 32.788 24.468 35.679 28.031 35.679 C 28.316 35.679 28.58 35.659 28.865 35.638 L 21.557 28.33 C 21.537 28.615 21.517 28.921 21.517 29.206 Z" transform="matrix(1, 0, 0, 1, 0, -7.105427357601002e-15)"/>
-                <ellipse style="stroke: rgb(0, 0, 0); stroke-opacity: 0;" cx="27.995" cy="29.236" rx="6.501" ry="6.465" transform="matrix(1, 0, 0, 1, 0, -7.105427357601002e-15)"/>
-                <path stroke-width="0" d="M 18.603 13.861 C 19.091 13.719 24.992 18.79 24.091 19.077 C 22.509 19.581 18.684 22.472 17.569 25.11 C 17.047 26.344 10.065 18.246 11.055 17.529 C 12.045 16.812 16.75 14.402 18.603 13.861 Z" style="stroke-width: 2px; stroke-opacity: 0; stroke: rgb(0, 0, 0);" transform="matrix(0.999998927116394, -0.0011749999830499291, 0.0011749999830499291, 0.999998927116394, -0.02545822784304619, 0.018562106415629387)"/>
-                <path stroke-width="0" d="M 40.061 33.143 C 40.628 32.991 46.711 38.163 45.665 38.471 C 43.83 39.012 40.103 42.315 38.809 45.148 C 38.203 46.474 30.155 37.853 31.304 37.082 C 32.453 36.312 37.912 33.724 40.061 33.143 Z" style="stroke-width: 2px; stroke-opacity: 0; stroke: rgb(0, 0, 0); transform-origin: 38.4888px 39.213px;" transform="matrix(-0.999456107616, 0.03298400715, -0.03298400715, -0.999456107616, 0.753546564574, 0.06263895885)"/>
-                </svg>
-                <p class="openerText">
-                    Opens Cryphr <br>without cloaking<br>
-                    <button class="openerButton" onclick="location.href = 'app.html'">Open in standard applet</button>
-                    <p class="openerSubText">Will show in search history</p>
-                </p>
-            </div>
-        </div>
+		<div class="standardOpener">
+			<div class="openerContainer">
+				<svg
+					class="starderdOpenerLogo"
+					viewBox="-122.5 -60 300 300"
+					fill="#ffffff"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M 45.863 41.562 C 52.255 37.43 56 32.056 56 29.674 C 56 25.542 44.703 12.371 28.01 12.371 C 24.55 12.371 21.313 12.961 18.341 13.938 L 23.654 19.231 C 24.977 18.661 26.443 18.335 28.01 18.335 C 34.321 18.335 39.389 23.323 39.389 29.674 C 39.389 31.221 39.064 32.707 38.432 34.01 L 45.863 41.562 Z M 28.01 46.977 C 31.776 46.977 35.277 46.305 38.412 45.206 L 33.018 39.811 C 31.532 40.585 29.822 41.012 28.01 41.012 C 21.659 41.012 16.631 35.862 16.611 29.674 C 16.611 27.842 17.038 26.112 17.812 24.585 L 11.232 17.418 C 4.514 21.55 0 27.231 0 29.674 C 0 33.786 11.501 46.977 28.01 46.977 Z M 34.484 29.246 C 34.484 25.684 31.613 22.793 28.01 22.793 C 27.746 22.793 27.481 22.814 27.237 22.834 L 34.443 30.04 C 34.463 29.796 34.484 29.511 34.484 29.246 Z M 21.517 29.206 C 21.517 32.788 24.468 35.679 28.031 35.679 C 28.316 35.679 28.58 35.659 28.865 35.638 L 21.557 28.33 C 21.537 28.615 21.517 28.921 21.517 29.206 Z"
+						transform="matrix(1, 0, 0, 1, 0, -7.105427357601002e-15)"
+					/>
+					<ellipse
+						style="stroke: rgb(0, 0, 0); stroke-opacity: 0"
+						cx="27.995"
+						cy="29.236"
+						rx="6.501"
+						ry="6.465"
+						transform="matrix(1, 0, 0, 1, 0, -7.105427357601002e-15)"
+					/>
+					<path
+						stroke-width="0"
+						d="M 18.603 13.861 C 19.091 13.719 24.992 18.79 24.091 19.077 C 22.509 19.581 18.684 22.472 17.569 25.11 C 17.047 26.344 10.065 18.246 11.055 17.529 C 12.045 16.812 16.75 14.402 18.603 13.861 Z"
+						style="
+							stroke-width: 2px;
+							stroke-opacity: 0;
+							stroke: rgb(0, 0, 0);
+						"
+						transform="matrix(0.999998927116394, -0.0011749999830499291, 0.0011749999830499291, 0.999998927116394, -0.02545822784304619, 0.018562106415629387)"
+					/>
+					<path
+						stroke-width="0"
+						d="M 40.061 33.143 C 40.628 32.991 46.711 38.163 45.665 38.471 C 43.83 39.012 40.103 42.315 38.809 45.148 C 38.203 46.474 30.155 37.853 31.304 37.082 C 32.453 36.312 37.912 33.724 40.061 33.143 Z"
+						style="
+							stroke-width: 2px;
+							stroke-opacity: 0;
+							stroke: rgb(0, 0, 0);
+							transform-origin: 38.4888px 39.213px;
+						"
+						transform="matrix(-0.999456107616, 0.03298400715, -0.03298400715, -0.999456107616, 0.753546564574, 0.06263895885)"
+					/>
+				</svg>
+				<div class="openerText">
+					Opens Cryphr <br />without cloaking<br />
+					<button
+						class="openerButton"
+						onclick="location.href = 'app.html'"
+					>
+						Open in standard applet
+					</button>
+					<p class="openerSubText">Will show in search history</p>
+				</div>
+			</div>
+		</div>
 
-        <!-- Center of botBar -->
-        <p id="time" class="clock botBar"></p>
+		<!-- Center of botBar -->
+		<p id="time" class="clock botBar"></p>
 
-        <p id="battery" class="battery botBar"></p>
+		<p id="battery" class="battery botBar"></p>
 
-        <!-- Left side of botBar -->
-        <a
-            class="discord botBar"
-            href="https://discord.com/users/713488984596021291"
-            target="_blank" rel="noopener noreferrer">
-            <span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
-        >
+		<!-- Left side of botBar -->
+		<a
+			class="discord botBar"
+			href="https://discord.com/users/713488984596021291"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
+		>
 
-        <a 
-            class="githubLink botBar"
-            href="https://github.com/crllect/Cryphr"
-            target="_blank" rel="noopener noreferrer">
-            <span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
-        >
+		<a
+			class="githubLink botBar"
+			href="https://github.com/crllect/Cryphr"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
+		>
 
-        <!-- Credits stuff-->
-        <p class="credits botBar">
-            <span class="fa-solid fa-info"></span>&#160;&#160;Credits
-        </p>
-        <div class="hidden" id="creditsPopup">
-            <div class="creditsPopupText">
-                Written completely by&#160;<a href="https://github.com/Crllect" target="_blank" rel="noopener noreferrer">Crllect</a>
-                <br>
-                <br>
-                Thanks to&#160;<a href="https://github.com/Riftriot" target="_blank" rel="noopener noreferrer">Riftriot</a>&#160;for helping set up UV
-            </div>
-        </div>
-        <div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
+		<!-- Credits stuff-->
+		<p class="credits botBar">
+			<span class="fa-solid fa-info"></span>&#160;&#160;Credits
+		</p>
+		<div class="hidden" id="creditsPopup">
+			<div class="creditsPopupText">
+				Written completely by&#160;<a
+					href="https://github.com/Crllect"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Crllect</a
+				>
+				<br />
+				<br />
+				Thanks to&#160;<a
+					href="https://github.com/Riftriot"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Riftriot</a
+				>&#160;for helping set up UV
+			</div>
+		</div>
+		<div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
 
-        <!-- Email stuff-->
-        <p class="email botBar">
-            <span class="fa-regular fa-at"></span>&#160;&#160;Emails
-        </p>
-        <div class="hidden" id="emailPopup">
-            <div class="emailPopupText">
-                Email me at&#160;<a href="mailto:crllect@proton.me" target="_blank" rel="noopener noreferrer">crllect@proton.me</a>&#160;I check this email more often,
-                <br>
-                <br>
-                and at&#160;<a href="mailto:crllect@tuta.io" target="_blank" rel="noopener noreferrer">crllect@tuta.io</a>&#160;for serious inquiries
-            </div>
-        </div>
-        <div class="hidden emailPopupBg" id="emailPopupBg"></div>
+		<!-- Email stuff-->
+		<p class="email botBar">
+			<span class="fa-regular fa-at"></span>&#160;&#160;Emails
+		</p>
+		<div class="hidden" id="emailPopup">
+			<div class="emailPopupText">
+				Email me at&#160;<a
+					href="mailto:crllect@proton.me"
+					target="_blank"
+					rel="noopener noreferrer"
+					>crllect@proton.me</a
+				>&#160;I check this email more often,
+				<br />
+				<br />
+				and at&#160;<a
+					href="mailto:crllect@tuta.io"
+					target="_blank"
+					rel="noopener noreferrer"
+					>crllect@tuta.io</a
+				>&#160;for serious inquiries
+			</div>
+		</div>
+		<div class="hidden emailPopupBg" id="emailPopupBg"></div>
 
-        <!-- Import varius JS things -->
-        <script src="js/clock.js"></script>
-        <script src="js/credits.js"></script>
-        <script src="js/emails.js"></script>
-        <script src="js/battery.js"></script>
-    </body>
-    <script src="js/indexParticles.js"></script>
-    <script src="js/settingsLoader.js"></script>
+		<!-- Import varius JS things -->
+		<script src="js/clock.js"></script>
+		<script src="js/credits.js"></script>
+		<script src="js/emails.js"></script>
+		<script src="js/battery.js"></script>
+	</body>
+	<script src="js/indexParticles.js"></script>
+	<script src="js/settingsLoader.js"></script>
 </html>

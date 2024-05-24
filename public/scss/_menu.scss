@@ -1,219 +1,275 @@
 .menu {
-    position: absolute;
-    .menuIcon {
-        fill: var(--menuButtonCol);
-        stroke: var(--menuButtonCol);
-        height: calc(var(--waybarHeight) * 9);
-        width: calc(var(--waybarHeight) / 1.75);
-        transition: none;
-        z-index: 9999980;
-    }
-    .menuLogo {
-        font-style: normal;
-        text-decoration: none;
-        font-family: 'Open Sans';
-        fill: #00000000;
-        stroke: #00000000;
-        color: transparent;
-        user-select: none;
-        cursor: default;
-        font-size: 0;
-    }
-    width: calc(var(--waybarHeight) - var(--uniMargin));
-    height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
-    top: calc(var(--uniMargin));
-    left: var(--uniMargin);
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    background-color: var(--windowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease,
-        font-size var(--transitionSpeed) ease;
+	position: absolute;
+	.menuIcon {
+		fill: var(--menuButtonCol);
+		stroke: var(--menuButtonCol);
+		height: calc(var(--waybarHeight) * 9);
+		width: calc(var(--waybarHeight) / 1.75);
+		transition: none;
+		z-index: 9999980;
+	}
+	.menuLogo {
+		font-style: normal;
+		text-decoration: none;
+		font-family: 'Open Sans';
+		fill: #00000000;
+		stroke: #00000000;
+		color: transparent;
+		user-select: none;
+		cursor: default;
+		font-size: 0;
+	}
+	width: calc(var(--waybarHeight) - var(--uniMargin));
+	height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
+	top: calc(var(--uniMargin));
+	left: var(--uniMargin);
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	background-color: var(--windowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease,
+		font-size var(--transitionSpeed) ease;
 }
 
 .menu:hover {
-    width: calc((var(--waybarHeight) - var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
-    height: calc((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
-    left: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-    top: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-    border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-    background-color: var(--hoverWindowCol);
-    box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-    border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-    backdrop-filter:
-        blur(var(--hoverWindowBlur))
-        brightness(var(--hoverWindowBrightness))
-        contrast(var(--hoverWindowContrast));
+	width: calc(
+		(var(--waybarHeight) - var(--uniMargin)) * var(--hoverCoefficient) +
+			var(--hoverConst)
+	);
+	height: calc(
+		(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) *
+			var(--hoverCoefficient) + var(--hoverConst)
+	);
+	left: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - (2 * var(--uniMargin))) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
+	top: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - var(--uniMargin) - var(--waybarHeight)) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
+	border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+	background-color: var(--hoverWindowCol);
+	box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+	border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+	backdrop-filter: blur(var(--hoverWindowBlur))
+		brightness(var(--hoverWindowBrightness))
+		contrast(var(--hoverWindowContrast));
 }
 
 .menu.menuOpen {
-    position: absolute;
-    .menuIcon {
-        fill: #00000000;
-        stroke: #00000000;
-        height: 0.00000000001;
-        width: 0.00000000001;
-    }
-    .menuLogo {
-        fill: var(--menuButtonCol);
-        stroke: var(--menuButtonCol);
-        color: aliceblue;
-        cursor: pointer;
-        font-size: calc(0.4 * var(--waybarHeight));
-        font: 'Open Sans';
-        text-decoration: none;
-    }
-    width: var(--fullMenuSize);
-    height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
-    top: calc(var(--uniMargin));
-    left: var(--uniMargin);
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    background-color: var(--activeWindowCol);
-    backdrop-filter:
-        blur(calc(var(--hoverWindowBlur) / 8))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
+	position: absolute;
+	.menuIcon {
+		fill: #00000000;
+		stroke: #00000000;
+		height: 0.00000000001;
+		width: 0.00000000001;
+	}
+	.menuLogo {
+		fill: var(--menuButtonCol);
+		stroke: var(--menuButtonCol);
+		color: aliceblue;
+		cursor: pointer;
+		font-size: calc(0.4 * var(--waybarHeight));
+		font: 'Open Sans';
+		text-decoration: none;
+	}
+	width: var(--fullMenuSize);
+	height: calc(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin)));
+	top: calc(var(--uniMargin));
+	left: var(--uniMargin);
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	background-color: var(--activeWindowCol);
+	backdrop-filter: blur(calc(var(--hoverWindowBlur) / 8))
+		brightness(var(--windowBrightness)) contrast(var(--windowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
 }
 
 .menu.menuOpen:hover {
-    width: calc(var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst));
-    height: calc((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
-    left: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-    top: calc(var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-    border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-    box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-    background-color: var(--activeWindowCol);
-    border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-    backdrop-filter:
-        blur(var(--hoverWindowBlur))
-        brightness(var(--hoverActiveWindowBrightness))
-        contrast(var(--hoverActiveWindowContrast));
+	width: calc(
+		var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst)
+	);
+	height: calc(
+		(var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))) *
+			var(--hoverCoefficient) + var(--hoverConst)
+	);
+	left: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - (2 * var(--uniMargin))) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
+	top: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - var(--uniMargin) - var(--waybarHeight)) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
+	border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+	box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+	background-color: var(--activeWindowCol);
+	border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+	backdrop-filter: blur(var(--hoverWindowBlur))
+		brightness(var(--hoverActiveWindowBrightness))
+		contrast(var(--hoverActiveWindowContrast));
 }
 .fullMenu {
-    position: absolute;
-    width: var(--fullMenuSize);
-    height: calc(100% - var(--waybarHeight) - var(--botBarHeight) + var(--uniMargin) * 1.5);
-    bottom: calc((var(--botBarHeight) + var(--uniMargin)));
-    left: calc((-1 * var(--uniMargin)) * 2 - var(--fullMenuSize));
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    background-color: var(--activeWindowCol);
-    backdrop-filter:
-        blur(var(--activeTransition))
-        brightness(var(--activeWindowBrightness))
-        contrast(var(--activeWindowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
+	position: absolute;
+	width: var(--fullMenuSize);
+	height: calc(
+		100% - var(--waybarHeight) - var(--botBarHeight) + var(--uniMargin) *
+			1.5
+	);
+	bottom: calc((var(--botBarHeight) + var(--uniMargin)));
+	left: calc((-1 * var(--uniMargin)) * 2 - var(--fullMenuSize));
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	background-color: var(--activeWindowCol);
+	backdrop-filter: blur(var(--activeTransition))
+		brightness(var(--activeWindowBrightness))
+		contrast(var(--activeWindowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
 }
 .menuOpen-fullMenu {
-    position: absolute;
-    width: var(--fullMenuSize);
-    height: calc(100% - var(--waybarHeight) - var(--botBarHeight) + var(--uniMargin) * 1.5);
-    bottom: calc((var(--botBarHeight) + var(--uniMargin)));
-    left: calc(var(--uniMargin));
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    background-color: var(--activeWindowCol);
-    backdrop-filter:
-        blur(var(--activeWindowContrast))
-        brightness(var(--activeWindowBrightness))
-        contrast(var(--activeWindowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
+	position: absolute;
+	width: var(--fullMenuSize);
+	height: calc(
+		100% - var(--waybarHeight) - var(--botBarHeight) + var(--uniMargin) *
+			1.5
+	);
+	bottom: calc((var(--botBarHeight) + var(--uniMargin)));
+	left: calc(var(--uniMargin));
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	background-color: var(--activeWindowCol);
+	backdrop-filter: blur(var(--activeWindowContrast))
+		brightness(var(--activeWindowBrightness))
+		contrast(var(--activeWindowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
 }
 
 .menuOpen-fullMenu:hover {
-    width: calc(var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst));
-    height: calc(((100% - var(--waybarHeight)) * var(--hoverCoefficient)) + var(--hoverConst) - var(--botBarHeight) + 1.5 * var(--uniMargin));
-    bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - (var(--hoverConst) / 2));
-    left: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-    border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-    box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-    background-color: var(--activeWindowCol);
-    border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-    backdrop-filter:
-        blur(var(--hoverActiveWindowBlur))
-        brightness(var(--hoverActiveWindowBrightness))
-        contrast(var(--hoverActiveWindowContrast));
+	width: calc(
+		var(--fullMenuSize) * var(--hoverCoefficient) + var(--hoverConst)
+	);
+	height: calc(
+		((100% - var(--waybarHeight)) * var(--hoverCoefficient)) +
+			var(--hoverConst) - var(--botBarHeight) + 1.5 * var(--uniMargin)
+	);
+	bottom: calc(
+		((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) -
+			(var(--hoverConst) / 2)
+	);
+	left: calc(
+		var(--uniMargin) -
+			(
+				(
+						(100% - (2 * var(--uniMargin))) *
+							(var(--hoverCoefficient) - 1)
+					) / 2
+			) - (var(--hoverConst) / 2)
+	);
+	border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+	box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+	background-color: var(--activeWindowCol);
+	border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+	backdrop-filter: blur(var(--hoverActiveWindowBlur))
+		brightness(var(--hoverActiveWindowBrightness))
+		contrast(var(--hoverActiveWindowContrast));
 }

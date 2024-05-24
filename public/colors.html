@@ -1,114 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-      gtag('config', 'G-1F8N3BHMZ1');
-    </script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
-      crossorigin="anonymous"
-    ></script>
+			gtag('config', 'G-1F8N3BHMZ1');
+		</script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
+			crossorigin="anonymous"
+		></script>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Settings page for Cryphr" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Settings page for Cryphr" />
 
-    <script>
-      // page title
-      document.title = 'Cryphr';
-    </script>
+		<script>
+			// page title
+			document.title = 'Cryphr';
+		</script>
 
-    <link rel="stylesheet" href="css/colors.css" />
+		<link rel="stylesheet" href="css/colors.css" />
 
-    <!-- sets the favicon -->
-    <link rel="icon" href="assets/xorro-favicon-hypr-3.png" id="image/x-icon" />
+		<!-- sets the favicon -->
+		<link
+			rel="icon"
+			href="assets/xorro-favicon-hypr-3.png"
+			id="image/x-icon"
+		/>
 
-    <!-- dynamically sets the favicon based on user color scheme -->
-    <script>
-      function updateFavicon() {
-        const favicon = document.getElementById('image/x-icon');
-        if (
-          window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches
-        ) {
-          favicon.href = 'assets/xorro-favicon-dark-2.png';
-        } else {
-          favicon.href = 'assets/xorro-favicon-light-2.png';
-        }
-      }
-      updateFavicon();
-    </script>
+		<!-- dynamically sets the favicon based on user color scheme -->
+		<script>
+			function updateFavicon() {
+				const favicon = document.getElementById('image/x-icon');
+				if (
+					window.matchMedia &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches
+				) {
+					favicon.href = 'assets/xorro-favicon-dark-2.png';
+				} else {
+					favicon.href = 'assets/xorro-favicon-light-2.png';
+				}
+			}
+			updateFavicon();
+		</script>
 
-    <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
-    <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
-    <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
-    <script
-      src="https://kit.fontawesome.com/df4e45b628.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="title">
-      <button id="setColorSettings" class="selected topButton">Colors</button>
-      <button id="setProxySettings" class="topButton">
-        Proxy Configuration
-      </button>
-      <button id="setCloakingSettings" class="topButton">Tab Cloaking</button>
-      <button id="wipeAllSettings" class="topButton">WIPE ALL SETTINGS</button>
-      <button class="crllectButton">Made By Crllect</button>
-      <div class="settingsSeparator"></div>
-    </div>
-    <main class="content">
-      <div class="presetGrid">
-        <button id="clearButton">Load Default Preset</button>
-        <button id="nebulaPreset">Load Nebula Preset</button>
-        <button id="transparentPreset">Load Transparent Preset</button>
-        <button id="debugPreset">Load Debug Preset</button>
-      </div>
+		<!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+		<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+		<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+		<script
+			src="https://kit.fontawesome.com/df4e45b628.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="title">
+			<button id="setColorSettings" class="selected topButton">
+				Colors
+			</button>
+			<button id="setProxySettings" class="topButton">
+				Proxy Configuration
+			</button>
+			<button id="setCloakingSettings" class="topButton">
+				Tab Cloaking
+			</button>
+			<button id="wipeAllSettings" class="topButton">
+				WIPE ALL SETTINGS
+			</button>
+			<button class="crllectButton">Made By Crllect</button>
+			<div class="settingsSeparator"></div>
+		</div>
+		<main class="content">
+			<div class="presetGrid">
+				<button id="clearButton">Load Default Preset</button>
+				<button id="nebulaPreset">Load Nebula Preset</button>
+				<button id="transparentPreset">Load Transparent Preset</button>
+				<button id="debugPreset">Load Debug Preset</button>
+			</div>
 
-      <br />
+			<br />
 
-      <div class="cssTutorial">
-        <h2>Wanna make your own theme?</h2>
-        <br />
-        Well, turns out its pretty easy. Courtesy of me, below is a CSS
-        template. You can copy that into any text editor or even google docs.
-        Edit the values to add custom colors or any other custom CSS that you
-        want to, then just re-upload it!
-      </div>
+			<div class="cssTutorial">
+				<h2>Wanna make your own theme?</h2>
+				<br />
+				Well, turns out its pretty easy. Courtesy of me, below is a CSS
+				template. You can copy that into any text editor or even google
+				docs. Edit the values to add custom colors or any other custom
+				CSS that you want to, then just re-upload it!
+			</div>
 
-      <button
-        id="uploadButtonCSS"
-        onclick="document.getElementById('uploadButton').click();"
-      >
-        Upload Custom CSS here!
-      </button>
-      <input
-        type="file"
-        id="uploadButton"
-        accept="text/css"
-        style="display: none"
-        onchange="handleFileSelect(this)"
-      />
-      <h1 class="csstemplate">
-        CSS template:
-        <h4 id="cssTemplateCopyText" class="cssTemplateCopyText">
-          (Click to Copy)
-        </h4>
-      </h1>
-      <textarea id="cssTemplate" readonly spellcheck="false">
+			<button
+				id="uploadButtonCSS"
+				onclick="document.getElementById('uploadButton').click();"
+			>
+				Upload Custom CSS here!
+			</button>
+			<input
+				type="file"
+				id="uploadButton"
+				accept="text/css"
+				style="display: none"
+				onchange="handleFileSelect(this)"
+			/>
+			<h1 class="csstemplate">
+				CSS template:
+				<h4 id="cssTemplateCopyText" class="cssTemplateCopyText">
+					(Click to Copy)
+				</h4>
+			</h1>
+			<textarea id="cssTemplate" readonly spellcheck="false">
 :root { /* You can put "transparent" instead of "#00000000" for transparent colors, also you dont need to set every variable. You can just not include it and it will use the default one */
     /* Background */
     --bgCol: #14121D; /* <-- url(https://link.to.image/image) instead of #hexColor for image */
@@ -186,19 +196,18 @@
 }
 
 /* Do note that there are no safe guards. You can add or change any CSS, but messing with something like the margins too much might break code or cause divisions by 0. So unless your doing something very complex or trying to break my app (report bugs to the repo https://github.com/crllect/Cryphr), I wouldn't recommend messing with anything too much unless you know what your doing. If you end up making a theme that you like, send it so me on discord, I might add it to the presets */
-            </textarea
-      >
-    </main>
-  </body>
-  <script>
-    function handleFileSelect(input) {
-      if (input.files && input.files[0]) {
-        console.log('File chosen: ', input.files[0].name);
-      }
-    }
-  </script>
-  <script src="js/colors.js"></script>
-  <script src="js/presets.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/settingsLoader.js"></script>
+            </textarea>
+		</main>
+	</body>
+	<script>
+		function handleFileSelect(input) {
+			if (input.files && input.files[0]) {
+				console.log('File chosen: ', input.files[0].name);
+			}
+		}
+	</script>
+	<script src="js/colors.js"></script>
+	<script src="js/presets.js"></script>
+	<script src="js/settings.js"></script>
+	<script src="js/settingsLoader.js"></script>
 </html>

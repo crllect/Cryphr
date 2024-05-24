@@ -1,40 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-@import "_variables.scss"; // importing global variables
-@import "_mainWindow.scss"; // rest of the imports are self-explanatory
-@import "_waybar.scss";
-@import "_iframeWindow.scss";
-@import "_menu.scss";
-@import "_botBar.scss";
-@import "_popups.scss";
-@import "_aboutBlankChooser.scss";
-@import "_transitions.scss";
+@import '_variables.scss'; // importing global variables
+@import '_mainWindow.scss'; // rest of the imports are self-explanatory
+@import '_waybar.scss';
+@import '_iframeWindow.scss';
+@import '_menu.scss';
+@import '_botBar.scss';
+@import '_popups.scss';
+@import '_aboutBlankChooser.scss';
+@import '_transitions.scss';
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans';
-    color: var(--textCol);
-    user-select: none;
-    background-image: var(--bgCol);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: var(--bgCol);
-    overflow: hidden;
-    height: 100%;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans';
+	color: var(--textCol);
+	user-select: none;
+	background-image: var(--bgCol);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: var(--bgCol);
+	overflow: hidden;
+	height: 100%;
 }
 
 #particles-js {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: calc(100vw * var(--doParticles));
-    height: calc(100vh * var(--doParticles));
-    z-index: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: calc(100vw * var(--doParticles));
+	height: calc(100vh * var(--doParticles));
+	z-index: 0;
 }
 
 a {
-    color: var(--linkCol);
+	color: var(--linkCol);
 }
 
 /*

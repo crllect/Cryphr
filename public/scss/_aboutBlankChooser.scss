@@ -1,123 +1,169 @@
 .aboutBlankOpener {
-    position: absolute;
-    width: calc(50% - (1.5 * var(--uniMargin)));
-    height: calc(100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin));
-    bottom: calc(var(--botBarHeight) + var(--uniMargin));
-    right: var(--uniMargin);
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    background-color: var(--windowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all var(--transitionSpeed) ease;
-    &:hover {
-        user-select: none;
-        width: calc(50% - (1.5 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
-        height: calc(((100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin)) * var(--hoverCoefficient)) + var(--hoverConst));
-        right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-        bottom: calc(((var(--botBarHeight) + var(--uniMargin)) * var(--hoverCoefficient)) + var(--hoverConst) / 2);
-        border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        background-color: var(--hoverWindowCol);
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
+	position: absolute;
+	width: calc(50% - (1.5 * var(--uniMargin)));
+	height: calc(
+		100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin)
+	);
+	bottom: calc(var(--botBarHeight) + var(--uniMargin));
+	right: var(--uniMargin);
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	background-color: var(--windowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: all var(--transitionSpeed) ease;
+	&:hover {
+		user-select: none;
+		width: calc(
+			50% - (1.5 * var(--uniMargin)) * var(--hoverCoefficient) +
+				var(--hoverConst)
+		);
+		height: calc(
+			(
+					(
+							100% - (var(--botBarHeight) + var(--uniMargin)) - var(
+									--uniMargin
+								)
+						) * var(--hoverCoefficient)
+				) + var(--hoverConst)
+		);
+		right: calc(
+			var(--uniMargin) -
+				(
+					(
+							(100% - (2 * var(--uniMargin))) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 2)
+		);
+		bottom: calc(
+			((var(--botBarHeight) + var(--uniMargin)) * var(--hoverCoefficient)) +
+				var(--hoverConst) / 2
+		);
+		border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+		box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+		border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+		background-color: var(--hoverWindowCol);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
 }
 
 .standardOpener {
-    position: absolute;
-    width: calc(50% - (1.5 * var(--uniMargin)));
-    height: calc(100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin));
-    bottom: calc(var(--botBarHeight) + var(--uniMargin));
-    left: var(--uniMargin);
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    background-color: var(--windowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all var(--transitionSpeed) ease;
-    &:hover {
-        user-select: none;
-        width: calc(50% - (1.5 * var(--uniMargin)) * var(--hoverCoefficient) + var(--hoverConst));
-        height: calc(((100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin)) * var(--hoverCoefficient)) + var(--hoverConst));
-        left: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-        bottom: calc(((var(--botBarHeight) + var(--uniMargin)) * var(--hoverCoefficient)) + var(--hoverConst) / 2);
-        border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        background-color: var(--hoverWindowCol);
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
+	position: absolute;
+	width: calc(50% - (1.5 * var(--uniMargin)));
+	height: calc(
+		100% - (var(--botBarHeight) + var(--uniMargin)) - var(--uniMargin)
+	);
+	bottom: calc(var(--botBarHeight) + var(--uniMargin));
+	left: var(--uniMargin);
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	background-color: var(--windowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: all var(--transitionSpeed) ease;
+	&:hover {
+		user-select: none;
+		width: calc(
+			50% - (1.5 * var(--uniMargin)) * var(--hoverCoefficient) +
+				var(--hoverConst)
+		);
+		height: calc(
+			(
+					(
+							100% - (var(--botBarHeight) + var(--uniMargin)) - var(
+									--uniMargin
+								)
+						) * var(--hoverCoefficient)
+				) + var(--hoverConst)
+		);
+		left: calc(
+			var(--uniMargin) -
+				(
+					(
+							(100% - (2 * var(--uniMargin))) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 2)
+		);
+		bottom: calc(
+			((var(--botBarHeight) + var(--uniMargin)) * var(--hoverCoefficient)) +
+				var(--hoverConst) / 2
+		);
+		border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+		box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+		border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+		background-color: var(--hoverWindowCol);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
 }
 
 .openerText {
-    position: absolute;
-    font-family: 'Open Sans';
-    font-size: 1.4vw;
-    color: var(--textCol);
-    top: 45%;
+	position: absolute;
+	font-family: 'Open Sans';
+	font-size: 1.4vw;
+	color: var(--textCol);
+	top: 45%;
 }
 
 .openerSubText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    font-family: 'Open Sans';
-    color: #7C7777; // if anybody ends up making a pr, this color is not from a variable on purpose
-    font-size: 0.9vw;
-    transform: translateY(810%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	font-family: 'Open Sans';
+	color: #7c7777; // if anybody ends up making a pr, this color is not from a variable on purpose
+	font-size: 0.9vw;
+	transform: translateY(810%);
 }
 
 .openerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 45%;
-    height: 22vw;
-    background-color: var(--frontElementCol);
-    padding: 0.5em;
-    border-radius: var(--borderRad);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 45%;
+	height: 22vw;
+	background-color: var(--frontElementCol);
+	padding: 0.5em;
+	border-radius: var(--borderRad);
 }
 
 .openerButton {
-    transform: translateY(2vh);
-    display: inline-block;
-    background-color: transparent;
-    border: var(--borderThickness) solid var(--hoverBorderCol);
-    color: var(--textCol);
-    font-size: 1.5vw;
-    padding: 0.5em 1em;
-    transition: background-color 0.3s ease;
-    border-radius: var(--borderRad);
-    text-align: center;
-    box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-    &:hover {
-        background-color: color-mix(in srgb, var(--hoverBorderCol) 20%, transparent);
-        text-shadow: 0px 0px 6px var(--hoverBorderCol);
-        cursor: pointer;
-    }
+	transform: translateY(2vh);
+	display: inline-block;
+	background-color: transparent;
+	border: var(--borderThickness) solid var(--hoverBorderCol);
+	color: var(--textCol);
+	font-size: 1.5vw;
+	padding: 0.5em 1em;
+	transition: background-color 0.3s ease;
+	border-radius: var(--borderRad);
+	text-align: center;
+	box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+	&:hover {
+		background-color: color-mix(
+			in srgb,
+			var(--hoverBorderCol) 20%,
+			transparent
+		);
+		text-shadow: 0px 0px 6px var(--hoverBorderCol);
+		cursor: pointer;
+	}
 }

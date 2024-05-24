@@ -1,48 +1,60 @@
 .iframeWindow {
-    position: absolute; // Absolute positioning
-    width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
-    height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
-    right: -200vw;
-    border: $borderThickness solid $borderCol; // Border styling
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
-    box-sizing: border-box; // Ensures consistent box model
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: $windowCol;
-    transition:
-        background-color $transitionSpeed ease,
-        width $transitionSpeed ease,
-        height $transitionSpeed ease,
-        left $transitionSpeed ease,
-        bottom $transitionSpeed ease,
-        right $transitionSpeed ease,
-        top $transitionSpeed ease,
-        transform $transitionSpeed ease,
-        border-radius $transitionSpeed ease,
-        stroke $transitionSpeed ease,
-        border $transitionSpeed ease,
-        box-shadow $transitionSpeed ease,
-        backdrop-filter $transitionSpeed ease,
-        fill $transitionSpeed ease;
+	position: absolute; // Absolute positioning
+	width: calc((100% - (2 * $uniMargin))); // Width adjusted for uniform margin
+	height: calc(
+		100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)
+	); // Height considering uniform margin and waybar height
+	bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+	right: -200vw;
+	border: $borderThickness solid $borderCol; // Border styling
+	border-radius: $borderRad;
+	box-shadow: $shadowRad $shadowCol;
+	box-sizing: border-box; // Ensures consistent box model
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: $windowCol;
+	transition:
+		background-color $transitionSpeed ease,
+		width $transitionSpeed ease,
+		height $transitionSpeed ease,
+		left $transitionSpeed ease,
+		bottom $transitionSpeed ease,
+		right $transitionSpeed ease,
+		top $transitionSpeed ease,
+		transform $transitionSpeed ease,
+		border-radius $transitionSpeed ease,
+		stroke $transitionSpeed ease,
+		border $transitionSpeed ease,
+		box-shadow $transitionSpeed ease,
+		backdrop-filter $transitionSpeed ease,
+		fill $transitionSpeed ease;
 }
 
 .menuOpen-iframeWindow {
-    width: calc(((100% - (2 * $uniMargin))) - (((perToInt($waybarHeight) * 1vh - ($uniMargin))) + (((($waybarHeight) - 2.25 * (2 * $uniMargin))))) - $uniMargin); // Width adjusted for uniform margin
-    height: calc(100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)); // Height considering uniform margin and waybar height
-    bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
-    right: -200vw;
+	width: calc(
+		((100% - (2 * $uniMargin))) -
+			(
+				((perToInt($waybarHeight) * 1vh - ($uniMargin))) +
+					(((($waybarHeight) - 2.25 * (2 * $uniMargin))))
+			) - $uniMargin
+	); // Width adjusted for uniform margin
+	height: calc(
+		100% - $uniMargin - $waybarHeight - ($botBarHeight + $uniMargin)
+	); // Height considering uniform margin and waybar height
+	bottom: calc(2 * ($uniMargin) + ($botBarHeight + $uniMargin));
+	right: -200vw;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: border-box;
 	transform-style: preserve-3d;
 }
 .hidden {
-    display: none;
+	display: none;
 }
 
 body {
@@ -70,7 +82,7 @@ body {
 	height: 100%;
 	position: absolute;
 	padding: 6.5vmin 3vmin;
-	animation: mirror1 calc(1s * 2) ease 0s infinite ;
+	animation: mirror1 calc(1s * 2) ease 0s infinite;
 }
 
 .bars + .bars {
@@ -82,26 +94,56 @@ body {
 	width: 44vmin;
 	height: 3vmin;
 	margin: 2vmin 0vmin;
-	background: linear-gradient(90deg, #fff0 33%, transparent 33% 67%, #fff0 67% 100%);
-	animation: grow 1s ease-in-out 0s infinite alternate; 
+	background: linear-gradient(
+		90deg,
+		#fff0 33%,
+		transparent 33% 67%,
+		#fff0 67% 100%
+	);
+	animation: grow 1s ease-in-out 0s infinite alternate;
 	background-size: 300%;
 	background-position-x: -203%;
 }
 
 @keyframes mirror1 {
-	0%, 47%, 99.99%, 100% { transform: rotate(180deg) rotateX(0deg); }
-	47.01%, 99.98% { transform: rotate(180deg) rotateX(180deg); }
+	0%,
+	47%,
+	99.99%,
+	100% {
+		transform: rotate(180deg) rotateX(0deg);
+	}
+	47.01%,
+	99.98% {
+		transform: rotate(180deg) rotateX(180deg);
+	}
 }
 
 @keyframes mirror2 {
-	0%, 47%, 99.99%, 100% { transform: rotate(90deg) rotateX(180deg); }
-	47.01%, 99.98% { transform: rotate(90deg) rotateX(0deg); }
+	0%,
+	47%,
+	99.99%,
+	100% {
+		transform: rotate(90deg) rotateX(180deg);
+	}
+	47.01%,
+	99.98% {
+		transform: rotate(90deg) rotateX(0deg);
+	}
 }
 
 @keyframes grow {
-	0%, 25% { background-position-x: -297%; }
-	45%, 55% { background-position-x: -250%; }
-	75%, 100% { background-position-x: -203%; }
+	0%,
+	25% {
+		background-position-x: -297%;
+	}
+	45%,
+	55% {
+		background-position-x: -250%;
+	}
+	75%,
+	100% {
+		background-position-x: -203%;
+	}
 }
 
 .bar:nth-child(2) {
@@ -146,5 +188,5 @@ body {
 }
 
 .iframeWindow {
-    color: #fff;
+	color: #fff;
 }

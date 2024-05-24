@@ -6,77 +6,81 @@
 *   https://github.com/Riftriot
 */
 
-
 :root {
-    /* Background */
-    --bgCol: url('../assets/bgImg.png');
+	/* Background */
+	--bgCol: url('../assets/bgImg.png');
 
-    /* Window Properties */
-    --windowCol: #141414d1;
-    --windowBlur: 1vh;
-    --windowBrightness: 1;
-    --windowContrast: 1.1;
-    --frontElementCol: #f1f1f114;
-    --textCol: #fff;
-    --textColSec: #fff9;
-    --linkCol: #5a2491;
+	/* Window Properties */
+	--windowCol: #141414d1;
+	--windowBlur: 1vh;
+	--windowBrightness: 1;
+	--windowContrast: 1.1;
+	--frontElementCol: #f1f1f114;
+	--textCol: #fff;
+	--textColSec: #fff9;
+	--linkCol: #5a2491;
 
-    /* Shadow properties */
-    --shadowCol: rgba(255, 255, 255, 0.02);
-    --shadowRad: 0px 4px 4px;
+	/* Shadow properties */
+	--shadowCol: rgba(255, 255, 255, 0.02);
+	--shadowRad: 0px 4px 4px;
 
-    /* Margins */
-    --uniMargin: 1vh;
-    --waybarHeight: 10vh;
-    --urlInputLength: 43vw;
-    --botBarHeight: 4.5vh;
-    --botBarFontSize: 0.8;
-    --fullMenuSize: 25vh;
+	/* Margins */
+	--uniMargin: 1vh;
+	--waybarHeight: 10vh;
+	--urlInputLength: 43vw;
+	--botBarHeight: 4.5vh;
+	--botBarFontSize: 0.8;
+	--fullMenuSize: 25vh;
 
-    /* Border */
-    --borderRad: 7px;
-    --borderThickness: 1.75px;
-    --borderCol: #9c9c9c5b;
+	/* Border */
+	--borderRad: 7px;
+	--borderThickness: 1.75px;
+	--borderCol: #9c9c9c5b;
 
-    /* Transitions */
-    --transitionSpeed: 0.4s;
-    --fastTransitionSpeed: 0.1s;
+	/* Transitions */
+	--transitionSpeed: 0.4s;
+	--fastTransitionSpeed: 0.1s;
 
-    /* Menu */
-    --menuButtonCol: var(--textCol);
+	/* Menu */
+	--menuButtonCol: var(--textCol);
 
-    /* Active */
-    --activeTransition: var(--transitionSpeed);
-    --activeWindowCol: #25252ad1;
-    --activeWindowBlur: calc(var(--hoverWindowBlur) / 8);
-    --activeWindowBrightness: var(--hoverWindowBrightness);
-    --activeWindowContrast: var(--hoverWindowContrast);
+	/* Active */
+	--activeTransition: var(--transitionSpeed);
+	--activeWindowCol: #25252ad1;
+	--activeWindowBlur: calc(var(--hoverWindowBlur) / 8);
+	--activeWindowBrightness: var(--hoverWindowBrightness);
+	--activeWindowContrast: var(--hoverWindowContrast);
 
-    /* Full Menu */
-    --fullMenuOffset: 10px;
+	/* Full Menu */
+	--fullMenuOffset: 10px;
 
-    /* Hover Vars */
-    --hoverConst: 0vh;
-    --hoverCoefficient: 1;
-    --hoverWindowBlur: 0.7vw;
-    --hoverWindowBrightness: 1.2;
-    --hoverWindowContrast: 1.15;
-    --hoverBorderCol: #a1a1ffe7;
-    --hoverWindowCol: #141414d1;
-    --hoverBorderThickness: var(--borderThickness);
-    --hoverBorderRad: 0.8;
-    --hoverBorderOpacity: rgba(255, 255, 255, 0.744);
-    --hoverShadowCol: rgba(
-        calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
-        calc(green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) / 255),
-        calc(blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255),
-        calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
-    );
-    --hoverShadowRad: 0px 0px var(--fullMenuOffset);
-    --hoverFrontElementCol: #f1f1f120;
-    --hoverActiveWindowBlur: calc(var(--hoverWindowBlur) / 6);
-    --hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
-    --hoverActiveWindowContrast: var(--hoverWindowContrast);
+	/* Hover Vars */
+	--hoverConst: 0vh;
+	--hoverCoefficient: 1;
+	--hoverWindowBlur: 0.7vw;
+	--hoverWindowBrightness: 1.2;
+	--hoverWindowContrast: 1.15;
+	--hoverBorderCol: #a1a1ffe7;
+	--hoverWindowCol: #141414d1;
+	--hoverBorderThickness: var(--borderThickness);
+	--hoverBorderRad: 0.8;
+	--hoverBorderOpacity: rgba(255, 255, 255, 0.744);
+	--hoverShadowCol: rgba(
+		calc(red(var(--hoverBorderCol)) * red(var(--hoverBorderOpacity)) / 255),
+		calc(
+			green(var(--hoverBorderCol)) * green(var(--hoverBorderOpacity)) /
+				255
+		),
+		calc(
+			blue(var(--hoverBorderCol)) * blue(var(--hoverBorderOpacity)) / 255
+		),
+		calc(alpha(var(--hoverBorderCol)) * alpha(var(--hoverBorderOpacity)))
+	);
+	--hoverShadowRad: 0px 0px var(--fullMenuOffset);
+	--hoverFrontElementCol: #f1f1f120;
+	--hoverActiveWindowBlur: calc(var(--hoverWindowBlur) / 6);
+	--hoverActiveWindowBrightness: calc(var(--hoverWindowBrightness) - 0.3);
+	--hoverActiveWindowContrast: var(--hoverWindowContrast);
 
-    --doParticles: 1;
+	--doParticles: 1;
 }

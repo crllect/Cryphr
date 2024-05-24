@@ -1,70 +1,68 @@
 .botBar {
-    user-select: none;
-    font-style: normal;
-    text-decoration: none;
-    font-family: 'Open Sans';
-    position: absolute;
-    font-size: 2.75vh * $botBarFontSize;
-    margin: 0;
-    padding: 0;
-    bottom: 2 * $uniMargin;
-    color: #fdfdfd;
-    height: $botBarHeight - $uniMargin;
-    border: $borderThickness solid $borderCol;
-    border-radius: $borderRad;
-    box-shadow: $shadowRad $shadowCol;
-    backdrop-filter:
-        blur($windowBlur)
-        brightness($windowBrightness)
-        contrast($windowContrast);
-    box-sizing: border-box;
-    transition:
-        background-color $transitionSpeed ease,
-        transform $transitionSpeed ease,
-        width $transitionSpeed ease,
-        height $transitionSpeed ease,
-        left $transitionSpeed ease,
-        bottom $transitionSpeed ease,
-        right $transitionSpeed ease,
-        top $transitionSpeed ease,
-        border-radius $transitionSpeed ease,
-        stroke $transitionSpeed ease,
-        backdrop-filter $transitionSpeed ease,
-        box-shadow $transitionSpeed ease,
-        border $transitionSpeed ease,
-        fill $transitionSpeed ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $windowCol;
+	user-select: none;
+	font-style: normal;
+	text-decoration: none;
+	font-family: 'Open Sans';
+	position: absolute;
+	font-size: 2.75vh * $botBarFontSize;
+	margin: 0;
+	padding: 0;
+	bottom: 2 * $uniMargin;
+	color: #fdfdfd;
+	height: $botBarHeight - $uniMargin;
+	border: $borderThickness solid $borderCol;
+	border-radius: $borderRad;
+	box-shadow: $shadowRad $shadowCol;
+	backdrop-filter: blur($windowBlur) brightness($windowBrightness)
+		contrast($windowContrast);
+	box-sizing: border-box;
+	transition:
+		background-color $transitionSpeed ease,
+		transform $transitionSpeed ease,
+		width $transitionSpeed ease,
+		height $transitionSpeed ease,
+		left $transitionSpeed ease,
+		bottom $transitionSpeed ease,
+		right $transitionSpeed ease,
+		top $transitionSpeed ease,
+		border-radius $transitionSpeed ease,
+		stroke $transitionSpeed ease,
+		backdrop-filter $transitionSpeed ease,
+		box-shadow $transitionSpeed ease,
+		border $transitionSpeed ease,
+		fill $transitionSpeed ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $windowCol;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .clock {
-    display: none;
+	display: none;
 }
 
 .discord {
-    left: $uniMargin;
-    width: calc(50vw - ($uniMargin / 1% * 1.5vw));
+	left: $uniMargin;
+	width: calc(50vw - ($uniMargin / 1% * 1.5vw));
 }
 
 .githubLink {
-    right: $uniMargin;
-    width: calc(50vw - ($uniMargin / 1% * 1.5vw));
+	right: $uniMargin;
+	width: calc(50vw - ($uniMargin / 1% * 1.5vw));
 }
 
 .email {
-    display: none;
+	display: none;
 }
 
 .credits {
-    display: none;
+	display: none;
 }
 
 .battery {
-    display: none;
+	display: none;
 }

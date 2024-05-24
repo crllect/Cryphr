@@ -1,5 +1,5 @@
 .hidden {
-    display: none;
+	display: none;
 }
 
 $emailWidth: 35%;
@@ -11,158 +11,176 @@ $creditsHeight: 20%;
 $popupBgCol: #00000068;
 
 #emailPopup {
-    display: flex;
-    width: $emailWidth;
-    height: $emailHeight;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000000;
-    user-select: none;
-    font-style: normal;
-    text-decoration: none;
-    font-family: 'Open Sans';
-    font-size: 2.75vh;
-    margin: 0;
-    padding: 0;
-    bottom: calc(2 * var(--uniMargin));
-    color: calc(var(--textCol));
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        box-shadow var(--fastTransitionSpeed) ease,
-        border var(--fastTransitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--windowCol);
-    &:hover {
-        height: calc((($emailHeight) * var(--hoverCoefficient)) + var(--hoverConst));
-        width: calc((($emailWidth) * var(--hoverCoefficient)) + var(--hoverConst));
-        bottom: calc(2 * var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        background-color: var(--hoverWindowCol);
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
-    &.hidden {
-        display: none;
-    }
+	display: flex;
+	width: $emailWidth;
+	height: $emailHeight;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000000;
+	user-select: none;
+	font-style: normal;
+	text-decoration: none;
+	font-family: 'Open Sans';
+	font-size: 2.75vh;
+	margin: 0;
+	padding: 0;
+	bottom: calc(2 * var(--uniMargin));
+	color: calc(var(--textCol));
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		box-shadow var(--fastTransitionSpeed) ease,
+		border var(--fastTransitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--windowCol);
+	&:hover {
+		height: calc(
+			(($emailHeight) * var(--hoverCoefficient)) + var(--hoverConst)
+		);
+		width: calc(
+			(($emailWidth) * var(--hoverCoefficient)) + var(--hoverConst)
+		);
+		bottom: calc(
+			2 * var(--uniMargin) -
+				(
+					(
+							(100% - var(--uniMargin) - var(--waybarHeight)) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 2)
+		);
+		box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+		border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+		background-color: var(--hoverWindowCol);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
+	&.hidden {
+		display: none;
+	}
 }
 
 #emailPopupBg {
-    display: flex;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $popupBgCol;
-    backdrop-filter: blur(0.3vh);
-    z-index: 999990;
-    &.hidden {
-        display: none;
-    }
+	display: flex;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $popupBgCol;
+	backdrop-filter: blur(0.3vh);
+	z-index: 999990;
+	&.hidden {
+		display: none;
+	}
 }
 
 #creditsPopup {
-    display: flex;
-    width: $creditsWidth;
-    height: $creditsHeight;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000000;
-    user-select: none;
-    font-style: normal;
-    text-decoration: none;
-    font-family: 'Open Sans';
-    font-size: 2.75vh;
-    margin: 0;
-    padding: 0;
-    bottom: calc(2 * var(--uniMargin));
-    color: calc(var(--textCol));
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        box-shadow var(--fastTransitionSpeed) ease,
-        border var(--fastTransitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--windowCol);
-    &:hover {
-        height: calc((($creditsHeight) * var(--hoverCoefficient)) + var(--hoverConst));
-        width: calc((($creditsWidth) * var(--hoverCoefficient)) + var(--hoverConst));
-        bottom: calc(2 * var(--uniMargin) - (((100% - var(--uniMargin) - var(--waybarHeight)) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        background-color: var(--hoverWindowCol);
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
-    &.hidden {
-        display: none;
-    }
+	display: flex;
+	width: $creditsWidth;
+	height: $creditsHeight;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000000;
+	user-select: none;
+	font-style: normal;
+	text-decoration: none;
+	font-family: 'Open Sans';
+	font-size: 2.75vh;
+	margin: 0;
+	padding: 0;
+	bottom: calc(2 * var(--uniMargin));
+	color: calc(var(--textCol));
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		box-shadow var(--fastTransitionSpeed) ease,
+		border var(--fastTransitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--windowCol);
+	&:hover {
+		height: calc(
+			(($creditsHeight) * var(--hoverCoefficient)) + var(--hoverConst)
+		);
+		width: calc(
+			(($creditsWidth) * var(--hoverCoefficient)) + var(--hoverConst)
+		);
+		bottom: calc(
+			2 * var(--uniMargin) -
+				(
+					(
+							(100% - var(--uniMargin) - var(--waybarHeight)) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 2)
+		);
+		box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+		border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+		background-color: var(--hoverWindowCol);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
+	&.hidden {
+		display: none;
+	}
 }
 
 #creditsPopupBg {
-    display: flex;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $popupBgCol;
-    backdrop-filter: blur(0.3vh);
-    z-index: 999990;
-    &.hidden {
-        display: none;
-    }
+	display: flex;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $popupBgCol;
+	backdrop-filter: blur(0.3vh);
+	z-index: 999990;
+	&.hidden {
+		display: none;
+	}
 }
 
 .emailPopupText {
-    padding: 2em;
+	padding: 2em;
 }
 .creditsPopupText {
-    padding: 2em;
+	padding: 2em;
 }

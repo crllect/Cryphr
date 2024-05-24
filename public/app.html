@@ -1,242 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
-        ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-1F8N3BHMZ1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-            gtag("config", "G-1F8N3BHMZ1");
-        </script>
-        <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
-            crossorigin="anonymous"
-        ></script>
+			gtag('config', 'G-1F8N3BHMZ1');
+		</script>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9949540152801570"
+			crossorigin="anonymous"
+		></script>
 
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-            name="description"
-            content="Cryphr is a open source proxy front end based on the titanium networks ultra violet"
-        />
-        <meta
-            name="keywords"
-            content="proxy server solutions, anonymous web browsing, high-speed proxies, secure proxy networks, private internet access, unblocked online games, access school games, bypass game restrictions, free web-based games, unblocked game sites, HTML5 game development, responsive web design, frontend frameworks, JavaScript UI development, CSS3 animations, SCSS best practices, SASS styling tips, SCSS vs SASS, advanced SCSS techniques, mixin libraries for SASS, clean UI design principles, minimalist website interfaces, user-friendly web design, intuitive navigation UI, aesthetic UI elements, interactive web games, HTML game programming, cross-platform game development, browser game optimization, game design for web, CSS animations for games, JavaScript game scripts, easy-to-learn web games, educational online games, casual browser games, competitive online gaming, web game design inspiration, mobile-responsive games, web gaming communities, HTML5 gaming libraries, CSS layout techniques, SASS variables and functions, SCSS nesting and partials, modular front-end coding, UI color schemes, typography in web design, front-end development tools, user experience enhancements, web design trends, innovative online games"
-        />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="description"
+			content="Cryphr is a open source proxy front end based on the titanium networks ultra violet"
+		/>
+		<meta
+			name="keywords"
+			content="proxy server solutions, anonymous web browsing, high-speed proxies, secure proxy networks, private internet access, unblocked online games, access school games, bypass game restrictions, free web-based games, unblocked game sites, HTML5 game development, responsive web design, frontend frameworks, JavaScript UI development, CSS3 animations, SCSS best practices, SASS styling tips, SCSS vs SASS, advanced SCSS techniques, mixin libraries for SASS, clean UI design principles, minimalist website interfaces, user-friendly web design, intuitive navigation UI, aesthetic UI elements, interactive web games, HTML game programming, cross-platform game development, browser game optimization, game design for web, CSS animations for games, JavaScript game scripts, easy-to-learn web games, educational online games, casual browser games, competitive online gaming, web game design inspiration, mobile-responsive games, web gaming communities, HTML5 gaming libraries, CSS layout techniques, SASS variables and functions, SCSS nesting and partials, modular front-end coding, UI color schemes, typography in web design, front-end development tools, user experience enhancements, web design trends, innovative online games"
+		/>
 
-        <!-- UV things -->
-        <script src="/uv/uv.bundle.js"></script>
-        <script src="/uv/uv.config.js"></script> <!-- added defer as before the script would load before the form would load -->
-        <script src="/dynamic/dynamic.config.js"></script>
+		<!-- UV things -->
+		<script src="/uv/uv.bundle.js"></script>
+		<script src="/uv/uv.config.js"></script>
+		<!-- added defer as before the script would load before the form would load -->
+		<script src="/dynamic/dynamic.config.js"></script>
 
-        <script>
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", () => {
-                    navigator.serviceWorker.register("/sw.js", {
-                        scope: "/",
-                    });
-                });
-            }
-        </script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/sw.js', {
+						scope: '/'
+					});
+				});
+			}
+		</script>
 
-        <!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
+		<!-- location.href = __uv$config.prefix + __uv$config.encodeUrl(url); -->
 
-        <script>
-            // page title
-            document.title = "Cryphr";
-        </script>
+		<script>
+			// page title
+			document.title = 'Cryphr';
+		</script>
 
-        <!-- Include the stylesheet -->
-        <link rel="stylesheet" href="css/index.css" />
+		<!-- Include the stylesheet -->
+		<link rel="stylesheet" href="css/index.css" />
 
-        <!-- sets the favicon -->
-        <link
-            rel="icon"
-            href="assets/xorro-favicon-hypr-2.png"
-            id="image/x-icon"
-        />
+		<!-- sets the favicon -->
+		<link
+			rel="icon"
+			href="assets/xorro-favicon-hypr-2.png"
+			id="image/x-icon"
+		/>
 
-        <!-- dynamically sets the favicon based on user color scheme -->
-        <script>
-            function updateFavicon() {
-                const favicon = document.getElementById("image/x-icon");
-                if (
-                    window.matchMedia &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches
-                ) {
-                    favicon.href = "assets/xorro-favicon-dark-2.png";
-                } else {
-                    favicon.href = "assets/xorro-favicon-light-2.png";
-                }
-            }
-            updateFavicon();
-        </script>
+		<!-- dynamically sets the favicon based on user color scheme -->
+		<script>
+			function updateFavicon() {
+				const favicon = document.getElementById('image/x-icon');
+				if (
+					window.matchMedia &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches
+				) {
+					favicon.href = 'assets/xorro-favicon-dark-2.png';
+				} else {
+					favicon.href = 'assets/xorro-favicon-light-2.png';
+				}
+			}
+			updateFavicon();
+		</script>
 
-        <!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
-        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
-        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
-        <script src="js/particles.js"></script>
-        <script
-            src="https://kit.fontawesome.com/df4e45b628.js"
-            crossorigin="anonymous"
-        ></script>
-        <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        </script>
-        <script defer src="/_vercel/insights/script.js"></script>
-    </head>
+		<!-- <iframe is="x-frame-bypass" src="https://news.ycombinator.com/"></iframe> -->
+		<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+		<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+		<script src="js/particles.js"></script>
+		<script
+			src="https://kit.fontawesome.com/df4e45b628.js"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			window.va =
+				window.va ||
+				function () {
+					(window.vaq = window.vaq || []).push(arguments);
+				};
+		</script>
+		<script defer src="/_vercel/insights/script.js"></script>
+	</head>
 
-    <body>
-        <div id="particles-js"></div>
-        <section class="menu"> <!-- Maybe make it so (at a later date) the menu is the logo, instead of the menu. Maybe add this to the customizer. Allow custom logos and such, along with the default ones -->
-            <!-- menuIcon -->
-            <svg class="menuIcon" viewBox="-37.7 -37.7 452.40 452.40">
-                version="1.1" id="Layer_1" viewBox="-37.7 -37.7 452.40 452.40"
-                xml:space="preserve" width="256px" height="256px"
-                stroke-width="3.77" >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                <g>
-                    <rect x="75" y="73.5" width="302" height="30" />
-                    <rect y="73.5" width="30" height="30" />
-                    <rect y="273.5" width="30" height="30" />
-                    <rect x="75" y="273.5" width="302" height="30" />
-                    <rect y="173.5" width="30" height="30" />
-                    <rect x="75" y="173.5" width="302" height="30" />
-                </g>
+	<body>
+		<div id="particles-js"></div>
+		<section class="menu">
+			<!-- Maybe make it so (at a later date) the menu is the logo, instead of the menu. Maybe add this to the customizer. Allow custom logos and such, along with the default ones -->
+			<!-- menuIcon -->
+			<svg class="menuIcon" viewBox="-37.7 -37.7 452.40 452.40">
+				version="1.1" id="Layer_1" viewBox="-37.7 -37.7 452.40 452.40"
+				xml:space="preserve" width="256px" height="256px"
+				stroke-width="3.77" >
+				<g id="SVGRepo_bgCarrier" stroke-width="0" />
+				<g>
+					<rect x="75" y="73.5" width="302" height="30" />
+					<rect y="73.5" width="30" height="30" />
+					<rect y="273.5" width="30" height="30" />
+					<rect x="75" y="273.5" width="302" height="30" />
+					<rect y="173.5" width="30" height="30" />
+					<rect x="75" y="173.5" width="302" height="30" />
+				</g>
 
-                <g id="SVGRepo_iconCarrier">
-                    <g>
-                        <rect x="75" y="73.5" width="302" height="30" />
-                        <rect y="73.5" width="30" height="30" />
-                        <rect y="273.5" width="30" height="30" />
-                        <rect x="75" y="273.5" width="302" height="30" />
-                        <rect y="173.5" width="30" height="30" />
-                        <rect x="75" y="173.5" width="302" height="30" />
-                    </g>
-                </g>
-            </svg>
+				<g id="SVGRepo_iconCarrier">
+					<g>
+						<rect x="75" y="73.5" width="302" height="30" />
+						<rect y="73.5" width="30" height="30" />
+						<rect y="273.5" width="30" height="30" />
+						<rect x="75" y="273.5" width="302" height="30" />
+						<rect y="173.5" width="30" height="30" />
+						<rect x="75" y="173.5" width="302" height="30" />
+					</g>
+				</g>
+			</svg>
 
-            <!-- menuLogo -->
-            <p
-                class="menuLogo"
-                style="
-                    display: flex;
-                    text-align: center;
-                    justify-content: center;
-                    transform: translateY(-7.9%);
-                ">
-                Cryphr
-            </p>
-        </section>
-        <iframe id="fullMenu" class="fullMenu" src="history.html">
-            <div class="searchEngineSelect hidden">
-                <select id="searchEngineSelect">
-                    <option value="https://www.google.com/search?q=">Google</option>
-                    <option value="https://www.bing.com/search?q=">Bing</option>
-                    <option value="https://search.yahoo.com/search?p=">Yahoo</option>
-                    <option value="https://www.baidu.com/s?wd=">Baidu</option>
-                    <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
-                  </select>
-                  <button onclick="saveSearchEnginePreference()">Save Preference</button>
-            </div>
-        </iframe>
+			<!-- menuLogo -->
+			<p
+				class="menuLogo"
+				style="
+					display: flex;
+					text-align: center;
+					justify-content: center;
+					transform: translateY(-7.9%);
+				"
+			>
+				Cryphr
+			</p>
+		</section>
+		<iframe id="fullMenu" class="fullMenu" src="history.html">
+			<div class="searchEngineSelect hidden">
+				<select id="searchEngineSelect">
+					<option value="https://www.google.com/search?q=">
+						Google
+					</option>
+					<option value="https://www.bing.com/search?q=">Bing</option>
+					<option value="https://search.yahoo.com/search?p=">
+						Yahoo
+					</option>
+					<option value="https://www.baidu.com/s?wd=">Baidu</option>
+					<option value="https://duckduckgo.com/?q=">
+						DuckDuckGo
+					</option>
+				</select>
+				<button onclick="saveSearchEnginePreference()">
+					Save Preference
+				</button>
+			</div>
+		</iframe>
 
-        <nav class="waybar"> <!-- add zoom in browser (later date) -->
-            <p id="reloadButton"><span class="fa-solid fa-rotate-right"></span></p>
-            <input type="text" id="urlInput" placeholder="Search the web or enter URL here">
-            <button id="searchButton"><span class="fa-solid fa-search"></span></button>
-            <p id="settingsButton"><span class="fa-solid fa-cog"></span></p>
-        </nav>
+		<nav class="waybar">
+			<!-- add zoom in browser (later date) -->
+			<p id="reloadButton">
+				<span class="fa-solid fa-rotate-right"></span>
+			</p>
+			<input
+				type="text"
+				id="urlInput"
+				placeholder="Search the web or enter URL here"
+			/>
+			<button id="searchButton">
+				<span class="fa-solid fa-search"></span>
+			</button>
+			<p id="settingsButton"><span class="fa-solid fa-cog"></span></p>
+		</nav>
 
-        <iframe id="iframeWindow" class="iframeWindow hidden hoverable"></iframe>
-        <iframe id="mainWindow" class="mainWindow hoverable" src="greeter.html"></iframe>
-        <div id="loadingIframe" class="hidden" style="z-index: 999980;">
-            <div id="loadingIframe" class="content"">
-                <div class="bars">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <div class="bars">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </div>
+		<iframe
+			id="iframeWindow"
+			class="iframeWindow hidden hoverable"
+		></iframe>
+		<iframe
+			id="mainWindow"
+			class="mainWindow hoverable"
+			src="greeter.html"
+		></iframe>
+		<div id="loadingIframe" class="hidden" style="z-index: 999980">
+			<div id="loadingIframe" class="content">
+				<div class="bars">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<div class="bars">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Center of botBar -->
+		<p id="time" class="clock botBar"></p>
 
-        <!-- Center of botBar -->
-        <p id="time" class="clock botBar"></p>
+		<p id="battery" class="battery botBar"></p>
 
-        <p id="battery" class="battery botBar"></p>
+		<!-- Left side of botBar -->
+		<a
+			class="discord botBar"
+			href="https://discord.com/users/713488984596021291"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
+		>
 
-        <!-- Left side of botBar -->
-        <a
-            class="discord botBar"
-            href="https://discord.com/users/713488984596021291"
-            target="_blank" rel="noopener noreferrer">
-            <span class="fa-brands fa-discord"></span>&#160;&#160;Discord</a
-        >
+		<a
+			class="githubLink botBar"
+			href="https://github.com/crllect/Cryphr"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
+		>
 
-        <a 
-            class="githubLink botBar"
-            href="https://github.com/crllect/Cryphr"
-            target="_blank" rel="noopener noreferrer">
-            <span class="fa-brands fa-github"></span>&#160;&#160;GitHub</a
-        >
+		<!-- Credits stuff-->
+		<p class="credits botBar">
+			<span class="fa-solid fa-info"></span>&#160;&#160;Credits
+		</p>
+		<div class="hidden" id="creditsPopup">
+			<div class="creditsPopupText">
+				Written completely by&#160;<a
+					href="https://github.com/Crllect"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Crllect</a
+				>
+				<br />
+				<br />
+				Thanks to&#160;<a
+					href="https://github.com/Riftriot"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Riftriot</a
+				>&#160;for helping set up UV
+			</div>
+		</div>
+		<div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
 
-        <!-- Credits stuff-->
-        <p class="credits botBar">
-            <span class="fa-solid fa-info"></span>&#160;&#160;Credits
-        </p>
-        <div class="hidden" id="creditsPopup">
-            <div class="creditsPopupText">
-                Written completely by&#160;<a href="https://github.com/Crllect" target="_blank" rel="noopener noreferrer">Crllect</a>
-                <br>
-                <br>
-                Thanks to&#160;<a href="https://github.com/Riftriot" target="_blank" rel="noopener noreferrer">Riftriot</a>&#160;for helping set up UV
-            </div>
-        </div>
-        <div class="hidden creditsPopupBg" id="creditsPopupBg"></div>
+		<!-- Email stuff-->
+		<p class="email botBar">
+			<span class="fa-regular fa-at"></span>&#160;&#160;Emails
+		</p>
+		<div class="hidden" id="emailPopup">
+			<div class="emailPopupText">
+				Email me at&#160;<a
+					href="mailto:crllect@proton.me"
+					target="_blank"
+					rel="noopener noreferrer"
+					>crllect@proton.me</a
+				>&#160;I check this email more often,
+				<br />
+				<br />
+				and at&#160;<a
+					href="mailto:crllect@tuta.io"
+					target="_blank"
+					rel="noopener noreferrer"
+					>crllect@tuta.io</a
+				>&#160;for serious inquiries
+			</div>
+		</div>
+		<div class="hidden emailPopupBg" id="emailPopupBg"></div>
 
-        <!-- Email stuff-->
-        <p class="email botBar">
-            <span class="fa-regular fa-at"></span>&#160;&#160;Emails
-        </p>
-        <div class="hidden" id="emailPopup">
-            <div class="emailPopupText">
-                Email me at&#160;<a href="mailto:crllect@proton.me" target="_blank" rel="noopener noreferrer">crllect@proton.me</a>&#160;I check this email more often,
-                <br>
-                <br>
-                and at&#160;<a href="mailto:crllect@tuta.io" target="_blank" rel="noopener noreferrer">crllect@tuta.io</a>&#160;for serious inquiries
-            </div>
-        </div>
-        <div class="hidden emailPopupBg" id="emailPopupBg"></div>
-
-        <!-- Import varius JS things -->
-        <script src="js/menu.js"></script>
-        <script src="js/waybar.js"></script>
-        <script src="js/clock.js"></script>
-        <script src="js/credits.js"></script>
-        <script src="js/emails.js"></script>
-        <script src="js/battery.js"></script>
-        <script src="js/settings.js"></script>
-    </body>
-    <script src="js/indexParticles.js"></script>
-    <script src="js/settingsLoader.js"></script>
+		<!-- Import varius JS things -->
+		<script src="js/menu.js"></script>
+		<script src="js/waybar.js"></script>
+		<script src="js/clock.js"></script>
+		<script src="js/credits.js"></script>
+		<script src="js/emails.js"></script>
+		<script src="js/battery.js"></script>
+		<script src="js/settings.js"></script>
+	</body>
+	<script src="js/indexParticles.js"></script>
+	<script src="js/settingsLoader.js"></script>
 </html>

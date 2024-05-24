@@ -1,78 +1,124 @@
 .mainWindow {
-    position: absolute;
-    width: calc((100vw - (2 * var(--uniMargin))));
-    height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
-    bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
-    right: var(--uniMargin);
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    background-color: var(--windowCol);
-    backdrop-filter:
-        blur(var(--windowBlur))
-        brightness(var(--windowBrightness))
-        contrast(var(--windowContrast));
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
+	position: absolute;
+	width: calc((100vw - (2 * var(--uniMargin))));
+	height: calc(
+		100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) *
+			1.5
+	);
+	bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
+	right: var(--uniMargin);
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	background-color: var(--windowCol);
+	backdrop-filter: blur(var(--windowBlur)) brightness(var(--windowBrightness))
+		contrast(var(--windowContrast));
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
 }
 
 .mainWindow:hover {
-    user-select: none;
-    &.hoverable {
-        width: calc((100% - (2 * var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst));
-        height: calc(((100% - var(--waybarHeight)) * var(--hoverCoefficient)) + var(--hoverConst) - (var(--botBarHeight)) + 1.5 * var(--uniMargin));
-        right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 2));
-        bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - (var(--hoverConst) / 2));
-        border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
-        box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
-        border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
-        background-color: var(--hoverWindowCol);
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
+	user-select: none;
+	&.hoverable {
+		width: calc(
+			(100% - (2 * var(--uniMargin))) * var(--hoverCoefficient) +
+				var(--hoverConst)
+		);
+		height: calc(
+			((100% - var(--waybarHeight)) * var(--hoverCoefficient)) +
+				var(--hoverConst) - (var(--botBarHeight)) + 1.5 *
+				var(--uniMargin)
+		);
+		right: calc(
+			var(--uniMargin) -
+				(
+					(
+							(100% - (2 * var(--uniMargin))) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 2)
+		);
+		bottom: calc(
+			((var(--uniMargin)) + (var(--botBarHeight))) *
+				var(--hoverCoefficient) - (var(--hoverConst) / 2)
+		);
+		border-radius: calc(var(--borderRad) * var(--hoverBorderRad));
+		box-shadow: var(--hoverShadowRad) var(--hoverShadowCol);
+		border: var(--hoverBorderThickness) solid var(--hoverBorderCol);
+		background-color: var(--hoverWindowCol);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
 }
 
 .menuOpen-mainWindow {
-    width: calc(((100% - (var(--uniMargin))) - var(--fullMenuSize) - 2 * var(--uniMargin)));
-    height: calc(100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) * 1.5);
-    bottom: calc((var(--botBarHeight) + var(--uniMargin)));
-    right: var(--uniMargin);
-    backdrop-filter:
-        blur(var(--hoverWindowBlur))
-        brightness(var(--hoverWindowBrightness))
-        contrast(var(--hoverWindowContrast));
+	width: calc(
+		(
+			(100% - (var(--uniMargin))) - var(--fullMenuSize) - 2 *
+				var(--uniMargin)
+		)
+	);
+	height: calc(
+		100% - var(--waybarHeight) - (var(--botBarHeight)) + var(--uniMargin) *
+			1.5
+	);
+	bottom: calc((var(--botBarHeight) + var(--uniMargin)));
+	right: var(--uniMargin);
+	backdrop-filter: blur(var(--hoverWindowBlur))
+		brightness(var(--hoverWindowBrightness))
+		contrast(var(--hoverWindowContrast));
 }
 
 .menuOpen-mainWindow:hover {
-    user-select: none;
-    &.hoverable {
-        width: calc((((100% - (var(--uniMargin))) * var(--hoverCoefficient) + var(--hoverConst)) - var(--fullMenuSize) - 2 * var(--uniMargin)));
-        height: calc(((100% - var(--waybarHeight)) * var(--hoverCoefficient)) + var(--hoverConst) - (var(--botBarHeight) - 1.5 * var(--uniMargin)));
-        right: calc(var(--uniMargin) - (((100% - (2 * var(--uniMargin))) * (var(--hoverCoefficient) - 1)) / 2) - (var(--hoverConst) / 4));
-        bottom: calc(((var(--uniMargin)) + (var(--botBarHeight))) * var(--hoverCoefficient) - (var(--hoverConst) / 2));
-        backdrop-filter:
-            blur(var(--hoverWindowBlur))
-            brightness(var(--hoverWindowBrightness))
-            contrast(var(--hoverWindowContrast));
-    }
+	user-select: none;
+	&.hoverable {
+		width: calc(
+			(
+				(
+						(100% - (var(--uniMargin))) * var(--hoverCoefficient) +
+							var(--hoverConst)
+					) - var(--fullMenuSize) - 2 * var(--uniMargin)
+			)
+		);
+		height: calc(
+			((100% - var(--waybarHeight)) * var(--hoverCoefficient)) +
+				var(--hoverConst) -
+				(var(--botBarHeight) - 1.5 * var(--uniMargin))
+		);
+		right: calc(
+			var(--uniMargin) -
+				(
+					(
+							(100% - (2 * var(--uniMargin))) *
+								(var(--hoverCoefficient) - 1)
+						) / 2
+				) - (var(--hoverConst) / 4)
+		);
+		bottom: calc(
+			((var(--uniMargin)) + (var(--botBarHeight))) *
+				var(--hoverCoefficient) - (var(--hoverConst) / 2)
+		);
+		backdrop-filter: blur(var(--hoverWindowBlur))
+			brightness(var(--hoverWindowBrightness))
+			contrast(var(--hoverWindowContrast));
+	}
 }

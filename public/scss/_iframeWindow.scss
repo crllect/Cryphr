@@ -1,48 +1,64 @@
 .iframeWindow {
-    position: absolute;
-    width: calc((100% - (3 * var(--uniMargin))));
-    height: calc(100% - var(--uniMargin) - var(--waybarHeight) - (var(--botBarHeight) + var(--uniMargin)));
-    bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
-    right: -200vw;
-    border: var(--borderThickness) solid var(--borderCol);
-    border-radius: var(--borderRad);
-    box-shadow: var(--shadowRad) var(--shadowCol);
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--windowCol);
-    transition:
-        background-color var(--transitionSpeed) ease,
-        width var(--transitionSpeed) ease,
-        height var(--transitionSpeed) ease,
-        left var(--transitionSpeed) ease,
-        bottom var(--transitionSpeed) ease,
-        right var(--transitionSpeed) ease,
-        top var(--transitionSpeed) ease,
-        transform var(--transitionSpeed) ease,
-        border-radius var(--transitionSpeed) ease,
-        stroke var(--transitionSpeed) ease,
-        border var(--transitionSpeed) ease,
-        box-shadow var(--transitionSpeed) ease,
-        backdrop-filter var(--transitionSpeed) ease,
-        fill var(--transitionSpeed) ease;
+	position: absolute;
+	width: calc((100% - (3 * var(--uniMargin))));
+	height: calc(
+		100% - var(--uniMargin) - var(--waybarHeight) -
+			(var(--botBarHeight) + var(--uniMargin))
+	);
+	bottom: calc((var(--uniMargin)) + (var(--botBarHeight)));
+	right: -200vw;
+	border: var(--borderThickness) solid var(--borderCol);
+	border-radius: var(--borderRad);
+	box-shadow: var(--shadowRad) var(--shadowCol);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: var(--windowCol);
+	transition:
+		background-color var(--transitionSpeed) ease,
+		width var(--transitionSpeed) ease,
+		height var(--transitionSpeed) ease,
+		left var(--transitionSpeed) ease,
+		bottom var(--transitionSpeed) ease,
+		right var(--transitionSpeed) ease,
+		top var(--transitionSpeed) ease,
+		transform var(--transitionSpeed) ease,
+		border-radius var(--transitionSpeed) ease,
+		stroke var(--transitionSpeed) ease,
+		border var(--transitionSpeed) ease,
+		box-shadow var(--transitionSpeed) ease,
+		backdrop-filter var(--transitionSpeed) ease,
+		fill var(--transitionSpeed) ease;
 }
 
 .menuOpen-iframeWindow {
-    width: calc(((100% - (3 * var(--uniMargin))) - ((var(--waybarHeight) - (2 * var(--uniMargin))) + ((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))))) - var(--uniMargin)));
-    height: calc(100% - var(--uniMargin) - var(--waybarHeight) - (var(--botBarHeight) + var(--uniMargin)));
-    bottom: calc((var(--botBarHeight) + var(--uniMargin)));
-    right: -200vw;
+	width: calc(
+		(
+			(100% - (3 * var(--uniMargin))) -
+				(
+					(var(--waybarHeight) - (2 * var(--uniMargin))) +
+						((var(--waybarHeight) - 2.25 * (2 * var(--uniMargin))))
+				) - var(--uniMargin)
+		)
+	);
+	height: calc(
+		100% - var(--uniMargin) - var(--waybarHeight) -
+			(var(--botBarHeight) + var(--uniMargin))
+	);
+	bottom: calc((var(--botBarHeight) + var(--uniMargin)));
+	right: -200vw;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: border-box;
 	transform-style: preserve-3d;
 }
 .hidden {
-    display: none;
+	display: none;
 }
 
 body {
@@ -70,7 +86,7 @@ body {
 	height: 100%;
 	position: absolute;
 	padding: 6.5vmin 3vmin;
-	animation: mirror1 calc(1s * 2) ease 0s infinite ;
+	animation: mirror1 calc(1s * 2) ease 0s infinite;
 }
 
 .bars + .bars {
@@ -82,26 +98,56 @@ body {
 	width: 44vmin;
 	height: 3vmin;
 	margin: 2vmin 0vmin;
-	background: linear-gradient(90deg, #fff0 33%, var(--menuButtonCol) 33% 67%, #fff0 67% 100%);
-	animation: grow 1s ease-in-out 0s infinite alternate; 
+	background: linear-gradient(
+		90deg,
+		#fff0 33%,
+		var(--menuButtonCol) 33% 67%,
+		#fff0 67% 100%
+	);
+	animation: grow 1s ease-in-out 0s infinite alternate;
 	background-size: 300%;
 	background-position-x: -203%;
 }
 
 @keyframes mirror1 {
-	0%, 47%, 99.99%, 100% { transform: rotate(180deg) rotateX(0deg); }
-	47.01%, 99.98% { transform: rotate(180deg) rotateX(180deg); }
+	0%,
+	47%,
+	99.99%,
+	100% {
+		transform: rotate(180deg) rotateX(0deg);
+	}
+	47.01%,
+	99.98% {
+		transform: rotate(180deg) rotateX(180deg);
+	}
 }
 
 @keyframes mirror2 {
-	0%, 47%, 99.99%, 100% { transform: rotate(90deg) rotateX(180deg); }
-	47.01%, 99.98% { transform: rotate(90deg) rotateX(0deg); }
+	0%,
+	47%,
+	99.99%,
+	100% {
+		transform: rotate(90deg) rotateX(180deg);
+	}
+	47.01%,
+	99.98% {
+		transform: rotate(90deg) rotateX(0deg);
+	}
 }
 
 @keyframes grow {
-	0%, 25% { background-position-x: -297%; }
-	45%, 55% { background-position-x: -250%; }
-	75%, 100% { background-position-x: -203%; }
+	0%,
+	25% {
+		background-position-x: -297%;
+	}
+	45%,
+	55% {
+		background-position-x: -250%;
+	}
+	75%,
+	100% {
+		background-position-x: -203%;
+	}
 }
 
 .bar:nth-child(2) {

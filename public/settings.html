@@ -1,26 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Settings Check</title>
-        <script>
-            function checkSettings() {
-                var recentSettings = localStorage.getItem("recentSettings");
-                if (!recentSettings) {
-                    window.location.href = "colors.html";
-                } else {
-                    if (recentSettings === "colorSettings") {
-                        window.location.href = "colors.html";
-                    } else if (recentSettings === "proxySettings") {
-                        window.location.href = "proxyConfig.html";
-                    } else if (recentSettings === "cloakSettings") {
-                        window.location.href = "cloaking.html";
-                    } else if (recentSettings === "wipeAll") {
-                        localStorage.clear();
-                        window.parent.location.reload();
-                    }
-                }
-            }
-        </script>
-    </head>
-    <body onload="checkSettings()"></body>
+	<head>
+		<title>Settings Check</title>
+		<script>
+			function checkSettings() {
+				var recentSettings = localStorage.getItem('recentSettings');
+				if (!recentSettings) {
+					window.location.href = 'colors.html';
+				} else {
+					if (recentSettings === 'colorSettings') {
+						window.location.href = 'colors.html';
+					} else if (recentSettings === 'proxySettings') {
+						window.location.href = 'proxyConfig.html';
+					} else if (recentSettings === 'cloakSettings') {
+						window.location.href = 'cloaking.html';
+					} else if (recentSettings === 'wipeAll') {
+						localStorage.clear();
+						window.parent.location.reload();
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="checkSettings()"></body>
 </html>
