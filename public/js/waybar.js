@@ -1,7 +1,12 @@
+// File defines functionality for the search and URL input fields, the search button, the settings button, and the reload button. It also defines some of the functionality for the search history and the settings menu.
+
+
+// Checks if variables historyArray and nextHistoryItemId are in local storage and if so assigns them in this file. Else assigns them to their empty defaults ([] and 0)
 let historyArray = JSON.parse(localStorage.getItem('historyArray')) || [];
 let nextHistoryItemId =
 	JSON.parse(localStorage.getItem('nextHistoryItemId')) || 0;
 
+// If the search bar is not empty, the color of the search confirmation button changes
 document.addEventListener('DOMContentLoaded', function () {
 	var urlInput = document.getElementById('urlInput');
 	var searchButton = document.getElementById('searchButton');
@@ -27,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+// Adds an event listener to the window object that listens for a storage event. If the key of the event is 'UVEnabled', the value of the event is parsed and assigned to the variable UVEnabled
 window.addEventListener('storage', function (event) {
 	if (event.key === 'UVEnabled') {
 		let newValue = JSON.parse(event.newValue) || false;
@@ -42,6 +48,7 @@ function performSearch(query) {
 
 let UVEnabled = JSON.parse(localStorage.getItem('UVEnabled')) || false;
 
+// Adds an event listener to the input field with the id 'urlInput' that listens for the 'keydown' event. If the key pressed is 'Enter', the event is prevented and the search button is clicked
 document
 	.getElementById('urlInput')
 	.addEventListener('keydown', function (event) {
@@ -81,6 +88,7 @@ function addToSearchHistory(query) {
 		timeStamp12: timeStamp12
 	};
 
+// Adds the new history item to the historyArray and sets the historyArray in local storage
 	historyArray.push(newHistoryItem);
 	localStorage.setItem('historyArray', JSON.stringify(historyArray));
 
@@ -91,6 +99,7 @@ function addToSearchHistory(query) {
 	);
 }
 
+// 
 let settingsOpen = false;
 
 function closeSettings() {
@@ -112,6 +121,7 @@ document.getElementById('settingsButton').onclick = function (event) {
 	mainWindow.src = settingsOpen ? 'settings.html' : 'greeter.html';
 };
 
+// 
 document.getElementById('searchButton').onclick = function (event) {
 	event.preventDefault();
 
