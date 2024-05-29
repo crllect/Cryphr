@@ -2,7 +2,7 @@
 
 <!-- used colors: 24410c, e70052, 25252a, 141414, ce244c -->
 
-Hey, my names crllect, I started working on this proxy pretty recently, I think
+Hey, my name's crllect, I started working on this proxy pretty recently, I think
 its coming along pretty nicely, if you encounter any issues, contact me on
 [discord](https://discord.com/users/713488984596021291).
 
@@ -18,25 +18,21 @@ its coming along pretty nicely, if you encounter any issues, contact me on
 
 ## TODO:
 
--   Muiltiple tabs (this is going to be a seperate project/repo)
+-   Multiple tabs (this is going to be a separate project/repo)
 -   Add rammerhead as a proxy option
 -   Add DIP as a proxy option
 -   Change how to open the window, E.G. Embed vs New Tab
 -   Tab Cloaking (Favicon and Title, along with some presets)
 -   Add css for proxyConfig
--   Add my game lib, and also add 3kh0 game lib. Might also have a ruffle embed
-    built in. Depends if this gains any traction or not
--   On first open, make the user go to settings to add a theme, and add a breif
-    tutorial on changing proxies and when to do so (Very Low priority)
+-   Add my game lib, and also add 3kh0 game lib. Might also have a ruffle embed built in. Depends if this gains any traction or not
+-   On first open, make the user go to settings to add a theme, and add a brief tutorial on changing proxies and when to do so (Very Low priority)
 
 ---
 
-If you even moderately enjoy this, star this and follow my GitHub, I promise you
-wont regret it. Add some PRs if you notice any easy bugs or stupid design
-decisions.
+If you even moderately enjoy this, star this and follow my GitHub, I promise you won't regret it. Add some PRs if you notice any easy bugs or stupid design decisions.
 
 ---
 
 If someone could make some simple css themes using the built in template that
-would be nice. I could do it myself, but im a little busy at the moment, and
+would be nice. I could do it myself, but I'm a little busy at the moment, and
 making some themes is time consuming if you want to make them look any good.
