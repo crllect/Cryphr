@@ -29,7 +29,7 @@ It's coming along pretty nicely, if you encounter any issues, contact me on
 
 ---
 
-If you even moderately enjoy this, star this, and follow my GitHub, I promise you won't regret it. Add some PRs if you notice any easy bugs or stupid design decisions.
+If you even moderately enjoyed this, star this, and follow my GitHub. Add some PRs if you notice any easy bugs or stupid design decisions.
 
 ---
 
