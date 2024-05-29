@@ -3,36 +3,34 @@
 <!-- used colors: 24410c, e70052, 25252a, 141414, ce244c -->
 
 Hey, my name's crllect, I started working on this proxy pretty recently, I think
-its coming along pretty nicely, if you encounter any issues, contact me on
+It's coming along pretty nicely, if you encounter any issues, contact me on
 [discord](https://discord.com/users/713488984596021291).
 
 ## Current features:
 
 -   Pretty clean UI
 -   Ability to view and clear search history
--   Uploading / adding custom CSS
+-   Uploading/adding custom CSS
 -   Ability to toggle search engine
--   Both UltraViolet and Dynamic proxies are setup and toggleable.
+-   Both UltraViolet and Dynamic proxies are set up and toggleable.
 
 ---
 
 ## TODO:
 
 -   Multiple tabs (this is going to be a separate project/repo)
--   Add rammerhead as a proxy option
+-   Add Rammerhead as a proxy option
 -   Add DIP as a proxy option
 -   Change how to open the window, E.G. Embed vs New Tab
--   Tab Cloaking (Favicon and Title, along with some presets)
--   Add css for proxyConfig
--   Add my game lib, and also add 3kh0 game lib. Might also have a ruffle embed built in. Depends if this gains any traction or not
--   On first open, make the user go to settings to add a theme, and add a brief tutorial on changing proxies and when to do so (Very Low priority)
+-   Tab cloaking (Favicon and Title, along with some presets)
+-   Add CSS for ProxyConfig
+-   Add my game lib, and also add 3kh0 game lib. Might also have a Ruffle embed built in. Depends if this gains any traction or not
+-   On first open, make the user go to settings to add a theme, and add a brief tutorial on changing proxies and when to do so (very low priority)
 
 ---
 
-If you even moderately enjoy this, star this and follow my GitHub, I promise you won't regret it. Add some PRs if you notice any easy bugs or stupid design decisions.
+If you even moderately enjoy this, star this, and follow my GitHub, I promise you won't regret it. Add some PRs if you notice any easy bugs or stupid design decisions.
 
 ---
 
-If someone could make some simple css themes using the built in template that
-would be nice. I could do it myself, but I'm a little busy at the moment, and
-making some themes is time consuming if you want to make them look any good.
+If someone could make some simple CSS themes using the built-in template that would be nice. I could do it myself, but I'm a little busy at the moment, and making some themes is time consuming if you want to make them look any good.
