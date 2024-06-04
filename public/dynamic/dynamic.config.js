@@ -5,7 +5,7 @@ self.__dynamic$config = {
 	logLevel: 3,
 	bare: {
 		version: 2,
-		path: 'https://focus-bare.vercel.app/'
+		path: 'https://bare-server-liard.vercel.app/'
 	},
 	tab: {
 		title: 'Service',
