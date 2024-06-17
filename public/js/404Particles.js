@@ -1,105 +1,105 @@
-particlesJS('particles-js', {
-	particles: {
-		number: {
-			value: 16,
+particlesJS('particles-js', { // Initialize particles.js on the element with id 'particles-js'
+	particles: { // Particle configuration
+		number: { // Particle count and density
+			value: 16, // Number of particles to generate
 			density: {
-				enable: true,
-				value_area: 1000
+				enable: true, // Enable density based particle generation
+				value_area: 1000 // Area density of particles
 			}
 		},
-		color: {
-			value: '#ffffff'
+		color: { // Particle color
+			value: '#ffffff' // Set the particle color to white
 		},
-		shape: {
-			type: 'triangle',
-			stroke: {
-				width: 0,
-				color: '#000000'
+		shape: { // Particle shape
+			type: 'triangle', // Set particle shape to triangle
+			stroke: { // Stroke settings
+				width: 0, // Disable stroke width
+				color: '#000000' // Set stroke color to black (unused due to width being 0)
 			},
-			polygon: {
-				nb_sides: 5
+			polygon: { // Polygon shape configuration
+				nb_sides: 5 // Set number of sides for the polygon shape
 			}
 		},
-		opacity: {
-			value: 1,
-			random: true,
-			anim: {
-				enable: true,
-				speed: 1,
-				opacity_min: 0,
-				sync: false
+		opacity: { // Particle opacity
+			value: 1, // Set initial opacity to 1 (fully opaque)
+			random: true, // Enable random opacity for individual particles
+			anim: { // Opacity animation settings
+				enable: true, // Enable opacity animation
+				speed: 1, // Animation speed
+				opacity_min: 0, // Minimum opacity value for animation
+				sync: false // Disable synchronized animation for all particles
 			}
 		},
-		size: {
-			value: 4,
-			random: true,
-			anim: {
-				enable: true,
-				speed: 4,
-				size_min: 0.3,
-				sync: false
+		size: { // Particle size
+			value: 4, // Set initial particle size
+			random: true, // Enable random size for individual particles
+			anim: { // Size animation settings
+				enable: true, // Enable size animation
+				speed: 4, // Animation speed
+				size_min: 0.3, // Minimum size value for animation
+				sync: false // Disable synchronized animation for all particles
 			}
 		},
-		line_linked: {
-			enable: true,
-			distance: 250,
-			color: '#ffffff',
-			opacity: 0.4,
-			width: 1
+		line_linked: { // Line connecting particles
+			enable: true, // Enable line connection between particles
+			distance: 250, // Maximum distance for connection
+			color: '#ffffff', // Line color
+			opacity: 0.4, // Line opacity
+			width: 1 // Line width
 		},
-		move: {
-			enable: true,
-			speed: 2,
-			direction: 'top',
-			random: true,
-			straight: false,
-			out_mode: 'out',
-			bounce: false,
-			attract: {
-				enable: false,
-				rotateX: 600,
-				rotateY: 600
+		move: { // Particle movement settings
+			enable: true, // Enable particle movement
+			speed: 2, // Particle speed
+			direction: 'top', // Set movement direction to top
+			random: true, // Enable random movement direction
+			straight: false, // Disable straight movement
+			out_mode: 'out', // Particle behavior when hitting the canvas boundary (exit)
+			bounce: false, // Disable bouncing behavior
+			attract: { // Attraction settings
+				enable: false, // Disable attraction
+				rotateX: 600, // Attraction rotation on the x-axis
+				rotateY: 600 // Attraction rotation on the y-axis
 			}
 		}
 	},
-	interactivity: {
-		detect_on: 'window',
-		events: {
-			onhover: {
-				enable: true,
-				mode: 'grab'
+	interactivity: { // Interactive behavior settings
+		detect_on: 'window', // Detect interactions on the entire window
+		events: { // Interaction events
+			onhover: { // On mouse hover events
+				enable: true, // Enable hover events
+				mode: 'grab' // Set hover mode to "grab" (particles attract towards the mouse)
 			},
-			onclick: {
-				enable: false,
-				mode: 'repulse'
+			onclick: { // On mouse click events
+				enable: false, // Disable click events
+				mode: 'repulse' // Set click mode to "repulse" (particles move away from the mouse)
 			},
-			resize: true
+			resize: true // Enable particle resizing on window resize
 		},
-		modes: {
-			grab: {
-				distance: 400,
-				line_linked: {
-					opacity: 1
+		modes: { // Interaction modes
+			grab: { // Grab mode settings
+				distance: 400, // Grab distance
+				line_linked: { // Line connected between mouse and particles
+					opacity: 1 // Set line opacity to 1 (fully opaque)
 				}
 			},
-			bubble: {
-				distance: 250,
-				size: 0,
-				duration: 2,
-				opacity: 0,
-				speed: 3
+			bubble: { // Bubble mode settings (not used)
+				distance: 250, // Bubble distance
+				size: 0, // Bubble size
+				duration: 2, // Bubble duration
+				opacity: 0, // Bubble opacity
+				speed: 3 // Bubble speed
 			},
-			repulse: {
-				distance: 400,
-				duration: 0.4
+			repulse: { // Repulse mode settings
+				distance: 400, // Repulse distance
+				duration: 0.4 // Repulse duration
 			},
-			push: {
-				particles_nb: 4
+			push: { // Push mode settings (not used)
+				particles_nb: 4 // Number of particles to push
 			},
-			remove: {
-				particles_nb: 2
+			remove: { // Remove mode settings (not used)
+				particles_nb: 2 // Number of particles to remove
 			}
 		}
 	},
-	retina_detect: true
+	retina_detect: true // Enable retina detection for high-resolution displays
 });
