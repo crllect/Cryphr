@@ -23,8 +23,8 @@ document.querySelector('.menu').addEventListener('click', function () {
 			iframeWindow.add('menuOpen-iframeWindowOpen');
 		}
 	} else {
-		// If the menu is closed...
-		// Remove specific classes from various elements to handle the closed menu state.
+
+		// Remove 'menuOpen' related classes from elements
 		mainWindow.remove('menuOpen-mainWindow');
 		iframeWindow.remove('menuOpen-iframeWindow');
 		iframeWindow.remove('menuOpen-iframeWindowOpen');
