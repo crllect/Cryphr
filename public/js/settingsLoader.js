@@ -1,53 +1,65 @@
 function applyCustomCSS(css) {
-	let styleSheet = document.getElementById('custom-css-style');
+	// Applies custom CSS to the document
+	let styleSheet = document.getElementById('custom-css-style'); // Get the existing custom CSS style sheet
 	if (!styleSheet) {
+		// Create the style sheet if it doesn't exist
 		styleSheet = document.createElement('style');
 		styleSheet.id = 'custom-css-style';
-		document.head.appendChild(styleSheet);
+		document.head.appendChild(styleSheet); // Append the style sheet to the head of the document
 	}
-	styleSheet.textContent = css;
+	styleSheet.textContent = css; // Set the text content of the style sheet to the provided CSS
 }
 
 function handleFileUpload(e) {
-	const file = e.target.files[0];
+	// Handles file upload for custom CSS
+	const file = e.target.files[0]; // Get the first selected file
 	if (!file) {
+		// Return if no file is selected
 		return;
 	}
 
-	const reader = new FileReader();
+	const reader = new FileReader(); // Create a new file reader
 	reader.onload = function (e) {
-		const contents = e.target.result;
-		localStorage.setItem('customCSS', contents);
-		applyCustomCSS(contents);
+		// Define a function to execute when the file is loaded
+		const contents = e.target.result; // Get the file contents
+		localStorage.setItem('customCSS', contents); // Store the custom CSS in local storage
+		applyCustomCSS(contents); // Apply the custom CSS to the document
 	};
 
-	reader.readAsText(file);
+	reader.readAsText(file); // Read the file contents as text
 }
 
 function clearCustomCSS() {
-	localStorage.removeItem('customCSS');
-	applyCustomCSS('');
+	// Clears the custom CSS
+	localStorage.removeItem('customCSS'); // Remove the custom CSS from local storage
+	applyCustomCSS(''); // Apply empty CSS, effectively clearing any custom styles
 }
 
 window.addEventListener('storage', function (e) {
+	// Listen for changes in local storage
 	if (e.key === 'customCSS') {
-		applyCustomCSS(e.newValue);
+		// Check if the change was to the 'customCSS' key
+		applyCustomCSS(e.newValue); // Apply the new custom CSS to the document
 	}
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-	const customCSS = localStorage.getItem('customCSS');
+	// Listen for the document to be ready
+	const customCSS = localStorage.getItem('customCSS'); // Get the custom CSS from local storage
 	if (customCSS) {
+		// Apply the custom CSS if it exists
 		applyCustomCSS(customCSS);
 	}
 });
 
 window.settingsLoader = {
-	applyCustomCSS,
-	handleFileUpload,
-	clearCustomCSS
+	// Create an object to expose functions for external use
+	applyCustomCSS, // Function to apply custom CSS
+	handleFileUpload, // Function to handle custom CSS file upload
+	clearCustomCSS // Function to clear the custom CSS
 };
 
+// Add fun ASCII logo to console :)
 console.log(`
                        x .d88"  x .d88"                           :8
              .u    .    5888R    5888R                           .88
