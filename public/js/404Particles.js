@@ -1,105 +1,131 @@
 particlesJS('particles-js', {
+	// Initializes particles.js with an ID 'particles-js' and configuration object
 	particles: {
+		// Configuration for particles
 		number: {
-			value: 16,
+			// Number of particles
+			value: 16, // Number of particles
 			density: {
-				enable: true,
-				value_area: 1000
+				// Particle density configuration
+				enable: true, // Enables particle density
+				value_area: 1000 // Area density
 			}
 		},
 		color: {
-			value: '#ffffff'
+			// Particle color
+			value: '#ffffff' // White color
 		},
 		shape: {
-			type: 'triangle',
+			// Particle shape
+			type: 'triangle', // Shape type is triangle
 			stroke: {
-				width: 0,
-				color: '#000000'
+				// Stroke for the shape
+				width: 0, // Stroke width is 0
+				color: '#000000' // Stroke color is black
 			},
 			polygon: {
-				nb_sides: 5
+				// Polygon shape configuration
+				nb_sides: 5 // Number of sides in the polygon
 			}
 		},
 		opacity: {
-			value: 1,
-			random: true,
+			// Particle opacity
+			value: 1, // Opacity value
+			random: true, // Opacity is random
 			anim: {
-				enable: true,
-				speed: 1,
-				opacity_min: 0,
-				sync: false
+				// Animation for opacity
+				enable: true, // Enables animation
+				speed: 1, // Animation speed
+				opacity_min: 0, // Minimum opacity
+				sync: false // Whether animation is synchronized
 			}
 		},
 		size: {
-			value: 4,
-			random: true,
+			// Particle size
+			value: 4, // Size value
+			random: true, // Size is random
 			anim: {
-				enable: true,
-				speed: 4,
-				size_min: 0.3,
-				sync: false
+				// Animation for size
+				enable: true, // Enables animation
+				speed: 4, // Animation speed
+				size_min: 0.3, // Minimum size
+				sync: false // Whether animation is synchronized
 			}
 		},
 		line_linked: {
-			enable: true,
-			distance: 250,
-			color: '#ffffff',
-			opacity: 0.4,
-			width: 1
+			// Line linked between particles
+			enable: true, // Enables line linking
+			distance: 250, // Distance for line linking
+			color: '#ffffff', // Color of the line
+			opacity: 0.4, // Opacity of the line
+			width: 1 // Width of the line
 		},
 		move: {
-			enable: true,
-			speed: 2,
-			direction: 'top',
-			random: true,
-			straight: false,
-			out_mode: 'out',
-			bounce: false,
+			// Particle movement
+			enable: true, // Enables particle movement
+			speed: 2, // Movement speed
+			direction: 'top', // Movement direction
+			random: true, // Movement is random
+			straight: false, // Straight movement
+			out_mode: 'out', // Out of bounds behavior
+			bounce: false, // Bouncing behavior
 			attract: {
-				enable: false,
-				rotateX: 600,
-				rotateY: 600
+				// Attraction behavior
+				enable: false, // Enables attraction
+				rotateX: 600, // Rotation on the X-axis
+				rotateY: 600 // Rotation on the Y-axis
 			}
 		}
 	},
 	interactivity: {
-		detect_on: 'window',
+		// Interactivity settings
+		detect_on: 'window', // Event detection area
 		events: {
+			// Events configuration
 			onhover: {
-				enable: true,
-				mode: 'grab'
+				// Hover event
+				enable: true, // Enables hover event
+				mode: 'grab' // Hover mode is grab
 			},
 			onclick: {
-				enable: false,
-				mode: 'repulse'
+				// Click event
+				enable: false, // Enables click event
+				mode: 'repulse' // Click mode is repulse
 			},
-			resize: true
+			resize: true // Enables resizing for responsiveness
 		},
 		modes: {
+			// Modes for interactivity
 			grab: {
-				distance: 400,
+				// Grab mode
+				distance: 400, // Grab distance
 				line_linked: {
-					opacity: 1
+					// Line linked configuration for grab mode
+					opacity: 1 // Opacity of the line
 				}
 			},
 			bubble: {
-				distance: 250,
-				size: 0,
-				duration: 2,
-				opacity: 0,
-				speed: 3
+				// Bubble mode
+				distance: 250, // Bubble distance
+				size: 0, // Bubble size
+				duration: 2, // Bubble duration
+				opacity: 0, // Bubble opacity
+				speed: 3 // Bubble speed
 			},
 			repulse: {
-				distance: 400,
-				duration: 0.4
+				// Repulse mode
+				distance: 400, // Repulse distance
+				duration: 0.4 // Repulse duration
 			},
 			push: {
-				particles_nb: 4
+				// Push mode
+				particles_nb: 4 // Number of particles to push
 			},
 			remove: {
-				particles_nb: 2
+				// Remove mode
+				particles_nb: 2 // Number of particles to remove
 			}
 		}
 	},
-	retina_detect: true
+	retina_detect: true // Detects retina display for higher resolution
 });
