@@ -5,7 +5,7 @@
 		"@fastify/compress": "^6.4.0",
 		"@fastify/static": "^6.10.2",
 		"@tomphttp/bare-client": "^2.2.0-alpha",
-		"@tomphttp/bare-server-node": "^2.0.1",
+		"@tomphttp/bare-server-node": "2.0.3",
 		"@vercel/analytics": "^1.1.1",
 		"@vercel/speed-insights": "^1.0.8",
 		"acorn": "^8.10.0",
